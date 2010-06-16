@@ -1,0 +1,63 @@
+
+Slurp is my personal code for checking out publically available Common Lisp
+repositories and later updating them to get the latest changes.  Slurp
+contains a database about public Lisp repositories and knows how to access
+repositories managed by CVS, Darcs, Git, Mercurial, and Subversion.
+
+I only use Slurp with SBCL, so Slurp will require a bit of porting if you
+are using a different Common Lisp implementation.  I hope it will prove
+useful for you.  Please send suggestions and bug reports to robert.brown at
+the email hosting site gmail.com.
+
+You'll need to configure Slurp before you use it.  For now, that means
+editing slurp.lisp itself so that the values of *SOURCE-ROOT* and
+*SYSTEMS-ROOT* are correct for your system.  The parameter *SOURCE-ROOT*
+names the directory on your computer where Slurp will place checked out
+source code repositories, while *SYSTEMS-ROOT* indicates which directory
+Slurp should use when creating symbolic links to the ASDF system definition
+files in the checked out directories.  To be useful, you should make the
+*SYSTEMS-ROOT* directory a member of ASDF:*CENTRAL-REGISTRY* so that ASDF
+uses the symbolic links there to compile and load the packages you have
+checked out.
+
+After you have modified *SYSTEMS-ROOT* and *SYSTEMS-ROOT*, load slurp.lisp
+into your Lisp system:
+
+  (load "slurp.lisp")
+
+Test Slurp by checking out a code repository.  The following expression will
+check out Slime, an Emacs IDE for Common Lisp:
+
+  (checkout 'slime)
+
+Make sure that the Slime code was checked out in the directory you specified
+for *SOURCE-ROOT*.  Verify also that Slurp created a symbolic link to
+swank.asd in the directory you chose for *SYSTEMS-ROOT*.
+
+At this point you can either check out another repository in Slurp's
+database or check out all the Lisp repositories Slurp knows about.  The
+second is accomplished by evaluating:
+
+  (checkout-all)
+
+In either case, at some point you'll want to get the latest version of a
+repository.  To update one repository, use UPDATE.  The following expression
+updates Slime:
+
+  (update 'slime)
+
+To update you local versions of all the repositories, evaluate:
+
+  (update-all)
+
+Occasionally, something goes wrong when you update one or all the
+repositories.  A repository may be unavailable or you may experience a
+temporary network glitch.  If either happens, you'll end up in the debugger.
+You can skip over the bad repository and continue the update process with
+another repository by using the function UPDATE-ALL-STARTING-WITH.  For
+instance, to update all repositories starting with Slime, evaluate:
+
+  (update-all-starting-with 'slime)
+
+Please send me an email with suggestions for improvements or with patches to
+support other Common Lisp implementations or source code management systems.
