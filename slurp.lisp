@@ -11,6 +11,13 @@
 (defparameter *systems-root* "/local/software/systems"
   "Directory populated with symbolic links to repository ASDF files.")
 
+(eval-when (:compile-toplevel :load-toplevel :execute)
+
+(defun concat (&rest args)
+  (apply #'concatenate (cons 'string args)))
+
+)
+
 ;; XXXX: Rework syntax so we have:
 ;;   (anardb (git "http://cl-www.msi.co.jp/projects/anardb/anardb.git") :asd ("anardb.asd"
 ;; Can we treat repository specs just like repository abbreviations?
@@ -25,7 +32,7 @@
 
 ;; open gl git repository.  Is this the best cl-opengl repository??
 ;; http://github.com/3b/cl-opengl.git
-
+;; Definitely switch to 3b's github repository.
 
 
 (defparameter +repositiory-specs+
@@ -80,10 +87,12 @@
     (asdf-install darcs "http://common-lisp.net/project/asdf-install/darcs"
      :asd ("asdf-install/asdf-install.asd"
            "asdf-install/test-asdf-install.asd"))
-    (asdf-install-unstable darcs "http://common-lisp.net/project/asdf-install/asdf-install-unstable"
+    (asdf-install-unstable
+     darcs "http://common-lisp.net/project/asdf-install/asdf-install-unstable"
      :asd none)
     (asdf-system-connections
-     darcs "http://common-lisp.net/project/cl-containers/asdf-system-connections/darcs/asdf-system-connections")
+     darcs #.(concat "http://common-lisp.net/project/cl-containers/"
+                     "asdf-system-connections/darcs/asdf-system-connections"))
     (asdf-world (melis))
     (aserve (github "franzinc")
      :asd none)
@@ -588,7 +597,8 @@
     (cxml git "git://repo.or.cz/cxml.git")
     (deflate (github "pmai" "Deflate")
      :asd ("Deflate.asd"))
-    (defsystem-compatibility darcs "http://common-lisp.net/project/cl-containers/defsystem-compatibility"
+    (defsystem-compatibility
+     darcs "http://common-lisp.net/project/cl-containers/defsystem-compatibility"
      :asd ("defsystem-compatibility.asd"
            "defsystem-compatibility-test.asd"))
     (demacs (github "vy"))
@@ -1007,7 +1017,8 @@
            "okra.asd"))
     (ometa hg "http://subvert-the-dominant-paradigm.net/repos/hgwebdir.cgi/ometa")
     ;; XXXX: svn: REPORT of '/svnroot/open-axiom/!svn/vcc/default':
-    ;; Could not read response body: SSL error: Decryption has failed. (https://open-axiom.svn.sourceforge.net)
+    ;; Could not read response body: SSL error: Decryption has failed.
+    ;; (https://open-axiom.svn.sourceforge.net)
     (open-axiom (sourceforge svn)
      :asd none)
     (outbreak (github "patzy"))
@@ -1311,9 +1322,6 @@
     (wave-protocol (google-code hg) :asd none)
     )
   "Database of projects we are interested in cloning locally.")
-
-(defun concat (&rest args)
-  (apply #'concatenate (cons 'string args)))
 
 
 ;;;     Source code repositories
@@ -1662,7 +1670,5 @@ or update all submodules."
 ;; cl-emb      mtn pull cl-emb.mtn-host.prjek.net \* This is an attempt to revive cl-emb project
 ;; cl-fuse    mtn pull cl-fuse.mtn-host.prjek.net \* Common Lisp FUSE (file system in user space) bindings.
 ;; cl-www-indexer  mtn pull cl-www-indexer.mtn-host.prjek.net \*
-
-
 
 ;;    (s-protobuf git "http://www.prism.gatech.edu/~ndantam3/git/s-protobuf.git")
