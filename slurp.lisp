@@ -34,6 +34,12 @@
 ;; http://github.com/3b/cl-opengl.git
 ;; Definitely switch to 3b's github repository.
 
+;; fe[nl]ix says http://gitorious.org/iolib/static-vectors/ is canonical
+
+
+;; Reiterate
+;; http://dwim.hu/darcsweb/darcsweb.cgi?r=HEAD%20hu.dwim.reiterate;a=summary
+
 
 (defparameter +repositiory-specs+
   '((abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
@@ -809,6 +815,7 @@
      :asd none)
     (incf-cl (github "jmbr"))
     ;; XXXX: what about iolib/iolib and iolib/static-vectors on gitorious??
+    ;; fe[nl]ix says http://gitorious.org/iolib/static-vectors/ is canonical
     (iolib git "http://repo.or.cz/r/iolib.git"
      :asd ("src/iolib.asd"
            "src/iolib.base.asd"
@@ -1145,6 +1152,7 @@
      :asd ("swank.asd"))
     (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
      :asd ("src/netlib.asd"))
+    (slurp (github "brown"))
     (smarkup (harmon)
      :asd ("smarkup.asd" "smarkup-test.asd"))
     (snow (clnet svn)
@@ -1431,14 +1439,16 @@ specification with the SCMS removed."
 
 (defun operate (project-name operation)
   "Perform an operation on a project."
-  (multiple-value-bind (scms arguments)
-      (find-project project-name)
-    ;; Lack of an asd specification means there's one asd file named after the
-    ;; project.
-    (unless (member :asd arguments)
-      (setf arguments (append arguments '(:asd project-name))))
-    (apply scms (cons operation arguments))
-    (values)))
+  (let ((project (find-project project-name)))
+    (unless project
+      (error "unknown project"))
+    (multiple-value-bind (scms arguments) project
+      ;; Lack of an asd specification means there's one asd file named after the
+      ;; project.
+      (unless (member :asd arguments)
+        (setf arguments (append arguments '(:asd project-name))))
+      (apply scms (cons operation arguments))
+      (values))))
 
 (defun checkout (project-name)
   "Check out a project."
