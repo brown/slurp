@@ -1448,7 +1448,7 @@ specification with the SCMS removed."
       (unless (member :asd arguments)
         (setf arguments (append arguments '(:asd project-name))))
       (apply scms (cons operation arguments))
-      (values))))
+      (values)))
 
 (defun checkout (project-name)
   "Check out a project."
