@@ -1439,12 +1439,12 @@ specification with the SCMS removed."
 
 (defun operate (project-name operation)
   "Perform an operation on a project."
-  (let ((project (find-project project-name)))
-    (unless project
+  (multiple-value-bind (scms arguments)
+      (find-project project-name)
+    (unless scms
       (error "unknown project"))
-    (multiple-value-bind (scms arguments) project
-      ;; Lack of an asd specification means there's one asd file named after the
-      ;; project.
+      ;; Lack of an asd specification means there's one asd file named after
+      ;; the project.
       (unless (member :asd arguments)
         (setf arguments (append arguments '(:asd project-name))))
       (apply scms (cons operation arguments))
@@ -1500,7 +1500,7 @@ than or equal to NAME."
   (let ((result
          (sb-ext:process-exit-code
           (sb-ext:run-program program args :output output :search t :wait t))))
-    ;; XXXX: Keep track of exit codes.  Don't link ASD files if checkout or
+    ;; XXXX: Keep track of exit codes.  Don't link ASD files if check out or
     ;; update fails.
     (assert (zerop result))))
 
@@ -1528,12 +1528,12 @@ than or equal to NAME."
 ;;;     Source code management systems
 
 
-;; XXXX: For each checkout procedure, check the code out into a temporary
+;; XXXX: For each check out procedure, check the code out into a temporary
 ;; directory and then move the result to the source directory.
 
 (defun cvs (op name method user password host root
             &key asd (module (string-downcase name)))
-  "Checkout or update a CVS repository."
+  "Check out or update a CVS repository."
   (let* ((name (string-downcase name))
          (user (string-downcase user))
          (cvs-root
@@ -1557,7 +1557,7 @@ than or equal to NAME."
     (create-asd-links project-directory name asd)))
 
 (defun bzr (op name url &key asd lightweight)
-  "Checkout or update a bazaar repository."
+  "Check out or update a bazaar repository."
   (let* ((name (string-downcase name))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
@@ -1572,7 +1572,7 @@ than or equal to NAME."
     (create-asd-links project-directory name asd)))
 
 (defun darcs (op name url &key asd)
-  "Checkout or update a darcs repository."
+  "Check out or update a darcs repository."
   (let* ((name (string-downcase name))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
@@ -1586,8 +1586,8 @@ than or equal to NAME."
     (create-asd-links project-directory name asd)))
 
 (defun git (op name url &key asd submodules)
-  "Checkout or update a Git repository.  When SUBMODULES is non-nil, checkout
-or update all submodules."
+  "Check out or update a Git repository.  When SUBMODULES is non-nil, check
+out or update all submodules."
   (let* ((name (string-downcase name))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
@@ -1604,7 +1604,7 @@ or update all submodules."
     (create-asd-links project-directory name asd)))
 
 (defun hg (op name url &key asd)
-  "Checkout or update a Mercurial repository."
+  "Check out or update a Mercurial repository."
   (let* ((name (string-downcase name))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
@@ -1617,7 +1617,7 @@ or update all submodules."
     (create-asd-links project-directory name asd)))
 
 (defun svn (op name url &key asd)
-  "Checkout or update a Subversion repository."
+  "Check out or update a Subversion repository."
   (let* ((name (string-downcase name))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
