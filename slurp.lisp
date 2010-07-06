@@ -18,6 +18,12 @@
 
 )
 
+;; New location for lift:
+;; git clone git://github.com/gwkkwg/lift 
+;; github.com/gwkkwg also has: log5, asdf-install, trivial-shell, metabang-bind,
+;; regenerate-websites
+
+
 ;; XXXX: Rework syntax so we have:
 ;;   (anardb (git "http://cl-www.msi.co.jp/projects/anardb/anardb.git") :asd ("anardb.asd"
 ;; Can we treat repository specs just like repository abbreviations?
