@@ -1,9 +1,9 @@
 
 ;;;;    slurp.lisp
 
+
 (in-package #:slurp)
 
-;(require 'sb-posix)
 
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
@@ -12,33 +12,8 @@
   "Directory populated with symbolic links to repository ASDF files.")
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
-
-(defun concat (&rest args)
-  (apply #'concatenate (cons 'string args)))
-
-)
-
-;; XXXX: Rework syntax so we have:
-;;   (anardb (git "http://cl-www.msi.co.jp/projects/anardb/anardb.git") :asd ("anardb.asd"
-;; Can we treat repository specs just like repository abbreviations?
-
-
-;; We want the cl-sdl-timot file tree.
-;;(cl-sdl (sourceforge cvs) :asd none)
-
-
-;; Recent post says git clone git://gitorious.org/iolib/iolib.git
-;; is the right GIT repository for iolib
-
-;; open gl git repository.  Is this the best cl-opengl repository??
-;; http://github.com/3b/cl-opengl.git
-;; Definitely switch to 3b's github repository.
-
-;; fe[nl]ix says http://gitorious.org/iolib/static-vectors/ is canonical
-
-
-;; Reiterate
-;; http://dwim.hu/darcsweb/darcsweb.cgi?r=HEAD%20hu.dwim.reiterate;a=summary
+  (defun concat (&rest args)
+    (apply #'concatenate (cons 'string args))))
 
 
 (defparameter +repositiory-specs+
@@ -126,7 +101,10 @@
     (bdb (clnet darcs))
     (bdb-playground darcs "http://common-lisp.net/project/bdb/darcs/bdb-playground")
     (beirc (clnet cvs))
-    (binary-types cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    ;; XXXX: I think the second is probably canonical now, but it lacks two files --
+    ;; pdf and ps -- look at them.
+    ;; (binary-types cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    (binary-types (github "frodef"))
     (binascii (github "froydnj")
      :asd none)
     (binomial-heap (github "vy"))
@@ -163,12 +141,19 @@
            ;; "projects/bknr-website/src/bknr.website.asd"
            ))
     (black-tie (github "aerique"))
+    (blackthorn-engine (google-code hg)
+     :asd ("blackthorn.asd"
+           "thopter.asd"
+           "blackthorn-collision-test.asd"
+           "blackthorn-test.asd"
+           "bunnyslayer.asd"
+           "blackthorn-stress-test.asd"))
     (bordeaux-fft (github "ahefner"))
     (bordeaux-threads (clnet darcs))
     (bratwurst (github "sabetts"))
     (buclet (github "aerique"))
     (buildapp (github "xach"))
-    (bytemap (clnet git)
+    (bytemap git "http://common-lisp.net/projects/bytemap/bytemap.git"
      :asd ("bytemap-test.asd"
            "bytemap.asd"))
     (caleb svn "svn://common-lisp.net/project/caleb/svn")
@@ -297,6 +282,8 @@
      :asd ("fft.asd" "pfft.asd"))
     (cl-frame (github "dto")
      :asd none)
+    (cl-gambol (google-code svn)
+     :asd "gambol.asd")
     (cl-gd darcs "http://common-lisp.net/~loliveira/ediware/cl-gd"
      :asd ("cl-gd.asd"
            "cl-gd-test.asd"))
@@ -341,6 +328,7 @@
     ;; XXXX: unclear what asd files should be listed here
     (cl-libxml2 (github "archimag")
      :asd none)
+    (cl-llvm git "http://repo.or.cz/r/cl-llvm.git")
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
      :asd ("cl-markdown-comparisons.asd"
            "cl-markdown-test.asd"
@@ -574,6 +562,8 @@
            "clsr-gen.asd"
            "clsr-test.asd"))
     (cluck git "git://git.b9.com/cluck.git")
+    (clucumber (github "antifuchs")
+     :asd ("lib/clucumber/clucumber.asd"))
     (cluster-ffi (harmon)
      :asd ("cluster-ffi.asd"
            "cluster-ffi-gen.asd"))
@@ -705,6 +695,7 @@
            "hemlock.qt.asd"
            "hemlock.clx.asd"
            "hemlock.tty.asd"))
+    (hob git "http://marijn.haverbeke.nl/git/hob")
     (html-entities (google-code svn))
     (html-template darcs "http://common-lisp.net/~loliveira/ediware/html-template")
     (http-dohc (github "vsedach" "HTTP-DOHC"))
@@ -838,6 +829,8 @@
      :asd ("jpegmeta.asd"
            "binary-data/com.gigamonkeys.binary-data.asd"
            "macro-utilities/com.gigamonkeys.macro-utilities.asd"))
+    (js (github "akapav"))
+    ;; XXXX: Is this an early version of parse-js ?
     (js-parser (github "gonzojive")
      :asd ("js-parser-tests.asd"
            "js-parser.asd"))
@@ -934,6 +927,8 @@
            "lotzo.asd"
            "announces/announces.asd"
            "logging/log.asd"))
+    (lsw2 (google-code svn) :asd none)
+
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
     (maild (github "franzinc")
      :asd none)
@@ -1044,6 +1039,7 @@
     (parse-declarations (clnet darcs)
      :asd ("parse-declarations-1.0.asd"))
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
+    (parse-js git "http://marijn.haverbeke.nl/git/parse-js")
     (parser-generator git "http://git.nklein.com/lisp/apps/parser-generator.git"
      :asd ("com.nklein.parser-generator.asd"
            "com.nklein.parser-generator.reader.asd"
@@ -1055,6 +1051,7 @@
     ;; (persistent-sheeple (github "sykopomp"))
     (pg (clnet cvs))
     (pipes git "git://git.b9.com/pipes.git")
+    (pithy-xml (github "frodef"))
     (pjb-lisp darcs "http://darcs.informatimago.com/lisp"
      :asd ("cl-posix/cliki/cliki.asd"
            "cl-posix/cliki/clposixcliki.asd"
@@ -1082,13 +1079,20 @@
            ;; "libs/cl-ppcre/cl-ppcre.asd"
            ;; "libs/puri-1.3.1/puri.asd"
            ))
+    ;; XXXXX What version of postmodern is canonical?  marijn has a version
     (postmodern (clnet darcs)
      :asd ("postmodern.asd" "cl-postgres.asd"))
+; XXXXXXXXX
+;    (postmodern git "http://marijn.haverbeke.nl/git/postmodern" :asd none)
+; there is a copy here too:     http://github.com/marijnh
     (postoffice git "git://git.b9.com/postoffice.git")
     (prepl (gitorious))
     (pretty-function (clnet darcs))
     (protobuf (github "brown")
-     :submodules t)
+     :submodules t
+     :asd ("protobuf.asd"
+           "protobuf-test.asd"
+           "example/protobuf-example.asd"))
     (ptester git "git://git.b9.com/ptester.git")
     (pubmed git "git://git.b9.com/pubmed.git")
     (puri git "git://git.b9.com/puri.git")
@@ -1141,11 +1145,17 @@
      :asd none)
     (sbcl-git git "git://git.boinkor.net/sbcl"
      :asd none)
+    ;; XXXX: Remove this and just keep any new files?  Is it actively being
+    ;; worked on?
+    (sbcl-llvm git "git://repo.or.cz/sbcl/llvm.git" :asd none)
     (series (sourceforge cvs))
     (sheeple (github "sykopomp"))
     (shuffletron (github "ahefner"))
-    (sicl git "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
-     :asd none)
+    ;; I think the clnet URL is canonical now.
+;    (sicl git "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
+;     :asd none)
+    ;; XXXX: What asd files should we link to?
+    (sicl (clnet git "SICL") :asd none)
     (simple-rgb (google-code svn))
     (skippy (xach))
     (slime (clnet cvs)
@@ -1339,13 +1349,12 @@
               &optional (module (string-downcase project-name)))
   "Repository specification abbreviation function for a project hosted on
 common-lisp.net."
-  (let ((name (string-downcase project-name))
-        (url-prefix "http://common-lisp.net/project/"))
+  (let ((name (string-downcase project-name)))
     (ecase scms
       ((cvs) `(cvs pserver anonymous t common-lisp.net ,(concat "/project/" name "/cvsroot")
                :module ,module))
-      ((darcs) `(darcs ,(concat url-prefix name "/darcs/" module)))
-      ((git) `(git ,(concat url-prefix name "/" module ".git")))
+      ((darcs) `(darcs ,(concat "http://common-lisp.net/project/" name "/darcs/" module)))
+      ((git) `(git ,(concat "git://common-lisp.net/projects/" name "/" module ".git")))
       ((svn) `(svn ,(concat "svn://common-lisp.net/project/" name "/svn/trunk"))))))
 
 (defun melis (project-name)
@@ -1628,57 +1637,3 @@ out or update all submodules."
        (with-cwd project-directory
          (run "svn" '("update") *terminal-io*))))
     (create-asd-links project-directory name asd)))
-
-
-
-;; ========================================
-
-;; XXXXXXXXXXXXXXXXXXXX broken
-;;    (defclazz darcs "http://common-lisp.net/~lnostdal/programming/lisp/defclazz")
-;;  find old copy on paradicsom ????
-
-
-;;  common-lisp.net projects to look at
-
-;;  cells-gtk
-;;  cells-ode chemboy cinline cl+j cl-amqp cl-applescript
-;;  cl-cactus-kev cl-captcha cl-carbon cl-cli-parser
-;;  cl-clickatell cl-component cl-cracklib cl-darx cl-date-calc cl-dises
-;;  cl-dwim cl-emb cl-enumeration cl-facebook cl-fltk cl-ftp cl-fuse cl-gdbm
-;;  cl-glpk cl-godb cl-gsl cl-heap cl-ipc cl-kanren-trs cl-lazy-list
-
-;;  cl-lexer lisppaste ucw xmls ??
-
-;; lifp vial ?
-
-;;  cl-libtai cl-machine-learning cl-magick cl-match
-;;  cl-menusystem cl-migrations cl-mp3-parse cl-mpd cl-muproc cl-octave cl-ode
-;;  cl-plplot cl-plus-j cl-plus-ssl cl-pop cl-proc cl-rope cl-sbml cl-screen
-;;  cl-semantic cl-smogames cl-snmp cl-soap cl-sockets cl-syslog
-;;  cl-taint cl-telnetd cl-trane cl-twitter cl-wav-synth cl-wdim cl-weblocks
-;;  cl-wiki cl-xml cl-xmlspam cl-xmms cltcl clappa clarity clbuild cldoc cleric
-;;  clfswm clget clhp climplayer clkd clnuplot clo clois-lane closer clotnet
-;;  cloud clsql-fluid clsql-mysql-introspect cltl3 common-math
-;;  core-services corman-sdl cparse crypticl css-sexp decl defdoc defeditor
-;;  definer defmud defplayer defwm docutrack dyslexia ecl-readline
-;;  eclipse encline erlang-in-lisp erlisp external-program fetter fomus fret fucc
-;;  funds gamelib ganelon geco gecol geohash geometry gestalt glouton gnucard
-;;  grand-prix graphic-forms gzip-stream ht-ajax hyperdoc hyperspec-lookup
-;;  iaxphone ieeefp-tests innen isidorus iso8601-date iterate-clsql
-;;  jess-parse jnil lambda-gtk lgtk lifp limp lineal linedit lisp-on-lines
-;;  lisp-res-kit lispbox lispfaq lisplab lisppaste lispy lmud log4cl lost+found
-;;  lw-vim-mode macho macondoolap meta-cvs mirror misc-extensions misrouted
-;;  mod-lisp modisc morphologie movies names-and-paths nixies noctool nrw-xmcl
-;;  nxtlisp objective-cl oct openair osicat pal patg patty pg-introspect
-;;  phemlock phorplay plain-odbc ply portage-overlay progintellect py-configparser
-;;  python-on-lisp qitab quiz rcl rclg rdnzl rjain-utils same sb-simd sexpc
-;;  simple-http snmp1 spray sqlisp ssc stamp stdutil steeldump suave
-;;  tbnl the-feebs-war tioga trivial-freeimage trivial-iconv ubf ucs-sort ucw
-;;  ucw-extras umpa-lumpa unetwork uri-template vial xml-psychiatrist xmls yason)
-
-;; monotone projects
-;; cl-emb      mtn pull cl-emb.mtn-host.prjek.net \* This is an attempt to revive cl-emb project
-;; cl-fuse    mtn pull cl-fuse.mtn-host.prjek.net \* Common Lisp FUSE (file system in user space) bindings.
-;; cl-www-indexer  mtn pull cl-www-indexer.mtn-host.prjek.net \*
-
-;;    (s-protobuf git "http://www.prism.gatech.edu/~ndantam3/git/s-protobuf.git")
