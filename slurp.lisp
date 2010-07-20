@@ -4,7 +4,6 @@
 
 (in-package #:slurp)
 
-
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
 
@@ -688,6 +687,13 @@
            "glop-test.asd"))
     (getopt git "git://git.b9.com/getopt.git")
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
+    (gsd git "git://repo.or.cz/gsd.git"
+     :asd ("c-array.asd"
+           "grid.asd"
+           "grid-tests.asd"
+           "c-array/c-array.asd"
+           "grid/grid.asd"
+           "grid/grid-tests.asd"))
     (gsll git "git://repo.or.cz/gsll.git"
      :asd ("gsll.asd" "gsll-tests.asd"))
     (hemlock (gitorious)
