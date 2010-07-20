@@ -1395,6 +1395,12 @@ projects hosted on http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
   (let ((name (string-downcase project-name)))
     `(git ,(concat "git://cyrusharmon.org/pub/git/" name ".git"))))
 
+(defun repo-or-cz (project-name)
+  "Repository specification abbreviation function for git projects hosted on
+repo.or.cz."
+  (let ((name (string-downcase project-name)))
+    `(git ,(concat "git://repo.or.cz/cyrusharmon.org/" name ".git"))))
+
 (defun savannah (project-name scms)
   "Repository specification abbreviation function for a project hosted on
 savannah.gnu.org."
