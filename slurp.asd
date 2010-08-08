@@ -10,13 +10,14 @@
 
 (in-package #:slurp-system)
 
+
 (defsystem slurp
   :name "Slurp"
   :description "Check out public Common Lisp source code repositories."
   :long-description "Slurp is a package that lets you easily check out
 public Common Lisp source code repositories and keep your local copies up
 to date when the repositories change."
-  :version "0.1"
+  :version "0.2"
   :author "Robert Brown"
   :licence "See file COPYING and the copyright messages in individual files."
   #+sbcl :depends-on #+sbcl (:sb-posix)

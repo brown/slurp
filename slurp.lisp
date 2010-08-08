@@ -95,11 +95,9 @@
     ;;   git clone git://axiom.git.sourceforge.net/gitroot/axiom/axiom
     ;;   git clone git://git.savannah.nongnu.org/axiom.git
     ;;   git clone axiom@git.sv.nongnu.org:/srv/git/axiom.git
-    ;; Figure out which is best.  Bill Daly's git repository on github is
-    ;; not getting much action.
-    ;; (axiom (savannah cvs)
-    ;;  :asd none)
-    (axiom-git (github "daly" "axiom")
+    ;; Figure out which is best.  Bill Daly's git repository on github and
+    ;; the one on sourceforge are getting updates.
+    (axiom (github "daly" "axiom")
      :asd none)
     (babel (clnet darcs)
      :asd ("babel.asd"
@@ -277,16 +275,17 @@
     (cl-dwarf (gitorious)
      :asd none)
     (cl-elf (repo-or-cz))
-    ;; XXXXXXXXXXXXXXXXXXXX
-    ;; XXXXXXXXXXXXXXXXXXXX repository is messed up; can't darcs get it
-    ;; XXXXXXXXXXXXXXXXXXXX
-    ;;    (cl-dwim (clnet darcs)
-    ;;     :asd ("dwim.asd" "dwim-meta-model-test.asd"))
+    ;; Checking out this repository prints:
+    ;; This repo is OBSOLETE!
+    ;; The new darcs2 repo is available at http://dwim.hu
+    ;; XXXX: remove this repository and cl-dwim-old
+    ;(cl-dwim (clnet darcs)
+    ; :asd ("dwim.asd" "dwim-meta-model-test.asd"))
 
     ;; XXXXXXXXXXXXXXXXXXXX last update failed:
     ;; svn: Can't connect to host 'slimy.com': Connection refused
-;    (cl-e svn "svn://slimy.com/cl-e/cl-e/trunk/"
-;     :asd ("e-on-cl.asd"))
+    ;(cl-e svn "svn://slimy.com/cl-e/cl-e/trunk/"
+    ; :asd ("e-on-cl.asd"))
     (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad")
     (cl-fft git "http://git.nklein.com/lisp/libs/fft.git"
      :asd ("fft.asd" "pfft.asd"))
@@ -336,9 +335,11 @@
      :asd ("cl-librarian.asd"
            "skel/skel.asd"))
     (cl-libsvm (melis))
-    ;; XXXX: unclear what asd files should be listed here
     (cl-libxml2 (github "archimag")
-     :asd none)
+     :asd ("xfactory.asd"
+           "cl-libxslt.asd"
+           "cl-libxml2.asd"
+           "xoverlay.asd"))
     (cl-llvm (repo-or-cz))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
      :asd ("cl-markdown-comparisons.asd"
@@ -398,7 +399,6 @@
            "cl-pdf-parser.asd"
            "salza/salza.asd"))
     (cl-peg darcs "http://subvert-the-dominant-paradigm.net/repos/cl-peg")
-    ;; XXXX: Last update 2010/3/29 failed
     (cl-photo git "git://git.b9.com/cl-photo.git"
      :asd ("cl-photo.asd"
            "cl-photo-tests.asd"))
@@ -483,7 +483,6 @@
            "cl-xmpp-tls.asd"
            "cl-xmpp.asd"
            "test/cl-xmpp-test.asd"))
-    ;; XXXX: This repository didn't work the last time I updated everything.
     (cl-yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc"
      :asd ("yacc.asd"))
     (cl-zmq (repo-or-cz)
@@ -523,7 +522,7 @@
     (clisp (sourceforge cvs)
      :asd none)
 
-    ;; figure out where this is
+    ;; XXXX: figure out where this is
     ;;    (clnuplot darcs "http://common-lisp.net/project/clnuplot")
 
     (cloak git "http://www.lichteblau.com/git/cloakbuild.git"
@@ -651,7 +650,6 @@
      :asd none)
     (ecl-test git "http://ecls.sourceforge.net/git/ecl-test/.git"
      :asd none)
-    ;; XXXX: older version still available here: (elephant (clnet cvs))
     (elephant (clnet darcs "elephant-1.0")
      :asd ("ele-bdb.asd"
            "ele-clp.asd"
@@ -668,9 +666,25 @@
     (esa cvs pserver anonymous t common-lisp.net "/project/climacs/cvsroot")
     (esrap (github "nikodemus")
      :asd none)
-    ;; XXXX: create proper asd file set
+    ;; XXXX: Maybe just check out the trunk?  There are tons of tags
+    ;; directories.
     (exp-engine svn "http://exp-engine.svn.sourceforge.net/svnroot/exp-engine"
-     :asd none)
+     :asd ("expresso/trunk/clim/expresso-clim.asd"
+           "expresso/trunk/x/mapping-engine.asd"
+           "expresso/trunk/p21/p21.asd"
+           "expresso/trunk/shell/osicat/osicat.asd"
+           "expresso/trunk/shell/terminfo/terminfo.asd"
+           "expresso/trunk/shell/linedit/linedit.asd"
+           "expresso/trunk/shell/expresso-shell.asd"
+           ;"expresso/trunk/shell/uffi/uffi.asd"
+           ;"expresso/trunk/shell/uffi/uffi-tests.asd"
+           "expresso/trunk/p11/p11.asd"
+           "expresso/trunk/compiler/expresso-compiler.asd"
+           "expresso/trunk/expcore/expresso-core.asd"
+           "expresso/trunk/expcore/expresso-base.asd"
+           "expresso/trunk/expcore/expresso.asd"
+           "expresso/trunk/gui/expresso-capi.asd"
+           "expresso/trunk/p14/p14.asd"))
     (fare-utils git "git://common-lisp.net/users/frideau/fare-utils.git"
      :asd ("fare-utils.asd"
            "test/fare-utils-test.asd"))
@@ -690,11 +704,6 @@
     (fsbv (repo-or-cz))
     (fsvd (melis))
     (ftd (clnet darcs))
-    ;; XXXXXXXXXXXXXXXXXXXX update did not work
-    ;; update GARNET
-    ;; cvs update: CVS password file /home/brown/.cvspass does not exist - creating a new file
-    ;; Fatal error, aborting.
-    ;; anoncvs_garnetlisp: no such system user
     (garnet cvs pserver anonymous nil garnetlisp.cvs.sourceforge.net "/cvsroot/garnetlisp"
      :asd none)
     (gcl (savannah cvs)
@@ -854,9 +863,8 @@
     (irc-logger git "git://git.b9.com/irc-logger.git")
     (ironclad (github "froydnj"))
     (iterate (clnet darcs))
-    ;; XXXX: Repository didn't work last time I updated.
-    ;;(j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
-    ;;:asd none)
+    (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
+     :asd none)
     (jpegmeta (google-code svn)
      :asd ("jpegmeta.asd"
            "binary-data/com.gigamonkeys.binary-data.asd"
@@ -1120,11 +1128,11 @@
            ;; "libs/puri-1.3.1/puri.asd"
            ))
     ;; XXXXX What version of postmodern is canonical?  marijn has a version
-    (postmodern (clnet darcs)
-     :asd ("postmodern.asd" "cl-postgres.asd"))
     ;; XXXXXXXXX
     ;;    (postmodern git "http://marijn.haverbeke.nl/git/postmodern" :asd none)
     ;; there is a copy here too:     http://github.com/marijnh
+    (postmodern (clnet darcs)
+     :asd ("postmodern.asd" "cl-postgres.asd"))
     (postoffice git "git://git.b9.com/postoffice.git")
     (prepl (gitorious))
     (pretty-function (clnet darcs))
@@ -1141,12 +1149,13 @@
      :asd none)
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
     ;; XXXX: rename to quicktime if possible
+    ;; XXXX: try loading it and resolve all dependencies
     (quicktime-ffi (harmon)
      :asd ("quicktime.asd" "quicktime-init.asd" "quicktime-test.asd"))
     (raylisp (github "nikodemus")
      :asd ("raylisp.asd" "raylisp-gui.asd"))
     (readline git "git://git.b9.com/cl-readline.git")
-    ;; XXXX: Emacs extensions for lisp
+    ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
      :asd none)
     (restas (github "archimag"))
@@ -1190,12 +1199,17 @@
     (series (sourceforge cvs))
     (sheeple (github "sykopomp"))
     (shuffletron (github "ahefner"))
-    ;; I think the clnet URL is canonical now.
-    ;;    (sicl git "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
-    ;;     :asd none)
-    ;; XXXX: What asd files should we link to?
+    ;; XXXX: This repository appears to be the canonical one, but is
+    ;; sicl-OLD from "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
+    ;; still getting updates?
     (sicl (clnet git "SICL")
-     :asd none)
+     :asd ("Lisp-Unit/lisp-unit.asd"
+           "Code/Cons-high/cons-high.asd"
+           "Code/Loop/loop.asd"
+           "Code/Reader/read.asd"
+           "Code/sicl.asd"
+           "Code/Format/format.asd"
+           "Code/Sequences/sequences.asd"))
     (simple-rgb (google-code svn))
     (skippy (xach))
     (slime (clnet cvs)
@@ -1340,7 +1354,6 @@
     (wol git "git://git.b9.com/wol.git")
     (woolly git "http://git.nklein.com/lisp/libs/woolly.git/"
      :asd ("woolly.asd" "woolly-gl.asd"))
-    ;; XXXX: Why does wxcl have a wxcl subdirectory?
     (wxcl (sourceforge svn))
     (x.let-star (github "ks" "X.LET-STAR"))
     (x.fdatatypes (github "ks" "X.FDATATYPES"))
@@ -1446,7 +1459,6 @@ savannah.gnu.org."
     (ecase scms
       ((bzr) `(bzr ,(concat "http://bzr.savannah.gnu.org/r/" name "/trunk")))
       ((cvs) `(cvs pserver anonymous nil cvs.savannah.gnu.org ,(concat "/sources/" name)
-               ;; XXXX: module shouldn't be needed, since it defaults to lower case name
                :module ,name)))))
 
 (defun sourceforge (project-name scms)
@@ -1457,7 +1469,6 @@ sourceforge.net."
       ((cvs) `(cvs pserver anonymous nil
                ,(intern (string-upcase (concat name ".cvs.sourceforge.net")))
                ,(concat "/cvsroot/" name)
-               ;; XXXX: module shouldn't be needed, since it defaults to lower case name
                :module ,name))
       ((git) `(git ,(concat "http://" name ".sourceforge.net/git/" name "/.git")))
       ((svn) `(svn ,(concat "http://" name ".svn.sourceforge.net/svnroot/" name "/trunk"))))))
@@ -1555,12 +1566,9 @@ than or equal to NAME."
 
 #+sbcl
 (defun run (program args output)
-  ;; (format output "RUN: ~a ~a~%" program args)
   (let ((result
          (sb-ext:process-exit-code
           (sb-ext:run-program program args :output output :search t :wait t))))
-    ;; XXXX: Keep track of exit codes.  Don't link ASD files if check out or
-    ;; update fails.
     (assert (zerop result))))
 
 (defun link (project-directory asd-file-path)
@@ -1586,9 +1594,6 @@ than or equal to NAME."
 
 ;;;     Source code management systems
 
-
-;; XXXX: For each check out procedure, check the code out into a temporary
-;; directory and then move the result to the source directory.
 
 (defun cvs (op name method user password host root
             &key asd (module (string-downcase name)))
@@ -1626,7 +1631,6 @@ than or equal to NAME."
               *terminal-io*)))
       ((update)
        (with-cwd project-directory
-         ;; XXXX: remove dir/_darcs/lock first ?
          (run "bzr" '("update" "--verbose") *terminal-io*))))
     (create-asd-links project-directory name asd)))
 
@@ -1640,7 +1644,9 @@ than or equal to NAME."
          (run "darcs" `("get" ,url ,name) *terminal-io*)))
       ((update)
        (with-cwd project-directory
-         ;; XXXX: remove dir/_darcs/lock first ?
+         ;; Sometimes a darcs pull fails because there's a leftover lock
+         ;; file from a previous interrupted pull.  Should we try to remove
+         ;; the lock file, repository/_darcs/lock?
          (run "darcs" '("pull" "--all" "--verbose") *terminal-io*))))
     (create-asd-links project-directory name asd)))
 
