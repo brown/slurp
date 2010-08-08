@@ -16,7 +16,16 @@
 
 
 (defparameter +repositiory-specs+
-  '((abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
+  '((3bil (github "3b")
+     :asd ("3b-swf-writer.asd"
+           "swf-writer-hack.asd"
+           "avm2-asm.asd"
+           "avm2-compile.asd"
+           "avm2-lib.asd"))
+    (3b-swf (github "3b")
+     :asd ("3b-swf-swc.asd"
+           "3b-swf.asd"))
+    (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
     (adw-charting (clnet darcs)
      :asd ("adw-charting-google.asd"
            "adw-charting-vecto.asd"
@@ -265,7 +274,9 @@
     (cl-dbus (github "blitz"))
     (cl-devil (github "sykopomp"))
     (cl-dot svn "http://svn.foldr.org/~michaelw/cl-dot/trunk")
-
+    (cl-dwarf (gitorious)
+     :asd none)
+    (cl-elf (repo-or-cz))
     ;; XXXXXXXXXXXXXXXXXXXX
     ;; XXXXXXXXXXXXXXXXXXXX repository is messed up; can't darcs get it
     ;; XXXXXXXXXXXXXXXXXXXX
@@ -319,6 +330,7 @@
            "cl-irregsexp.asd"))
     (cl-jpeg (clnet cvs "cljl"))
     (cl-json (clnet darcs))
+    (cl-kyoto-cabinet (github "kraison"))
     (cl-l10n (clnet darcs))
     (cl-librarian darcs "http://www.pasternacki.net/repos/cl-librarian"
      :asd ("cl-librarian.asd"
@@ -327,7 +339,7 @@
     ;; XXXX: unclear what asd files should be listed here
     (cl-libxml2 (github "archimag")
      :asd none)
-    (cl-llvm git "http://repo.or.cz/r/cl-llvm.git")
+    (cl-llvm (repo-or-cz))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
      :asd ("cl-markdown-comparisons.asd"
            "cl-markdown-test.asd"
@@ -371,6 +383,8 @@
     (cl-openal (github "sykopomp")
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
+    ;; XXXXXXXXXX: There is a cl-opengl project on github.  Is it a better version?
+    ;;(cl-opengl (github "3b") :asd none)
     (cl-opengl (clnet darcs)
      :asd ("cl-glu.asd"
            "cl-glut-examples.asd"
@@ -415,7 +429,9 @@
            "cl-sam-test.asd"))
     (cl-selenium (clnet cvs)
      :asd ("selenium.asd"))
+    (cl-skip-list (github "kraison"))
     (cl-smtp (clnet cvs))
+    (cl-spidermonkey (github "gonzojive"))
     (cl-sqlite git "git://repo.or.cz/cl-sqlite.git"
      :asd ("sqlite-tests.asd"
            "sqlite.asd"))
@@ -461,7 +477,7 @@
            "cl-variates-test.asd"))
     (cl-web-crawler (google-code svn))
     (cl-who darcs "http://common-lisp.net/~loliveira/ediware/cl-who")
-    (cl-x86-asm git "git://repo.or.cz/cl-x86-asm.git")
+    (cl-x86-asm (repo-or-cz))
     (cl-xmpp (clnet cvs)
      :asd ("cl-xmpp-sasl.asd"
            "cl-xmpp-tls.asd"
@@ -470,7 +486,7 @@
     ;; XXXX: This repository didn't work the last time I updated everything.
     (cl-yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc"
      :asd ("yacc.asd"))
-    (cl-zmq git "git://repo.or.cz/cl-zmq.git"
+    (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
     (claw (clnet svn)
      :asd ("main/claw-as/claw-as.asd"
@@ -530,6 +546,7 @@
      :asd ("clois-lane.asd"
            "clois-lane-cegui.asd"))
     (clon (github "dto"))
+    (clonsigna (clnet git))
     ;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     ;; Same project name as other clon.  Figure out a solution.
     ;; Need different directory name and renaming of asd file links.
@@ -542,6 +559,8 @@
      :asd ("src/clouchdb.asd"
            "src/clouchdb-examples.asd"
            "src/clouchdb-tests.asd"))
+    (clqr (repo-or-cz)
+     :asd none)
     (clsql git "git://git.b9.com/clsql.git"
      :asd ("clsql.asd"
            "clsql-aodbc.asd"
@@ -566,6 +585,7 @@
     (cluster-ffi (harmon)
      :asd ("cluster-ffi.asd"
            "cluster-ffi-gen.asd"))
+    (clws (github "3b"))
     (clx darcs "http://common-lisp.net/~crhodes/clx")
     (clx-franz (github "franzinc" "clx")
      :asd none)
@@ -661,9 +681,11 @@
      :asd ("flexichain-doc.asd"
            "flexichain-test.asd"
            "flexichain.asd"))
+    (freeimage (github "BradWBeer" "CL-FreeImage"))
     (fricas (sourceforge svn)
      :asd none)
     (fset (clnet svn))
+    (fsbv (repo-or-cz))
     (fsvd (melis))
     (ftd (clnet darcs))
     ;; XXXXXXXXXXXXXXXXXXXX update did not work
@@ -855,8 +877,7 @@
     (lassie (melis))
     (latex-table (github "tpapp"))
     (liards (clnet darcs))
-    (lice git "git://repo.or.cz/lice.git"
-     :asd ("src/lice.asd"))
+    (lice (repo-or-cz) :asd ("src/lice.asd"))
     (lift darcs "http://common-lisp.net/project/lift/darcs"
      :asd ("lift.asd" "lift-test.asd" "lift-documentation.asd"))
     (lisa (sourceforge cvs))
@@ -933,8 +954,8 @@
            "lotzo.asd"
            "announces/announces.asd"
            "logging/log.asd"))
-    (lsw2 (google-code svn) :asd none)
-
+    (lsw2 (google-code svn)
+     :asd none)
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
     (maild (github "franzinc")
      :asd none)
@@ -984,6 +1005,10 @@
            "mgl.asd"
            "mgl-example.asd"
            "mgl-visuals.asd"))
+    (mixalot (github "ahefner")
+     :asd ("mixalot.asd"
+           "mixalot-mp3.asd"
+           "mpg123-ffi.asd"))
     ;; XXXXXXXXXX empty repository ?? ask Gabor about it
     ;; (micmac (melis) :asd none)
     (mod_lisp svn "http://www.fractalconcept.com:8000/public/open-source/mod_lisp"
@@ -1017,6 +1042,8 @@
      :asd none)
     (nuclblog (harmon)
      :asd ("nuclblog.asd" "nuclblog-demo.asd"))
+    (objcffi (repo-or-cz))
+    (ocml (github "kmi"))
     (okra (github "aerique")
      :asd ("okra-bindings.asd"
            "okra-bindings-generator.asd"
@@ -1032,6 +1059,7 @@
     (outbreak (github "patzy"))
     (paktahn (github "skypher")
      :asd none)
+    (pango (github "BradWBeer" "CL-Pango"))
     ;; XXXXXXXXXXX my dir is empty ... find the code, change the asd setting
     (paragent (google-code svn)
      :asd none)
@@ -1041,6 +1069,8 @@
     (paren-test (github "gonzojive")
      :asd none)
     (paren-util (github "gonzojive"))
+    ;; XXXXXXXXXX: There is a parenscript project on github.  Is it better?
+    ;; (parenscript (github "3b") :asd none)
     (parenscript git "http://common-lisp.net/project/parenscript/git/parenscript")
     (parse-declarations (clnet darcs)
      :asd ("parse-declarations-1.0.asd"))
@@ -1154,6 +1184,8 @@
     ;; XXXX: Remove this and just keep any new files?  Is it actively being
     ;; worked on?
     (sbcl-llvm git "git://repo.or.cz/sbcl/llvm.git" :asd none)
+    (screamer (repo-or-cz)
+     :asd none)
     (series (sourceforge cvs))
     (sheeple (github "sykopomp"))
     (shuffletron (github "ahefner"))
@@ -1161,11 +1193,15 @@
 ;    (sicl git "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
 ;     :asd none)
     ;; XXXX: What asd files should we link to?
-    (sicl (clnet git "SICL") :asd none)
+    (sicl (clnet git "SICL")
+     :asd none)
     (simple-rgb (google-code svn))
     (skippy (xach))
     (slime (clnet cvs)
      :asd ("swank.asd"))
+    (slime-proxy (github "3b")
+     :asd ("slime-proxy.asd"
+           "slime-proxy-ps.asd"))
     (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
      :asd ("src/netlib.asd"))
     (slurp (github "brown"))
@@ -1271,6 +1307,7 @@
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
      :asd ("verrazano.asd"
            "verrazano-runtime.asd"))
+    (vivace-graph (github "kraison"))
     (wclas git "http://cl-www.msi.co.jp/projects/wclas/wclas.git")
     (webfunk (github "gonzojive")
      :asd ("webfunk.asd"
@@ -1321,6 +1358,7 @@
     (yashmup (github "sykopomp")
      :asd ("yashmup.asd"
            "util/sprite-checker/sprite-checker.asd"))
+    (yotta-zoomer (repo-or-cz))
     (zip (clnet cvs))
     (zlib (github "franzinc")
      :asd none)
@@ -1399,7 +1437,7 @@ projects hosted on http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
   "Repository specification abbreviation function for git projects hosted on
 repo.or.cz."
   (let ((name (string-downcase project-name)))
-    `(git ,(concat "git://repo.or.cz/cyrusharmon.org/" name ".git"))))
+    `(git ,(concat "git://repo.or.cz/" name ".git"))))
 
 (defun savannah (project-name scms)
   "Repository specification abbreviation function for a project hosted on
