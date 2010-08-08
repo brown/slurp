@@ -311,7 +311,7 @@
     (cl-graph darcs "http://common-lisp.net/project/cl-graph"
      :asd ("cl-graph.asd"
            "cl-graph-test.asd"))
-    (cl-gtk2 git "git://repo.or.cz/cl-gtk2.git"
+    (cl-gtk2 (repo-or-cz)
      :asd ("cairo/cl-gtk2-cairo.asd"
            "gdk/cl-gtk2-gdk.asd"
            "glib/cl-gtk2-glib.asd"
@@ -373,7 +373,7 @@
            "snmp/trunk/snmp-ui.asd"
            "snmp/trunk/snmp.asd"
            "usocket-udp/trunk/usocket-udp.asd"))
-    (cl-notify git "git://repo.or.cz/cl-notify.git")
+    (cl-notify (repo-or-cz))
     (cl-numlib (github "tpapp"))
     (cl-num-utils (github "tpapp")
      :asd ("cl-num-utils.asd"
@@ -432,7 +432,7 @@
     (cl-skip-list (github "kraison"))
     (cl-smtp (clnet cvs))
     (cl-spidermonkey (github "gonzojive"))
-    (cl-sqlite git "git://repo.or.cz/cl-sqlite.git"
+    (cl-sqlite (repo-or-cz)
      :asd ("sqlite-tests.asd"
            "sqlite.asd"))
     (cl-starcraft-proxybot (github "aerique"))
@@ -454,7 +454,7 @@
            "cl-tokyo-cabinet-test.asd"))
     (cl-transactional (github "Ramarren")
      :asd ("cl-transactional-tests.asd" "cl-transactional.asd"))
-    (cl-tuples git "git://repo.or.cz/cl-tuples.git"
+    (cl-tuples (repo-or-cz)
      :asd ("cl-tuples.asd"
            "cl-tuples-test.asd"))
     (cl-twit (github "chaitanyagupta"))
@@ -553,8 +553,8 @@
     ;; (clon (melis) :asd none)
     (closer-mop darcs "http://common-lisp.net/project/closer/repos/closer-mop")
     (closure (clnet cvs))
-    (closure-common git "git://repo.or.cz/closure-common.git")
-    (closure-html git "git://repo.or.cz/closure-html.git")
+    (closure-common (repo-or-cz))
+    (closure-html (repo-or-cz))
     (clouchdb (clnet cvs)
      :asd ("src/clouchdb.asd"
            "src/clouchdb-examples.asd"
@@ -598,9 +598,11 @@
      :submodules t
      :asd none)
     (common-worm (github "sykopomp"))
-    ;; Also available at:  http://www.lichteblau.com/git/commonqt.git
+    ;; commonqt-OLD comes from repo.or.cz
+    ;; (commonqt git "git://repo.or.cz/commonqt.git" ...)
+    ;; Checkout of that repository fails, so I switched to lichteblau's
     ;; XXXX: Which is the canonical source?
-    (commonqt git "git://repo.or.cz/commonqt.git"
+    (commonqt git "http://www.lichteblau.com/git/commonqt.git"
      :asd ("qt.asd"
            "qt-repl.asd"
            "qt-tutorial.asd"))
@@ -609,7 +611,7 @@
     (css-lite (github "paddymul"))
     (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
      :asd none)
-    (cxml git "git://repo.or.cz/cxml.git")
+    (cxml (repo-or-cz))
     (deflate (github "pmai" "Deflate")
      :asd ("Deflate.asd"))
     (defsystem-compatibility
@@ -709,14 +711,16 @@
            "glop-test.asd"))
     (getopt git "git://git.b9.com/getopt.git")
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
-    (gsd git "git://repo.or.cz/gsd.git"
-     :asd ("c-array.asd"
-           "grid.asd"
+    (gsd (repo-or-cz)
+     :asd ("foreign-array/foreign-array.asd"
+           "foreign-array/foreign-array-tests.asd"
            "grid-tests.asd"
-           "c-array/c-array.asd"
+           "grid/grid-tests.asd"
            "grid/grid.asd"
-           "grid/grid-tests.asd"))
-    (gsll git "git://repo.or.cz/gsll.git"
+           "foreign-array.asd"
+           "grid.asd"
+           "foreign-array-tests.asd"))
+    (gsll (repo-or-cz)
      :asd ("gsll.asd" "gsll-tests.asd"))
     (hemlock (gitorious)
      :asd ("hemlock.base.asd"
@@ -835,8 +839,9 @@
     (incf-cl (github "jmbr"))
     ;; XXXX: what about iolib/iolib and iolib/static-vectors on gitorious??
     ;; fe[nl]ix says http://gitorious.org/iolib/static-vectors/ is canonical
-    (iolib git "http://repo.or.cz/r/iolib.git"
-     :asd ("src/iolib.asd"
+    (iolib (repo-or-cz)
+     :asd ("examples/iolib.examples.asd"
+           "src/iolib.asd"
            "src/iolib.base.asd"
            "src/iolib.multiplex.asd"
            "src/iolib.os.asd"
@@ -845,7 +850,6 @@
            "src/iolib.streams.asd"
            "src/iolib.syscalls.asd"
            "src/iolib.trivial-sockets.asd"
-           "src/iolib.zstreams.asd"
            "tests/iolib-tests.asd"))
     (irc-logger git "git://git.b9.com/irc-logger.git")
     (ironclad (github "froydnj"))
@@ -1118,9 +1122,9 @@
     ;; XXXXX What version of postmodern is canonical?  marijn has a version
     (postmodern (clnet darcs)
      :asd ("postmodern.asd" "cl-postgres.asd"))
-; XXXXXXXXX
-;    (postmodern git "http://marijn.haverbeke.nl/git/postmodern" :asd none)
-; there is a copy here too:     http://github.com/marijnh
+    ;; XXXXXXXXX
+    ;;    (postmodern git "http://marijn.haverbeke.nl/git/postmodern" :asd none)
+    ;; there is a copy here too:     http://github.com/marijnh
     (postoffice git "git://git.b9.com/postoffice.git")
     (prepl (gitorious))
     (pretty-function (clnet darcs))
@@ -1181,17 +1185,14 @@
      :asd none)
     (sbcl-git git "git://git.boinkor.net/sbcl"
      :asd none)
-    ;; XXXX: Remove this and just keep any new files?  Is it actively being
-    ;; worked on?
-    (sbcl-llvm git "git://repo.or.cz/sbcl/llvm.git" :asd none)
     (screamer (repo-or-cz)
      :asd none)
     (series (sourceforge cvs))
     (sheeple (github "sykopomp"))
     (shuffletron (github "ahefner"))
     ;; I think the clnet URL is canonical now.
-;    (sicl git "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
-;     :asd none)
+    ;;    (sicl git "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
+    ;;     :asd none)
     ;; XXXX: What asd files should we link to?
     (sicl (clnet git "SICL")
      :asd none)
@@ -1228,8 +1229,8 @@
     (sw-mvc (gitorious))
     (sw-stm (gitorious))
     (sykobot (github "sykopomp"))
-;XXXXXXXXXXXXXXXXXXXX  all files were deleted
-;XXXXXXXXXXXXXXXXXXXX investigate
+    ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
+    ;;XXXXXXXXXXXXXXXXXXXX investigate
     ;; (sykosomatic (github "sykopomp")
     ;;  :asd ("sykosomatic.util.asd"
     ;;        "sykosomatic.core.asd"
@@ -1353,7 +1354,7 @@
      :asd none)
     (xmlutils git "git://git.b9.com/xmlutils.git")
     (xptest git "git://git.b9.com/xptest.git")
-    (xuriella git "http://repo.or.cz/r/xuriella.git")
+    (xuriella (repo-or-cz))
     (yaclml darcs "http://common-lisp.net/project/bese/repos/yaclml")
     (yashmup (github "sykopomp")
      :asd ("yashmup.asd"
@@ -1369,7 +1370,6 @@
     ;;; Repositories not related to Common Lisp.
 
     (dwarf git "http://git.androdna.com/lisp/dwarf" :asd none)
-;;    (emacs (savannah cvs) :asd none)
     (emacs (savannah bzr)  :lightweight t :asd none)
     (emacs-jabber (sourceforge cvs) :asd none)
     (git git "git://git.kernel.org/pub/scm/git/git.git" :asd none)
