@@ -155,7 +155,9 @@
            "bunnyslayer.asd"
            "blackthorn-stress-test.asd"))
     (bordeaux-fft (github "ahefner"))
-    (bordeaux-threads (clnet darcs))
+    (bordeaux-threads (clnet darcs)
+     :asd ("bordeaux-threads.asd"
+           "bordeaux-threads-test.asd"))
     (bratwurst (github "sabetts"))
     (buclet (github "aerique"))
     (buildapp (github "xach"))
@@ -216,7 +218,8 @@
     (chanl (github "sykopomp"))
     (chipz (github "froydnj"))
     (chronicity (github "chaitanyagupta")
-     :asd ("chronicity.asd" "chronicity-test.asd"))
+     :asd ("chronicity.asd"
+           "chronicity-test.asd"))
     (chunga darcs "http://common-lisp.net/~loliveira/ediware/chunga")
     (cl+ssl cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (cl-2d (github "tpapp"))
@@ -288,7 +291,8 @@
     ; :asd ("e-on-cl.asd"))
     (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad")
     (cl-fft git "http://git.nklein.com/lisp/libs/fft.git"
-     :asd ("fft.asd" "pfft.asd"))
+     :asd ("fft.asd"
+           "pfft.asd"))
     (cl-frame (github "dto")
      :asd none)
     (cl-gambol (google-code svn)
@@ -393,7 +397,8 @@
            "cl-opengl.asd"))
     (cl-openid (clnet darcs))
     (cl-parser-combinators (github "Ramarren")
-     :asd ("parser-combinators.asd" "parser-combinators-tests.asd"))
+     :asd ("parser-combinators.asd"
+           "parser-combinators-tests.asd"))
     (cl-pdf svn "http://www.fractalconcept.com:8000/public/open-source/cl-pdf"
      :asd ("cl-pdf.asd"
            "cl-pdf-parser.asd"
@@ -414,6 +419,7 @@
            "cl-prolog-test.asd"
            "cl-swi.asd"
            "cl-swi-client.asd"))
+    ;; XXXX change name to clpython
     (cl-python (github "franzinc")
      :asd ("clpython.asd"
            "clpython-test.asd"))
@@ -422,7 +428,8 @@
     (cl-rdfxml svn "http://svn.cs.rpi.edu/svn/tayloj/cl-rdfxml")
     (cl-rogue (google-code svn))
     (cl-routes (github "archimag")
-     :asd ("routes.asd" "routes-test.asd"))
+     :asd ("routes.asd"
+           "routes-test.asd"))
     (cl-sails (github "gonzojive"))
     (cl-sam (github "keithj")
      :asd ("cl-sam.asd"
@@ -439,7 +446,8 @@
     (cl-stm darcs "http://common-lisp.net/project/cl-stm")
     (cl-store (clnet cvs))
     (cl-strings (google-code svn)
-     :asd ("cl-strings.asd" "cl-strings-tests.asd"))
+     :asd ("cl-strings.asd"
+           "cl-strings-tests.asd"))
     (cl-svg (google-code svn))
     ;; Look for a newer cl-swm repository at github.com/gonzojive.
     (cl-svm git "http://common-lisp.net/project/suave/git/cl-svm/.git")
@@ -453,7 +461,8 @@
      :asd ("cl-tokyo-cabinet.asd"
            "cl-tokyo-cabinet-test.asd"))
     (cl-transactional (github "Ramarren")
-     :asd ("cl-transactional-tests.asd" "cl-transactional.asd"))
+     :asd ("cl-transactional-tests.asd"
+           "cl-transactional.asd"))
     (cl-tuples (repo-or-cz)
      :asd ("cl-tuples.asd"
            "cl-tuples-test.asd"))
@@ -465,7 +474,8 @@
            "contrib/xhtml-renderer/xml-render.asd"
            "documentation/lisp-source/cl-pdf-doc.asd"))
     (cl-unification (clnet cvs)
-     :asd ("cl-unification.asd" "cl-unification-lib.asd"))
+     :asd ("cl-unification.asd"
+           "cl-unification-lib.asd"))
     (cl-uri (clnet darcs)
      :asd ("src/cl-uri.asd"))
     (cl-uri-templates (github "billitch")
@@ -483,8 +493,12 @@
            "cl-xmpp-tls.asd"
            "cl-xmpp.asd"
            "test/cl-xmpp-test.asd"))
+    ;; XXXX: Remove the "cl-" from the name of this project.
     (cl-yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc"
      :asd ("yacc.asd"))
+    ;; XXXX: Remove the "cl-" from the name of this project.
+    (cl-yacc-ebnf (gitorious)
+     :asd ("src/yacc-ebnf.asd"))
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
     (claw (clnet svn)
@@ -516,7 +530,8 @@
            "rsvg/rsvg.asd"
            "tools/clg-tools.asd"))
     (clim-desktop (clnet cvs)
-     :asd ("clim-desktop.asd" "clim-desktop-minimal.asd"))
+     :asd ("clim-desktop.asd"
+           "clim-desktop-minimal.asd"))
     (climacs (clnet cvs))
     (climc (google-code svn))
     (clisp (sourceforge cvs)
@@ -709,7 +724,8 @@
     (gcl (savannah cvs)
      :asd none)
     (gcc-xml-ffi (harmon)
-     :asd ("gcc-xml-ffi.asd" "gcc-xml-ffi-test.asd"))
+     :asd ("gcc-xml-ffi.asd"
+           "gcc-xml-ffi-test.asd"))
     (glaw (github "patzy")
      :asd ("glaw-sdl.asd"
            "glaw-imago.asd"
@@ -718,6 +734,8 @@
     (glop (github "patzy")
      :asd ("glop.asd"
            "glop-test.asd"))
+    (google-protobuf (github "brown")
+     :asd none)
     (getopt git "git://git.b9.com/getopt.git")
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
     (gsd (repo-or-cz)
@@ -730,7 +748,8 @@
            "grid.asd"
            "foreign-array-tests.asd"))
     (gsll (repo-or-cz)
-     :asd ("gsll.asd" "gsll-tests.asd"))
+     :asd ("gsll.asd"
+           "gsll-tests.asd"))
     (hemlock (gitorious)
      :asd ("hemlock.base.asd"
            "hemlock.qt.asd"
@@ -743,12 +762,35 @@
 
     ;; XXXXXXXXXXXXXXXXXXXX check out other dwim.hu repositories
 
+    (hu.dwim.asdf (dwim-hu)
+     :asd ("hu.dwim.asdf.documentation.asd"
+           "hu.dwim.asdf.asd"))
+    (hu.dwim.blog (dwim-hu)
+     :asd ("hu.dwim.blog.documentation.asd"
+           "hu.dwim.blog.asd"
+           "hu.dwim.blog.test.asd"))
+    (hu.dwim.brainfuck (dwim-hu)
+     :asd ("hu.dwim.brainfuck.test.asd"
+           "hu.dwim.brainfuck.asd"))
+    (hu.dwim.build (dwim-hu)
+     :asd ("hu.dwim.build.documentation.asd"
+           "hu.dwim.build.asd"))
+    (hu.dwim.common (dwim-hu)
+     :asd ("hu.dwim.common.documentation.asd"
+           "hu.dwim.common.asd"))
+    (hu.dwim.common-lisp (dwim-hu)
+     :asd ("hu.dwim.common-lisp.asd"
+           "hu.dwim.common-lisp.documentation.asd"))
     (hu.dwim.computed-class darcs "http://dwim.hu/darcs/hu.dwim.computed-class"
      :asd ("hu.dwim.computed-class.asd"
            "hu.dwim.computed-class+swank.asd"
            "hu.dwim.computed-class.documentation.asd"
            "hu.dwim.computed-class+hu.dwim.defclass-star.asd"
            "hu.dwim.computed-class.test.asd"))
+    (hu.dwim.debug (dwim-hu)
+     :asd ("hu.dwim.debug.documentation.asd"
+           "hu.dwim.debug.asd"
+           "hu.dwim.debug.test.asd"))
     (hu.dwim.def darcs "http://dwim.hu/darcs/hu.dwim.def"
      :asd ("hu.dwim.def+cl-l10n.asd"
            "hu.dwim.def.namespace.asd"
@@ -771,10 +813,52 @@
      :asd ("hu.dwim.delico.asd"
            "hu.dwim.delico.documentation.asd"
            "hu.dwim.delico.test.asd"))
+    (hu.dwim.dises (dwim-hu)
+     :asd ("hu.dwim.dises.test.asd"
+           "hu.dwim.dises.asd"
+           "hu.dwim.dises.documentation.asd"))
+    (hu.dwim.excosy (dwim-hu)
+     :asd ("hu.dwim.excosy.test.asd"
+           "hu.dwim.excosy.asd"
+           "hu.dwim.excosy.documentation.asd"))
+    (hu.dwim.genetic-programming (dwim-hu)
+     :asd ("hu.dwim.genetic-programming.test.asd"
+           "hu.dwim.genetic-programming.asd"
+           "hu.dwim.genetic-programming.documentation.asd"))
     (hu.dwim.graphviz darcs "http://dwim.hu/darcs/hu.dwim.graphviz"
      :asd ("hu.dwim.graphviz.asd"
            "hu.dwim.graphviz.test.asd"
            "hu.dwim.graphviz.documentation.asd"))
+    (hu.dwim.home (dwim-hu)
+     :asd ("hu.dwim.home.documentation.asd"
+           "hu.dwim.home.asd"
+           "hu.dwim.home.all.asd"
+           "hu.dwim.home.test.asd"))
+    (hu.dwim.lazy-eval (dwim-hu)
+     :asd ("hu.dwim.lazy-eval.test.asd"
+           "hu.dwim.lazy-eval.asd"
+           "hu.dwim.lazy-eval.documentation.asd"))
+    (hu.dwim.logger (dwim-hu)
+     :asd ("hu.dwim.logger.documentation.asd"
+           "hu.dwim.logger.asd"
+           "hu.dwim.logger.test.asd"))
+    (hu.dwim.meta-model (dwim-hu)
+     :asd ("hu.dwim.meta-model.test.asd"
+           "hu.dwim.meta-model.documentation.asd"
+           "hu.dwim.meta-model.asd"))
+    (hu.dwim.model (dwim-hu)
+     :asd ("hu.dwim.model.address.asd"
+           "hu.dwim.model.documentation.asd"
+           "hu.dwim.model.test.asd"
+           "hu.dwim.model.asd"))
+    (hu.dwim.new-project (dwim-hu)
+     :asd ("hu.dwim.new-project.documentation.asd"
+           "hu.dwim.new-project.test.asd"
+           "hu.dwim.new-project.asd"))
+    (hu.dwim.partial-eval (dwim-hu)
+     :asd ("hu.dwim.partial-eval.test.asd"
+           "hu.dwim.partial-eval.asd"
+           "hu.dwim.partial-eval.documentation.asd"))
     (hu.dwim.perec darcs "http://dwim.hu/darcs/hu.dwim.perec"
      :asd ("hu.dwim.perec.test.asd"
            "hu.dwim.perec+iolib.asd"
@@ -808,6 +892,16 @@
            "hu.dwim.rdbms.test.asd"
            "hu.dwim.rdbms.postgresql.test.asd"
            "hu.dwim.rdbms.oracle.asd"))
+
+;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    (hu.dwim.reader (dwim-hu) :asd none)
+    (hu.dwim.reiterate (dwim-hu) :asd none)
+    (hu.dwim.remote-eval (dwim-hu) :asd none)
+    (hu.dwim.slime (dwim-hu) :asd none)
+
+;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
     (hu.dwim.serializer darcs "http://dwim.hu/darcs/hu.dwim.serializer"
      :asd ("hu.dwim.serializer.test.asd"
            "hu.dwim.serializer.asd"
@@ -832,13 +926,16 @@
     ;; XXXXXXXXXXXXXXXXXXXX Planet Lisp says there were recent changes, but
     ;; update didn't change anything.  Do I have the right repository?
     (hunchentoot darcs "http://common-lisp.net/~loliveira/ediware/hunchentoot"
-     :asd ("hunchentoot.asd" "hunchentoot-test.asd"))
+     :asd ("hunchentoot.asd"
+           "hunchentoot-test.asd"))
     (hunchentoot-auth (harmon)
-     :asd ("hunchentoot-auth.asd" "hunchentoot-auth-test.asd"))
+     :asd ("hunchentoot-auth.asd"
+           "hunchentoot-auth-test.asd"))
     (hunchentoot-cgi (harmon))
     (hunchentoot-vhost (harmon))
     (hyperobject git "git://git.b9.com/hyperobject.git"
-     :asd ("hyperobject.asd" "hyperobject-tests.asd"))
+     :asd ("hyperobject.asd"
+           "hyperobject-tests.asd"))
     (ia-x86 cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
     (ieee-floats (clnet darcs))
     (imago (clnet cvs)
@@ -876,9 +973,11 @@
            "js-parser.asd"))
     (js-toolkit (github "vsedach"))
     (jwacs darcs "http://chumsley.org/jwacs/unstable"
-     :asd ("jwacs.asd" "jwacs-tests.asd"))
+     :asd ("jwacs.asd"
+           "jwacs-tests.asd"))
     (kmrcl git "git://git.b9.com/kmrcl.git"
-     :asd ("kmrcl.asd" "kmrcl-tests.asd"))
+     :asd ("kmrcl.asd"
+           "kmrcl-tests.asd"))
     (kpax darcs "http://www.beta9.be/darcs/kpax"
      :asd ("kpax-core.asd"
            "kpax-examples.asd"
@@ -891,7 +990,9 @@
     (liards (clnet darcs))
     (lice (repo-or-cz) :asd ("src/lice.asd"))
     (lift darcs "http://common-lisp.net/project/lift/darcs"
-     :asd ("lift.asd" "lift-test.asd" "lift-documentation.asd"))
+     :asd ("lift.asd"
+           "lift-test.asd"
+           "lift-documentation.asd"))
     (lisa (sourceforge cvs))
     (lisp-matrix (github "blindglobe"))
     ;; XXXX: we need an asd rule that says "link every asd file in tree"
@@ -954,12 +1055,15 @@
      :asd ("lisppaste.asd"))
     (lla (github "tpapp"))
     (lml git "git://git.b9.com/lml.git"
-     :asd ("lml.asd" "lml-tests.asd"))
+     :asd ("lml.asd"
+           "lml-tests.asd"))
     (lml2 git "git://git.b9.com/lml2.git"
-     :asd ("lml2.asd" "lml2-tests.asd"))
+     :asd ("lml2.asd"
+           "lml2-tests.asd"))
     (local-time (clnet darcs))
     (log5 darcs "http://common-lisp.net/project/log5"
-     :asd ("log5.asd" "log5-test.asd"))
+     :asd ("log5.asd"
+           "log5-test.asd"))
     (lotzo (github "patzy")
      :asd ("notes/notes.asd"
            "motd/motd.asd"
@@ -1005,13 +1109,17 @@
      :asd none)
     (meta-sexp (github "vy"))
     (metabang-bind darcs "http://common-lisp.net/project/metabang-bind/darcs"
-     :asd ("metabang-bind.asd" "metabang-bind-test.asd"))
+     :asd ("metabang-bind.asd"
+           "metabang-bind-test.asd"))
     (metacopy (clnet darcs)
-     :asd ("metacopy.asd" "metacopy-test.asd"))
+     :asd ("metacopy.asd"
+           "metacopy-test.asd"))
     (metatilities darcs "http://common-lisp.net/project/metatilities"
-     :asd ("metatilities.asd" "metatilities-test.asd"))
+     :asd ("metatilities.asd"
+           "metatilities-test.asd"))
     (metatilities-base darcs "http://common-lisp.net/project/metatilities-base"
-     :asd ("metatilities-base.asd" "metatilities-base-test.asd"))
+     :asd ("metatilities-base.asd"
+           "metatilities-base-test.asd"))
     (mgl (melis)
      :asd ("mgl-test.asd"
            "mgl.asd"
@@ -1035,7 +1143,8 @@
      :asd ("mop-feature-tests.asd"))
     (mop-utils darcs "http://common-lisp.net/project/submarine/darcs/mop-utils")
     (moptilities darcs "http://common-lisp.net/project/moptilities"
-     :asd ("moptilities.asd" "moptilities-test.asd"))
+     :asd ("moptilities.asd"
+           "moptilities-test.asd"))
     (movitz cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
     (mw-equiv svn "http://svn.foldr.org/~michaelw/mw-equiv/trunk")
     (mw-tiny-clos git "http://www.foldr.org/~michaelw/projects/mw-tiny-clos.git")
@@ -1048,12 +1157,14 @@
     (nfs (github "franzinc")
      :asd none)
     (nio (clnet cvs)
-     :asd ("nio.asd" "event-notification.asd"))
+     :asd ("nio.asd"
+           "event-notification.asd"))
     (nlisp (sourceforge svn))
     (ntservice (github "franzinc")
      :asd none)
     (nuclblog (harmon)
-     :asd ("nuclblog.asd" "nuclblog-demo.asd"))
+     :asd ("nuclblog.asd"
+           "nuclblog-demo.asd"))
     (objcffi (repo-or-cz))
     (ocml (github "kmi"))
     (okra (github "aerique")
@@ -1132,12 +1243,12 @@
     ;;    (postmodern git "http://marijn.haverbeke.nl/git/postmodern" :asd none)
     ;; there is a copy here too:     http://github.com/marijnh
     (postmodern (clnet darcs)
-     :asd ("postmodern.asd" "cl-postgres.asd"))
+     :asd ("postmodern.asd"
+           "cl-postgres.asd"))
     (postoffice git "git://git.b9.com/postoffice.git")
     (prepl (gitorious))
     (pretty-function (clnet darcs))
     (protobuf (github "brown")
-     :submodules t
      :asd ("protobuf.asd"
            "protobuf-test.asd"
            "example/protobuf-example.asd"))
@@ -1151,9 +1262,12 @@
     ;; XXXX: rename to quicktime if possible
     ;; XXXX: try loading it and resolve all dependencies
     (quicktime-ffi (harmon)
-     :asd ("quicktime.asd" "quicktime-init.asd" "quicktime-test.asd"))
+     :asd ("quicktime.asd"
+           "quicktime-init.asd"
+           "quicktime-test.asd"))
     (raylisp (github "nikodemus")
-     :asd ("raylisp.asd" "raylisp-gui.asd"))
+     :asd ("raylisp.asd"
+           "raylisp-gui.asd"))
     (readline git "git://git.b9.com/cl-readline.git")
     ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
@@ -1172,7 +1286,8 @@
     (rt git "git://git.b9.com/rt.git")
     (rtf darcs "http://common-lisp.net/project/bese/repos/rtf")
     (rucksack (clnet cvs)
-     :asd ("rucksack.asd" "tests/rucksack-test.asd"))
+     :asd ("rucksack.asd"
+           "tests/rucksack-test.asd"))
     (rulisp (github "archimag"))
     (s-base64 darcs "http://www.beta9.be/darcs/s-base64")
     (s-http-client darcs "http://www.beta9.be/darcs/s-http-client")
@@ -1221,7 +1336,8 @@
      :asd ("src/netlib.asd"))
     (slurp (github "brown"))
     (smarkup (harmon)
-     :asd ("smarkup.asd" "smarkup-test.asd"))
+     :asd ("smarkup.asd"
+           "smarkup-test.asd"))
     (snow (clnet svn)
      :asd ("src/lisp/snow/snow.asd"
            ;; "lib/named-readtables/named-readtables.asd"
@@ -1237,7 +1353,8 @@
     (st-json darcs "http://marijn.haverbeke.nl/st-json")
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
     (submarine (clnet darcs)
-     :asd ("submarine.asd" "submarine-tests.asd"))
+     :asd ("submarine.asd"
+           "submarine-tests.asd"))
     (sw-db (gitorious))
     (sw-http (gitorious))
     (sw-mvc (gitorious))
@@ -1256,6 +1373,8 @@
      :asd ("symbolicweb.asd"
            "symbolicweb-examples.asd"
            "symbolicweb-jquery.asd"))
+    (t-system (gitorious)
+     :asd none)
     (teepeedee2 (github "vii")
      :asd ("teepeedee2.asd"
            "teepeedee2-test.asd"
@@ -1268,20 +1387,25 @@
            ))
     (tester (github "franzinc"))
     (tiff-ffi (harmon)
-     :asd ("tiff-ffi.asd" "tiff-ffi-gen.asd"))
+     :asd ("tiff-ffi.asd"
+           "tiff-ffi-gen.asd"))
     (tilde (github "xach"))
     (time-interval (harmon))
     (tinaa darcs "http://common-lisp.net/project/tinaa"
-     :asd ("tinaa.asd" "tinaa-test.asd"))
+     :asd ("tinaa.asd"
+           "tinaa-test.asd"))
     (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
-     :asd ("trivial-backtrace.asd" "trivial-backtrace-test.asd"))
+     :asd ("trivial-backtrace.asd"
+           "trivial-backtrace-test.asd"))
     (trivial-configuration-parser svn "svn://unmutual.info/trivial-configuration-parser")
     (trivial-features darcs "http://common-lisp.net/~loliveira/darcs/trivial-features"
-     :asd ("trivial-features.asd" "trivial-features-tests.asd"))
+     :asd ("trivial-features.asd"
+           "trivial-features-tests.asd"))
     (trivial-garbage darcs "http://common-lisp.net/~loliveira/darcs/trivial-garbage")
     (trivial-gray-streams cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (trivial-http darcs "http://common-lisp.net/project/trivial-http"
-     :asd ("trivial-http.asd" "trivial-http-test.asd"))
+     :asd ("trivial-http.asd"
+           "trivial-http-test.asd"))
     (trivial-https cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (trivial-http-old svn "svn://unmutual.info/trivial-http"
      :asd none)
@@ -1346,6 +1470,7 @@
            "weblocks-store-test.asd"
            "weblocks-test.asd"
            "weblocks.asd"))
+    (white-shadow (gitorious "white-shadows"))
     (wiki-parser (github "archimag"))
     (wilbur darcs "http://www.crispylogics.com/opensource/repos/wilbur"
      :asd ("src/wilbur.asd"))
@@ -1353,13 +1478,18 @@
      :asd ("src/wispylisp.asd"))
     (wol git "git://git.b9.com/wol.git")
     (woolly git "http://git.nklein.com/lisp/libs/woolly.git/"
-     :asd ("woolly.asd" "woolly-gl.asd"))
+     :asd ("woolly.asd"
+           "woolly-gl.asd"))
     (wxcl (sourceforge svn))
     (x.let-star (github "ks" "X.LET-STAR"))
     (x.fdatatypes (github "ks" "X.FDATATYPES"))
     (xarray (github "tpapp"))
-    (xcvb git "http://common-lisp.net/project/xcvb/git/xcvb.git"
-     :asd ("xcvb.asd" "xcvb-test.asd"))
+    ;; Also available at "http://common-lisp.net/project/xcvb/git/xcvb.git"
+    ;; Which is best?
+    (xcvb (github "fare")
+     :asd ("xcvb.asd"
+           "xcvb-driver.asd"
+           "xcvb-master.asd"))
     (xe2 (github "dto"))
     (xlunit git "git://git.b9.com/xlunit.git")
     (xml-mop (github "gonzojive"))
@@ -1383,11 +1513,11 @@
     ;;; Repositories not related to Common Lisp.
 
     (dwarf git "http://git.androdna.com/lisp/dwarf" :asd none)
-    (emacs (savannah bzr)  :lightweight t :asd none)
+    ;; Emacs is now a bazaar repository that's huge.
+    ;; (emacs (savannah bzr)  :lightweight t :asd none)
     (emacs-jabber (sourceforge cvs) :asd none)
     (git git "git://git.kernel.org/pub/scm/git/git.git" :asd none)
     (go (google-code hg) :asd none)
-    (google-protobuf (google-code svn "protobuf") :asd none)
     (libsigsegv (savannah cvs) :asd none)
     (magit git "git://gitorious.org/magit/mainline.git" :asd none)
     (gnome-common git "git://git.gnome.org/gnome-common" :asd none)
@@ -1426,11 +1556,11 @@ Gabor Melis on quotenil.com."
 github.com."
   `(git ,(concat "git://github.com/" user "/" repository ".git")))
 
-(defun gitorious (project-name)
+(defun gitorious (project-name
+                  &optional (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a git project hosted on
 gitorious.org."
-  (let ((repository (string-downcase project-name)))
-    `(git ,(concat "git://gitorious.org/" repository "/" repository ".git"))))
+  `(git ,(concat "git://gitorious.org/" repository "/" repository ".git")))
 
 (defun google-code (project-name scms
                     &optional (repository (string-downcase project-name)))
@@ -1445,6 +1575,12 @@ Mercurial repository hosted on code.google.com."
 projects hosted on http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
   (let ((name (string-downcase project-name)))
     `(git ,(concat "git://cyrusharmon.org/pub/git/" name ".git"))))
+
+(defun dwim-hu (project-name)
+  "Repository specification abbreviation function for darcs projects hosted
+on dwim.hu."
+  (let ((name (string-downcase project-name)))
+    `(darcs ,(concat "http://dwim.hu/darcs/" name))))
 
 (defun repo-or-cz (project-name)
   "Repository specification abbreviation function for git projects hosted on
