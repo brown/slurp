@@ -30,22 +30,6 @@
      :asd ("adw-charting-google.asd"
            "adw-charting-vecto.asd"
            "adw-charting.asd"))
-
-
-    ;; XXXX move these soon
-    (binary-data (github "gigamonkey")
-     :asd ("com.gigamonkeys.binary-data.asd"))
-    (spam (github "gigamonkey")
-     :asd ("com.gigamonkeys.spam.asd"))
-    (pathnames (github "gigamonkey")
-     :asd ("com.gigamonkeys.pathnames.asd"))
-    (utilities (github "gigamonkey")
-     :asd ("com.gigamonkeys.utilities.asd"))
-    (macro-utilities (github "gigamonkey")
-     :asd ("com.gigamonkeys.macro-utilities.asd"))
-    ;; XXXX
-
-
     (aftpd (github "franzinc")
      :asd none)
     (ait (clnet darcs)
@@ -123,6 +107,8 @@
     (bdb (clnet darcs))
     (bdb-playground darcs "http://common-lisp.net/project/bdb/darcs/bdb-playground")
     (beirc (clnet cvs))
+    (binary-data (github "gigamonkey")
+     :asd ("com.gigamonkeys.binary-data.asd"))
     ;; XXXX: I think the second is probably canonical now, but it lacks two files --
     ;; pdf and ps -- look at them.
     ;; (binary-types cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
@@ -1089,6 +1075,8 @@
     (lsw2 (google-code svn)
      :asd none)
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
+    (macro-utilities (github "gigamonkey")
+     :asd ("com.gigamonkeys.macro-utilities.asd"))
     (maild (github "franzinc")
      :asd none)
     ;; Also available from git://github.com/ilitirit/manardb.git
@@ -1219,6 +1207,8 @@
      :asd ("com.nklein.parser-generator.asd"
            "com.nklein.parser-generator.reader.asd"
            "com.nklein.parser-generator.types.asd"))
+    (pathnames (github "gigamonkey")
+     :asd ("com.gigamonkeys.pathnames.asd"))
     ;; (patg (clnet ))  XXXXXXXXXXX Subversion ???
     (patron (github "vy"))
     ;; XXXX: blog entry says persistent-sheeple is being renamed.  code has
@@ -1363,6 +1353,8 @@
            ;; "lib/cells/cells.asd"
            ;; "lib/cells/cells-test/cells-test.asd"
            ))
+    (spam (github "gigamonkey")
+     :asd ("com.gigamonkeys.spam.asd"))
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))
@@ -1456,6 +1448,8 @@
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
      :asd ("usocket.asd"
            "usocket-test.asd"))
+    (utilities (github "gigamonkey")
+     :asd ("com.gigamonkeys.utilities.asd"))
     (vclos darcs "http://common-lisp.net/~crhodes/vclos")
     (vcs-tree git "git://git.b9.com/vcs-tree.git")
     (vecto (xach))
