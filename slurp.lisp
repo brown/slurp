@@ -30,6 +30,22 @@
      :asd ("adw-charting-google.asd"
            "adw-charting-vecto.asd"
            "adw-charting.asd"))
+
+
+    ;; XXXX move these soon
+    (binary-data (github "gigamonkey")
+     :asd ("com.gigamonkeys.binary-data.asd"))
+    (spam (github "gigamonkey")
+     :asd ("com.gigamonkeys.spam.asd"))
+    (pathnames (github "gigamonkey")
+     :asd ("com.gigamonkeys.pathnames.asd"))
+    (utilities (github "gigamonkey")
+     :asd ("com.gigamonkeys.utilities.asd"))
+    (macro-utilities (github "gigamonkey")
+     :asd ("com.gigamonkeys.macro-utilities.asd"))
+    ;; XXXX
+
+
     (aftpd (github "franzinc")
      :asd none)
     (ait (clnet darcs)
