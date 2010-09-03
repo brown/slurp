@@ -32,6 +32,7 @@
            "adw-charting.asd"))
     (aftpd (github "franzinc")
      :asd none)
+    ;; XXXX: asd file name conflicts with asdf-install
     (ait (clnet darcs)
      :asd ("asdf-install-tester.asd"
            "asdf-install-dates.asd"))
@@ -73,9 +74,12 @@
            "test/test1.asd"
            "test/test2.asd"
            "tests/abl-test-system.asd"))
-    (asdf-install darcs "http://common-lisp.net/project/asdf-install/darcs"
+    (asdf-install (github "gwkkwg")
      :asd ("asdf-install/asdf-install.asd"
            "asdf-install/test-asdf-install.asd"))
+    ;; XXXX: The documenation for asdf-install no longer mentions this
+    ;; repository as the place for pre-release versions.  It's probably
+    ;; obsolete.
     (asdf-install-unstable
      darcs "http://common-lisp.net/project/asdf-install/asdf-install-unstable"
      :asd none)
@@ -192,6 +196,7 @@
            "ph-maths.asd"
            "pod-utils.asd"
            "test-gtk.asd"))
+    ;; XXXX I saw a mention of cffi repositories on gitorious.
     (cffi (clnet darcs)
      :asd ("cffi.asd"
            "cffi-examples.asd"
@@ -218,7 +223,10 @@
      :asd ("ch-util.asd"
            "ch-util-test.asd"))
     (chanl (github "sykopomp"))
-    (chipz (github "froydnj"))
+    (chillax (github "sykopomp"))
+    (chipz (github "froydnj")
+     :asd ("chillax.asd"
+           "chillax-server.asd"))
     (chronicity (github "chaitanyagupta")
      :asd ("chronicity.asd"
            "chronicity-test.asd"))
@@ -253,6 +261,7 @@
            "cl-cairo2-win32.asd"
            "cl-cairo2.asd"
            "a-cl-cairo2-loader.asd"))
+    (cl-ci (github "billitch"))
     (cl-closure-template (github "archimag")
      :asd ("closure-template.asd"))
     (cl-colors (github "tpapp"))
@@ -297,6 +306,7 @@
            "pfft.asd"))
     (cl-frame (github "dto")
      :asd none)
+    (cl-future (github "jpalmucci"))
     (cl-gambol (google-code svn)
      :asd "gambol.asd")
     (cl-gd darcs "http://common-lisp.net/~loliveira/ediware/cl-gd"
@@ -489,6 +499,7 @@
            "cl-variates-test.asd"))
     (cl-web-crawler (google-code svn))
     (cl-who darcs "http://common-lisp.net/~loliveira/ediware/cl-who")
+    (cl-whois (github "billitch"))
     (cl-x86-asm (repo-or-cz))
     (cl-xmpp (clnet cvs)
      :asd ("cl-xmpp-sasl.asd"
@@ -991,7 +1002,7 @@
     (latex-table (github "tpapp"))
     (liards (clnet darcs))
     (lice (repo-or-cz) :asd ("src/lice.asd"))
-    (lift darcs "http://common-lisp.net/project/lift/darcs"
+    (lift (github "gwkkwg")
      :asd ("lift.asd"
            "lift-test.asd"
            "lift-documentation.asd"))
@@ -1063,7 +1074,7 @@
      :asd ("lml2.asd"
            "lml2-tests.asd"))
     (local-time (clnet darcs))
-    (log5 darcs "http://common-lisp.net/project/log5"
+    (log5 (github "gwkkwg")
      :asd ("log5.asd"
            "log5-test.asd"))
     (lotzo (github "patzy")
@@ -1112,7 +1123,7 @@
     (mel-base-old darcs "http://common-lisp.net/project/mel-base/darcs/mel-base"
      :asd none)
     (meta-sexp (github "vy"))
-    (metabang-bind darcs "http://common-lisp.net/project/metabang-bind/darcs"
+    (metabang-bind (github "gwkkwg")
      :asd ("metabang-bind.asd"
            "metabang-bind-test.asd"))
     (metacopy (clnet darcs)
@@ -1265,6 +1276,8 @@
     (pvs svn "https://spartan.csl.sri.com/svn/public/pvs/trunk"
      :asd none)
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
+    (quicklisp-projects (github "quicklisp")
+     :asd none)
     ;; XXXX: rename to quicktime if possible
     ;; XXXX: try loading it and resolve all dependencies
     (quicktime-ffi (harmon)
@@ -1278,6 +1291,8 @@
     ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
      :asd none)
+    (regenerate-websites (github "gwkkwg"))
+    (repo-install (github "jpalmucci"))
     (restas (github "archimag"))
     (restas-planet (github "archimag"))
     (retrospectiff (harmon))
@@ -1419,7 +1434,7 @@
      :asd none)
     (trivial-lisp-webapp (github "smanek")
      :asd ("src/webapp.asd"))
-    (trivial-shell darcs "http://common-lisp.net/project/trivial-shell"
+    (trivial-shell (github "gwkkwg")
      :asd ("trivial-shell.asd"
            "trivial-shell-test.asd"))
     (trivial-timeout darcs "http://common-lisp.net/project/trivial-timeout"
