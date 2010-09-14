@@ -366,6 +366,7 @@
            "cl-mathstats-test.asd"))
     (cl-mill (google-code svn)
      :asd ("gcode.asd"))
+    (cl-mongrel2 (github "vseloved"))
     (cl-mpi (google-code svn)
      :asd ("cl-mpi.asd"
            "par-eval.asd"))
@@ -408,6 +409,7 @@
            "cl-glut.asd"
            "cl-opengl.asd"))
     (cl-openid (clnet darcs))
+    (cl-parsec (github "vseloved"))
     (cl-parser-combinators (github "Ramarren")
      :asd ("parser-combinators.asd"
            "parser-combinators-tests.asd"))
@@ -438,6 +440,9 @@
     (cl-randist (github "lvaruzza"))
     (cl-random (github "tpapp"))
     (cl-rdfxml svn "http://svn.cs.rpi.edu/svn/tayloj/cl-rdfxml")
+    ;; XXXX: This version of cl-rdfxml may be better.  Active development?
+    ;; (cl-rdfxml (github "turbo24prg") :asd none)
+    (cl-redis (github "vseloved"))
     (cl-rogue (google-code svn))
     (cl-routes (github "archimag")
      :asd ("routes.asd"
@@ -639,6 +644,7 @@
     (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
+    (date-utils (github "vseloved") :asd none)
     (deflate (github "pmai" "Deflate")
      :asd ("Deflate.asd"))
     (defsystem-compatibility
@@ -744,6 +750,7 @@
            "glaw-imago.asd"
            "glaw.asd"
            "glaw-examples.asd"))
+    (glitter (github "froydnj"))
     (glop (github "patzy")
      :asd ("glop.asd"
            "glop-test.asd"))
@@ -1000,6 +1007,7 @@
            "kpax.asd"))
     (lassie (melis))
     (latex-table (github "tpapp"))
+    (lexer (github "turbo24prg"))
     (liards (clnet darcs))
     (lice (repo-or-cz) :asd ("src/lice.asd"))
     (lift (github "gwkkwg")
@@ -1088,6 +1096,7 @@
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
     (macro-utilities (github "gigamonkey")
      :asd ("com.gigamonkeys.macro-utilities.asd"))
+    (macrophp (github "valeryz" "MacroPHP"))
     (maild (github "franzinc")
      :asd none)
     ;; Also available from git://github.com/ilitirit/manardb.git
@@ -1161,9 +1170,11 @@
      :asd ("moptilities.asd"
            "moptilities-test.asd"))
     (movitz cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    (mutest (github "vseloved"))
     (mw-equiv svn "http://svn.foldr.org/~michaelw/mw-equiv/trunk")
     (mw-tiny-clos git "http://www.foldr.org/~michaelw/projects/mw-tiny-clos.git")
     (mycl-util darcs "http://common-lisp.net/project/bdb/darcs/mycl-util")
+    (n3 (github "turbo24prg"))
     (named-readtables darcs "http://common-lisp.net/project/editor-hints/darcs/named-readtables")
     (net-xml-generator (github "franzinc")
      :asd none)
@@ -1171,6 +1182,7 @@
      :asd none)
     (nfs (github "franzinc")
      :asd none)
+    (nibbles (github "froydnj"))
     (nio (clnet cvs)
      :asd ("nio.asd"
            "event-notification.asd"))
@@ -1180,6 +1192,10 @@
     (nuclblog (harmon)
      :asd ("nuclblog.asd"
            "nuclblog-demo.asd"))
+    (nuts (github "vseloved")
+     :asd ("nuts.asd"
+           "nuts-clsql.asd"
+           "nuts-core.asd"))
     (objcffi (repo-or-cz))
     (ocml (github "kmi"))
     (okra (github "aerique")
@@ -1287,6 +1303,9 @@
     (raylisp (github "nikodemus")
      :asd ("raylisp.asd"
            "raylisp-gui.asd"))
+    (rdf-store (github "turbo24prg"))
+    (rdf-utils (github "turbo24prg"))
+
     (readline git "git://git.b9.com/cl-readline.git")
     ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
@@ -1310,6 +1329,7 @@
      :asd ("rucksack.asd"
            "tests/rucksack-test.asd"))
     (rulisp (github "archimag"))
+    (rutils (github "vseloved"))
     (s-base64 darcs "http://www.beta9.be/darcs/s-base64")
     (s-http-client darcs "http://www.beta9.be/darcs/s-http-client")
     (s-http-server darcs "http://www.beta9.be/darcs/s-http-server")
@@ -1346,6 +1366,8 @@
            "Code/sicl.asd"
            "Code/Format/format.asd"
            "Code/Sequences/sequences.asd"))
+    ;; Another sicl project -- a SPARQL implementation.
+    ;; (sicl (github "turbo24prg") :asd none)
     (simple-rgb (google-code svn))
     (skippy (xach))
     (slime (clnet cvs)
