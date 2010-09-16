@@ -779,9 +779,8 @@
     (html-entities (google-code svn))
     (html-template darcs "http://common-lisp.net/~loliveira/ediware/html-template")
     (http-dohc (github "vsedach" "HTTP-DOHC"))
-
-    ;; XXXXXXXXXXXXXXXXXXXX check out other dwim.hu repositories
-
+    ;; XXXXXXXXXXXXXXXXXXXX look for other dwim.hu repositories
+    ;; XXXX: finish conversion to dwim-hu
     (hu.dwim.asdf (dwim-hu)
      :asd ("hu.dwim.asdf.documentation.asd"
            "hu.dwim.asdf.asd"))
@@ -801,7 +800,7 @@
     (hu.dwim.common-lisp (dwim-hu)
      :asd ("hu.dwim.common-lisp.asd"
            "hu.dwim.common-lisp.documentation.asd"))
-    (hu.dwim.computed-class darcs "http://dwim.hu/darcs/hu.dwim.computed-class"
+    (hu.dwim.computed-class (dwim-hu)
      :asd ("hu.dwim.computed-class.asd"
            "hu.dwim.computed-class+swank.asd"
            "hu.dwim.computed-class.documentation.asd"
@@ -811,7 +810,7 @@
      :asd ("hu.dwim.debug.documentation.asd"
            "hu.dwim.debug.asd"
            "hu.dwim.debug.test.asd"))
-    (hu.dwim.def darcs "http://dwim.hu/darcs/hu.dwim.def"
+    (hu.dwim.def (dwim-hu)
      :asd ("hu.dwim.def+cl-l10n.asd"
            "hu.dwim.def.namespace.asd"
            "hu.dwim.def+hu.dwim.common.asd"
@@ -821,7 +820,7 @@
            "hu.dwim.def+swank.asd"
            "hu.dwim.def.asd"
            "hu.dwim.def+hu.dwim.delico.asd"))
-    (hu.dwim.defclass-star darcs "http://dwim.hu/darcs/hu.dwim.defclass-star"
+    (hu.dwim.defclass-star (dwim-hu)
      :asd ("hu.dwim.defclass-star+hu.dwim.def.asd"
            "hu.dwim.defclass-star.documentation.asd"
            "hu.dwim.defclass-star.asd"
@@ -829,7 +828,7 @@
            "hu.dwim.defclass-star+contextl.asd"
            "hu.dwim.defclass-star+swank.asd"
            "hu.dwim.defclass-star+hu.dwim.def+contextl.asd"))
-    (hu.dwim.delico darcs "http://dwim.hu/darcs/hu.dwim.delico"
+    (hu.dwim.delico (dwim-hu)
      :asd ("hu.dwim.delico.asd"
            "hu.dwim.delico.documentation.asd"
            "hu.dwim.delico.test.asd"))
@@ -912,20 +911,26 @@
            "hu.dwim.rdbms.test.asd"
            "hu.dwim.rdbms.postgresql.test.asd"
            "hu.dwim.rdbms.oracle.asd"))
-
-;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-    (hu.dwim.reader (dwim-hu) :asd none)
-    (hu.dwim.reiterate (dwim-hu) :asd none)
-    (hu.dwim.remote-eval (dwim-hu) :asd none)
-    (hu.dwim.slime (dwim-hu) :asd none)
-
-;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+    (hu.dwim.reader (dwim-hu)
+     :asd ("hu.dwim.reader.test.asd"
+           "hu.dwim.reader.documentation.asd"
+           "hu.dwim.reader+hu.dwim.syntax-sugar.asd"
+           "hu.dwim.reader.asd"
+           "hu.dwim.reader+hu.dwim.walker.asd"))
+    (hu.dwim.reiterate (dwim-hu)
+     :asd ("hu.dwim.reiterate.asd"
+           "hu.dwim.reiterate.documentation.asd"
+           "hu.dwim.reiterate.test.asd"))
+    (hu.dwim.remote-eval (dwim-hu)
+     :asd ("hu.dwim.remote-eval.asd"
+           "hu.dwim.remote-eval.documentation.asd"
+           "hu.dwim.remote-eval.test.asd"))
     (hu.dwim.serializer darcs "http://dwim.hu/darcs/hu.dwim.serializer"
      :asd ("hu.dwim.serializer.test.asd"
            "hu.dwim.serializer.asd"
            "hu.dwim.serializer.documentation.asd"))
+    ;; I use swank.asd from the slime project.
+    (hu.dwim.slime (dwim-hu) :asd none)
     (hu.dwim.stefil darcs "http://dwim.hu/darcs/hu.dwim.stefil"
      :asd ("hu.dwim.stefil.test.asd"
            "hu.dwim.stefil+hu.dwim.def.asd"
