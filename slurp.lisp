@@ -1024,6 +1024,7 @@
            "lift-documentation.asd"))
     (lisa (sourceforge cvs))
     (lisp-matrix (github "blindglobe"))
+    (lisp-unit (github "OdonataResearchLLC"))
     ;; XXXX: we need an asd rule that says "link every asd file in tree"
     (lispbuilder (google-code svn)
      :asd ("lispbuilder-cal3d/lispbuilder-cal3d-examples.asd"
