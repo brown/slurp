@@ -644,7 +644,8 @@
     (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
-    (date-utils (github "vseloved") :asd none)
+    (date-utils (github "vseloved")
+     :asd none)
     (deflate (github "pmai" "Deflate")
      :asd ("Deflate.asd"))
     (defsystem-compatibility
@@ -930,7 +931,8 @@
            "hu.dwim.serializer.asd"
            "hu.dwim.serializer.documentation.asd"))
     ;; I use swank.asd from the slime project.
-    (hu.dwim.slime (dwim-hu) :asd none)
+    (hu.dwim.slime (dwim-hu)
+     :asd none)
     (hu.dwim.stefil darcs "http://dwim.hu/darcs/hu.dwim.stefil"
      :asd ("hu.dwim.stefil.test.asd"
            "hu.dwim.stefil+hu.dwim.def.asd"
@@ -1014,7 +1016,8 @@
     (latex-table (github "tpapp"))
     (lexer (github "turbo24prg"))
     (liards (clnet darcs))
-    (lice (repo-or-cz) :asd ("src/lice.asd"))
+    (lice (repo-or-cz)
+     :asd ("src/lice.asd"))
     (lift (github "gwkkwg")
      :asd ("lift.asd"
            "lift-test.asd"
