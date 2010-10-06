@@ -59,11 +59,17 @@
      :asd none)
     (araneida-testing darcs "http://common-lisp.net/project/araneida/araneida-testing"
      :asd ("araneida.asd"))
+    ;; hanshueber has a fork of archive on github.
     (archive (github "froydnj"))
     (armish (clnet darcs))
     (arnesi_dev darcs "http://common-lisp.net/project/bese/repos/arnesi_dev"
      :asd ("arnesi.asd"))
-    (aromyxo (gitorious))
+
+    ;; XXXX: aromyxo may have been renamed to aromyxo-void
+    ;; We need to support the following URL
+    ;; git://gitorious.org/aromyxo/aromyxo-void.git
+    ;;(aromyxo (gitorious))
+
     (array-operations (github "tpapp"))
     (asdf (clnet git)
      :asd none)
@@ -111,8 +117,6 @@
     (bdb (clnet darcs))
     (bdb-playground darcs "http://common-lisp.net/project/bdb/darcs/bdb-playground")
     (beirc (clnet cvs))
-    (binary-data (github "gigamonkey")
-     :asd ("com.gigamonkeys.binary-data.asd"))
     ;; XXXX: I think the second is probably canonical now, but it lacks two files --
     ;; pdf and ps -- look at them.
     ;; (binary-types cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
@@ -122,36 +126,196 @@
     (binomial-heap (github "vy"))
     (bk-tree (github "vy"))
     (bknr svn "svn://svn.bknr.net/svn/trunk"
-     :asd ("libraries/yason/yason.asd"
+     :asd (
+           ;; "thirdparty/cl-ftp/ftp.asd"
+           ;; "thirdparty/cl-mime/cl-mime.asd"
+           ;; "thirdparty/kmrcl-1.97/kmrcl.asd"
+           ;; "thirdparty/kmrcl-1.97/kmrcl-tests.asd"
+           ;; "thirdparty/cl-interpol/cl-interpol.asd"
+           ;; "thirdparty/parse-number/parse-number.asd"
+           ;; "thirdparty/parse-number/_darcs/pristine/parse-number.asd"
+           ;; "thirdparty/atdoc/atdoc.asd"
+           ;; "thirdparty/atdoc/example/blocks-world.asd"
+           ;; "thirdparty/plexippus-xpath/xpath.asd"
+           ;; "thirdparty/plexippus-xpath/_darcs/pristine/xpath.asd"
+           ;; "thirdparty/babel/babel-streams.asd"
+           ;; "thirdparty/babel/_darcs/pristine/babel-streams.asd"
+           ;; "thirdparty/babel/_darcs/pristine/babel-tests.asd"
+           ;; "thirdparty/babel/_darcs/pristine/babel.asd"
+           ;; "thirdparty/babel/babel-tests.asd"
+           ;; "thirdparty/babel/babel.asd"
+           ;; "thirdparty/closure-html/closure-html.asd"
+           ;; "thirdparty/cl-unicode/cl-unicode.asd"
+           ;; "thirdparty/asdf/asdf.asd"
+           ;; "thirdparty/asdf/test/try-recompiling-1.asd"
+           ;; "thirdparty/asdf/test/test2b2.asd"
+           ;; "thirdparty/asdf/test/test-modules-serial.asd"
+           ;; "thirdparty/asdf/test/test-missing-lisp-file.asd"
+           ;; "thirdparty/asdf/test/test-modules.asd"
+           ;; "thirdparty/asdf/test/graveyard/test-preferences-system-1.asd"
+           ;; "thirdparty/asdf/test/test-samedir-modules.asd"
+           ;; "thirdparty/asdf/test/wild-module.asd"
+           ;; "thirdparty/asdf/test/test2a.asd"
+           ;; "thirdparty/asdf/test/test2.asd"
+           ;; "thirdparty/asdf/test/test9-2.asd"
+           ;; "thirdparty/asdf/test/test-force.asd"
+           ;; "thirdparty/asdf/test/test-module-pathnames.asd"
+           ;; "thirdparty/asdf/test/test1.asd"
+           ;; "thirdparty/asdf/test/test-redundant-recompile.asd"
+           ;; "thirdparty/asdf/test/test-nested-components-1.asd"
+           ;; "thirdparty/asdf/test/test-module-excessive-depend.asd"
+           ;; "thirdparty/asdf/test/test5.asd"
+           ;; "thirdparty/asdf/test/test2b3.asd"
+           ;; "thirdparty/asdf/test/test2b1.asd"
+           ;; "thirdparty/asdf/test/test-module-depend.asd"
+           ;; "thirdparty/asdf/test/try-reloading-1.asd"
+           ;; "thirdparty/asdf/test/test9-1.asd"
+           ;; "thirdparty/asdf/test/test-package.asd"
+           ;; "thirdparty/asdf/test/test3.asd"
+           ;; "thirdparty/asdf/test/file3-only.asd"
+           ;; "thirdparty/asdf/test/static-and-serial.asd"
+           ;; "thirdparty/unit-test/unit-test.asd"
+           ;; "thirdparty/trivial-gray-streams/trivial-gray-streams.asd"
+           ;; "thirdparty/zpb-ttf-0.7/zpb-ttf.asd"
+           ;; "thirdparty/cl-yacc/yacc.asd"
+           ;; "thirdparty/cl-yacc/_darcs/pristine/yacc.asd"
+           ;; "thirdparty/md5/md5.asd"
+           ;; "thirdparty/bordeaux-threads/bordeaux-threads.asd"
+           ;; "thirdparty/lw-compat/lw-compat.asd"
+           ;; "thirdparty/lw-compat/_darcs/current/lw-compat.asd"
+           ;; "thirdparty/closure-common/closure-common.asd"
+           ;; "thirdparty/trivial-backtrace/trivial-backtrace-test.asd"
+           ;; "thirdparty/trivial-backtrace/_darcs/pristine/trivial-backtrace-test.asd"
+           ;; "thirdparty/trivial-backtrace/_darcs/pristine/trivial-backtrace.asd"
+           ;; "thirdparty/trivial-backtrace/trivial-backtrace.asd"
+           ;; "thirdparty/cl-gd/cl-gd-test.asd"
+           ;; "thirdparty/cl-gd/cl-gd.asd"
+           ;; "thirdparty/cl-stm/cl-stm.asd"
+           ;; "thirdparty/cl-stm/_darcs/pristine/cl-stm.asd"
+           ;; "thirdparty/cl-xmlspam/cl-xmlspam.asd"
+           ;; "thirdparty/zpb-exif/zpb-exif.asd"
+           ;; "thirdparty/cl-ppcre/cl-ppcre-unicode.asd"
+           ;; "thirdparty/cl-ppcre/cl-ppcre.asd"
+           ;; "thirdparty/stem/stem.asd"
+           ;; "thirdparty/chtml/closure-html.asd"
+           ;; "thirdparty/stefil/_darcs/pristine/stefil.asd"
+           ;; "thirdparty/stefil/stefil.asd"
+           ;; "thirdparty/trivial-garbage/trivial-garbage.asd"
+           ;; "thirdparty/trivial-garbage/_darcs/pristine/trivial-garbage.asd"
+           ;; "thirdparty/cl-who/cl-who.asd"
+           ;; "thirdparty/iterate/iterate.asd"
+           ;; "thirdparty/iterate/_darcs/pristine/iterate.asd"
+           ;; "thirdparty/cxml/cxml.asd"
+           ;; "thirdparty/metabang-bind/metabang-bind-test.asd"
+           ;; "thirdparty/metabang-bind/metabang-bind.asd"
+           ;; "thirdparty/puri/puri.asd"
+           ;; "thirdparty/slime/swank.asd"
+           ;; "thirdparty/arnesi/arnesi.asd"
+           ;; "thirdparty/alexandria/alexandria.asd"
+           ;; "thirdparty/alexandria/alexandria-tests.asd"
+           ;; "thirdparty/cl-store_0.8.4/cl-store.asd"
+           ;; "thirdparty/pg/pg.asd"
+           ;; "thirdparty/cl-pdf/cl-pdf-parser.asd"
+           ;; "thirdparty/cl-pdf/cl-pdf.asd"
+           ;; "thirdparty/cl-fad/cl-fad.asd"
+           ;; "thirdparty/cl-webdav/cl-webdav.asd"
+           ;; "thirdparty/drakma/drakma.asd"
+           ;; "thirdparty/parenscript/parenscript.asd"
+           ;; "thirdparty/vecto-1.0.2/vecto.asd"
+           ;; "thirdparty/rt-20040621/rt.asd"
+           ;; "thirdparty/usocket/usocket.asd"
+           ;; "thirdparty/usocket/usocket-test.asd"
+           ;; "thirdparty/uffi/uffi.asd"
+           ;; "thirdparty/uffi/uffi-tests.asd"
+           ;; "thirdparty/asdf-system-connections/asdf-system-connections.asd"
+           ;; "thirdparty/fiveam/_darcs/pristine/fiveam.asd"
+           ;; "thirdparty/fiveam/fiveam.asd"
+           ;; "thirdparty/salza-png-1.0.1/salza-png.asd"
+           ;; "thirdparty/trivial-features/_darcs/pristine/trivial-features-tests.asd"
+           ;; "thirdparty/trivial-features/_darcs/pristine/trivial-features.asd"
+           ;; "thirdparty/trivial-features/trivial-features-tests.asd"
+           ;; "thirdparty/trivial-features/trivial-features.asd"
+           ;; "thirdparty/rfc2388/rfc2388.asd"
+           ;; "thirdparty/screamer/screamer.asd"
+           ;; "thirdparty/hunchentoot/hunchentoot.asd"
+           ;; "thirdparty/flexi-streams/flexi-streams.asd"
+           ;; "thirdparty/cl-paypal/cl-paypal.asd"
+           ;; "thirdparty/cffi/cffi-tests.asd"
+           ;; "thirdparty/cffi/cffi.asd"
+           ;; "thirdparty/cffi/cffi-grovel.asd"
+           ;; "thirdparty/cffi/uffi-compat/uffi.asd"
+           ;; "thirdparty/cffi/cffi-uffi-compat.asd"
+           ;; "thirdparty/cffi/cffi-examples.asd"
+           ;; "thirdparty/cl-smtp/cl-smtp.asd"
+           ;; "thirdparty/salza-0.7.4/salza.asd"
+           ;; "thirdparty/cl-vectors-0.1.3/cl-vectors.asd"
+           ;; "thirdparty/cl-vectors-0.1.3/cl-paths-ttf.asd"
+           ;; "thirdparty/cl-vectors-0.1.3/cl-paths.asd"
+           ;; "thirdparty/cl-vectors-0.1.3/cl-aa-misc.asd"
+           ;; "thirdparty/cl-vectors-0.1.3/cl-aa.asd"
+           ;; "thirdparty/cxml-stp/cxml-stp.asd"
+           ;; "thirdparty/trivial-https/trivial-https.asd"
+           ;; "thirdparty/xuriella/xuriella.asd"
+           ;; "thirdparty/split-sequence/split-sequence.asd"
+           ;; "thirdparty/trivial-sockets/trivial-sockets.asd"
+           ;; "thirdparty/cl-ssl/cl-ssl/cl-ssl.asd"
+           ;; "thirdparty/closer-mop/_darcs/current/closer-mop.asd"
+           ;; "thirdparty/closer-mop/closer-mop.asd"
+           ;; "thirdparty/anaphora-0.9.3/anaphora.asd"
+           ;; "thirdparty/cl-base64/cl-base64.asd"
+           ;; "thirdparty/cybertiggyr-time/cybertiggyr-time.asd"
+           ;; "thirdparty/trivial-utf-8/trivial-utf-8.asd"
+           ;; "thirdparty/trivial-utf-8/_darcs/pristine/trivial-utf-8.asd"
+           ;; "thirdparty/cl-qprint/cl-qprint.asd"
+           ;; "thirdparty/chunga/chunga.asd"
+           ;; "thirdparty/documentation-template/documentation-template.asd"
+           ;; "thirdparty/defclass-star/defclass-star.asd"
+           ;; "thirdparty/defclass-star/_darcs/pristine/defclass-star.asd"
+           ;; "thirdparty/cl+ssl/cl+ssl.asd"
+           ;; "thirdparty/iolib/examples/iolib.examples.asd"
+           ;; "thirdparty/iolib/src/iolib.asd"
+           ;; "thirdparty/iolib/src/iolib.base.asd"
+           ;; "thirdparty/iolib/src/iolib.multiplex.asd"
+           ;; "thirdparty/iolib/src/iolib.trivial-sockets.asd"
+           ;; "thirdparty/iolib/src/iolib.streams.asd"
+           ;; "thirdparty/iolib/src/iolib.pathnames.asd"
+           ;; "thirdparty/iolib/src/iolib.os.asd"
+           ;; "thirdparty/iolib/src/iolib.syscalls.asd"
+           ;; "thirdparty/iolib/src/iolib.sockets.asd"
+           ;; "thirdparty/iolib/src/iolib.zstreams.asd"
+           ;; "thirdparty/iolib/tests/iolib-tests.asd"
+           ;; "thirdparty/ironclad/ironclad.asd"
+           "libraries/yason/yason.asd"
            "libraries/xhtmlgen/xhtmlgen.asd"
            "libraries/clixdoc/clixdoc.asd"
-           "bknr/datastore/src/bknr.xml.asd"
-           "bknr/datastore/src/bknr.impex.asd"
-           "bknr/datastore/src/bknr.data.impex.asd"
-           "bknr/datastore/src/bknr.skip-list.asd"
-           "bknr/datastore/src/bknr.utils.asd"
-           "bknr/datastore/src/bknr.indices.asd"
-           "bknr/datastore/src/bknr.datastore.asd"
-           "bknr/modules/spider/leech.asd"
-           "bknr/modules/bknr.modules.asd"
-           "bknr/web/src/bknr.web.asd"
-           "bknr/web/src/html-match/html-match.asd"
-           ;; "projects/hello-web/src/hello-web.asd"
-           ;; "projects/bos/m2/bos.m2.asd"
-           ;; "projects/bos/web/bos.web.asd"
-           ;; "projects/bos/test/bos.test.asd"
-           ;; "projects/scrabble/src/scrabble.asd"
-           ;; "projects/album-maker/src/album-maker.asd"
-           ;; "projects/lisp-ecoop/src/lisp-ecoop.asd"
-           ;; "projects/quickhoney/src/quickhoney.asd"
-           ;; "projects/unmaintained/saugnapf/src/saugnapf.asd"
-           ;; "projects/unmaintained/raw-data/mcp/mcp.asd"
-           ;; "projects/unmaintained/eboy/src/eboy.asd"
-           ;; "projects/unmaintained/gpn/gpn.asd"
-           ;; "projects/poll-postbank/poll-postbank.asd"
-           ;; "projects/mah-jongg/src/mah-jongg.asd"
-           ;; "projects/bknr-website/src/bknr.website.asd"
-           ))
+           "projects/hello-web/src/hello-web.asd"
+           "projects/bos/m2/bos.m2.asd"
+           "projects/bos/web/bos.web.asd"
+           "projects/bos/test/bos.test.asd"
+           "projects/scrabble/src/scrabble.asd"
+           "projects/album-maker/src/album-maker.asd"
+           "projects/lisp-ecoop/src/lisp-ecoop.asd"
+           "projects/quickhoney/src/quickhoney.asd"
+           "projects/unmaintained/saugnapf/src/saugnapf.asd"
+           "projects/unmaintained/raw-data/mcp/mcp.asd"
+           "projects/unmaintained/eboy/src/eboy.asd"
+           "projects/unmaintained/gpn/gpn.asd"
+           "projects/poll-postbank/poll-postbank.asd"
+           "projects/mah-jongg/src/mah-jongg.asd"
+           "projects/bknr-website/src/bknr.website.asd"))
+    (bknr-datastore (github "hanshuebner")
+     :asd ("src/bknr.xml.asd"
+           "src/bknr.impex.asd"
+           "src/bknr.data.impex.asd"
+           "src/bknr.skip-list.asd"
+           "src/bknr.utils.asd"
+           "src/bknr.indices.asd"
+           "src/bknr.datastore.asd"))
+    (bknr-web (github "hanshuebner")
+     :asd ("src/bknr.web.asd"
+           "src/html-match/html-match.asd"
+           "modules/spider/leech.asd"
+           "modules/bknr.modules.asd"))
     (black-tie (github "aerique"))
     (blackthorn-engine (google-code hg)
      :asd ("blackthorn.asd"
@@ -306,6 +470,9 @@
     (cl-fft git "http://git.nklein.com/lisp/libs/fft.git"
      :asd ("fft.asd"
            "pfft.asd"))
+    (cl-fluiddb (github "hdurer")
+     :asd ("cl-fluiddb.asd"
+           "cl-fluiddb-test.asd"))
     (cl-frame (github "dto")
      :asd none)
     (cl-future (github "jpalmucci"))
@@ -560,10 +727,12 @@
     ;; XXXX: figure out where this is
     ;;    (clnuplot darcs "http://common-lisp.net/project/clnuplot")
 
+    (clixdoc (github "hanshuebner"))
     (cloak git "http://www.lichteblau.com/git/cloakbuild.git"
      :asd ("cloak/cloak.asd"
            "java-cloak-compat/java-cloak-compat.asd"
            "sb-regpair/sb-regpair.asd"))
+    ;; blindglobe has a clocc repository on github.
     (clocc (sourceforge cvs)
      :asd ("src/f2cl/debian/f2cl.asd"
            "src/f2cl/f2cl.asd"
@@ -628,6 +797,11 @@
            "clysma-gtk.asd"))
     (cmucl (clnet cvs "src")
      :asd none)
+    (com.gigamonkeys.binary-data (github "gigamonkey" "binary-data"))
+    (com.gigamonkeys.macro-utilities (github "gigamonkey" "macro-utilities"))
+    (com.gigamonkeys.pathnames (github "gigamonkey" "pathnames"))
+    (com.gigamonkeys.spam (github "gigamonkey" "spam"))
+    (com.gigamonkeys.utilities (github "gigamonkey" "utilities"))
     (common-lisp-stat (github "blindglobe")
      :submodules t
      :asd none)
@@ -646,6 +820,7 @@
     (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
+    (cxml-rpc (github "antifuchs"))
     (date-utils (github "vseloved")
      :asd none)
     (deflate (github "pmai" "Deflate")
@@ -673,6 +848,7 @@
            "deoxybyte-utilities-test.asd"))
     (detachtty darcs "http://common-lisp.net/project/bese/repos/detachtty"
      :asd none)
+    (discworld (github "cddr"))
     (docudown darcs "http://common-lisp.net/project/docudown"
      :asd ("docudown.asd"
            "docudown-test.asd"))
@@ -700,6 +876,10 @@
            "src/contrib/rread/db-clsql/ele-postgresql.asd"
            "src/contrib/rread/db-clsql/ele-sqlite3.asd"
            "src/contrib/rread/dcm/dcm.asd"))
+    (epigraph (github "slyrus")
+     :asd ("epigraph.asd"
+           "epigraph-doc.asd"
+           "epigraph-test.asd"))
     (esa cvs pserver anonymous t common-lisp.net "/project/climacs/cvsroot")
     (esrap (github "nikodemus")
      :asd none)
@@ -1000,8 +1180,9 @@
      :asd none)
     (jpegmeta (google-code svn)
      :asd ("jpegmeta.asd"
-           "binary-data/com.gigamonkeys.binary-data.asd"
-           "macro-utilities/com.gigamonkeys.macro-utilities.asd"))
+           ;; "binary-data/com.gigamonkeys.binary-data.asd"
+           ;; "macro-utilities/com.gigamonkeys.macro-utilities.asd"
+           ))
     (js (github "akapav"))
     ;; XXXX: Is this an early version of parse-js ?
     (js-parser (github "gonzojive")
@@ -1089,6 +1270,8 @@
            "lispbuilder-windows/lispbuilder-windows-examples.asd"
            "lispbuilder-windows/lispbuilder-windows.asd"
            "lispbuilder-yacc/lispbuilder-yacc.asd"))
+    (lispdev hg "http://bitbucket.org/skolos/lispdev"
+     :asd none)
     ;; XXXX: maybe change project name to lisppaste
     (lisppaste2 cvs pserver anonymous t common-lisp.net "/project/lisppaste/cvsroot"
      :asd ("lisppaste.asd"))
@@ -1112,8 +1295,6 @@
     (lsw2 (google-code svn)
      :asd none)
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
-    (macro-utilities (github "gigamonkey")
-     :asd ("com.gigamonkeys.macro-utilities.asd"))
     (macrophp (github "valeryz" "MacroPHP"))
     (maild (github "franzinc")
      :asd none)
@@ -1252,8 +1433,6 @@
      :asd ("com.nklein.parser-generator.asd"
            "com.nklein.parser-generator.reader.asd"
            "com.nklein.parser-generator.types.asd"))
-    (pathnames (github "gigamonkey")
-     :asd ("com.gigamonkeys.pathnames.asd"))
     ;; (patg (clnet ))  XXXXXXXXXXX Subversion ???
     (patron (github "vy"))
     ;; XXXX: blog entry says persistent-sheeple is being renamed.  code has
@@ -1312,6 +1491,7 @@
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
     (quicklisp-projects (github "quicklisp")
      :asd none)
+    (quickproject (github "xach"))
     ;; XXXX: rename to quicktime if possible
     ;; XXXX: try loading it and resolve all dependencies
     (quicktime-ffi (harmon)
@@ -1408,8 +1588,6 @@
            ;; "lib/cells/cells.asd"
            ;; "lib/cells/cells-test/cells-test.asd"
            ))
-    (spam (github "gigamonkey")
-     :asd ("com.gigamonkeys.spam.asd"))
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))
@@ -1503,8 +1681,6 @@
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
      :asd ("usocket.asd"
            "usocket-test.asd"))
-    (utilities (github "gigamonkey")
-     :asd ("com.gigamonkeys.utilities.asd"))
     (vclos darcs "http://common-lisp.net/~crhodes/vclos")
     (vcs-tree git "git://git.b9.com/vcs-tree.git")
     (vecto (xach))
@@ -1556,6 +1732,7 @@
            "xcvb-driver.asd"
            "xcvb-master.asd"))
     (xe2 (github "dto"))
+    (xhtmlgen (github "hanshuebner"))
     (xlunit git "git://git.b9.com/xlunit.git")
     (xml-mop (github "gonzojive"))
     (xmlisp (google-code svn)
@@ -1567,13 +1744,16 @@
     (yashmup (github "sykopomp")
      :asd ("yashmup.asd"
            "util/sprite-checker/sprite-checker.asd"))
+    (yason (github "hanshuebner"))
     (yotta-zoomer (repo-or-cz))
+    (zcdb (github "xach"))
     (zip (clnet cvs))
     (zlib (github "franzinc")
      :asd none)
+    (zpb-exif (xach))
     (zpb-ttf (xach))
     (zpng (xach))
-    (zs3 (xach))
+    (zs3 (github "xach"))
 
     ;;; Repositories not related to Common Lisp.
 
