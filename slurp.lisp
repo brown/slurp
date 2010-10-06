@@ -1457,6 +1457,7 @@
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
     (quicklisp-projects (github "quicklisp")
      :asd none)
+    (quickproject (github "xach"))
     ;; XXXX: rename to quicktime if possible
     ;; XXXX: try loading it and resolve all dependencies
     (quicktime-ffi (harmon)
@@ -1709,12 +1710,14 @@
      :asd ("yashmup.asd"
            "util/sprite-checker/sprite-checker.asd"))
     (yotta-zoomer (repo-or-cz))
+    (zcdb (github "xach"))
     (zip (clnet cvs))
     (zlib (github "franzinc")
      :asd none)
+    (zpb-exif (xach))
     (zpb-ttf (xach))
     (zpng (xach))
-    (zs3 (xach))
+    (zs3 (github "xach"))
 
     ;;; Repositories not related to Common Lisp.
 
