@@ -59,6 +59,7 @@
      :asd none)
     (araneida-testing darcs "http://common-lisp.net/project/araneida/araneida-testing"
      :asd ("araneida.asd"))
+    ;; hanshueber has a fork of archive on github.
     (archive (github "froydnj"))
     (armish (clnet darcs))
     (arnesi_dev darcs "http://common-lisp.net/project/bese/repos/arnesi_dev"
@@ -302,6 +303,19 @@
            "projects/poll-postbank/poll-postbank.asd"
            "projects/mah-jongg/src/mah-jongg.asd"
            "projects/bknr-website/src/bknr.website.asd"))
+    (bknr-datastore (github "hanshuebner")
+     :asd ("src/bknr.xml.asd"
+           "src/bknr.impex.asd"
+           "src/bknr.data.impex.asd"
+           "src/bknr.skip-list.asd"
+           "src/bknr.utils.asd"
+           "src/bknr.indices.asd"
+           "src/bknr.datastore.asd"))
+    (bknr-web (github "hanshuebner")
+     :asd ("src/bknr.web.asd"
+           "src/html-match/html-match.asd"
+           "modules/spider/leech.asd"
+           "modules/bknr.modules.asd"))
     (black-tie (github "aerique"))
     (blackthorn-engine (google-code hg)
      :asd ("blackthorn.asd"
@@ -708,6 +722,7 @@
     ;; XXXX: figure out where this is
     ;;    (clnuplot darcs "http://common-lisp.net/project/clnuplot")
 
+    (clixdoc (github "hanshuebner"))
     (cloak git "http://www.lichteblau.com/git/cloakbuild.git"
      :asd ("cloak/cloak.asd"
            "java-cloak-compat/java-cloak-compat.asd"
@@ -799,6 +814,7 @@
     (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
+    (cxml-rpc (github "antifuchs"))
     (date-utils (github "vseloved")
      :asd none)
     (deflate (github "pmai" "Deflate")
@@ -1698,6 +1714,7 @@
            "xcvb-driver.asd"
            "xcvb-master.asd"))
     (xe2 (github "dto"))
+    (xhtmlgen (github "hanshuebner"))
     (xlunit git "git://git.b9.com/xlunit.git")
     (xml-mop (github "gonzojive"))
     (xmlisp (google-code svn)
@@ -1709,6 +1726,7 @@
     (yashmup (github "sykopomp")
      :asd ("yashmup.asd"
            "util/sprite-checker/sprite-checker.asd"))
+    (yason (github "hanshuebner"))
     (yotta-zoomer (repo-or-cz))
     (zcdb (github "xach"))
     (zip (clnet cvs))
