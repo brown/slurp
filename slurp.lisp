@@ -171,6 +171,8 @@
      :asd ("bytemap-test.asd"
            "bytemap.asd"))
     (caleb svn "svn://common-lisp.net/project/caleb/svn")
+    ;; XXXX: Should work soon.
+    ;; (categories git "git://codebasehq.com/bywicket/xg/categories.git"
     (ccl svn "http://svn.clozure.com/publicsvn/openmcl/trunk/darwinx86/ccl"
      :asd none)
     (cclan (sourceforge cvs)
@@ -732,6 +734,13 @@
      :asd ("flexichain-doc.asd"
            "flexichain-test.asd"
            "flexichain.asd"))
+    (folio git "git://codebasehq.com/bywicket/xg/folio.git"
+     :asd ("as/as.asd"
+           "collections/collections.asd"
+           "lib/misc-extensions_1.2.0/misc-extensions.asd"
+           ;; XXXX: Conflict with fset project.
+           ;; "lib/fset_1.2.2/fset.asd"
+           "folio.asd"))
     (freeimage (github "BradWBeer" "CL-FreeImage"))
     (fricas (sourceforge svn)
      :asd none)
@@ -933,7 +942,7 @@
     ;; I use swank.asd from the slime project.
     (hu.dwim.slime (dwim-hu)
      :asd none)
-    (hu.dwim.stefil darcs "http://dwim.hu/darcs/hu.dwim.stefil"
+    (hu.dwim.stefil (dwim-hu)
      :asd ("hu.dwim.stefil.test.asd"
            "hu.dwim.stefil+hu.dwim.def.asd"
            "hu.dwim.stefil+swank.asd"
