@@ -468,6 +468,9 @@
     (cl-fft git "http://git.nklein.com/lisp/libs/fft.git"
      :asd ("fft.asd"
            "pfft.asd"))
+    (cl-fluiddb (github "hdurer")
+     :asd ("cl-fluiddb.asd"
+           "cl-fluiddb-test.asd"))
     (cl-frame (github "dto")
      :asd none)
     (cl-future (github "jpalmucci"))
@@ -727,6 +730,7 @@
      :asd ("cloak/cloak.asd"
            "java-cloak-compat/java-cloak-compat.asd"
            "sb-regpair/sb-regpair.asd"))
+    ;; blindglobe has a clocc repository on github.
     (clocc (sourceforge cvs)
      :asd ("src/f2cl/debian/f2cl.asd"
            "src/f2cl/f2cl.asd"
@@ -842,6 +846,7 @@
            "deoxybyte-utilities-test.asd"))
     (detachtty darcs "http://common-lisp.net/project/bese/repos/detachtty"
      :asd none)
+    (discworld (github "cddr"))
     (docudown darcs "http://common-lisp.net/project/docudown"
      :asd ("docudown.asd"
            "docudown-test.asd"))
@@ -869,6 +874,10 @@
            "src/contrib/rread/db-clsql/ele-postgresql.asd"
            "src/contrib/rread/db-clsql/ele-sqlite3.asd"
            "src/contrib/rread/dcm/dcm.asd"))
+    (epigraph (github "slyrus")
+     :asd ("epigraph.asd"
+           "epigraph-doc.asd"
+           "epigraph-test.asd"))
     (esa cvs pserver anonymous t common-lisp.net "/project/climacs/cvsroot")
     (esrap (github "nikodemus")
      :asd none)
