@@ -14,6 +14,14 @@
   (defun concat (&rest args)
     (apply #'concatenate (cons 'string args))))
 
+#|
+; sellout packages
+(dispatch (github "sellout" "cl-dispatch"))
+(kilns  (github "sellout" "Kilns"))
+(llvm  (github "sellout" "cl-llvm"))
+(math-extensions (github "sellout"))
+(loom (github "sellout" "LOOM"))
+|#
 
 (defparameter +repositiory-specs+
   '((3bil (github "3b")
