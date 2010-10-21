@@ -16,15 +16,15 @@
 
 
 (defparameter +repositiory-specs+
-  '((3bil (github "3b")
-     :asd ("3b-swf-writer.asd"
-           "swf-writer-hack.asd"
-           "avm2-asm.asd"
-           "avm2-compile.asd"
-           "avm2-lib.asd"))
-    (3b-swf (github "3b")
+  '((3b-swf (github "3b")
      :asd ("3b-swf-swc.asd"
            "3b-swf.asd"))
+    (3bil (github "3b")
+     :asd ("3b-swf-writer.asd"
+           "avm2-asm.asd"
+           "avm2-compile.asd"
+           "avm2-lib.asd"
+           "swf-writer-hack.asd"))
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
     (adw-charting (clnet darcs)
      :asd ("adw-charting-google.asd"
