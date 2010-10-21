@@ -14,14 +14,6 @@
   (defun concat (&rest args)
     (apply #'concatenate (cons 'string args))))
 
-#|
-; sellout packages
-(dispatch (github "sellout" "cl-dispatch"))
-(kilns  (github "sellout" "Kilns"))
-(llvm  (github "sellout" "cl-llvm"))
-(math-extensions (github "sellout"))
-(loom (github "sellout" "LOOM"))
-|#
 
 (defparameter +repositiory-specs+
   '((3b-swf (github "3b")
@@ -857,6 +849,7 @@
     (detachtty darcs "http://common-lisp.net/project/bese/repos/detachtty"
      :asd none)
     (discworld (github "cddr"))
+    (dispatch (github "sellout" "cl-dispatch"))
     (docudown darcs "http://common-lisp.net/project/docudown"
      :asd ("docudown.asd"
            "docudown-test.asd"))
@@ -864,7 +857,7 @@
     (dynamic-classes darcs "http://common-lisp.net/project/dynamic-classes"
      :asd ("dynamic-classes.asd"
            "dynamic-classes-test.asd"))
-    (eager-future darcs "http://common-lisp.net/project/eager-future/repository/eager-future")
+    (eager-future (github "vsedach" "Eager-Future"))
     (ecl git "http://ecls.sourceforge.net/git/ecl/.git"
      :asd none)
     (ecl-doc git "http://ecls.sourceforge.net/git/ecl-doc/.git"
@@ -1200,6 +1193,7 @@
     (jwacs darcs "http://chumsley.org/jwacs/unstable"
      :asd ("jwacs.asd"
            "jwacs-tests.asd"))
+    (kilns  (github "sellout" "Kilns"))
     (kmrcl git "git://git.b9.com/kmrcl.git"
      :asd ("kmrcl.asd"
            "kmrcl-tests.asd"))
@@ -1284,6 +1278,7 @@
     (lisppaste2 cvs pserver anonymous t common-lisp.net "/project/lisppaste/cvsroot"
      :asd ("lisppaste.asd"))
     (lla (github "tpapp"))
+    (llvm  (github "sellout" "CL-LLVM"))
     (lml git "git://git.b9.com/lml.git"
      :asd ("lml.asd"
            "lml-tests.asd"))
@@ -1294,6 +1289,7 @@
     (log5 (github "gwkkwg")
      :asd ("log5.asd"
            "log5-test.asd"))
+    (loom (github "sellout" "LOOM"))
     (lotzo (github "patzy")
      :asd ("notes/notes.asd"
            "motd/motd.asd"
@@ -1311,6 +1307,7 @@
     (manardb git "http://cl-www.msi.co.jp/projects/manardb/manardb.git"
      :asd ("manardb.asd"
            "manardb-test.asd"))
+    (math-extensions (github "sellout"))
     (matlisp cvs pserver anonymous nil matlisp.cvs.sourceforge.net "/cvsroot/matlisp"
      :asd none)
     (maxima (sourceforge cvs)
@@ -1685,6 +1682,7 @@
      :asd none)
     (uri (github "franzinc")
      :asd none)
+    (uri-template (github "vsedach"))
     (url-rewrite darcs "http://common-lisp.net/~loliveira/ediware/url-rewrite")
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
      :asd ("usocket.asd"
