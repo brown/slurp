@@ -36,9 +36,10 @@
     (ait (clnet darcs)
      :asd ("asdf-install-tester.asd"
            "asdf-install-dates.asd"))
-    (alexandria (clnet darcs)
-     :asd ("alexandria.asd"
-           "alexandria-tests.asd"))
+    ;; http://common-lisp.net/project/alexandria/
+    (alexandria (clnet git)
+    :asd ("alexandria.asd"
+          "alexandria-tests.asd"))
     (amazon-ecs (github "gonzojive"))
     (amd64-asm (google-code svn))
     (anaphora (clnet cvs "src"))
@@ -325,7 +326,8 @@
            "bunnyslayer.asd"
            "blackthorn-stress-test.asd"))
     (bordeaux-fft (github "ahefner"))
-    (bordeaux-threads (clnet darcs)
+    ;; http://common-lisp.net/project/bordeaux-threads
+    (bordeaux-threads (clnet git)
      :asd ("bordeaux-threads.asd"
            "bordeaux-threads-test.asd"))
     (bratwurst (github "sabetts"))
@@ -362,17 +364,15 @@
            "ph-maths.asd"
            "pod-utils.asd"
            "test-gtk.asd"))
+    ;; http://common-lisp.net/project/cffi
     ;; XXXX I saw a mention of cffi repositories on gitorious.
-    (cffi (clnet darcs)
+    (cffi (clnet git)
      :asd ("cffi.asd"
            "cffi-examples.asd"
            "cffi-grovel.asd"
            "cffi-tests.asd"
            "cffi-uffi-compat.asd"
            "uffi-compat/uffi.asd"))
-    ;; XXXX: Maybe this is an obsolete package.  It has a cffi-grovel.asd file.
-    ;; :asd ("cffi-grovel.asd" "cffi-net.asd" "cffi-unix.asd")
-    (cffi-net darcs "http://cffi-net.accela.net/darcs/cffi-net")
     (cffi-j (github "Ramarren"))
     (cffi-redland (github "Ramarren")
      :asd ("redland.asd"
@@ -389,10 +389,12 @@
      :asd ("ch-util.asd"
            "ch-util-test.asd"))
     (chanl (github "sykopomp"))
-    (chillax (github "sykopomp"))
-    (chipz (github "froydnj")
-     :asd ("chillax.asd"
-           "chillax-server.asd"))
+    (chillax (github "sykopomp")
+     :asd ("chillax.view-server.asd"
+           "chillax.asd"
+           "chillax.core.asd"
+           "chillax.yason.asd"))
+    (chipz (github "froydnj"))
     (chronicity (github "chaitanyagupta")
      :asd ("chronicity.asd"
            "chronicity-test.asd"))
@@ -602,10 +604,7 @@
            "cl-prolog-test.asd"
            "cl-swi.asd"
            "cl-swi-client.asd"))
-    ;; XXXX change name to clpython
-    (cl-python (github "franzinc")
-     :asd ("clpython.asd"
-           "clpython-test.asd"))
+    (clpython (github "franzinc" "cl-python"))
     (cl-randist (github "lvaruzza"))
     (cl-random (github "tpapp"))
     (cl-rdfxml svn "http://svn.cs.rpi.edu/svn/tayloj/cl-rdfxml")
@@ -823,8 +822,7 @@
     (cxml-rpc (github "antifuchs"))
     (date-utils (github "vseloved")
      :asd none)
-    (deflate (github "pmai" "Deflate")
-     :asd ("Deflate.asd"))
+    (deflate (github "pmai" "Deflate"))
     (defsystem-compatibility
      darcs "http://common-lisp.net/project/cl-containers/defsystem-compatibility"
      :asd ("defsystem-compatibility.asd"
@@ -1206,7 +1204,8 @@
            "kpax.asd"))
     (lassie (melis))
     (latex-table (github "tpapp"))
-    (lexer (github "turbo24prg"))
+    ;; XXXX: This user has disappeared on github.
+    ;; (lexer (github "turbo24prg"))
     (liards (clnet darcs))
     (lice (repo-or-cz)
      :asd ("src/lice.asd"))
@@ -1378,7 +1377,8 @@
     (mw-equiv svn "http://svn.foldr.org/~michaelw/mw-equiv/trunk")
     (mw-tiny-clos git "http://www.foldr.org/~michaelw/projects/mw-tiny-clos.git")
     (mycl-util darcs "http://common-lisp.net/project/bdb/darcs/mycl-util")
-    (n3 (github "turbo24prg"))
+    ;; XXXX: This user is now missing on github.
+    ;; (n3 (github "turbo24prg"))
     (named-readtables darcs "http://common-lisp.net/project/editor-hints/darcs/named-readtables")
     (net-xml-generator (github "franzinc")
      :asd none)
@@ -1433,6 +1433,7 @@
     (parse-declarations (clnet darcs)
      :asd ("parse-declarations-1.0.asd"))
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
+    ;; XXXX: broken last time I tried to update this repository.
     (parse-js git "http://marijn.haverbeke.nl/git/parse-js")
     (parser-generator git "http://git.nklein.com/lisp/apps/parser-generator.git"
      :asd ("com.nklein.parser-generator.asd"
@@ -1458,7 +1459,8 @@
            ))
     (pjb-small-cl-pgms darcs "http://darcs.informatimago.com/darcs/public/small-cl-pgms"
      :asd none)
-    (plantae (github "patzy"))
+    ;; XXXX: This repository has disappeared on github.
+    ;; (plantae (github "patzy"))
     (plexippus-xpath (clnet darcs)
      :asd ("xpath.asd"))
     (plop (google-code svn)
@@ -1506,9 +1508,10 @@
     (raylisp (github "nikodemus")
      :asd ("raylisp.asd"
            "raylisp-gui.asd"))
-    (rdf-store (github "turbo24prg"))
-    (rdf-utils (github "turbo24prg"))
-
+    ;; XXXX: This user is now missing on github.
+    ;; (rdf-store (github "turbo24prg"))
+    ;; XXXX: This user is now missing on github.
+    ;; (rdf-utils (github "turbo24prg"))
     (readline git "git://git.b9.com/cl-readline.git")
     ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
@@ -1546,8 +1549,9 @@
     (sb-cpu-affinity (github "nikodemus"))
     (sb-lset (github "nikodemus")
      :asd none)
-    (sb-mailbox (github "nikodemus")
-     :asd none)
+    ;; XXXX: this repository is missing now
+    ;; (sb-mailbox (github "nikodemus")
+    ;;  :asd none)
     (sb-vector-io (github "nikodemus"))
     (sbcl (sourceforge cvs)
      :asd none)
@@ -1577,7 +1581,7 @@
      :asd ("swank.asd"))
     (slime-proxy (github "3b")
      :asd ("slime-proxy.asd"
-           "slime-proxy-ps.asd"))
+           "slime-parenscript.asd"))
     (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
      :asd ("src/netlib.asd"))
     (slurp (github "brown"))
@@ -1601,10 +1605,10 @@
     (submarine (clnet darcs)
      :asd ("submarine.asd"
            "submarine-tests.asd"))
-    (sw-db (gitorious))
-    (sw-http (gitorious))
-    (sw-mvc (gitorious))
-    (sw-stm (gitorious))
+    (sw-db (gitorious "sw-db-void"))
+    (sw-http (gitorious "sw-http-void"))
+    (sw-mvc (gitorious "sw-mvc-void"))
+    (sw-stm (gitorious "sw-stm-void"))
     (sykobot (github "sykopomp"))
     ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
     ;;XXXXXXXXXXXXXXXXXXXX investigate
@@ -1615,7 +1619,7 @@
     ;;        "sykosomatic.object.asd"
     ;;        "sykosomatic.parser.asd"
     ;;        "sykosomatic.test.asd"))
-    (symbolicweb (gitorious)
+    (symbolicweb (gitorious "symbolicweb-void")
      :asd ("symbolicweb.asd"
            "symbolicweb-examples.asd"
            "symbolicweb-jquery.asd"))
@@ -1811,7 +1815,8 @@ github.com."
                   &optional (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a git project hosted on
 gitorious.org."
-  `(git ,(concat "git://gitorious.org/" repository "/" repository ".git")))
+  (let ((name (string-downcase project-name)))
+    `(git ,(concat "git://gitorious.org/" name "/" repository ".git"))))
 
 (defun google-code (project-name scms
                     &optional (repository (string-downcase project-name)))
