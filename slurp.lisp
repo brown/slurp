@@ -350,7 +350,7 @@
            "cl-freetype/cl-freetype.asd"
            "cl-freetype/cl-rsrc.asd"
            "cl-ftgl/cl-ftgl.asd"
-           "cl-magick/cl-magick.asd"
+           ; "cl-magick/cl-magick.asd"
            ; "cl-openal/cl-openal.asd"
            "kt-opengl/kt-opengl.asd"))
     (cells (github "Ramarren")
@@ -497,6 +497,9 @@
     (cl-graph darcs "http://common-lisp.net/project/cl-graph"
      :asd ("cl-graph.asd"
            "cl-graph-test.asd"))
+    ;; Primary repository http://git.nklein.com/lisp/libs/cl-growl.git is
+    ;; unreadable.
+    (cl-growl (github "nklein"))
     (cl-gtk2 (repo-or-cz)
      :asd ("cairo/cl-gtk2-cairo.asd"
            "gdk/cl-gtk2-gdk.asd"
@@ -522,12 +525,14 @@
      :asd ("cl-librarian.asd"
            "skel/skel.asd"))
     (cl-libsvm (melis))
+    (cl-libtai (clnet cvs))
     (cl-libxml2 (github "archimag")
      :asd ("xfactory.asd"
            "cl-libxslt.asd"
            "cl-libxml2.asd"
            "xoverlay.asd"))
     (cl-llvm (repo-or-cz))
+    (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
      :asd ("cl-markdown-comparisons.asd"
            "cl-markdown-test.asd"
@@ -535,9 +540,15 @@
     (cl-mathstats darcs "http://common-lisp.net/project/cl-mathstats"
      :asd ("cl-mathstats.asd"
            "cl-mathstats-test.asd"))
+    (cl-menusystem (clnet cvs))
+    (cl-migrations (clnet darcs))
     (cl-mill (google-code svn)
      :asd ("gcode.asd"))
     (cl-mongrel2 (github "vseloved"))
+
+; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;    (mpeg (clnet cvs "cl-mp3-parse" "cl-mp3-parse") :asd none)
+
     (cl-mpi (google-code svn)
      :asd ("cl-mpi.asd"
            "par-eval.asd"))
@@ -634,13 +645,17 @@
      :asd ("cl-strings.asd"
            "cl-strings-tests.asd"))
     (cl-svg (google-code svn))
+    ;; http://common-lisp.net/projects/cl-machine-learning/git/cl-svm/.git
     ;; Look for a newer cl-swm repository at github.com/gonzojive.
     (cl-svm git "http://common-lisp.net/project/suave/git/cl-svm/.git")
+    (cl-taint darcs "http://www.common-lisp.net/project/cl-taint/cl-taint-release")
     (cl-tc (github "unya")
      :asd ("cl-tc.asd"
            "tokyocabinet.asd"
            "tokyodystopia.asd"
            "tokyotyrant.asd"))
+    (cl-telnetd (clnet cvs)
+     :asd none)
     (cl-tidy (github "gonzojive"))
     (cl-tokyo-cabinet (github "keithj")
      :asd ("cl-tokyo-cabinet.asd"
@@ -652,6 +667,9 @@
      :asd ("cl-tuples.asd"
            "cl-tuples-test.asd"))
     (cl-twit (github "chaitanyagupta"))
+    (cl-twitter (clnet darcs)
+     :asd ("cl-twitter.asd"
+           "cl-twitter-db.asd"))
     (cl-typesetting svn "http://www.fractalconcept.com:8000/public/open-source/cl-typesetting"
      :asd ("cl-typegraph.asd"
            "cl-typesetting.asd"
@@ -1445,6 +1463,7 @@
     ;; disappeared from github.
     ;; (persistent-sheeple (github "sykopomp"))
     (pg (clnet cvs))
+    (pileup (github "nikodemus"))
     (pipes git "git://git.b9.com/pipes.git")
     (pithy-xml (github "frodef"))
     (pjb-lisp darcs "http://darcs.informatimago.com/lisp"
