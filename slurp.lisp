@@ -554,6 +554,12 @@
            "par-eval.asd"))
     (cl-mssql (github "archimag")
      :asd ("mssql.asd"))
+    (cl-mw git "http://pages.cs.wisc.edu/~psilord/lisp-public/public-repos-lisp/cl-mw.git"
+     :asd ("cl-mw.examples.higher-order.asd"
+           "cl-mw.asd"
+           "cl-mw.examples.monte-carlo-pi.asd"
+           "cl-mw.examples.ping.asd"
+           "cl-mw.examples.hello-world.asd"))
     (cl-ncurses (clnet svn))
     (cl-net-snmp (sourceforge svn)
      :asd ("asn.1/trunk/asn.1-dev.asd"
@@ -623,9 +629,6 @@
     ;; (cl-rdfxml (github "turbo24prg") :asd none)
     (cl-redis (github "vseloved"))
     (cl-rogue (google-code svn))
-    (cl-routes (github "archimag")
-     :asd ("routes.asd"
-           "routes-test.asd"))
     (cl-sails (github "gonzojive"))
     (cl-sam (github "keithj")
      :asd ("cl-sam.asd"
@@ -931,13 +934,16 @@
      :asd ("flexichain-doc.asd"
            "flexichain-test.asd"
            "flexichain.asd"))
-    (folio git "git://codebasehq.com/bywicket/xg/folio.git"
-     :asd ("as/as.asd"
-           "collections/collections.asd"
-           "lib/misc-extensions_1.2.0/misc-extensions.asd"
-           ;; XXXX: Conflict with fset project.
-           ;; "lib/fset_1.2.2/fset.asd"
-           "folio.asd"))
+
+    ;; Repository missing on 2010-11-09.
+    ;; (folio git "git://codebasehq.com/bywicket/xg/folio.git"
+    ;;  :asd ("as/as.asd"
+    ;;        "collections/collections.asd"
+    ;;        "lib/misc-extensions_1.2.0/misc-extensions.asd"
+    ;;        ;; XXXX: Conflict with fset project.
+    ;;        ;; "lib/fset_1.2.2/fset.asd"
+    ;;        "folio.asd"))
+
     (freeimage (github "BradWBeer" "CL-FreeImage"))
     (fricas (sourceforge svn)
      :asd none)
@@ -982,7 +988,8 @@
            "hemlock.qt.asd"
            "hemlock.clx.asd"
            "hemlock.tty.asd"))
-    (hob git "http://marijn.haverbeke.nl/git/hob")
+    ;; RPC error 2010-11-09
+    ;; (hob git "http://marijn.haverbeke.nl/git/hob")
     (html-entities (google-code svn))
     (html-template darcs "http://common-lisp.net/~loliveira/ediware/html-template")
     (http-dohc (github "vsedach" "HTTP-DOHC"))
@@ -1452,7 +1459,8 @@
      :asd ("parse-declarations-1.0.asd"))
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
     ;; XXXX: broken last time I tried to update this repository.
-    (parse-js git "http://marijn.haverbeke.nl/git/parse-js")
+    ;; RPC error 2010-11-09
+    ;; (parse-js git "http://marijn.haverbeke.nl/git/parse-js")
     (parser-generator git "http://git.nklein.com/lisp/apps/parser-generator.git"
      :asd ("com.nklein.parser-generator.asd"
            "com.nklein.parser-generator.reader.asd"
@@ -1547,6 +1555,7 @@
     (rjson (github "gonzojive"))
     (rlc git "git://git.b9.com/rlc.git")
     (ropes (github "Ramarren"))
+    (routes (github "archimag" "cl-routes"))
     (rss git "git://git.b9.com/cl-rss.git")
     (rt git "git://git.b9.com/rt.git")
     (rtf darcs "http://common-lisp.net/project/bese/repos/rtf")
@@ -1576,6 +1585,7 @@
      :asd none)
     (sbcl-git git "git://git.boinkor.net/sbcl"
      :asd none)
+    ;; XXXXXXXXXX Nikodemus is working on screamer on github.
     (screamer (repo-or-cz)
      :asd none)
     (series (sourceforge cvs))
@@ -1619,7 +1629,8 @@
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))
-    (st-json darcs "http://marijn.haverbeke.nl/st-json")
+    ;; Repository missing on 2010-11-09
+    ;; (st-json darcs "http://marijn.haverbeke.nl/st-json")
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
     (submarine (clnet darcs)
      :asd ("submarine.asd"
