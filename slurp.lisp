@@ -26,6 +26,7 @@
            "avm2-lib.asd"
            "swf-writer-hack.asd"))
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
+    (acl-zmq (github "marijnh"))
     (adw-charting (clnet darcs)
      :asd ("adw-charting-google.asd"
            "adw-charting-vecto.asd"
@@ -660,6 +661,7 @@
     (cl-telnetd (clnet cvs)
      :asd none)
     (cl-tidy (github "gonzojive"))
+    (cl-tk (github "marijnh"))
     (cl-tokyo-cabinet (github "keithj")
      :asd ("cl-tokyo-cabinet.asd"
            "cl-tokyo-cabinet-test.asd"))
@@ -700,11 +702,8 @@
            "cl-xmpp-tls.asd"
            "cl-xmpp.asd"
            "test/cl-xmpp-test.asd"))
-    ;; XXXX: Remove the "cl-" from the name of this project.
-    (cl-yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc"
-     :asd ("yacc.asd"))
-    ;; XXXX: Remove the "cl-" from the name of this project.
-    (cl-yacc-ebnf (gitorious)
+    (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
+    (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
      :asd ("src/yacc-ebnf.asd"))
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
@@ -844,6 +843,9 @@
     (date-utils (github "vseloved")
      :asd none)
     (deflate (github "pmai" "Deflate"))
+    (defservice (github "marijnh")
+     :asd ("defservice.asd"
+           "defservice.aserve.asd"))
     (defsystem-compatibility
      darcs "http://common-lisp.net/project/cl-containers/defsystem-compatibility"
      :asd ("defsystem-compatibility.asd"
@@ -1458,9 +1460,7 @@
     (parse-declarations (clnet darcs)
      :asd ("parse-declarations-1.0.asd"))
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
-    ;; XXXX: broken last time I tried to update this repository.
-    ;; RPC error 2010-11-09
-    ;; (parse-js git "http://marijn.haverbeke.nl/git/parse-js")
+    (parse-js (github "marijnh"))
     (parser-generator git "http://git.nklein.com/lisp/apps/parser-generator.git"
      :asd ("com.nklein.parser-generator.asd"
            "com.nklein.parser-generator.reader.asd"
@@ -1470,6 +1470,9 @@
     ;; XXXX: blog entry says persistent-sheeple is being renamed.  code has
     ;; disappeared from github.
     ;; (persistent-sheeple (github "sykopomp"))
+    (pcall (github "marijnh")
+     :asd ("pcall.asd"
+           "pcall-queue.asd"))
     (pg (clnet cvs))
     (pileup (github "nikodemus"))
     (pipes git "git://git.b9.com/pipes.git")
@@ -1502,11 +1505,7 @@
            ;; "libs/cl-ppcre/cl-ppcre.asd"
            ;; "libs/puri-1.3.1/puri.asd"
            ))
-    ;; XXXXX What version of postmodern is canonical?  marijn has a version
-    ;; XXXXXXXXX
-    ;;    (postmodern git "http://marijn.haverbeke.nl/git/postmodern" :asd none)
-    ;; there is a copy here too:     http://github.com/marijnh
-    (postmodern (clnet darcs)
+    (postmodern (github "marijnh" "Postmodern")
      :asd ("postmodern.asd"
            "cl-postgres.asd"))
     (postoffice git "git://git.b9.com/postoffice.git")
@@ -1629,16 +1628,15 @@
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))
-    ;; Repository missing on 2010-11-09
-    ;; (st-json darcs "http://marijn.haverbeke.nl/st-json")
+    (st-json (github "marijnh" "ST-JSON"))
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
     (submarine (clnet darcs)
      :asd ("submarine.asd"
            "submarine-tests.asd"))
-    (sw-db (gitorious "sw-db-void"))
-    (sw-http (gitorious "sw-http-void"))
-    (sw-mvc (gitorious "sw-mvc-void"))
-    (sw-stm (gitorious "sw-stm-void"))
+    (sw-db (gitorious "sw-db" "sw-db-void"))
+    (sw-http (gitorious "sw-http" "sw-http-void"))
+    (sw-mvc (gitorious "sw-mvc" "sw-mvc-void"))
+    (sw-stm (gitorious "sw-stm" "sw-stm-void"))
     (sykobot (github "sykopomp"))
     ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
     ;;XXXXXXXXXXXXXXXXXXXX investigate
@@ -1649,7 +1647,7 @@
     ;;        "sykosomatic.object.asd"
     ;;        "sykosomatic.parser.asd"
     ;;        "sykosomatic.test.asd"))
-    (symbolicweb (gitorious "symbolicweb-void")
+    (symbolicweb (gitorious "symbolicweb" "symbolicweb-void")
      :asd ("symbolicweb.asd"
            "symbolicweb-examples.asd"
            "symbolicweb-jquery.asd"))
@@ -1751,7 +1749,7 @@
            "weblocks-store-test.asd"
            "weblocks-test.asd"
            "weblocks.asd"))
-    (white-shadow (gitorious "white-shadows"))
+    (white-shadow (gitorious "white-shadow" "white-shadows"))
     (wiki-parser (github "archimag"))
     (wilbur darcs "http://www.crispylogics.com/opensource/repos/wilbur"
      :asd ("src/wilbur.asd"))
@@ -1841,12 +1839,11 @@ Gabor Melis on quotenil.com."
 github.com."
   `(git ,(concat "git://github.com/" user "/" repository ".git")))
 
-(defun gitorious (project-name
-                  &optional (repository (string-downcase project-name)))
+(defun gitorious (project-name &optional (name (string-downcase project-name))
+                  (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a git project hosted on
 gitorious.org."
-  (let ((name (string-downcase project-name)))
-    `(git ,(concat "git://gitorious.org/" name "/" repository ".git"))))
+  `(git ,(concat "git://gitorious.org/" name "/" repository ".git")))
 
 (defun google-code (project-name scms
                     &optional (repository (string-downcase project-name)))
