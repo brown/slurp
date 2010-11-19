@@ -66,12 +66,7 @@
     (armish (clnet darcs))
     (arnesi_dev darcs "http://common-lisp.net/project/bese/repos/arnesi_dev"
      :asd ("arnesi.asd"))
-
-    ;; XXXX: aromyxo may have been renamed to aromyxo-void
-    ;; We need to support the following URL
-    ;; git://gitorious.org/aromyxo/aromyxo-void.git
-    ;;(aromyxo (gitorious))
-
+    (aromyxo (gitorious "aromyxo" "aromyxo-void"))
     (array-operations (github "tpapp"))
     (asdf (clnet git)
      :asd none)
@@ -705,6 +700,7 @@
     (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
     (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
      :asd ("src/yacc-ebnf.asd"))
+    ;; XXXX: rename to zeromq
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
     (claw (clnet svn)
@@ -1491,6 +1487,7 @@
      :asd none)
     ;; XXXX: This repository has disappeared on github.
     ;; (plantae (github "patzy"))
+    ;; XXXX: rename to xpath
     (plexippus-xpath (clnet darcs)
      :asd ("xpath.asd"))
     (plop (google-code svn)
@@ -1731,12 +1728,12 @@
      :asd ("webfunk.asd"
            "contrib/metafunk/metafunk.asd"))
     (weblocks-dev hg "http://bitbucket.org/S11001001/weblocks-dev"
-     :asd none)
-    (weblocks-stable hg "http://www.bitbucket.org/skypher/weblocks-stable"
-     :asd ("contrib/s11001001/weblocks-s11.asd"
+     :asd ("contrib/jwr/yui/weblocks-yui.asd"
+           "contrib/s11001001/weblocks-s11.asd"
            "contrib/yarek/examples/employer-employee/employer-employee.asd"
            "contrib/yarek/examples/weblocks-demo-popover/weblocks-demo-popover.asd"
            "contrib/yarek/weblocks-yarek.asd"
+           "examples/simple-blog/simple-blog.asd"
            "examples/weblocks-clsql-demo/weblocks-clsql-demo.asd"
            "examples/weblocks-demo/weblocks-demo.asd"
            "examples/weblocks-elephant-demo/weblocks-elephant-demo.asd"
@@ -1749,6 +1746,25 @@
            "weblocks-store-test.asd"
            "weblocks-test.asd"
            "weblocks.asd"))
+    ;; (weblocks-stable hg "http://www.bitbucket.org/skypher/weblocks-stable"
+    ;;  :asd ("contrib/jwr/yui/weblocks-yui.asd"
+    ;;        "contrib/s11001001/weblocks-s11.asd"
+    ;;        "contrib/yarek/examples/employer-employee/employer-employee.asd"
+    ;;        "contrib/yarek/examples/weblocks-demo-popover/weblocks-demo-popover.asd"
+    ;;        "contrib/yarek/weblocks-yarek.asd"
+    ;;        "examples/simple-blog/simple-blog.asd"
+    ;;        "examples/weblocks-clsql-demo/weblocks-clsql-demo.asd"
+    ;;        "examples/weblocks-demo/weblocks-demo.asd"
+    ;;        "examples/weblocks-elephant-demo/weblocks-elephant-demo.asd"
+    ;;        "scripts/new-app-templates/{APPNAME}.asd"
+    ;;        "src/store/clsql/weblocks-clsql.asd"
+    ;;        "src/store/elephant/weblocks-elephant.asd"
+    ;;        "src/store/memory/weblocks-memory.asd"
+    ;;        "src/store/prevalence/weblocks-prevalence.asd"
+    ;;        "weblocks-scripts.asd"
+    ;;        "weblocks-store-test.asd"
+    ;;        "weblocks-test.asd"
+    ;;        "weblocks.asd"))
     (white-shadow (gitorious "white-shadow" "white-shadows"))
     (wiki-parser (github "archimag"))
     (wilbur darcs "http://www.crispylogics.com/opensource/repos/wilbur"
@@ -2097,7 +2113,7 @@ out or update all submodules."
          (run "hg" `("clone" ,url ,name) *terminal-io*)))
       ((update)
        (with-cwd project-directory
-         (run "hg" '("update") *terminal-io*))))
+         (run "hg" '("pull" "--update") *terminal-io*))))
     (create-asd-links project-directory name asd)))
 
 (defun svn (op name url &key asd)
