@@ -926,6 +926,7 @@
     (femlisp (savannah cvs))
     (ffa (github "tpapp"))
     (filtered-functions darcs "http://common-lisp.net/project/closer/repos/filtered-functions")
+    (firehose (github "xach"))
     (fiveam darcs "http://common-lisp.net/project/bese/repos/fiveam")
     (flexi-streams darcs "http://common-lisp.net/~loliveira/ediware/flexi-streams")
     (flexichain (clnet cvs)
@@ -942,6 +943,7 @@
     ;;        ;; "lib/fset_1.2.2/fset.asd"
     ;;        "folio.asd"))
 
+    (format-time (github "xach"))
     (freeimage (github "BradWBeer" "CL-FreeImage"))
     (fricas (sourceforge svn)
      :asd none)
@@ -956,6 +958,7 @@
     (gcc-xml-ffi (harmon)
      :asd ("gcc-xml-ffi.asd"
            "gcc-xml-ffi-test.asd"))
+    (geometry (github "xach"))
     (glaw (github "patzy")
      :asd ("glaw-sdl.asd"
            "glaw-imago.asd"
@@ -968,6 +971,8 @@
     (google-protobuf (github "brown")
      :asd none)
     (getopt git "git://git.b9.com/getopt.git")
+    (gridlock (github "xach"))
+    (grout (github "xach"))
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
     (gsd (repo-or-cz)
      :asd ("foreign-array/foreign-array.asd"
@@ -1236,6 +1241,7 @@
      :asd ("lift.asd"
            "lift-test.asd"
            "lift-documentation.asd"))
+    (linebreaker (github "xach"))
     (lisa (sourceforge cvs))
     (lisp-matrix (github "blindglobe"))
     (lisp-unit (github "OdonataResearchLLC"))
@@ -1438,6 +1444,7 @@
     (open-axiom (sourceforge svn)
      :asd none)
     (outbreak (github "patzy"))
+    (page-ranges (github "xach"))
     (paktahn (github "skypher")
      :asd none)
     (pango (github "BradWBeer" "CL-Pango"))
@@ -1713,11 +1720,13 @@
      :asd none)
     (uri-template (github "vsedach"))
     (url-rewrite darcs "http://common-lisp.net/~loliveira/ediware/url-rewrite")
+    (usenet-legend (github "xach"))
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
      :asd ("usocket.asd"
            "usocket-test.asd"))
     (vclos darcs "http://common-lisp.net/~crhodes/vclos")
     (vcs-tree git "git://git.b9.com/vcs-tree.git")
+    (vectometry (github "xach"))
     (vecto (xach))
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
      :asd ("verrazano.asd"
@@ -1804,6 +1813,7 @@
     (zip (clnet cvs))
     (zlib (github "franzinc")
      :asd none)
+    (zpb-aws (github "xach"))
     (zpb-exif (xach))
     (zpb-ttf (xach))
     (zpng (xach))
