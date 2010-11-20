@@ -314,6 +314,7 @@
            "modules/spider/leech.asd"
            "modules/bknr.modules.asd"))
     (black-tie (github "aerique"))
+    ;; XXXX: rename to blackthorn
     (blackthorn-engine (google-code hg)
      :asd ("blackthorn.asd"
            "thopter.asd"
@@ -574,6 +575,7 @@
            "snmp/trunk/snmp-test.asd"
            "snmp/trunk/snmp-ui.asd"
            "snmp/trunk/snmp.asd"
+           ;; This is the canonical version of usocket-udp.
            "usocket-udp/trunk/usocket-udp.asd"))
     (cl-notify (repo-or-cz))
     (cl-numlib (github "tpapp"))
@@ -609,15 +611,16 @@
      :asd ("cl-ppcre.asd"
            "cl-ppcre-test.asd"
            "cl-ppcre-unicode.asd"))
-    (cl-prevalence (clnet cvs))
-    ;; (clpython cvs pserver cvspublic t cvspublic.franz.com "/cvs-public"
-    ;;  :asd ("clpython-test.asd"))
+    ;; The web page says the repository on bitbucket is the most recent.
+    ;; My old version is from:  (cl-prevalence (clnet cvs))
+    (cl-prevalence hg "http://bitbucket.org/skypher/cl-prevalence"
+     :asd ("cl-prevalence.asd"
+           "test/cl-prevalence-test.asd"))
     (cl-prolog (github "keithj")
      :asd ("cl-prolog.asd"
            "cl-prolog-test.asd"
            "cl-swi.asd"
            "cl-swi-client.asd"))
-    (clpython (github "franzinc" "cl-python"))
     (cl-randist (github "lvaruzza"))
     (cl-random (github "tpapp"))
     (cl-rdfxml svn "http://svn.cs.rpi.edu/svn/tayloj/cl-rdfxml")
@@ -697,9 +700,6 @@
            "cl-xmpp-tls.asd"
            "cl-xmpp.asd"
            "test/cl-xmpp-test.asd"))
-    (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
-    (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
-     :asd ("src/yacc-ebnf.asd"))
     ;; XXXX: rename to zeromq
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
@@ -777,6 +777,9 @@
      :asd ("src/clouchdb.asd"
            "src/clouchdb-examples.asd"
            "src/clouchdb-tests.asd"))
+    ;; (clpython cvs pserver cvspublic t cvspublic.franz.com "/cvs-public"
+    ;;  :asd ("clpython-test.asd"))
+    (clpython (github "franzinc" "cl-python"))
     (clqr (repo-or-cz)
      :asd none)
     (clsql git "git://git.b9.com/clsql.git"
@@ -1313,7 +1316,10 @@
     (lml2 git "git://git.b9.com/lml2.git"
      :asd ("lml2.asd"
            "lml2-tests.asd"))
-    (local-time (clnet darcs))
+    (local-time (clnet darcs)
+     :asd ("cl-postgres+local-time.asd"
+           "local-time.asd"
+           "local-time.test.asd"))
     (log5 (github "gwkkwg")
      :asd ("log5.asd"
            "log5-test.asd"))
@@ -1714,6 +1720,12 @@
     (umlisp-orf git "git://git.b9.com/umlisp-orf.git"
      :asd ("umlisp-orf.asd"
            "umlisp-orf-tests.asd"))
+    (until-it-dies (github "sykopomp")
+     :asd ("until-it-dies.base.asd"
+           "until-it-dies.examples.asd"
+           "until-it-dies.asd"
+           "until-it-dies.sound.asd"
+           "until-it-dies.graphics.asd"))
     (upstream (github "nikodemus")
      :asd none)
     (uri (github "franzinc")
@@ -1803,6 +1815,9 @@
     (xmlutils git "git://git.b9.com/xmlutils.git")
     (xptest git "git://git.b9.com/xptest.git")
     (xuriella (repo-or-cz))
+    (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
+    (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
+     :asd ("src/yacc-ebnf.asd"))
     (yaclml darcs "http://common-lisp.net/project/bese/repos/yaclml")
     (yashmup (github "sykopomp")
      :asd ("yashmup.asd"
