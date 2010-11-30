@@ -844,6 +844,9 @@
     (cxml-rpc (github "antifuchs"))
     (date-utils (github "vseloved")
      :asd none)
+    (decimal-floats (github "gugamilare")
+     :asd ("decimal-floats.asd"
+           "decimal-floats-tests.asd"))
     (deflate (github "pmai" "Deflate"))
     (defservice (github "marijnh")
      :asd ("defservice.asd"
@@ -1643,10 +1646,18 @@
            ;; "lib/cells/cells.asd"
            ;; "lib/cells/cells-test/cells-test.asd"
            ))
+    (sorting (github "gugamilare")
+     :asd ("sorting.asd"
+           "sorting-benchmark.asd"))
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))
     (st-json (github "marijnh" "ST-JSON"))
+    (storable-functions (github "gugamilare")
+     :asd ("cl-store+functions.asd"
+           "storable-functions.asd"
+           "cl-store+functions-tests.asd"
+           "storable-functions-tests.asd"))
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
     (submarine (clnet darcs)
      :asd ("submarine.asd"
