@@ -879,6 +879,9 @@
     (docudown darcs "http://common-lisp.net/project/docudown"
      :asd ("docudown.asd"
            "docudown-test.asd"))
+    (doors (github "Lovesan")
+     :asd ("doors.asd"
+           "doors.examples.asd"))
     (drakma darcs "http://common-lisp.net/~loliveira/ediware/drakma")
     (dynamic-classes darcs "http://common-lisp.net/project/dynamic-classes"
      :asd ("dynamic-classes.asd"
@@ -1481,6 +1484,7 @@
      :asd ("com.nklein.parser-generator.asd"
            "com.nklein.parser-generator.reader.asd"
            "com.nklein.parser-generator.types.asd"))
+    (pastebin.com-api (github "Lovesan"))
     ;; (patg (clnet ))  XXXXXXXXXXX Subversion ???
     (patron (github "vy"))
     ;; XXXX: blog entry says persistent-sheeple is being renamed.  code has
@@ -1704,6 +1708,7 @@
     (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
+    (trivial-bit-streams (github "Lovesan"))
     (trivial-configuration-parser svn "svn://unmutual.info/trivial-configuration-parser")
     (trivial-features darcs "http://common-lisp.net/~loliveira/darcs/trivial-features"
      :asd ("trivial-features.asd"
@@ -1763,6 +1768,9 @@
      :asd ("verrazano.asd"
            "verrazano-runtime.asd"))
     (vivace-graph (github "kraison"))
+    (virgil (github "Lovesan")
+     :asd ("virgil.asd"
+           "virgil-test.asd"))
     (wclas git "http://cl-www.msi.co.jp/projects/wclas/wclas.git")
     (webfunk (github "gonzojive")
      :asd ("webfunk.asd"
