@@ -1391,8 +1391,9 @@
      :asd ("mixalot.asd"
            "mixalot-mp3.asd"
            "mpg123-ffi.asd"))
-    ;; XXXXXXXXXX empty repository ?? ask Gabor about it
-    ;; (micmac (melis) :asd none)
+    (micmac (melis)
+     :asd ("micmac.asd"
+           "micmac-test.asd"))
     (mod_lisp svn "http://www.fractalconcept.com:8000/public/open-source/mod_lisp"
      :asd none)
     (modlisp git "git://git.b9.com/cl-modlisp.git")
@@ -1498,6 +1499,10 @@
            ))
     (pjb-small-cl-pgms darcs "http://darcs.informatimago.com/darcs/public/small-cl-pgms"
      :asd none)
+    (planet-wars (melis)
+     :asd ("planet-wars.asd"
+           "planet-wars-util.asd"
+           "proxy-bot.asd"))
     ;; XXXX: This repository has disappeared on github.
     ;; (plantae (github "patzy"))
     ;; XXXX: rename to xpath
