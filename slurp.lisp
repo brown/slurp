@@ -414,6 +414,7 @@
            "cl-bio-taxonomy.asd"
            "cl-bio-test.asd"
            "cl-bio.asd"))
+    (cl-bliky (github "fons"))
     (cl-blockfort (github "gonzojive"))
     (cl-blog svn "svn://unmutual.info/cl-blog/trunk/cl-blog")
     (cl-btree (github "gonzojive")
@@ -541,6 +542,7 @@
     (cl-migrations (clnet darcs))
     (cl-mill (google-code svn)
      :asd ("gcode.asd"))
+    (cl-mongo (github "fons"))
     (cl-mongrel2 (github "vseloved"))
 
 ; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -635,6 +637,7 @@
     (cl-selenium (clnet cvs)
      :asd ("selenium.asd"))
     (cl-skip-list (github "kraison"))
+    (cl-skunk (github "fons"))
     (cl-smtp (clnet cvs))
     (cl-spidermonkey (github "gonzojive"))
     (cl-sqlite (repo-or-cz)
