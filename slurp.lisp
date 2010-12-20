@@ -15,6 +15,9 @@
     (apply #'concatenate (cons 'string args))))
 
 
+;; https://github.com/nixeagle
+
+
 (defparameter +repositiory-specs+
   '((3b-swf (github "3b")
      :asd ("3b-swf-swc.asd"
@@ -26,6 +29,8 @@
            "avm2-lib.asd"
            "swf-writer-hack.asd"))
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
+    (abcl-web (sourceforge svn)
+     :asd none)
     (acl-zmq (github "marijnh"))
     (adw-charting (clnet darcs)
      :asd ("adw-charting-google.asd"
@@ -461,11 +466,6 @@
     ;; XXXX: remove this repository and cl-dwim-old
     ;(cl-dwim (clnet darcs)
     ; :asd ("dwim.asd" "dwim-meta-model-test.asd"))
-
-    ;; XXXXXXXXXXXXXXXXXXXX last update failed:
-    ;; svn: Can't connect to host 'slimy.com': Connection refused
-    ;(cl-e svn "svn://slimy.com/cl-e/cl-e/trunk/"
-    ; :asd ("e-on-cl.asd"))
     (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad")
     (cl-fft git "http://git.nklein.com/lisp/libs/fft.git"
      :asd ("fft.asd"
@@ -542,6 +542,7 @@
     (cl-migrations (clnet darcs))
     (cl-mill (google-code svn)
      :asd ("gcode.asd"))
+    (cl-monad-macros (clnet svn))
     (cl-mongo (github "fons"))
     (cl-mongrel2 (github "vseloved"))
 
@@ -886,6 +887,7 @@
     (dynamic-classes darcs "http://common-lisp.net/project/dynamic-classes"
      :asd ("dynamic-classes.asd"
            "dynamic-classes-test.asd"))
+    (e-on-cl svn "http://switchb.org/svn/e/cl-e/trunk/")
     (eager-future (github "vsedach" "Eager-Future"))
     (ecl git "http://ecls.sourceforge.net/git/ecl/.git"
      :asd none)
@@ -906,6 +908,7 @@
            "src/contrib/rread/db-clsql/ele-postgresql.asd"
            "src/contrib/rread/db-clsql/ele-sqlite3.asd"
            "src/contrib/rread/dcm/dcm.asd"))
+    (enumerations cvs pserver anonymous t common-lisp.net "/project/cl-enumeration/cvsroot")
     (epigraph (github "slyrus")
      :asd ("epigraph.asd"
            "epigraph-doc.asd"
