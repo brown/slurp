@@ -15,9 +15,6 @@
     (apply #'concatenate (cons 'string args))))
 
 
-;; https://github.com/nixeagle
-
-
 (defparameter +repositiory-specs+
   '((3b-swf (github "3b")
      :asd ("3b-swf-swc.asd"
@@ -44,8 +41,8 @@
            "asdf-install-dates.asd"))
     ;; http://common-lisp.net/project/alexandria/
     (alexandria (clnet git)
-    :asd ("alexandria.asd"
-          "alexandria-tests.asd"))
+     :asd ("alexandria.asd"
+           "alexandria-tests.asd"))
     (amazon-ecs (github "gonzojive"))
     (amd64-asm (google-code svn))
     (anaphora (clnet cvs "src"))
@@ -403,7 +400,7 @@
     (chunga darcs "http://common-lisp.net/~loliveira/ediware/chunga")
     (cl+ssl cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (cl-2d (github "tpapp"))
-    (cl-base64 git "git://git.b9.com/cl-base64.git")
+    (cl-base64 (b9))
     (cl-beanstalk (github "antifuchs"))
     (cl-bench (clnet svn)
      :asd none)
@@ -505,6 +502,8 @@
            "gtk-glext/cl-gtk2-gtkglext.asd"
            "gtk/cl-gtk2-gtk.asd"
            "pango/cl-gtk2-pango.asd"))
+    ;; XXXX: Not sure if this one is the best.
+    (cl-i18n (bitbucket "skypher"))
     (cl-imagemagick (github "franzinc")
      :asd none)
     (cl-interpol darcs "http://common-lisp.net/~loliveira/ediware/cl-interpol")
@@ -516,6 +515,7 @@
      :asd ("cl-irregsexp-test.asd"
            "cl-irregsexp.asd"))
     (cl-jpeg (clnet cvs "cljl"))
+    (cl-js (github "akapav" "js"))
     (cl-json (clnet darcs))
     (cl-kyoto-cabinet (github "kraison"))
     (cl-l10n (clnet darcs))
@@ -607,7 +607,7 @@
            "cl-pdf-parser.asd"
            "salza/salza.asd"))
     (cl-peg darcs "http://subvert-the-dominant-paradigm.net/repos/cl-peg")
-    (cl-photo git "git://git.b9.com/cl-photo.git"
+    (cl-photo (b9)
      :asd ("cl-photo.asd"
            "cl-photo-tests.asd"))
     (cl-ppcre darcs "http://common-lisp.net/~loliveira/ediware/cl-ppcre"
@@ -616,7 +616,7 @@
            "cl-ppcre-unicode.asd"))
     ;; The web page says the repository on bitbucket is the most recent.
     ;; My old version is from:  (cl-prevalence (clnet cvs))
-    (cl-prevalence hg "http://bitbucket.org/skypher/cl-prevalence"
+    (cl-prevalence (bitbucket "skypher")
      :asd ("cl-prevalence.asd"
            "test/cl-prevalence-test.asd"))
     (cl-prolog (github "keithj")
@@ -639,6 +639,7 @@
      :asd ("selenium.asd"))
     (cl-skip-list (github "kraison"))
     (cl-skunk (github "fons"))
+    (cl-slog (bitbucket "skypher"))
     (cl-smtp (clnet cvs))
     (cl-spidermonkey (github "gonzojive"))
     (cl-sqlite (repo-or-cz)
@@ -767,12 +768,16 @@
     (clois-lane (github "aerique")
      :asd ("clois-lane.asd"
            "clois-lane-cegui.asd"))
-    (clon (github "dto"))
+    ;; Gabor Melis' task scheduler.
+    (clon-task-scheduler (melis "clon")
+     :asd none)
+    ;; David O'Toole's prototype object system.
+    ;; Currently missing from github.  XXXX: Move source?
+    ; (clon-prototype-objects (github "dto" "clon") :asd none)
+    ;; Didier Verna's command line options nuker.
+    (clon-command-line git "http://www.lrde.epita.fr/~didier/software/lisp/clon/clon.git"
+     :asd none)
     (clonsigna (clnet git))
-    ;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    ;; Same project name as other clon.  Figure out a solution.
-    ;; Need different directory name and renaming of asd file links.
-    ;; (clon (melis) :asd none)
     (closer-mop darcs "http://common-lisp.net/project/closer/repos/closer-mop")
     (closure (clnet cvs))
     (closure-common (repo-or-cz))
@@ -786,7 +791,7 @@
     (clpython (github "franzinc" "cl-python"))
     (clqr (repo-or-cz)
      :asd none)
-    (clsql git "git://git.b9.com/clsql.git"
+    (clsql (b9)
      :asd ("clsql.asd"
            "clsql-aodbc.asd"
            "clsql-db2.asd"
@@ -804,7 +809,7 @@
            "clsr-doc.asd"
            "clsr-gen.asd"
            "clsr-test.asd"))
-    (cluck git "git://git.b9.com/cluck.git")
+    (cluck (b9))
     (clucumber (github "antifuchs")
      :asd ("lib/clucumber/clucumber.asd"))
     (cluster-ffi (harmon)
@@ -819,11 +824,33 @@
            "clysma-gtk.asd"))
     (cmucl (clnet cvs "src")
      :asd none)
-    (com.gigamonkeys.binary-data (github "gigamonkey" "binary-data"))
-    (com.gigamonkeys.macro-utilities (github "gigamonkey" "macro-utilities"))
-    (com.gigamonkeys.pathnames (github "gigamonkey" "pathnames"))
-    (com.gigamonkeys.spam (github "gigamonkey" "spam"))
-    (com.gigamonkeys.utilities (github "gigamonkey" "utilities"))
+
+    ;; XXXXXXXXXXXXXXXXXXXX
+
+    (com.gigamonkeys.monkeydist (github "gigamonkey" "monkeydist"))
+    (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
+    (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
+    (com.gigamonkeys.json (github "gigamonkey" "monkeylib-json"))
+    (com.gigamonkeys.macro-utilities (github "gigamonkey" "monkeylib-macro-utilities"))
+    (com.gigamonkeys.markup (github "gigamonkey" "monkeylib-markup"))
+    (com.gigamonkeys.markup-html (github "gigamonkey" "monkeylib-markup-html"))
+    (com.gigamonkeys.markup-xml (github "gigamonkey" "monkeylib-markup-xml"))
+    (com.gigamonkeys.parser (github "gigamonkey" "monkeylib-parser"))
+    (com.gigamonkeys.pathnames (github "gigamonkey" "monkeylib-pathnames"))
+    (com.gigamonkeys.pcl-practicals (github "gigamonkey" "monkeylib-pcl-practicals"))
+    (com.gigamonkeys.prose-diff (github "gigamonkey" "monkeylib-prose-diff"))
+    (com.gigamonkeys.spam (github "gigamonkey" "monkeylib-spam"))
+    (com.gigamonkeys.statistics (github "gigamonkey" "monkeylib-statistics"))
+    (com.gigamonkeys.test-framework (github "gigamonkey" "monkeylib-test-framework"))
+    (com.gigamonkeys.utilities (github "gigamonkey" "monkeylib-utilities"))
+    (com.gigamonkeys.quicklisp-distcompiler (github "gigamonkey" "quicklisp-distcompiler"))
+
+    ;; (com.gigamonkeys.binary-data (github "gigamonkey" "binary-data"))
+    ;; (com.gigamonkeys.macro-utilities (github "gigamonkey" "macro-utilities"))
+    ;; (com.gigamonkeys.pathnames (github "gigamonkey" "pathnames"))
+    ;; (com.gigamonkeys.spam (github "gigamonkey" "spam"))
+    ;; (com.gigamonkeys.utilities (github "gigamonkey" "utilities"))
+
     (common-lisp-stat (github "blindglobe")
      :submodules t
      :asd none)
@@ -914,8 +941,7 @@
            "epigraph-doc.asd"
            "epigraph-test.asd"))
     (esa cvs pserver anonymous t common-lisp.net "/project/climacs/cvsroot")
-    (esrap (github "nikodemus")
-     :asd none)
+    (esrap (github "nikodemus"))
     ;; XXXX: Maybe just check out the trunk?  There are tons of tags
     ;; directories.
     (exp-engine svn "http://exp-engine.svn.sourceforge.net/svnroot/exp-engine"
@@ -944,6 +970,8 @@
     (firehose (github "xach"))
     (fiveam darcs "http://common-lisp.net/project/bese/repos/fiveam")
     (flexi-streams darcs "http://common-lisp.net/~loliveira/ediware/flexi-streams")
+
+    ;; Repository read problem 2010-12-28
     (flexichain (clnet cvs)
      :asd ("flexichain-doc.asd"
            "flexichain-test.asd"
@@ -985,7 +1013,7 @@
            "glop-test.asd"))
     (google-protobuf (github "brown")
      :asd none)
-    (getopt git "git://git.b9.com/getopt.git")
+    (getopt (b9))
     (gridlock (github "xach"))
     (grout (github "xach"))
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
@@ -1006,8 +1034,8 @@
            "hemlock.qt.asd"
            "hemlock.clx.asd"
            "hemlock.tty.asd"))
-    ;; RPC error 2010-11-09
-    ;; (hob git "http://marijn.haverbeke.nl/git/hob")
+    ;; The hob repository is also on github, but updates fail from that one.
+    (hob git "http://marijn.haverbeke.nl/git/hob")
     (html-entities (google-code svn))
     (html-template darcs "http://common-lisp.net/~loliveira/ediware/html-template")
     (http-dohc (github "vsedach" "HTTP-DOHC"))
@@ -1161,9 +1189,20 @@
      :asd ("hu.dwim.serializer.test.asd"
            "hu.dwim.serializer.asd"
            "hu.dwim.serializer.documentation.asd"))
+
+    ;; XXXXXXXXXXXXXXXXXXXX
+    ;; Moved into git repository along with
+    ;; git://dwim.hu/git/commonqt
+    ;; git://dwim.hu/git/iolib
+    ;; git://dwim.hu/git/sbcl
+    ;; git://dwim.hu/git/slime
+    ;; git://dwim.hu/git/xcvb
+    ;; use BRANCH "hu.dwim"
     ;; I use swank.asd from the slime project.
     (hu.dwim.slime (dwim-hu)
      :asd none)
+
+
     (hu.dwim.stefil (dwim-hu)
      :asd ("hu.dwim.stefil.test.asd"
            "hu.dwim.stefil+hu.dwim.def.asd"
@@ -1191,7 +1230,7 @@
            "hunchentoot-auth-test.asd"))
     (hunchentoot-cgi (harmon))
     (hunchentoot-vhost (harmon))
-    (hyperobject git "git://git.b9.com/hyperobject.git"
+    (hyperobject (b9)
      :asd ("hyperobject.asd"
            "hyperobject-tests.asd"))
     (ia-x86 cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
@@ -1215,7 +1254,7 @@
            "src/iolib.syscalls.asd"
            "src/iolib.trivial-sockets.asd"
            "tests/iolib-tests.asd"))
-    (irc-logger git "git://git.b9.com/irc-logger.git")
+    (irc-logger (b9))
     (ironclad (github "froydnj"))
     (iterate (clnet darcs))
     (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
@@ -1225,7 +1264,6 @@
            ;; "binary-data/com.gigamonkeys.binary-data.asd"
            ;; "macro-utilities/com.gigamonkeys.macro-utilities.asd"
            ))
-    (js (github "akapav"))
     ;; XXXX: Is this an early version of parse-js ?
     (js-parser (github "gonzojive")
      :asd ("js-parser-tests.asd"
@@ -1235,7 +1273,7 @@
      :asd ("jwacs.asd"
            "jwacs-tests.asd"))
     (kilns  (github "sellout" "Kilns"))
-    (kmrcl git "git://git.b9.com/kmrcl.git"
+    (kmrcl (b9)
      :asd ("kmrcl.asd"
            "kmrcl-tests.asd"))
     (kpax darcs "http://www.beta9.be/darcs/kpax"
@@ -1256,6 +1294,10 @@
      :asd ("lift.asd"
            "lift-test.asd"
            "lift-documentation.asd"))
+    ;; http://common-lisp.net/project/linedit
+    (linedit (clnet git)
+     :asd ("linedit.asd"
+           "terminfo.asd"))
     (linebreaker (github "xach"))
     (lisa (sourceforge cvs))
     (lisp-matrix (github "blindglobe"))
@@ -1315,17 +1357,17 @@
            "lispbuilder-windows/lispbuilder-windows-examples.asd"
            "lispbuilder-windows/lispbuilder-windows.asd"
            "lispbuilder-yacc/lispbuilder-yacc.asd"))
-    (lispdev hg "http://bitbucket.org/skolos/lispdev"
+    (lispdev (bitbucket "skolos")
      :asd none)
     ;; XXXX: maybe change project name to lisppaste
     (lisppaste2 cvs pserver anonymous t common-lisp.net "/project/lisppaste/cvsroot"
      :asd ("lisppaste.asd"))
     (lla (github "tpapp"))
     (llvm  (github "sellout" "CL-LLVM"))
-    (lml git "git://git.b9.com/lml.git"
+    (lml (b9)
      :asd ("lml.asd"
            "lml-tests.asd"))
-    (lml2 git "git://git.b9.com/lml2.git"
+    (lml2 (b9)
      :asd ("lml2.asd"
            "lml2-tests.asd"))
     (local-time (clnet darcs)
@@ -1375,7 +1417,7 @@
            "mcclim-tiff-bitmaps.asd"
            "mcclim.asd"))
     (mcpixel (github "ahefner" "McPixel"))
-    (md5 git "git://git.b9.com/md5.git")
+    (md5 (b9))
     (mel-base darcs "http://www.crispylogics.com/opensource/repos/mel-base")
     ;; XXXX: mel-base-old got a bunch of updates on jan 18 2010 that were
     ;; old ... jan to nov of 2009
@@ -1408,7 +1450,7 @@
            "micmac-test.asd"))
     (mod_lisp svn "http://www.fractalconcept.com:8000/public/open-source/mod_lisp"
      :asd none)
-    (modlisp git "git://git.b9.com/cl-modlisp.git")
+    (modlisp (b9 "cl-modlisp"))
     (montezuma (google-code svn)
      :asd ("montezuma.asd"
            "contrib/montezuma-indexfiles/montezuma-indexfiles.asd"
@@ -1421,6 +1463,7 @@
      :asd ("moptilities.asd"
            "moptilities-test.asd"))
     (movitz cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    (mtlisp (github "mtravers"))
     (mutest (github "vseloved"))
     (mw-equiv svn "http://svn.foldr.org/~michaelw/mw-equiv/trunk")
     (mw-tiny-clos git "http://www.foldr.org/~michaelw/projects/mw-tiny-clos.git")
@@ -1457,11 +1500,11 @@
            "okra-mygui.asd"
            "okra.asd"))
     (ometa hg "http://subvert-the-dominant-paradigm.net/repos/hgwebdir.cgi/ometa")
-    ;; XXXX: svn: REPORT of '/svnroot/open-axiom/!svn/vcc/default':
-    ;; Could not read response body: SSL error: Decryption has failed.
-    ;; (https://open-axiom.svn.sourceforge.net)
     (open-axiom (sourceforge svn)
      :asd none)
+    (osicat (clnet git)
+     :asd ("osicat.asd"
+           "osicat-tests.asd"))
     (outbreak (github "patzy"))
     (page-ranges (github "xach"))
     (paktahn (github "skypher")
@@ -1498,7 +1541,7 @@
            "pcall-queue.asd"))
     (pg (clnet cvs))
     (pileup (github "nikodemus"))
-    (pipes git "git://git.b9.com/pipes.git")
+    (pipes (b9))
     (pithy-xml (github "frodef"))
     (pjb-lisp darcs "http://darcs.informatimago.com/lisp"
      :asd ("cl-posix/cliki/cliki.asd"
@@ -1536,16 +1579,16 @@
     (postmodern (github "marijnh" "Postmodern")
      :asd ("postmodern.asd"
            "cl-postgres.asd"))
-    (postoffice git "git://git.b9.com/postoffice.git")
+    (postoffice (b9))
     (prepl (gitorious))
     (pretty-function (clnet darcs))
     (protobuf (github "brown")
      :asd ("protobuf.asd"
            "protobuf-test.asd"
            "example/protobuf-example.asd"))
-    (ptester git "git://git.b9.com/ptester.git")
-    (pubmed git "git://git.b9.com/pubmed.git")
-    (puri git "git://git.b9.com/puri.git")
+    (ptester (b9))
+    (pubmed (b9))
+    (puri (b9))
     ;; XXXX: I had to permanently accepted a bogus expired certificate.
     (pvs svn "https://spartan.csl.sri.com/svn/public/pvs/trunk"
      :asd none)
@@ -1566,7 +1609,7 @@
     ;; (rdf-store (github "turbo24prg"))
     ;; XXXX: This user is now missing on github.
     ;; (rdf-utils (github "turbo24prg"))
-    (readline git "git://git.b9.com/cl-readline.git")
+    (readline (b9 "cl-readline"))
     ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
      :asd none)
@@ -1575,16 +1618,16 @@
     (restas (github "archimag"))
     (restas-planet (github "archimag"))
     (retrospectiff (harmon))
-    (reversi git "git://git.b9.com/reversi.git")
+    (reversi (b9))
     (rfc2109 (clnet darcs))
     (rfc2388 (clnet cvs))
     (rfc2822 (clnet cvs))
     (rjson (github "gonzojive"))
-    (rlc git "git://git.b9.com/rlc.git")
+    (rlc (b9))
     (ropes (github "Ramarren"))
     (routes (github "archimag" "cl-routes"))
-    (rss git "git://git.b9.com/cl-rss.git")
-    (rt git "git://git.b9.com/rt.git")
+    (rss (b9 "cl-rss"))
+    (rt (b9))
     (rtf darcs "http://common-lisp.net/project/bese/repos/rtf")
     (rucksack (clnet cvs)
      :asd ("rucksack.asd"
@@ -1612,9 +1655,10 @@
      :asd none)
     (sbcl-git git "git://git.boinkor.net/sbcl"
      :asd none)
-    ;; XXXXXXXXXX Nikodemus is working on screamer on github.
-    (screamer (repo-or-cz)
-     :asd none)
+    ;; XXXX:  Is this one better?  stored in screamer-or-cz
+    ;;(screamer (repo-or-cz)
+    ;;:asd none)
+    (screamer (github "nikodemus"))
     (series (sourceforge cvs))
     (sheeple (github "sykopomp"))
     (shuffletron (github "ahefner"))
@@ -1738,13 +1782,13 @@
      :asd none)
     (ucw_dev darcs "http://common-lisp.net/project/ucw/repos/ucw_dev"
      :asd ("ucw.asd"))
-    (uffi git "git://git.b9.com/uffi.git"
+    (uffi (b9)
      :asd ("uffi.asd"
            "uffi-tests.asd"))
-    (umlisp git "git://git.b9.com/umlisp.git"
+    (umlisp (b9)
      :asd ("umlisp.asd"
            "umlisp-tests.asd"))
-    (umlisp-orf git "git://git.b9.com/umlisp-orf.git"
+    (umlisp-orf (b9)
      :asd ("umlisp-orf.asd"
            "umlisp-orf-tests.asd"))
     (until-it-dies (github "sykopomp")
@@ -1764,7 +1808,7 @@
      :asd ("usocket.asd"
            "usocket-test.asd"))
     (vclos darcs "http://common-lisp.net/~crhodes/vclos")
-    (vcs-tree git "git://git.b9.com/vcs-tree.git")
+    (vcs-tree (b9))
     (vectometry (github "xach"))
     (vecto (xach))
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
@@ -1778,7 +1822,7 @@
     (webfunk (github "gonzojive")
      :asd ("webfunk.asd"
            "contrib/metafunk/metafunk.asd"))
-    (weblocks-dev hg "http://bitbucket.org/S11001001/weblocks-dev"
+    (weblocks-dev (bitbucket "S11001001")
      :asd ("contrib/jwr/yui/weblocks-yui.asd"
            "contrib/s11001001/weblocks-s11.asd"
            "contrib/yarek/examples/employer-employee/employer-employee.asd"
@@ -1822,10 +1866,12 @@
      :asd ("src/wilbur.asd"))
     (wispylisp darcs "http://common-lisp.net/project/wispylisp"
      :asd ("src/wispylisp.asd"))
-    (wol git "git://git.b9.com/wol.git")
+    (wol (b9))
     (woolly git "http://git.nklein.com/lisp/libs/woolly.git/"
      :asd ("woolly.asd"
            "woolly-gl.asd"))
+    (wormtrails (github "xach"))
+    (wuwei (github "mtravers"))
     (wxcl (sourceforge svn))
     (x.let-star (github "ks" "X.LET-STAR"))
     (x.fdatatypes (github "ks" "X.FDATATYPES"))
@@ -1838,13 +1884,14 @@
            "xcvb-master.asd"))
     (xe2 (github "dto"))
     (xhtmlgen (github "hanshuebner"))
-    (xlunit git "git://git.b9.com/xlunit.git")
+    (xlunit (b9))
     (xml-mop (github "gonzojive"))
     (xmlisp (google-code svn)
      :asd none)
-    (xmlutils git "git://git.b9.com/xmlutils.git")
-    (xptest git "git://git.b9.com/xptest.git")
+    (xmlutils (b9))
+    (xptest (b9))
     (xuriella (repo-or-cz))
+    ;; XXXX: Timed out on 2010-12-28.
     (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
     (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
      :asd ("src/yacc-ebnf.asd"))
@@ -1867,8 +1914,7 @@
     ;;; Repositories not related to Common Lisp.
 
     (dwarf git "http://git.androdna.com/lisp/dwarf" :asd none)
-    ;; Emacs is now a bazaar repository that's huge.
-    ;; (emacs (savannah bzr)  :lightweight t :asd none)
+    (emacs (savannah git) :asd none)
     (emacs-jabber (sourceforge cvs) :asd none)
     (git git "git://git.kernel.org/pub/scm/git/git.git" :asd none)
     (go (google-code hg) :asd none)
@@ -1886,6 +1932,18 @@
 ;;;     Source code repositories
 
 
+(defun b9 (project-name &optional (repository (string-downcase project-name)))
+  "Repository specification abbreviation function for a git project hosted
+on b9.com."
+  ;; XXXX: git:// used to work.  Try it again soon.
+  `(git ,(concat "http://git.b9.com/" repository ".git")))
+
+(defun bitbucket (project-name user)
+  "Repository specification abbreviation function for a Mercurial project
+hosted on bitbucket.org."
+  (let ((repository (string-downcase project-name)))
+    `(hg ,(concat "https://bitbucket.org/" user "/" repository))))
+
 (defun clnet (project-name scms
               &optional (module (string-downcase project-name)))
   "Repository specification abbreviation function for a project hosted on
@@ -1898,11 +1956,10 @@ common-lisp.net."
       ((git) `(git ,(concat "git://common-lisp.net/projects/" name "/" module ".git")))
       ((svn) `(svn ,(concat "svn://common-lisp.net/project/" name "/svn/trunk"))))))
 
-(defun melis (project-name)
+(defun melis (project-name &optional (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a git project hosted by
 Gabor Melis on quotenil.com."
-  (let ((repository (string-downcase project-name)))
-    `(git ,(concat "http://quotenil.com/git/" repository ".git"))))
+  `(git ,(concat "http://quotenil.com/git/" repository ".git")))
 
 (defun github (project-name user
                &optional (repository (string-downcase project-name)))
@@ -1949,7 +2006,8 @@ savannah.gnu.org."
     (ecase scms
       ((bzr) `(bzr ,(concat "http://bzr.savannah.gnu.org/r/" name "/trunk")))
       ((cvs) `(cvs pserver anonymous nil cvs.savannah.gnu.org ,(concat "/sources/" name)
-               :module ,name)))))
+               :module ,name))
+      ((git) `(git ,(concat "git://git.savannah.gnu.org/" name ".git"))))))
 
 (defun sourceforge (project-name scms)
   "Repository specification abbreviation function for a project hosted on
