@@ -824,33 +824,18 @@
            "clysma-gtk.asd"))
     (cmucl (clnet cvs "src")
      :asd none)
-
-    ;; XXXXXXXXXXXXXXXXXXXX
-
-    (com.gigamonkeys.monkeydist (github "gigamonkey" "monkeydist"))
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
     (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
     (com.gigamonkeys.json (github "gigamonkey" "monkeylib-json"))
     (com.gigamonkeys.macro-utilities (github "gigamonkey" "monkeylib-macro-utilities"))
     (com.gigamonkeys.markup (github "gigamonkey" "monkeylib-markup"))
-    (com.gigamonkeys.markup-html (github "gigamonkey" "monkeylib-markup-html"))
-    (com.gigamonkeys.markup-xml (github "gigamonkey" "monkeylib-markup-xml"))
     (com.gigamonkeys.parser (github "gigamonkey" "monkeylib-parser"))
     (com.gigamonkeys.pathnames (github "gigamonkey" "monkeylib-pathnames"))
-    (com.gigamonkeys.pcl-practicals (github "gigamonkey" "monkeylib-pcl-practicals"))
     (com.gigamonkeys.prose-diff (github "gigamonkey" "monkeylib-prose-diff"))
     (com.gigamonkeys.spam (github "gigamonkey" "monkeylib-spam"))
     (com.gigamonkeys.statistics (github "gigamonkey" "monkeylib-statistics"))
     (com.gigamonkeys.test-framework (github "gigamonkey" "monkeylib-test-framework"))
     (com.gigamonkeys.utilities (github "gigamonkey" "monkeylib-utilities"))
-    (com.gigamonkeys.quicklisp-distcompiler (github "gigamonkey" "quicklisp-distcompiler"))
-
-    ;; (com.gigamonkeys.binary-data (github "gigamonkey" "binary-data"))
-    ;; (com.gigamonkeys.macro-utilities (github "gigamonkey" "macro-utilities"))
-    ;; (com.gigamonkeys.pathnames (github "gigamonkey" "pathnames"))
-    ;; (com.gigamonkeys.spam (github "gigamonkey" "spam"))
-    ;; (com.gigamonkeys.utilities (github "gigamonkey" "utilities"))
-
     (common-lisp-stat (github "blindglobe")
      :submodules t
      :asd none)
@@ -1002,6 +987,7 @@
      :asd ("gcc-xml-ffi.asd"
            "gcc-xml-ffi-test.asd"))
     (geometry (github "xach"))
+    (gigamonkey-distcompiler (github "gigamonkey" "quicklisp-distcompiler"))
     (glaw (github "patzy")
      :asd ("glaw-sdl.asd"
            "glaw-imago.asd"
@@ -1451,6 +1437,8 @@
     (mod_lisp svn "http://www.fractalconcept.com:8000/public/open-source/mod_lisp"
      :asd none)
     (modlisp (b9 "cl-modlisp"))
+    (monkeylib-markup-html (github "gigamonkey"))
+    (monkeylib-markup-xml (github "gigamonkey"))
     (montezuma (google-code svn)
      :asd ("montezuma.asd"
            "contrib/montezuma-indexfiles/montezuma-indexfiles.asd"
@@ -1539,6 +1527,7 @@
     (pcall (github "marijnh")
      :asd ("pcall.asd"
            "pcall-queue.asd"))
+    (pcl-practicals (github "gigamonkey"))
     (pg (clnet cvs))
     (pileup (github "nikodemus"))
     (pipes (b9))
