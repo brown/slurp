@@ -406,6 +406,10 @@
      :asd none)
     (cl-berkeley-db (clnet darcs)
      :asd ("src/cl-berkeley-db.asd"))
+    (cl-binary-file-trunk (sourceforge svn "cl-binary-file")
+     :asd ("cl-binary-file-trunk.asd"
+           "big-endian/big-endian.asd"
+           "little-endian/little-endian.asd"))
     (cl-bio (harmon)
      :asd ("cl-bio-align.asd"
            "cl-bio-doc.asd"
@@ -421,6 +425,7 @@
     (cl-blog svn "svn://unmutual.info/cl-blog/trunk/cl-blog")
     (cl-btree (github "gonzojive")
      :asd ("btree/btree.asd"))
+    (cl-btree-trunk (sourceforge svn "cl-btree"))
     (cl-buchberger (github "jmbr"))
     (cl-bzip2 (clnet darcs))
     (cl-cairo2 (github "tpapp")
@@ -655,6 +660,7 @@
     ;; http://common-lisp.net/projects/cl-machine-learning/git/cl-svm/.git
     ;; Look for a newer cl-swm repository at github.com/gonzojive.
     (cl-svm git "http://common-lisp.net/project/suave/git/cl-svm/.git")
+    (cl-swap-file-trunk (sourceforge svn "cl-swap-file"))
     (cl-taint darcs "http://www.common-lisp.net/project/cl-taint/cl-taint-release")
     (cl-tc (github "unya")
      :asd ("cl-tc.asd"
@@ -696,6 +702,7 @@
     (cl-variates (clnet darcs)
      :asd ("cl-variates.asd"
            "cl-variates-test.asd"))
+    (cl-wal-trunk (sourceforge svn "cl-wal"))
     (cl-web-crawler (google-code svn))
     (cl-who darcs "http://common-lisp.net/~loliveira/ediware/cl-who")
     (cl-whois (github "billitch"))
@@ -1998,17 +2005,17 @@ savannah.gnu.org."
                :module ,name))
       ((git) `(git ,(concat "git://git.savannah.gnu.org/" name ".git"))))))
 
-(defun sourceforge (project-name scms)
+(defun sourceforge (project-name scms
+                    &optional (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a project hosted on
 sourceforge.net."
-  (let ((name (string-downcase project-name)))
-    (ecase scms
-      ((cvs) `(cvs pserver anonymous nil
-               ,(intern (string-upcase (concat name ".cvs.sourceforge.net")))
-               ,(concat "/cvsroot/" name)
-               :module ,name))
-      ((git) `(git ,(concat "http://" name ".sourceforge.net/git/" name "/.git")))
-      ((svn) `(svn ,(concat "http://" name ".svn.sourceforge.net/svnroot/" name "/trunk"))))))
+  (ecase scms
+    ((cvs) `(cvs pserver anonymous nil
+             ,(intern (string-upcase (concat repository ".cvs.sourceforge.net")))
+             ,(concat "/cvsroot/" repository)
+             :module ,repository))
+    ((git) `(git ,(concat "http://" repository ".sourceforge.net/git/" repository "/.git")))
+    ((svn) `(svn ,(concat "http://" repository ".svn.sourceforge.net/svnroot/" repository "/trunk")))))
 
 (defun xach (project-name)
   "Repository specification abbreviation function for Zach Beane's git
