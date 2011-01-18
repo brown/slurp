@@ -923,6 +923,8 @@
            "dynamic-classes-test.asd"))
     (e-on-cl svn "http://switchb.org/svn/e/cl-e/trunk/")
     (eager-future (github "vsedach" "Eager-Future"))
+    ;; XXXX: The git repositories don't seem to have the latest code.  Try:
+    ;; git clone git://ecls.git.sourceforge.net/gitroot/ecls/ecls
     (ecl git "http://ecls.sourceforge.net/git/ecl/.git"
      :asd none)
     (ecl-doc git "http://ecls.sourceforge.net/git/ecl-doc/.git"
@@ -1559,17 +1561,44 @@
     (pileup (github "nikodemus"))
     (pipes (b9))
     (pithy-xml (github "frodef"))
-    (pjb-lisp darcs "http://darcs.informatimago.com/lisp"
-     :asd ("cl-posix/cliki/cliki.asd"
+    ;; http://informatimago.com/develop/lisp/
+    (pjb-lisp git "git://git.informatimago.com/public/lisp"
+     :asd ("clisp/com.informatimago.clisp.asd"
+           "susv3/com.informatimago.susv3.asd"
+           "tools/com.informatimago.common-lisp.tools.make-depends.asd"
+           "clext/com.informatimago.clext.asd"
+           "cl-posix/cliki/cliki.asd"
            "cl-posix/cliki/clposixcliki.asd"
-           ;; "clext/system.asd"
-           ;; "clisp/system.asd"
-           ;; "clmisc/system.asd"
-           ;; "common-lisp/system.asd"
-           ;; "sbcl/system.asd"
-           ;; "susv3/system.asd"
-           ))
-    (pjb-small-cl-pgms darcs "http://darcs.informatimago.com/darcs/public/small-cl-pgms"
+           "clmisc/com.informatimago.clmisc.asd"
+           "common-lisp/diagram/com.informatimago.common-lisp.diagram.asd"
+           "common-lisp/html-parser/com.informatimago.common-lisp.html-parser.asd"
+           "common-lisp/csv/com.informatimago.common-lisp.csv.asd"
+           "common-lisp/http/com.informatimago.common-lisp.http.asd"
+           "common-lisp/cesarum/com.informatimago.common-lisp.cesarum.asd"
+           "common-lisp/regexp/com.informatimago.common-lisp.regexp.asd"
+           "common-lisp/rfc2822/com.informatimago.common-lisp.rfc2822.asd"
+           "common-lisp/cxx/com.informatimago.common-lisp.cxx.asd"
+           "common-lisp/rfc3548/com.informatimago.common-lisp.rfc3548.asd"
+           "common-lisp/invoice/com.informatimago.common-lisp.invoice.asd"
+           "common-lisp/picture/com.informatimago.common-lisp.picture.asd"
+           "common-lisp/graphviz/com.informatimago.common-lisp.graphviz.asd"
+           "common-lisp/lisp-reader/com.informatimago.common-lisp.lisp-reader.asd"
+           "common-lisp/bank/com.informatimago.common-lisp.bank.asd"
+           "common-lisp/lisp-text/com.informatimago.common-lisp.lisp-text.asd"
+           "common-lisp/lisp/com.informatimago.common-lisp.lisp.asd"
+           "common-lisp/interactive/com.informatimago.common-lisp.interactive.asd"
+           "common-lisp/html-generator/com.informatimago.common-lisp.html-generator.asd"
+           "common-lisp/lisp-sexp/com.informatimago.common-lisp.lisp-sexp.asd"
+           "common-lisp/heap/com.informatimago.common-lisp.heap.asd"
+           "common-lisp/arithmetic/com.informatimago.common-lisp.arithmetic.asd"
+           "common-lisp/com.informatimago.common-lisp.asd"
+           "common-lisp/unix/com.informatimago.common-lisp.unix.asd"
+           "common-lisp/parser/com.informatimago.common-lisp.parser.asd"
+           "common-lisp/ed/com.informatimago.common-lisp.ed.asd"
+           "common-lisp/data-encoding/com.informatimago.common-lisp.data-encoding.asd"
+           "common-lisp/html-base/com.informatimago.common-lisp.html-base.asd"
+           "sbcl/com.informatimago.sbcl.asd"))
+    (pjb-small-cl-pgms git "git://git.informatimago.com/public/small-cl-pgms"
      :asd none)
     (planet-wars (melis)
      :asd ("planet-wars.asd"
