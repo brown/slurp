@@ -468,7 +468,7 @@
     (cl-dot svn "http://svn.foldr.org/~michaelw/cl-dot/trunk")
     (cl-dwarf (gitorious)
      :asd none)
-    (cl-elf (repo-or-cz))
+
     ;; Checking out this repository prints:
     ;; This repo is OBSOLETE!
     ;; The new darcs2 repo is available at http://dwim.hu
@@ -476,6 +476,8 @@
     ;(cl-dwim (clnet darcs)
     ; :asd ("dwim.asd" "dwim-meta-model-test.asd"))
 
+    (cl-elf (repo-or-cz))
+    (cl-env (github "franzinc"))
     ;; Unofficial darcs mirrir.
     (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad"
      :asd none)
@@ -704,6 +706,9 @@
     (cl-unification (clnet cvs)
      :asd ("cl-unification.asd"
            "cl-unification-lib.asd"))
+    ;; Version maintained by pinterface@gmail.com
+    (cl-unification-pinterface darcs "http://repo.kepibu.org/cl-unification"
+     :asd none)
     (cl-uri (clnet darcs)
      :asd ("src/cl-uri.asd"))
     (cl-uri-templates (github "billitch")
@@ -1041,6 +1046,8 @@
     (gsll (repo-or-cz)
      :asd ("gsll.asd"
            "gsll-tests.asd"))
+    (gtk (github "franzinc")
+     :asd none)
     (hemlock (gitorious)
      :asd ("hemlock.base.asd"
            "hemlock.qt.asd"
@@ -1310,6 +1317,7 @@
      :asd ("linedit.asd"
            "terminfo.asd"))
     (linebreaker (github "xach"))
+    (linj (github "xach"))
     (lisa (sourceforge cvs))
     (lisp-matrix (github "blindglobe"))
     (lisp-unit (github "OdonataResearchLLC"))
@@ -1631,6 +1639,8 @@
      :asd ("protobuf.asd"
            "protobuf-test.asd"
            "example/protobuf-example.asd"))
+    (pgsql (github "franzinc")
+     :asd none)
     (ptester (b9))
     (pubmed (b9))
     (puri (b9))
@@ -1788,6 +1798,8 @@
            ;; "addons/parenscript/parenscript.asd"
            ;; "addons/trivial-garbage/trivial-garbage.asd"
            ))
+    (telent-clx (github "franzinc")
+     :asd none)
     (tester (github "franzinc"))
     (tiff-ffi (harmon)
      :asd ("tiff-ffi.asd"
