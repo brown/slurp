@@ -1755,6 +1755,7 @@
     (sorting (github "gugamilare")
      :asd ("sorting.asd"
            "sorting-benchmark.asd"))
+    ;; XXXXX: 2011-02-03 error: not a repository
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))

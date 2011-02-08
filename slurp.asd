@@ -19,7 +19,7 @@ source code repositories and keep your local copies up to date when the
 repositories change."
   :version "0.3"
   :author "Robert Brown"
-  :licence "See file COPYING and the copyright messages in individual files."
+  :license "See file COPYING and the copyright messages in individual files."
   #+sbcl :depends-on #+sbcl (:sb-posix)
   :components
   ((:cl-source-file "package")
