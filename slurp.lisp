@@ -14,7 +14,6 @@
   (defun concat (&rest args)
     (apply #'concatenate (cons 'string args))))
 
-
 (defparameter +repositiory-specs+
   '((3b-swf (github "3b")
      :asd ("3b-swf-swc.asd"
@@ -382,7 +381,9 @@
     (cffi-stfl (github "Ramarren"))
     (cffi-udp git "http://cl-www.msi.co.jp/projects/cffi-udp/cffi-udp.git")
     (cffi-util darcs "http://common-lisp.net/project/bdb/darcs/cffi-util")
-    (ch-asdf (harmon))
+    (ch-asdf (github "slyrus"))
+    ;; ch-image is also available on github, but this version seems newer.
+    ;; XXXX: Look at the two again.
     (ch-image (harmon)
      :asd ("ch-image.asd"
            "ch-image-doc.asd"
@@ -393,6 +394,10 @@
     (chanl (github "sykopomp"))
     ;; XXXX: currently broken ... email Pascal J. Bourguignon
     ;; (check-pathnames git "git://git.informatimago.com/public/misc/check-pathnames" :asd none)
+    (chemicl (github "slyrus")
+     :asd ("chemicl-doc.asd"
+           "chemicl-test.asd"
+           "chemicl.asd"))
     (chillax (github "sykopomp")
      :asd ("chillax.view-server.asd"
            "chillax.asd"
@@ -417,7 +422,7 @@
      :asd ("cl-binary-file-trunk.asd"
            "big-endian/big-endian.asd"
            "little-endian/little-endian.asd"))
-    (cl-bio (harmon)
+    (cl-bio (github "slyrus")
      :asd ("cl-bio-align.asd"
            "cl-bio-doc.asd"
            "cl-bio-entrez-doc.asd"
@@ -744,7 +749,7 @@
     (clazy (clnet cvs))
     (clbuild (gitorious)
      :asd none)
-    (clem (harmon)
+    (clem (github "slyrus")
      :asd ("clem.asd"
            "clem-benchmark.asd"
            "clem-doc.asd"
@@ -851,6 +856,8 @@
      :asd none)
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
     (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
+    (com.gigamonkeys.id3v2 (github "slyrus" "monkeylib-id3")
+     :asd ("com.gigamonkeys.id3v2.asd"))
     (com.gigamonkeys.json (github "gigamonkey" "monkeylib-json"))
     (com.gigamonkeys.macro-utilities (github "gigamonkey" "monkeylib-macro-utilities"))
     (com.gigamonkeys.markup (github "gigamonkey" "monkeylib-markup"))
@@ -1274,6 +1281,7 @@
            "tests/iolib-tests.asd"))
     (irc-logger (b9))
     (ironclad (github "froydnj"))
+    (iso-media (github "slyrus"))
     (iterate (clnet darcs))
     (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
      :asd none)
@@ -1525,6 +1533,9 @@
     (ometa hg "http://subvert-the-dominant-paradigm.net/repos/hgwebdir.cgi/ometa")
     (open-axiom (sourceforge svn)
      :asd none)
+    (opticl (github "slyrus")
+     :asd ("opticl-test.asd"
+           "opticl.asd"))
     (option-9 git "http://pages.cs.wisc.edu/~psilord/lisp-public/public-repos-lisp/option-9.git"
      :asd none)
     (osicat (clnet git)
@@ -1672,7 +1683,7 @@
     (repo-install (github "jpalmucci"))
     (restas (github "archimag"))
     (restas-planet (github "archimag"))
-    (retrospectiff (harmon))
+    (retrospectiff (github "slyrus"))
     (reversi (b9))
     (rfc2109 (clnet darcs))
     (rfc2388 (clnet cvs))
@@ -1740,7 +1751,7 @@
     (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
      :asd ("src/netlib.asd"))
     (slurp (github "brown"))
-    (smarkup (harmon)
+    (smarkup (github "slyrus")
      :asd ("smarkup.asd"
            "smarkup-test.asd"))
     (snow (clnet svn)
