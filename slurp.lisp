@@ -340,6 +340,8 @@
     (caleb svn "svn://common-lisp.net/project/caleb/svn")
     ;; XXXX: Should work soon.
     ;; (categories git "git://codebasehq.com/bywicket/xg/categories.git"
+
+    ;; XXXX: switch to checking out the Linux sources ... or maybe everything
     (ccl svn "http://svn.clozure.com/publicsvn/openmcl/trunk/darwinx86/ccl"
      :asd none)
     (cclan (sourceforge cvs)
@@ -584,6 +586,9 @@
            "cl-mw.examples.monte-carlo-pi.asd"
            "cl-mw.examples.ping.asd"
            "cl-mw.examples.hello-world.asd"))
+    (cl-mysql (github "hackinghat")
+     :asd ("cl-mysql-test.asd"
+           "cl-mysql.asd"))
     (cl-ncurses (clnet svn))
     (cl-net-snmp (sourceforge svn)
      :asd ("asn.1/trunk/asn.1-dev.asd"
@@ -711,7 +716,8 @@
     (cl-unification (clnet cvs)
      :asd ("cl-unification.asd"
            "cl-unification-lib.asd"))
-    ;; Version maintained by pinterface@gmail.com
+    ;; Version maintained by pix@kepibu.org, who posts to the developer
+    ;; mailing list as pinterface@gmail.com
     (cl-unification-pinterface darcs "http://repo.kepibu.org/cl-unification"
      :asd none)
     (cl-uri (clnet darcs)
@@ -956,6 +962,8 @@
            "src/contrib/rread/db-clsql/ele-postgresql.asd"
            "src/contrib/rread/db-clsql/ele-sqlite3.asd"
            "src/contrib/rread/dcm/dcm.asd"))
+    (eclipse (clnet cvs)
+     :asd none)
     (enumerations cvs pserver anonymous t common-lisp.net "/project/cl-enumeration/cvsroot")
     (epigraph (github "slyrus")
      :asd ("epigraph.asd"
@@ -1999,7 +2007,7 @@
   "Database of projects we are interested in cloning locally.")
 
 
-;;;     Source code repositories
+;;;     Abbreviation functions for common code repositories
 
 
 (defun b9 (project-name &optional (repository (string-downcase project-name)))
@@ -2098,6 +2106,9 @@ projects hosted on http://git.xach.com"
     `(git ,(concat "http://git.xach.com/" name ".git"))))
 
 
+;;;     Parse repository specifications to create the repository database
+
+
 (defun parse-repository-spec (spec)
   "Parse a repository specification.  The form of the repository entry is
 either (NAME SCMS SCMS-ARGS MORE-ARGS) or (NAME (ABBREV-FUNC ABBREV-ARGS)
@@ -2113,7 +2124,11 @@ ABBREV-ARGS) to create SCMS and SCMS-ARGS."
   "Create the repository database from a list of repository specifications."
   (mapcar #'parse-repository-spec repositiory-specs))
 
-(defparameter *database* (make-database +repositiory-specs+))
+(defparameter *database* (make-database +repositiory-specs+)  "Repository database")
+
+
+;;;     Operations on the parsed repository database
+
 
 (defun find-project (name)
   "Find the repository specification of the project.  Return two values, the
