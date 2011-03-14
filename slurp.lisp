@@ -1227,6 +1227,7 @@
 
     ;; XXXXXXXXXXXXXXXXXXXX
     ;; Moved into git repository along with
+    ;; git://dwim.hu/git/cl-graph
     ;; git://dwim.hu/git/commonqt
     ;; git://dwim.hu/git/iolib
     ;; git://dwim.hu/git/sbcl
@@ -1289,6 +1290,26 @@
            "tests/iolib-tests.asd"))
     (irc-logger (b9))
     (ironclad (github "froydnj"))
+    (irs (github "kmi")
+     :asd ("src/irs.asd"
+           "apps/soa4all/soa4all.asd"
+           "apps/cs-invocation/cs-invocation.asd"
+           "apps/lhdl/lhdl.asd"
+           "apps/sepc-to-bpmo/sepc-to-bpmo.asd"
+           "apps/travel/travel.asd"
+           "apps/travel/travel-publisher.asd"
+           "apps/travel/travel-services.asd"
+           "apps/nih/nih.asd"
+           "apps/bpmo-to-irs/bpmo-to-irs.asd"
+           "apps/math/math.asd"
+           "apps/tutorial-iswc-2007/tutorial-iswc-2007.asd"
+           "apps/tutorial-iswc-2007/tutorial-iswc-2007-services.asd"
+           "apps/monitoring-engine/monitoring-engine.asd"
+           "apps/trusted-travel/trusted-travel.asd"
+           "apps/demo/demo.asd"
+           "publisher/irs-publisher.asd"
+           "tests/irs-tests.asd"
+           "tests/irs-tests-core.asd"))
     (iso-media (github "slyrus"))
     (iterate (clnet darcs))
     (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
@@ -1542,7 +1563,7 @@
     (open-axiom (sourceforge svn)
      :asd none)
     (opticl (github "slyrus")
-     :asd ("opticl-test.asd"
+     :asd ("opticl-doc.asd"
            "opticl.asd"))
     (option-9 git "http://pages.cs.wisc.edu/~psilord/lisp-public/public-repos-lisp/option-9.git"
      :asd none)
@@ -1691,7 +1712,9 @@
     (repo-install (github "jpalmucci"))
     (restas (github "archimag"))
     (restas-planet (github "archimag"))
-    (retrospectiff (github "slyrus"))
+    (retrospectiff (github "slyrus")
+     :asd ("retrospectiff-test.asd"
+           "retrospectiff.asd"))
     (reversi (b9))
     (rfc2109 (clnet darcs))
     (rfc2388 (clnet cvs))
@@ -1882,6 +1905,9 @@
     ;; Not present in bknr/third_party.
     (url-rewrite darcs "http://common-lisp.net/~loliveira/ediware/url-rewrite")
     (usenet-legend (github "xach"))
+    (userial git "http://git.nklein.com/lisp/libs/userial.git"
+     :asd ("userial.asd"
+           "userial-tests.asd"))
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
      :asd ("usocket.asd"
            "usocket-test.asd"))
