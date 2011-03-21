@@ -886,6 +886,8 @@
      :asd ("qt.asd"
            "qt-repl.asd"
            "qt-tutorial.asd"))
+    ;; A fork of the Swank backend that leverages ASDF, bordeaux-threads,
+    ;; closer-mop, trivial-gray-streams, usocket, etc.
     (conium (gitorious))
     (contextl darcs "http://common-lisp.net/project/closer/repos/contextl")
     (css-lite (github "paddymul"))
@@ -1815,6 +1817,8 @@
     (sw-http (gitorious "sw-http" "sw-http-void"))
     (sw-mvc (gitorious "sw-mvc" "sw-mvc-void"))
     (sw-stm (gitorious "sw-stm" "sw-stm-void"))
+    (swank-client-usocket (github "pf")
+     :asd none)
     (sykobot (github "sykopomp"))
     ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
     ;;XXXXXXXXXXXXXXXXXXXX investigate
