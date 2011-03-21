@@ -1045,8 +1045,6 @@
     (glop (github "patzy")
      :asd ("glop.asd"
            "glop-test.asd"))
-    (google-protobuf (github "brown")
-     :asd none)
     (getopt (b9))
     (gridlock (github "xach"))
     (grout (github "xach"))
@@ -1678,9 +1676,12 @@
     (prepl (gitorious))
     (pretty-function (clnet darcs))
     (protobuf (github "brown")
-     :asd ("protobuf.asd"
+     :asd ("base/base.asd"
+           "example/protobuf-example.asd"
            "protobuf-test.asd"
-           "example/protobuf-example.asd"))
+           "protobuf.asd"
+           "varint/varint-test.asd"
+           "varint/varint.asd"))
     (pgsql (github "franzinc")
      :asd none)
     (ptester (b9))
