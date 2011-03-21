@@ -414,6 +414,7 @@
      :asd none)
     (cl+ssl cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (cl-2d (github "tpapp"))
+    (cl-azure (github "blackwre"))
     (cl-base64 (b9))
     (cl-beanstalk (github "antifuchs"))
     (cl-bench (clnet svn)
@@ -465,6 +466,7 @@
            "cl-couchdb-object-layer.asd"
            "cl-couchdb-view-server.asd"
            "logv.asd"))
+    (cl-crc64 (github "blackwre"))
     (cl-curl svn "svn://common-lisp.net/project/cl-curl/subversion/trunk"
      :asd ("curl.asd"))
     (cl-darcs svn "svn://common-lisp.net/project/cl-darcs/svn/cl-darcs/trunk")
@@ -599,9 +601,6 @@
            "ldap/trunk/ldap.asd"
            "ldap/trunk/trivial-ldap-0.71/trivial-ldap.asd"
            "lispworks-udp/trunk/lispworks-udp.asd"
-           "snmp/trunk/snmp-base.asd"
-           "snmp/trunk/snmp-client.asd"
-           "snmp/trunk/snmp-dev.asd"
            "snmp/trunk/snmp-mib.asd"
            "snmp/trunk/snmp-server.asd"
            "snmp/trunk/snmp-test.asd"
@@ -619,6 +618,7 @@
     (cl-openal (github "sykopomp")
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
+    (cl-opencalais (github "blackwre"))
     ;; XXXXXXXXXX: There is a cl-opengl project on github.  Is it a better version?
     ;;(cl-opengl (github "3b") :asd none)
     (cl-opengl (clnet darcs)
@@ -1689,8 +1689,13 @@
     (pvs svn "https://spartan.csl.sri.com/svn/public/pvs/trunk"
      :asd none)
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
+    (quicklisp-bootstrap (github "quicklisp")
+     :asd none)
+    (quicklisp-client (github "quicklisp")
+     :asd ("quicklisp.asd"))
     (quicklisp-projects (github "quicklisp")
      :asd none)
+    (quicklisp-slime-helper (github "quicklisp"))
     (quickproject (github "xach"))
     ;; XXXX: rename to quicktime if possible
     ;; XXXX: try loading it and resolve all dependencies
@@ -2007,6 +2012,8 @@
     (yason (github "hanshuebner"))
     (yotta-zoomer (repo-or-cz))
     (zcdb (github "xach"))
+    (zen (github "pyb")
+     :asd none)
     (zip (clnet cvs))
     (zlib (github "franzinc")
      :asd none)
@@ -2124,7 +2131,7 @@ sourceforge.net."
              ,(concat "/cvsroot/" repository)
              :module ,repository))
     ((git) `(git ,(concat "http://" repository ".sourceforge.net/git/" repository "/.git")))
-    ((svn) `(svn ,(concat "http://" repository ".svn.sourceforge.net/svnroot/" repository "/trunk")))))
+    ((svn) `(svn ,(concat "https://" repository ".svn.sourceforge.net/svnroot/" repository)))))
 
 (defun xach (project-name)
   "Repository specification abbreviation function for Zach Beane's git
