@@ -1565,6 +1565,8 @@
     (opticl (github "slyrus")
      :asd ("opticl-doc.asd"
            "opticl.asd"))
+    (opticl-test (github "slyrus"))
+    (opticl-examples (github "slyrus"))
     (option-9 git "http://pages.cs.wisc.edu/~psilord/lisp-public/public-repos-lisp/option-9.git"
      :asd none)
     (osicat (clnet git)
