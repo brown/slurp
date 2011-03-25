@@ -67,7 +67,7 @@
     (armish (clnet darcs))
     (arnesi_dev darcs "http://common-lisp.net/project/bese/repos/arnesi_dev"
      :asd ("arnesi.asd"))
-    (aromyxo (gitorious "aromyxo" "aromyxo-void"))
+    (aromyxo (github "lnostdal" "Aromyxo"))
     (array-operations (github "tpapp"))
     (asdf (clnet git)
      :asd none)
@@ -490,9 +490,6 @@
     ;; Unofficial darcs mirrir.
     (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad"
      :asd none)
-    (cl-fft git "http://git.nklein.com/lisp/libs/fft.git"
-     :asd ("fft.asd"
-           "pfft.asd"))
     (cl-fluiddb (github "hdurer")
      :asd ("cl-fluiddb.asd"
            "cl-fluiddb-test.asd"))
@@ -753,7 +750,10 @@
            "main/connectors/claw-hunchentoot-connector/claw-hunchentoot-connector.asd"
            "site/claw-site.asd"))
     (clazy (clnet cvs))
+    ;; May no longer be maintained.
     (clbuild (gitorious)
+     :asd none)
+    (clbuild2 (gitorious)
      :asd none)
     (clem (github "slyrus")
      :asd ("clem.asd"
@@ -874,6 +874,14 @@
     (com.gigamonkeys.statistics (github "gigamonkey" "monkeylib-statistics"))
     (com.gigamonkeys.test-framework (github "gigamonkey" "monkeylib-test-framework"))
     (com.gigamonkeys.utilities (github "gigamonkey" "monkeylib-utilities"))
+    (com.nklein.gl-springs (github "nklein" "com-nklein-gl-springs"))
+    (com.nklein.misc (github "nklein" "com-nklein-misc") :asd none)
+    (com.nklein.parser-generator (github "nklein")
+     :asd ("com.nklein.parser-generator.asd"
+           "com.nklein.parser-generator.reader.asd"
+           "com.nklein.parser-generator.types.asd"))
+    (com.nklein.util.general (github "nklein" "com-nklein-util-general"))
+    (com.nklein.util.vec-math  (github "nklein" "com-nklein-util-vec-math"))
     (common-lisp-stat (github "blindglobe")
      :submodules t
      :asd none)
@@ -997,6 +1005,10 @@
            "test/fare-utils-test.asd"))
     (femlisp (savannah cvs))
     (ffa (github "tpapp"))
+    ;; This used to be cl-fft on http://git.nklein.com/lisp/libs/fft.git
+    (fft (github "nklein" "FFT")
+     :asd ("fft.asd"
+           "pfft.asd"))
     (filtered-functions darcs "http://common-lisp.net/project/closer/repos/filtered-functions")
     (firehose (github "xach"))
     (fiveam darcs "http://common-lisp.net/project/bese/repos/fiveam")
@@ -1593,10 +1605,6 @@
      :asd ("parse-declarations-1.0.asd"))
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
     (parse-js (github "marijnh"))
-    (parser-generator git "http://git.nklein.com/lisp/apps/parser-generator.git"
-     :asd ("com.nklein.parser-generator.asd"
-           "com.nklein.parser-generator.reader.asd"
-           "com.nklein.parser-generator.types.asd"))
     (pastebin.com-api (github "Lovesan"))
     ;; (patg (clnet ))  XXXXXXXXXXX Subversion ???
     (patron (github "vy"))
@@ -1732,6 +1740,7 @@
     (rjson (github "gonzojive"))
     (rlc (b9))
     (ropes (github "Ramarren"))
+    (roto-mortar (github "nklein" "Roto-Mortar"))
     (routes (github "archimag" "cl-routes"))
     (rss (b9 "cl-rss"))
     (rt (b9))
@@ -1808,6 +1817,7 @@
      :asd ("sorting.asd"
            "sorting-benchmark.asd"))
     ;; XXXXX: 2011-02-03 error: not a repository
+    ;; XXXXX: 2011-03-24 same thing
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (squirl (github "sykopomp"))
     (sst (github "vy"))
@@ -1821,10 +1831,10 @@
     (submarine (clnet darcs)
      :asd ("submarine.asd"
            "submarine-tests.asd"))
-    (sw-db (gitorious "sw-db" "sw-db-void"))
-    (sw-http (gitorious "sw-http" "sw-http-void"))
-    (sw-mvc (gitorious "sw-mvc" "sw-mvc-void"))
-    (sw-stm (gitorious "sw-stm" "sw-stm-void"))
+    (sw-db (github "lnostdal" "SW-DB"))
+    (sw-http (github "lnostdal" "SW-HTTP"))
+    (sw-mvc (github "lnostdal" "SW-MVC"))
+    (sw-stm (github "lnostdal" "SW-STM"))
     (swank-client-usocket (github "pf")
      :asd none)
     (sykobot (github "sykopomp"))
@@ -1837,7 +1847,7 @@
     ;;        "sykosomatic.object.asd"
     ;;        "sykosomatic.parser.asd"
     ;;        "sykosomatic.test.asd"))
-    (symbolicweb (gitorious "symbolicweb" "symbolicweb-void")
+    (symbolicweb (github "lnostdal" "SymbolicWeb")
      :asd ("symbolicweb.asd"
            "symbolicweb-examples.asd"
            "symbolicweb-jquery.asd"))
@@ -1903,6 +1913,7 @@
     (umlisp-orf (b9)
      :asd ("umlisp-orf.asd"
            "umlisp-orf-tests.asd"))
+    (unet (github "nklein"))
     (until-it-dies (github "sykopomp")
      :asd ("until-it-dies.base.asd"
            "until-it-dies.examples.asd"
@@ -1917,7 +1928,8 @@
     ;; Not present in bknr/third_party.
     (url-rewrite darcs "http://common-lisp.net/~loliveira/ediware/url-rewrite")
     (usenet-legend (github "xach"))
-    (userial git "http://git.nklein.com/lisp/libs/userial.git"
+    ;; Used to be http://git.nklein.com/lisp/libs/userial.git
+    (userial (github "nklein")
      :asd ("userial.asd"
            "userial-tests.asd"))
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
@@ -1983,7 +1995,8 @@
     (wispylisp darcs "http://common-lisp.net/project/wispylisp"
      :asd ("src/wispylisp.asd"))
     (wol (b9))
-    (woolly git "http://git.nklein.com/lisp/libs/woolly.git/"
+    ;; Used to be http://git.nklein.com/lisp/libs/woolly.git
+    (woolly (github "nklein" "Woolly")
      :asd ("woolly.asd"
            "woolly-gl.asd"))
     (wormtrails (github "xach"))
