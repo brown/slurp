@@ -42,6 +42,7 @@
     (alexandria (clnet git)
      :asd ("alexandria.asd"
            "alexandria-tests.asd"))
+    (alref (github "adlai" "ALREF"))
     (amazon-ecs (github "gonzojive"))
     (amd64-asm (google-code svn))
     (anaphora (clnet cvs "src"))
@@ -337,6 +338,7 @@
     (bytemap git "http://common-lisp.net/projects/bytemap/bytemap.git"
      :asd ("bytemap-test.asd"
            "bytemap.asd"))
+    (c-amplify (github "deplinenoise"))
     (caleb svn "svn://common-lisp.net/project/caleb/svn")
     ;; XXXX: Should work soon.
     ;; (categories git "git://codebasehq.com/bywicket/xg/categories.git"
@@ -487,6 +489,8 @@
 
     (cl-elf (repo-or-cz))
     (cl-env (github "franzinc"))
+    (cl-eshop (github "rigidus")
+     :asd none)
     ;; Unofficial darcs mirrir.
     (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad"
      :asd none)
@@ -512,6 +516,12 @@
            ;; "gordon-branches/gordon-clos/gordon.asd"
            "torta/torta.asd"
            "ttf-flash/ttf-flash.asd"))
+    (cl-gpu (github "angavrilov")
+     :asd ("cl-gpu.core.asd"
+           "cl-gpu.test.asd"
+           "cl-gpu.cuda.asd"
+           "cl-gpu.asd"
+           "cl-gpu.buffers.asd"))
     (cl-graph darcs "http://common-lisp.net/project/cl-graph"
      :asd ("cl-graph.asd"
            "cl-graph-test.asd"))
@@ -568,6 +578,9 @@
     (cl-mill (google-code svn)
      :asd ("gcode.asd"))
     (cl-monad-macros (clnet svn))
+    (cl-moneris (github "vsedach")
+     :asd ("cl-moneris.asd"
+           "cl-moneris-test.asd"))
     (cl-mongo (github "fons"))
     (cl-mongrel2 (github "vseloved"))
 
@@ -662,6 +675,7 @@
            "cl-sam-test.asd"))
     (cl-selenium (clnet cvs)
      :asd ("selenium.asd"))
+    (cl-simd (github "angavrilov"))
     (cl-skip-list (github "kraison"))
     (cl-skunk (github "fons"))
     (cl-slog (bitbucket "skypher"))
@@ -689,6 +703,7 @@
            "tokyotyrant.asd"))
     (cl-telnetd (clnet cvs)
      :asd none)
+    (cl-tetris3d (github "grouzen"))
     (cl-tidy (github "gonzojive"))
     (cl-tk (github "marijnh"))
     (cl-tokyo-cabinet (github "keithj")
@@ -951,6 +966,9 @@
            "dynamic-classes-test.asd"))
     (e-on-cl svn "http://switchb.org/svn/e/cl-e/trunk/")
     (eager-future (github "vsedach" "Eager-Future"))
+    (eager-future2 (github "vsedach" "Eager-Future2")
+     :asd ("eager-future2.asd"
+           "test.eager-future2.asd"))
     ;; XXXX: The git repositories don't seem to have the latest code.  Try:
     ;; git clone git://ecls.git.sourceforge.net/gitroot/ecls/ecls
     (ecl git "http://ecls.sourceforge.net/git/ecl/.git"
@@ -975,6 +993,7 @@
     (eclipse (clnet cvs)
      :asd none)
     (enumerations cvs pserver anonymous t common-lisp.net "/project/cl-enumeration/cvsroot")
+    (eos (github "adlai" "Eos"))
     (epigraph (github "slyrus")
      :asd ("epigraph.asd"
            "epigraph-doc.asd"
@@ -1010,6 +1029,7 @@
      :asd ("fft.asd"
            "pfft.asd"))
     (filtered-functions darcs "http://common-lisp.net/project/closer/repos/filtered-functions")
+    (finebrush (github "Valera"))
     (firehose (github "xach"))
     (fiveam darcs "http://common-lisp.net/project/bese/repos/fiveam")
     ;; Unofficial darcs mirrir.
@@ -1276,6 +1296,7 @@
            "hunchentoot-auth-test.asd"))
     (hunchentoot-cgi (harmon))
     (hunchentoot-vhost (harmon))
+    (hyperdoc darcs "http://common-lisp.net/project/editor-hints/darcs/hyperdoc")
     (hyperobject (b9)
      :asd ("hyperobject.asd"
            "hyperobject-tests.asd"))
@@ -1300,6 +1321,8 @@
            "src/iolib.syscalls.asd"
            "src/iolib.trivial-sockets.asd"
            "tests/iolib-tests.asd"))
+    (iolib-simple-mux (github "vsedach")
+     :asd none)
     (irc-logger (b9))
     (ironclad (github "froydnj"))
     (irs (github "kmi")
@@ -1427,6 +1450,9 @@
            "lispbuilder-yacc/lispbuilder-yacc.asd"))
     (lispdev (bitbucket "skolos")
      :asd none)
+    (lispmud (github "Valera" "LispMud")
+     :asd ("lispmud.asd"
+           "mudsketcher.asd"))
     ;; XXXX: maybe change project name to lisppaste
     (lisppaste2 cvs pserver anonymous t common-lisp.net "/project/lisppaste/cvsroot"
      :asd ("lisppaste.asd"))
@@ -1771,12 +1797,15 @@
      :asd none)
     (sbcl-git git "git://git.boinkor.net/sbcl"
      :asd none)
+    (score (github "emoon" "Score")
+     :asd ("src/Score.asd"))
     ;; XXXX:  Is this one better?  stored in screamer-or-cz
     ;;(screamer (repo-or-cz)
     ;;:asd none)
     (screamer (github "nikodemus"))
     (series (sourceforge cvs))
     (sheeple (github "sykopomp"))
+    (sheldonbot (github "vsedach" "SheldonBot"))
     (shuffletron (github "ahefner"))
     ;; XXXX: This repository appears to be the canonical one, but is
     ;; sicl-OLD from "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
@@ -1819,7 +1848,10 @@
     ;; XXXXX: 2011-02-03 error: not a repository
     ;; XXXXX: 2011-03-24 same thing
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
+    (spectacle (github "slyrus"))
     (squirl (github "sykopomp"))
+    (sse-expr (github "deplinenoise")
+     :asd none)
     (sst (github "vy"))
     (st-json (github "marijnh" "ST-JSON"))
     (storable-functions (github "gugamilare")
@@ -1866,6 +1898,8 @@
     (telent-clx (github "franzinc")
      :asd none)
     (tester (github "franzinc"))
+    (thinlisp (github "vsedach" "Thinlisp-1.1")
+     :asd none)
     (tiff-ffi (harmon)
      :asd ("tiff-ffi.asd"
            "tiff-ffi-gen.asd"))
@@ -1924,7 +1958,9 @@
      :asd none)
     (uri (github "franzinc")
      :asd none)
-    (uri-template (github "vsedach"))
+    (uri-template (github "vsedach")
+     :asd ("uri-template.asd"
+           "uri-template.test.asd"))
     ;; Not present in bknr/third_party.
     (url-rewrite darcs "http://common-lisp.net/~loliveira/ediware/url-rewrite")
     (usenet-legend (github "xach"))
@@ -1935,6 +1971,12 @@
     (usocket svn "svn://common-lisp.net/project/usocket/svn/usocket/trunk"
      :asd ("usocket.asd"
            "usocket-test.asd"))
+    (vacietis (github "vsedach" "Vacietis")
+     :asd ("vacietis.asd"
+           "vacietis.test.asd"))
+    (vas-string-metrics (github "vsedach")
+     :asd ("vas-string-metrics.asd"
+           "test.vas-string-metrics.asd"))
     (vclos darcs "http://common-lisp.net/~crhodes/vclos")
     (vcs-tree (b9))
     (vectometry (github "xach"))
@@ -2275,7 +2317,8 @@ than or equal to NAME."
          (link project-directory (concat project-name ".asd")))
         ((listp asd-files)
          (dolist (asd-file asd-files)
-           (link project-directory asd-file)))))
+           (link project-directory asd-file)))
+        (t (error "bad :ASD specifier"))))
 
 
 ;;;     Source code management systems
