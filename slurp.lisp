@@ -1392,6 +1392,9 @@
     (linj (github "xach"))
     (lisa (sourceforge cvs))
     (lisp-matrix (github "blindglobe"))
+    (lisp-on-lines (github "drewc")
+     :asd ("lisp-on-lines.asd"
+           "lisp-on-lines-ucw.asd"))
     (lisp-unit (github "OdonataResearchLLC"))
     ;; XXXX: we need an asd rule that says "link every asd file in tree"
     (lispbuilder (google-code svn)
@@ -1644,6 +1647,8 @@
     (pg (clnet cvs))
     (pileup (github "nikodemus"))
     (pipes (b9))
+    (pipes-edsl (github "pkhuong" "Pipes")
+     :asd none)
     (pithy-xml (github "frodef"))
     ;; http://informatimago.com/develop/lisp/
     (pjb-lisp git "git://git.informatimago.com/public/lisp"
@@ -1688,6 +1693,7 @@
      :asd ("planet-wars.asd"
            "planet-wars-util.asd"
            "proxy-bot.asd"))
+    (planks (github "drewc"))
     ;; XXXX: This repository has disappeared on github.
     ;; (plantae (github "patzy"))
     ;; XXXX: rename to xpath
@@ -1964,7 +1970,8 @@
     ;; Not present in bknr/third_party.
     (url-rewrite darcs "http://common-lisp.net/~loliveira/ediware/url-rewrite")
     (usenet-legend (github "xach"))
-    ;; Used to be http://git.nklein.com/lisp/libs/userial.git
+    ;; I used to pull from http://git.nklein.com/lisp/libs/userial.git
+    ;; which the web site claims is the main repository.
     (userial (github "nklein")
      :asd ("userial.asd"
            "userial-tests.asd"))
