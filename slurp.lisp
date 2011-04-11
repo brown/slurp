@@ -45,7 +45,7 @@
     (alref (github "adlai" "ALREF"))
     (amazon-ecs (github "gonzojive"))
     (amd64-asm (google-code svn))
-    (anaphora (clnet cvs "src"))
+    (anaphora (clnet cvs "anaphora" "src"))
     (anardb git "http://cl-www.msi.co.jp/projects/anardb/anardb.git"
      :asd ("anardb.asd"
            "anardb-test.asd"))
@@ -686,6 +686,9 @@
            "sqlite.asd"))
     (cl-starcraft-proxybot (github "aerique"))
     (cl-stm darcs "http://common-lisp.net/project/cl-stm")
+    (cl-stomp (clnet git)
+     :asd ("cl-stomp.asd"
+           "cl-stomp-example.asd"))
     (cl-store (clnet cvs))
     (cl-strings (google-code svn)
      :asd ("cl-strings.asd"
@@ -873,7 +876,7 @@
     (clysma (github "aerique")
      :asd ("clysma.asd"
            "clysma-gtk.asd"))
-    (cmucl (clnet cvs "src")
+    (cmucl (clnet cvs "cmucl" "src")
      :asd none)
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
     (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
@@ -897,6 +900,7 @@
            "com.nklein.parser-generator.types.asd"))
     (com.nklein.util.general (github "nklein" "com-nklein-util-general"))
     (com.nklein.util.vec-math  (github "nklein" "com-nklein-util-vec-math"))
+    (command-line-arguments (clnet git "qitab"))
     (common-lisp-stat (github "blindglobe")
      :submodules t
      :asd none)
@@ -977,7 +981,7 @@
      :asd none)
     (ecl-test git "http://ecls.sourceforge.net/git/ecl-test/.git"
      :asd none)
-    (elephant (clnet darcs "elephant-1.0")
+    (elephant (clnet darcs "elephant" "elephant-1.0")
      :asd ("ele-bdb.asd"
            "ele-clp.asd"
            "ele-postmodern.asd"
@@ -1307,19 +1311,22 @@
     (imap (github "franzinc")
      :asd none)
     (incf-cl (github "jmbr"))
-    ;; XXXX: what about iolib/iolib and iolib/static-vectors on gitorious??
-    ;; fe[nl]ix says http://gitorious.org/iolib/static-vectors/ is canonical
-    (iolib (repo-or-cz)
+    ;; iolib used to be pulled as follows: (iolib (repo-or-cz) ...)
+    ;; Switched to gitorious because static-vectors is there too.
+    (iolib (gitorious)
      :asd ("examples/iolib.examples.asd"
            "src/iolib.asd"
            "src/iolib.base.asd"
            "src/iolib.multiplex.asd"
-           "src/iolib.os.asd"
-           "src/iolib.pathnames.asd"
-           "src/iolib.sockets.asd"
-           "src/iolib.streams.asd"
-           "src/iolib.syscalls.asd"
            "src/iolib.trivial-sockets.asd"
+           "src/iolib-grovel.asd"
+           "src/iolib.streams.asd"
+           "src/iolib.pathnames.asd"
+           "src/iolib.asdf.asd"
+           "src/iolib.os.asd"
+           "src/iolib.syscalls.asd"
+           "src/iolib.sockets.asd"
+           "src/iolib.conf.asd"
            "tests/iolib-tests.asd"))
     (iolib-simple-mux (github "vsedach")
      :asd none)
@@ -1702,6 +1709,7 @@
     (plop (google-code svn)
      :asd ("src/plop.asd"))
     (png-read (github "Ramarren"))
+    (poiu (clnet git "qitab"))
     (portableaserve (sourceforge cvs)
      :asd ("acl-compat/acl-compat.asd"
            "aserve/aserve.asd"
@@ -1747,6 +1755,7 @@
      :asd ("quicktime.asd"
            "quicktime-init.asd"
            "quicktime-test.asd"))
+    (quux-time (clnet git "qitab"))
     (raylisp (github "nikodemus")
      :asd ("raylisp.asd"
            "raylisp-gui.asd"))
@@ -1816,7 +1825,7 @@
     ;; XXXX: This repository appears to be the canonical one, but is
     ;; sicl-OLD from "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
     ;; still getting updates?
-    (sicl (clnet git "SICL")
+    (sicl (clnet git "sicl" "SICL")
      :asd ("Lisp-Unit/lisp-unit.asd"
            "Code/Cons-high/cons-high.asd"
            "Code/Loop/loop.asd"
@@ -1827,6 +1836,8 @@
     ;; Another sicl project -- a SPARQL implementation.
     ;; (sicl (github "turbo24prg") :asd none)
     (simple-rgb (google-code svn))
+    (single-threaded-ccl (clnet git "qitab")
+     :asd none)
     (skippy (xach))
     (slime (clnet cvs)
      :asd ("swank.asd"))
@@ -1860,6 +1871,8 @@
      :asd none)
     (sst (github "vy"))
     (st-json (github "marijnh" "ST-JSON"))
+    (static-vectors (gitorious "iolib")
+     :asd ("src/static-vectors.asd"))
     (storable-functions (github "gugamilare")
      :asd ("cl-store+functions.asd"
            "storable-functions.asd"
@@ -1904,6 +1917,7 @@
     (telent-clx (github "franzinc")
      :asd none)
     (tester (github "franzinc"))
+    (texinfo-docstrings (gitorious "iolib"))
     (thinlisp (github "vsedach" "Thinlisp-1.1")
      :asd none)
     (tiff-ffi (harmon)
@@ -2124,17 +2138,16 @@ hosted on bitbucket.org."
   (let ((repository (string-downcase project-name)))
     `(hg ,(concat "https://bitbucket.org/" user "/" repository))))
 
-(defun clnet (project-name scms
-              &optional (module (string-downcase project-name)))
+(defun clnet (project-name scms &optional (name (string-downcase project-name))
+              (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a project hosted on
 common-lisp.net."
-  (let ((name (string-downcase project-name)))
-    (ecase scms
-      ((cvs) `(cvs pserver anonymous t common-lisp.net ,(concat "/project/" name "/cvsroot")
-               :module ,module))
-      ((darcs) `(darcs ,(concat "http://common-lisp.net/project/" name "/darcs/" module)))
-      ((git) `(git ,(concat "git://common-lisp.net/projects/" name "/" module ".git")))
-      ((svn) `(svn ,(concat "svn://common-lisp.net/project/" name "/svn/trunk"))))))
+  (ecase scms
+    ((cvs) `(cvs pserver anonymous t common-lisp.net ,(concat "/project/" name "/cvsroot")
+                 :module ,repository))
+    ((darcs) `(darcs ,(concat "http://common-lisp.net/project/" name "/darcs/" repository)))
+    ((git) `(git ,(concat "git://common-lisp.net/projects/" name "/" repository ".git")))
+    ((svn) `(svn ,(concat "svn://common-lisp.net/project/" name "/svn/trunk")))))
 
 (defun melis (project-name &optional (repository (string-downcase project-name)))
   "Repository specification abbreviation function for a git project hosted by
