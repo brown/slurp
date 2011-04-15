@@ -2068,6 +2068,7 @@
     (x.let-star (github "ks" "X.LET-STAR"))
     (x.fdatatypes (github "ks" "X.FDATATYPES"))
     (xarray (github "tpapp"))
+    (xcl (github "gnooth") :asd none)
     ;; Also available at "http://common-lisp.net/project/xcvb/git/xcvb.git"
     ;; Which is best?
     (xcvb (github "fare")
