@@ -24,6 +24,7 @@
            "avm2-compile.asd"
            "avm2-lib.asd"
            "swf-writer-hack.asd"))
+    (3bmd (github "3b"))
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
     (abcl-web (sourceforge svn)
      :asd none)
@@ -778,6 +779,15 @@
            "clem-benchmark.asd"
            "clem-doc.asd"
            "clem-test.asd"))
+    (clews git "http://www.jarw.org.uk/lisp/clews.git"
+     :asd ("peer-review/clews.peer-review.asd"
+           "assessment/clews.assessment.discussion.asd"
+           "assessment/clews.assessment.socratic.asd"
+           "assessment/clews.assessment.asd"
+           "clews.asd"
+           "discussion/clews.discussion.asd"
+           "form/clews.form.asd"
+           "articles/clews.articles.asd"))
     (clg (sourceforge cvs)
      :asd ("atk/atk.asd"
            "cairo/cairo.asd"
@@ -845,6 +855,8 @@
     (clpython (github "franzinc" "cl-python"))
     (clqr (repo-or-cz)
      :asd none)
+    (clrs (github "willijar"))
+    (clsem (github "antifuchs"))
     (clsql (b9)
      :asd ("clsql.asd"
            "clsql-aodbc.asd"
@@ -916,14 +928,18 @@
     ;; A fork of the Swank backend that leverages ASDF, bordeaux-threads,
     ;; closer-mop, trivial-gray-streams, usocket, etc.
     (conium (gitorious))
+    (consix (github "death"))
+    (constantia (github "death"))
     (contextl darcs "http://common-lisp.net/project/closer/repos/contextl")
     (css-lite (github "paddymul"))
     (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
     (cxml-rpc (github "antifuchs"))
+    (data-format-validation (github "willijar" "cl-data-format-validation"))
     (date-utils (github "vseloved")
      :asd none)
+    (dbus (github "death"))
     (decimal-floats (github "gugamilare")
      :asd ("decimal-floats.asd"
            "decimal-floats-tests.asd"))
@@ -954,11 +970,18 @@
            "deoxybyte-utilities-test.asd"))
     (detachtty darcs "http://common-lisp.net/project/bese/repos/detachtty"
      :asd none)
+    (dictionary git "http://www.jarw.org.uk/lisp/cl-dictionary.git"
+     :asd ("sql-dictionary.asd"
+           "db-dictionary.asd"
+           "dictionary.asd"))
     (discworld (github "cddr"))
     (dispatch (github "sellout" "cl-dispatch"))
     (docudown darcs "http://common-lisp.net/project/docudown"
      :asd ("docudown.asd"
            "docudown-test.asd"))
+    (docutils (github "willijar" "cl-docutils")
+     :asd ("docutils.asd"
+           "extensions/docutils.extensions.asd"))
     (doors (github "Lovesan")
      :asd ("doors.asd"
            "doors.examples.asd"))
@@ -1305,12 +1328,17 @@
      :asd ("hyperobject.asd"
            "hyperobject-tests.asd"))
     (ia-x86 cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    (idna (github "antifuchs"))
     (ieee-floats (clnet darcs))
     (imago (clnet cvs)
      :asd ("src/imago.asd"))
     (imap (github "franzinc")
      :asd none)
     (incf-cl (github "jmbr"))
+    (inet git "http://www.jarw.org.uk/lisp/cl-inet.git"
+     :asd ("http/inet.http.asd"
+           "inet-tests.asd"
+           "inet.asd"))
     ;; iolib used to be pulled as follows: (iolib (repo-or-cz) ...)
     ;; Switched to gitorious because static-vectors is there too.
     (iolib (gitorious)
@@ -1356,6 +1384,10 @@
     (iterate (clnet darcs))
     (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
      :asd none)
+    (jarw git "http://www.jarw.org.uk/lisp/cl-jarw.git"
+     :asd ("jarw.asd"
+           "queues.asd"))
+    (jofrli (github "antifuchs"))
     (jpegmeta (google-code svn)
      :asd ("jpegmeta.asd"
            ;; "binary-data/com.gigamonkeys.binary-data.asd"
@@ -1382,6 +1414,7 @@
            "kpax.asd"))
     (lassie (melis))
     (latex-table (github "tpapp"))
+    (lens (github "willijar" "LENS"))
     ;; XXXX: This user has disappeared on github.
     ;; (lexer (github "turbo24prg"))
     (liards (clnet darcs))
@@ -1488,6 +1521,7 @@
            "lotzo.asd"
            "announces/announces.asd"
            "logging/log.asd"))
+    (lredis (github "death"))
     (lsw2 (google-code svn)
      :asd none)
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
@@ -1499,6 +1533,7 @@
     (manardb git "http://cl-www.msi.co.jp/projects/manardb/manardb.git"
      :asd ("manardb.asd"
            "manardb-test.asd"))
+    (markup git "http://www.jarw.org.uk/lisp/cl-markup.git")
     (math-extensions (github "sellout"))
     (matlisp cvs pserver anonymous nil matlisp.cvs.sourceforge.net "/cvsroot/matlisp"
      :asd none)
@@ -1524,6 +1559,7 @@
            "mcclim.asd"))
     (mcpixel (github "ahefner" "McPixel"))
     (md5 (b9))
+    (media git "http://www.jarw.org.uk/lisp/media.git")
     (mel-base darcs "http://www.crispylogics.com/opensource/repos/mel-base")
     ;; XXXX: mel-base-old got a bunch of updates on jan 18 2010 that were
     ;; old ... jan to nov of 2009
@@ -1764,6 +1800,9 @@
     ;; XXXX: This user is now missing on github.
     ;; (rdf-utils (github "turbo24prg"))
     (readline (b9 "cl-readline"))
+    (recognize (github "3b")
+     :asd ("recognize.asd"
+           "recognize-demo.asd"))
     ;; Emacs extensions for lisp.
     (redshank darcs "http://www.foldr.org/~michaelw/projects/redshank"
      :asd none)
@@ -1928,6 +1967,7 @@
     (tinaa darcs "http://common-lisp.net/project/tinaa"
      :asd ("tinaa.asd"
            "tinaa-test.asd"))
+    (towers (github "death"))
     (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
