@@ -99,6 +99,11 @@
     (autobench (github "antifuchs")
      :asd ("autobench.asd"
            "autobench-web.asd"))
+    (autoproject (google-code svn)
+     :asd ("autoproject.asd"
+           "autoproject.crud.asd"
+           "autoproject.pkg.asd"
+           "autoproject.util.asd"))
     (avl-tree (github "vy"))
     ;; XXXX Axiom has transitioned to git for version control, but which
     ;; repository is canonical?  The web site lists at least:
@@ -328,6 +333,7 @@
            "blackthorn-test.asd"
            "bunnyslayer.asd"
            "blackthorn-stress-test.asd"))
+    (blogger (google-code svn "cl-blogger"))
     (bordeaux-fft (github "ahefner"))
     ;; http://common-lisp.net/project/bordeaux-threads
     (bordeaux-threads (clnet git)
@@ -503,6 +509,7 @@
     (cl-future (github "jpalmucci"))
     (cl-gambol (google-code svn)
      :asd "gambol.asd")
+    (cl-gcalc (google-code svn))
     ;; Unofficial darcs mirrir, slightly different from bknr version.
     (cl-gd darcs "http://common-lisp.net/~loliveira/ediware/cl-gd"
      :asd none)
@@ -512,6 +519,9 @@
     (cl-geometry (github "Ramarren")
      :asd ("cl-geometry.asd"
            "cl-geometry-tests.asd"))
+    (cl-geonames (google-code svn)
+     :asd ("cl-geonames.asd"
+           "cl-geonames-test.asd"))
     (cl-gordon (sourceforge svn)
      :asd ("gordon/gordon.asd"
            ;; "gordon-branches/gordon-clos/gordon.asd"
@@ -536,6 +546,7 @@
            "gtk-glext/cl-gtk2-gtkglext.asd"
            "gtk/cl-gtk2-gtk.asd"
            "pango/cl-gtk2-pango.asd"))
+    (cl-hmm (google-code svn))
     ;; XXXX: Not sure if this one is the best.
     (cl-i18n (bitbucket "skypher"))
     (cl-imagemagick (github "franzinc")
@@ -555,6 +566,10 @@
     (cl-json (clnet darcs))
     (cl-kyoto-cabinet (github "kraison"))
     (cl-l10n (clnet darcs))
+    (cl-lastfm (github "nlamirault")
+     :asd ("cl-lastfm.asd"
+           "cl-lastfm-test.asd"))
+    (cl-lex (google-code svn))
     (cl-librarian darcs "http://www.pasternacki.net/repos/cl-librarian"
      :asd ("cl-librarian.asd"
            "skel/skel.asd"))
@@ -582,6 +597,7 @@
     (cl-moneris (github "vsedach")
      :asd ("cl-moneris.asd"
            "cl-moneris-test.asd"))
+    (cl-money-type (google-code hg))
     (cl-mongo (github "fons"))
     (cl-mongrel2 (github "vseloved"))
 
@@ -626,6 +642,7 @@
            "cl-num-utils-tests.asd"))
     (cl-oauth (github "skypher"))
     (cl-objc (clnet darcs))
+    (cl-observer (google-code svn))
     (cl-openal (github "sykopomp")
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
@@ -647,6 +664,7 @@
            "cl-pdf-parser.asd"
            "salza/salza.asd"))
     (cl-peg darcs "http://subvert-the-dominant-paradigm.net/repos/cl-peg")
+    (cl-period (google-code svn))
     (cl-photo (b9)
      :asd ("cl-photo.asd"
            "cl-photo-tests.asd"))
@@ -670,6 +688,8 @@
     ;; (cl-rdfxml (github "turbo24prg") :asd none)
     (cl-redis (github "vseloved"))
     (cl-rogue (google-code svn))
+    (cl-ruby (google-code hg)
+     :asd none)
     (cl-sails (github "gonzojive"))
     (cl-sam (github "keithj")
      :asd ("cl-sam.asd"
@@ -752,6 +772,7 @@
      :asd none)
     (cl-whois (github "billitch"))
     (cl-x86-asm (repo-or-cz))
+    (cl-xspf (google-code svn))
     (cl-xmpp (clnet cvs)
      :asd ("cl-xmpp-sasl.asd"
            "cl-xmpp-tls.asd"
@@ -779,6 +800,9 @@
            "clem-benchmark.asd"
            "clem-doc.asd"
            "clem-test.asd"))
+    (cletris (github "nlamirault")
+     :asd ("cletris.asd"
+           "cletris-network.asd"))
     (clews git "http://www.jarw.org.uk/lisp/clews.git"
      :asd ("peer-review/clews.peer-review.asd"
            "assessment/clews.assessment.discussion.asd"
@@ -805,6 +829,7 @@
            "clim-desktop-minimal.asd"))
     (climacs (clnet cvs))
     (climc (google-code svn))
+    (climon (github "nlamirault"))
     (clisp (sourceforge cvs)
      :asd none)
 
@@ -850,6 +875,8 @@
      :asd ("src/clouchdb.asd"
            "src/clouchdb-examples.asd"
            "src/clouchdb-tests.asd"))
+    (cloze-call (google-code svn)
+     :asd none)
     ;; (clpython cvs pserver cvspublic t cvspublic.franz.com "/cvs-public"
     ;;  :asd ("clpython-test.asd"))
     (clpython (github "franzinc" "cl-python"))
@@ -1025,6 +1052,11 @@
      :asd ("epigraph.asd"
            "epigraph-doc.asd"
            "epigraph-test.asd"))
+    (ernestine (google-code svn)
+     :asd ("ernestine-gui.asd"
+           "ernestine-web.asd"
+           "ernestine-tests.asd"
+           "ernestine.asd"))
     (esa cvs pserver anonymous t common-lisp.net "/project/climacs/cvsroot")
     (esrap (github "nikodemus"))
     ;; XXXX: Maybe just check out the trunk?  There are tons of tags
@@ -1049,6 +1081,8 @@
     (fare-utils git "git://common-lisp.net/users/frideau/fare-utils.git"
      :asd ("fare-utils.asd"
            "test/fare-utils-test.asd"))
+    (faslpath (google-code svn)
+     :asd none)
     (femlisp (savannah cvs))
     (ffa (github "tpapp"))
     ;; This used to be cl-fft on http://git.nklein.com/lisp/libs/fft.git
@@ -1086,6 +1120,9 @@
     (fsbv (repo-or-cz))
     (fsvd (melis))
     (ftd (clnet darcs))
+    (garbage-pools (google-code svn)
+     :asd ("garbage-pools.asd"
+           "garbage-pools-test.asd"))
     (garnet cvs pserver anonymous nil garnetlisp.cvs.sourceforge.net "/cvsroot/garnetlisp"
      :asd none)
     (gcl (savannah cvs)
@@ -1384,6 +1421,8 @@
     (iterate (clnet darcs))
     (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
      :asd none)
+    (jacolib (google-code svn)
+     :asd ("jacolib-lisp/jacolib/jacolib.asd"))
     (jarw git "http://www.jarw.org.uk/lisp/cl-jarw.git"
      :asd ("jarw.asd"
            "queues.asd"))
@@ -1819,6 +1858,16 @@
     (rfc2822 (clnet cvs))
     (rjson (github "gonzojive"))
     (rlc (b9))
+    (roll-cl (google-code svn)
+     :asd ("/src/lisp/socklib/roll-socklib.asd"
+           "/src/lisp/util/roll-util.asd"
+           "/src/lisp/gnuplot/roll-gnuplot.asd"
+           "/src/lisp/roll.asd"
+           "/src/lisp/math/math.asd"
+           "/src/lisp/math/roll-math.asd"
+           "/src/lisp/geo/roll-geo.asd"
+           "/src/lisp/search/roll-search.asd"
+           "/src/lisp/gui/roll-gui.asd"))
     (ropes (github "Ramarren"))
     (roto-mortar (github "nklein" "Roto-Mortar"))
     (routes (github "archimag" "cl-routes"))
@@ -1943,6 +1992,8 @@
            "symbolicweb-jquery.asd"))
     (t-system (gitorious)
      :asd none)
+    (tapulli (google-code svn)
+     :asd ("tag-pool/tag-pool.asd"))
     (teepeedee2 (github "vii")
      :asd ("teepeedee2.asd"
            "teepeedee2-test.asd"
@@ -1955,8 +2006,12 @@
            ))
     (telent-clx (github "franzinc")
      :asd none)
+    (terse-ppcre (google-code svn))
     (tester (github "franzinc"))
     (texinfo-docstrings (gitorious "iolib"))
+    (the (google-code svn "cl-the"))
+    (tibly (google-code svn)
+     :asd none)
     (thinlisp (github "vsedach" "Thinlisp-1.1")
      :asd none)
     (tiff-ffi (harmon)
@@ -2129,6 +2184,7 @@
     (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
      :asd ("src/yacc-ebnf.asd"))
     (yaclml darcs "http://common-lisp.net/project/bese/repos/yaclml")
+    (yadd (google-code svn "cl-yadd"))
     (yashmup (github "sykopomp")
      :asd ("yashmup.asd"
            "util/sprite-checker/sprite-checker.asd"))
