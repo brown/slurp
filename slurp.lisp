@@ -342,6 +342,12 @@
     (bratwurst (github "sabetts"))
     (buclet (github "aerique"))
     (buildapp (github "xach"))
+    (buildnode (github "bobbysmith007")
+     :asd ("buildnode-excel.asd"
+           "buildnode-xul.asd"
+           "buildnode-kml.asd"
+           "buildnode.asd"
+           "buildnode-xhtml.asd"))
     (bytemap git "http://common-lisp.net/projects/bytemap/bytemap.git"
      :asd ("bytemap-test.asd"
            "bytemap.asd"))
@@ -362,8 +368,8 @@
            "cl-freetype/cl-freetype.asd"
            "cl-freetype/cl-rsrc.asd"
            "cl-ftgl/cl-ftgl.asd"
-           ; "cl-magick/cl-magick.asd"
-           ; "cl-openal/cl-openal.asd"
+           ;; "cl-magick/cl-magick.asd"
+           ;; "cl-openal/cl-openal.asd"
            "kt-opengl/kt-opengl.asd"))
     (cells (github "Ramarren")
      :asd ("cells-test/cells-test.asd"
@@ -476,6 +482,9 @@
            "cl-couchdb-view-server.asd"
            "logv.asd"))
     (cl-crc64 (github "blackwre"))
+    (cl-creditcard (github "bobbysmith007")
+     :asd ("cl-creditcard.asd"
+           "cl-authorize-net.asd"))
     (cl-curl svn "svn://common-lisp.net/project/cl-curl/subversion/trunk"
      :asd ("curl.asd"))
     (cl-darcs svn "svn://common-lisp.net/project/cl-darcs/svn/cl-darcs/trunk")
@@ -491,8 +500,8 @@
     ;; This repo is OBSOLETE!
     ;; The new darcs2 repo is available at http://dwim.hu
     ;; XXXX: remove this repository and cl-dwim-old
-    ;(cl-dwim (clnet darcs)
-    ; :asd ("dwim.asd" "dwim-meta-model-test.asd"))
+    ;; (cl-dwim (clnet darcs)
+    ;;  :asd ("dwim.asd" "dwim-meta-model-test.asd"))
 
     (cl-elf (repo-or-cz))
     (cl-env (github "franzinc"))
@@ -589,6 +598,7 @@
     (cl-mathstats darcs "http://common-lisp.net/project/cl-mathstats"
      :asd ("cl-mathstats.asd"
            "cl-mathstats-test.asd"))
+    (cl-mediawiki (github "bobbysmith007"))
     (cl-menusystem (clnet cvs))
     (cl-migrations (clnet darcs))
     (cl-mill (google-code svn)
@@ -862,7 +872,7 @@
      :asd none)
     ;; David O'Toole's prototype object system.
     ;; Currently missing from github.  XXXX: Move source?
-    ; (clon-prototype-objects (github "dto" "clon") :asd none)
+    ;; (clon-prototype-objects (github "dto" "clon") :asd none)
     ;; Didier Verna's command line options nuker.
     (clon-command-line git "http://www.lrde.epita.fr/~didier/software/lisp/clon/clon.git"
      :asd none)
@@ -897,6 +907,7 @@
            "clsql-sqlite3.asd"
            "clsql-tests.asd"
            "clsql-uffi.asd"))
+    (clsql-orm (github "bobbysmith007"))
     (clsr (harmon)
      :asd ("clsr.asd"
            "clsr-doc.asd"
@@ -959,7 +970,8 @@
     (constantia (github "death"))
     (contextl darcs "http://common-lisp.net/project/closer/repos/contextl")
     (css-lite (github "paddymul"))
-    (cusp svn "http://cusp.googlecode.com/svn"  ; missing /trunk on URI
+    (css-selectors (github "bobbysmith007"))
+    (cusp svn "http://cusp.googlecode.com/svn" ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
     (cxml-rpc (github "antifuchs"))
@@ -1986,12 +1998,14 @@
     ;;        "sykosomatic.object.asd"
     ;;        "sykosomatic.parser.asd"
     ;;        "sykosomatic.test.asd"))
+    (symbol-munger (github "bobbysmith007"))
     (symbolicweb (github "lnostdal" "SymbolicWeb")
      :asd ("symbolicweb.asd"
            "symbolicweb-examples.asd"
            "symbolicweb-jquery.asd"))
     (t-system (gitorious)
      :asd none)
+    (talcl (github "bobbysmith007"))
     (tapulli (google-code svn)
      :asd ("tag-pool/tag-pool.asd"))
     (teepeedee2 (github "vii")
@@ -2090,6 +2104,12 @@
     (vacietis (github "vsedach" "Vacietis")
      :asd ("vacietis.asd"
            "vacietis.test.asd"))
+    (vana (github "sgrove")
+     :asd none)
+    (vana-inflector (github "sgrove")
+     :asd none)
+    (vana-templating (github "sgrove")
+     :asd none)
     (vas-string-metrics (github "vsedach")
      :asd ("vas-string-metrics.asd"
            "test.vas-string-metrics.asd"))
@@ -2223,20 +2243,20 @@
 ;;;     Abbreviation functions for common code repositories
 
 
-(defun b9 (project-name &optional (repository (string-downcase project-name)))
+(defun b9 (project &optional (repository (string-downcase project)))
   "Repository specification abbreviation function for a git project hosted
 on b9.com."
   ;; XXXX: git:// used to work.  Try it again soon.
   `(git ,(concat "http://git.b9.com/" repository ".git")))
 
-(defun bitbucket (project-name user)
+(defun bitbucket (project user)
   "Repository specification abbreviation function for a Mercurial project
 hosted on bitbucket.org."
-  (let ((repository (string-downcase project-name)))
+  (let ((repository (string-downcase project)))
     `(hg ,(concat "https://bitbucket.org/" user "/" repository))))
 
-(defun clnet (project-name scms &optional (name (string-downcase project-name))
-              (repository (string-downcase project-name)))
+(defun clnet (project scms
+              &optional (name (string-downcase project)) (repository (string-downcase project)))
   "Repository specification abbreviation function for a project hosted on
 common-lisp.net."
   (ecase scms
@@ -2246,61 +2266,60 @@ common-lisp.net."
     ((git) `(git ,(concat "git://common-lisp.net/projects/" name "/" repository ".git")))
     ((svn) `(svn ,(concat "svn://common-lisp.net/project/" name "/svn/trunk")))))
 
-(defun melis (project-name &optional (repository (string-downcase project-name)))
+(defun melis (project &optional (repository (string-downcase project)))
   "Repository specification abbreviation function for a git project hosted by
 Gabor Melis on quotenil.com."
   `(git ,(concat "http://quotenil.com/git/" repository ".git")))
 
-(defun github (project-name user
-               &optional (repository (string-downcase project-name)))
+(defun github (project user &optional (repository (string-downcase project)))
   "Repository specification abbreviation function for a git project hosted on
 github.com."
   `(git ,(concat "git://github.com/" user "/" repository ".git")))
 
-(defun gitorious (project-name &optional (name (string-downcase project-name))
-                  (repository (string-downcase project-name)))
+(defun gitorious (project
+                  &optional
+                    (name (string-downcase project))
+                    (repository (string-downcase project)))
   "Repository specification abbreviation function for a git project hosted on
 gitorious.org."
   `(git ,(concat "git://gitorious.org/" name "/" repository ".git")))
 
-(defun google-code (project-name scms
-                    &optional (repository (string-downcase project-name)))
+(defun google-code (project scms &optional (repository (string-downcase project)))
   "Repository specification abbreviation function for a Subversion or
 Mercurial repository hosted on code.google.com."
   (ecase scms
     ((hg) `(hg ,(concat "http://" repository ".googlecode.com/hg")))
     ((svn) `(svn ,(concat "http://" repository ".googlecode.com/svn/trunk")))))
 
-(defun harmon (project-name)
+(defun harmon (project)
   "Repository specification abbreviation function for Cyrus Harmon's git
 projects hosted on http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
-  (let ((name (string-downcase project-name)))
+  (let ((name (string-downcase project)))
     `(git ,(concat "git://cyrusharmon.org/pub/git/" name ".git"))))
 
-(defun dwim-hu (project-name)
+(defun dwim-hu (project)
   "Repository specification abbreviation function for darcs projects hosted
 on dwim.hu."
-  (let ((name (string-downcase project-name)))
+  (let ((name (string-downcase project)))
     `(darcs ,(concat "http://dwim.hu/darcs/" name))))
 
-(defun repo-or-cz (project-name)
+(defun repo-or-cz (project)
   "Repository specification abbreviation function for git projects hosted on
 repo.or.cz."
-  (let ((name (string-downcase project-name)))
+  (let ((name (string-downcase project)))
     `(git ,(concat "git://repo.or.cz/" name ".git"))))
 
-(defun savannah (project-name scms)
+(defun savannah (project scms)
   "Repository specification abbreviation function for a project hosted on
 savannah.gnu.org."
-  (let ((name (string-downcase project-name)))
+  (let ((name (string-downcase project)))
     (ecase scms
       ((bzr) `(bzr ,(concat "http://bzr.savannah.gnu.org/r/" name "/trunk")))
       ((cvs) `(cvs pserver anonymous nil cvs.savannah.gnu.org ,(concat "/sources/" name)
                :module ,name))
       ((git) `(git ,(concat "git://git.savannah.gnu.org/" name ".git"))))))
 
-(defun sourceforge (project-name scms
-                    &optional (repository (string-downcase project-name)))
+(defun sourceforge (project scms &optional (repository (string-downcase project)))
   "Repository specification abbreviation function for a project hosted on
 sourceforge.net."
   (ecase scms
@@ -2311,10 +2330,10 @@ sourceforge.net."
     ((git) `(git ,(concat "http://" repository ".sourceforge.net/git/" repository "/.git")))
     ((svn) `(svn ,(concat "https://" repository ".svn.sourceforge.net/svnroot/" repository)))))
 
-(defun xach (project-name)
+(defun xach (project)
   "Repository specification abbreviation function for Zach Beane's git
 projects hosted on http://git.xach.com"
-  (let ((name (string-downcase project-name)))
+  (let ((name (string-downcase project)))
     `(git ,(concat "http://git.xach.com/" name ".git"))))
 
 
@@ -2328,9 +2347,9 @@ MORE-ARGS).  In the latter case, ABBREV-FUNC is invoked on (cons NAME
 ABBREV-ARGS) to create SCMS and SCMS-ARGS."
   (ecase (type-of (second spec))
     ((symbol) spec)
-    ((cons) (destructuring-bind (project-name (scms . arguments) &rest rest)
+    ((cons) (destructuring-bind (project (scms . arguments) &rest rest)
                 spec
-              `(,project-name ,@(apply scms (cons project-name arguments)) ,@rest)))))
+              `(,project ,@(apply scms (cons project arguments)) ,@rest)))))
 
 (defun make-database (repositiory-specs)
   "Create the repository database from a list of repository specifications."
@@ -2348,36 +2367,36 @@ source code management system (SCMS) used by the project and the project
 specification with the SCMS removed."
   (let ((project-spec (assoc name *database*)))
     (when project-spec
-      (destructuring-bind (project-name scms &rest rest)
+      (destructuring-bind (project scms &rest rest)
           project-spec
-        (values scms `(,project-name ,@rest))))))
+        (values scms `(,project ,@rest))))))
 
-(defun operate (project-name operation)
+(defun operate (project operation)
   "Perform an operation on a project."
   (multiple-value-bind (scms arguments)
-      (find-project project-name)
+      (find-project project)
     (unless scms
       (error "unknown project"))
-      ;; Lack of an asd specification means there's one asd file named after
-      ;; the project.
-      (unless (member :asd arguments)
-        (setf arguments (append arguments '(:asd project-name))))
-      (apply scms (cons operation arguments))
-      (values)))
+    ;; Lack of an asd specification means there's one asd file named after
+    ;; the project.
+    (unless (member :asd arguments)
+      (setf arguments (append arguments '(:asd project))))
+    (apply scms (cons operation arguments))
+    (values)))
 
-(defun checkout (project-name)
+(defun checkout (project)
   "Check out a project."
-  (format t "~%checkout ~a~%" project-name)
-  (operate project-name 'checkout))
+  (format t "~%checkout ~a~%" project)
+  (operate project 'checkout))
 
 (defun checkout-all ()
   "Check out all the project repositories in the database."
   (loop for (name . rest) in *database* do (checkout name)))
 
-(defun update (project-name)
+(defun update (project)
   "Update a project."
-  (format t "~%update ~a~%" project-name)
-  (operate project-name 'update))
+  (format t "~%update ~a~%" project)
+  (operate project 'update))
 
 (defun update-repositories (repository-specs)
   "Update all the projects listed in REPOSITORY-SPECS."
@@ -2394,7 +2413,7 @@ than or equal to NAME."
   (update-repositories
    (loop for repository-spec in *database*
          when (string>= (first repository-spec) name)
-         collect repository-spec)))
+           collect repository-spec)))
 
 #+sbcl
 (defmacro with-cwd (directory &body body)
@@ -2428,10 +2447,10 @@ than or equal to NAME."
     (run "rm" `("-f" ,link) *terminal-io*)
     (run "ln" `("-s" ,link-target ,link) *terminal-io*)))
 
-(defun create-asd-links (project-directory project-name asd-files)
+(defun create-asd-links (project-directory project asd-files)
   (cond ((eq asd-files 'none))
-        ((eq asd-files 'project-name)
-         (link project-directory (concat project-name ".asd")))
+        ((eq asd-files 'project)
+         (link project-directory (concat project ".asd")))
         ((listp asd-files)
          (dolist (asd-file asd-files)
            (link project-directory asd-file)))
