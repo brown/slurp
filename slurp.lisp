@@ -611,8 +611,8 @@
     (cl-mongo (github "fons"))
     (cl-mongrel2 (github "vseloved"))
 
-; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-;    (mpeg (clnet cvs "cl-mp3-parse" "cl-mp3-parse") :asd none)
+    ;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    ;;    (mpeg (clnet cvs "cl-mp3-parse" "cl-mp3-parse") :asd none)
 
     (cl-mpi (google-code svn)
      :asd ("cl-mpi.asd"
@@ -1081,8 +1081,8 @@
            "expresso/trunk/shell/terminfo/terminfo.asd"
            "expresso/trunk/shell/linedit/linedit.asd"
            "expresso/trunk/shell/expresso-shell.asd"
-           ;"expresso/trunk/shell/uffi/uffi.asd"
-           ;"expresso/trunk/shell/uffi/uffi-tests.asd"
+           ;; "expresso/trunk/shell/uffi/uffi.asd"
+           ;; "expresso/trunk/shell/uffi/uffi-tests.asd"
            "expresso/trunk/p11/p11.asd"
            "expresso/trunk/compiler/expresso-compiler.asd"
            "expresso/trunk/expcore/expresso-core.asd"
