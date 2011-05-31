@@ -58,6 +58,7 @@
      :asd none)
     (antiweb (github "hoytech")
      :asd none)
+    ;; XXXX: Remove? It's not a Lisp library.
     (aquamacs cvs pserver anonymous nil cvs.aquamacs.org "/cvsroot/aquamacs"
      :asd none)
     (araneida-release darcs "http://common-lisp.net/project/araneida/araneida-release"
@@ -98,7 +99,8 @@
     (aspectl darcs "http://common-lisp.net/project/closer/repos/aspectl")
     (autobench (github "antifuchs")
      :asd ("autobench.asd"
-           "autobench-web.asd"))
+           "autobench-ht.asd"
+           "web/autobench-web.asd"))
     (autoproject (google-code svn)
      :asd ("autoproject.asd"
            "autoproject.crud.asd"
@@ -517,7 +519,7 @@
      :asd none)
     (cl-future (github "jpalmucci"))
     (cl-gambol (google-code svn)
-     :asd "gambol.asd")
+     :asd ("gambol.asd"))
     (cl-gcalc (google-code svn))
     ;; Unofficial darcs mirrir, slightly different from bknr version.
     (cl-gd darcs "http://common-lisp.net/~loliveira/ediware/cl-gd"
@@ -800,7 +802,7 @@
            "main/connectors/claw-hunchentoot-connector/claw-hunchentoot-connector.asd"
            "site/claw-site.asd"))
     (clazy (clnet cvs))
-    ;; May no longer be maintained.
+    ;; May no longer be maintained ... appears to be gone on gitorious.
     (clbuild (gitorious)
      :asd none)
     (clbuild2 (gitorious)
@@ -1155,6 +1157,7 @@
            "glop-test.asd"))
     (getopt (b9))
     (gridlock (github "xach"))
+    (group-by (github "bobbysmith007"))
     (grout (github "xach"))
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
     (gsd (repo-or-cz)
@@ -1629,6 +1632,7 @@
     (metatilities-base darcs "http://common-lisp.net/project/metatilities-base"
      :asd ("metatilities-base.asd"
            "metatilities-base-test.asd"))
+    (method-versions (github "nklein"))
     (mgl (melis)
      :asd ("mgl-test.asd"
            "mgl.asd"
@@ -1943,7 +1947,7 @@
      :asd ("swank.asd"))
     (slime-proxy (github "3b")
      :asd ("slime-proxy.asd"
-           "slime-parenscript.asd"))
+           "contrib/slime-parenscript/swank-parenscript.asd"))
     (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
      :asd ("src/netlib.asd"))
     (slurp (github "brown"))
@@ -1962,8 +1966,9 @@
     (sorting (github "gugamilare")
      :asd ("sorting.asd"
            "sorting-benchmark.asd"))
-    ;; XXXXX: 2011-02-03 error: not a repository
-    ;; XXXXX: 2011-03-24 same thing
+    ;; XXXX: 2011-02-03 error: not a repository
+    ;; XXXX: 2011-03-24 same thing
+    ;; XXXX: 2011-05-31 cannot connect to server
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (spectacle (github "slyrus"))
     (squirl (github "sykopomp"))
@@ -2042,9 +2047,11 @@
            "trivial-backtrace-test.asd"))
     (trivial-bit-streams (github "Lovesan"))
     (trivial-configuration-parser svn "svn://unmutual.info/trivial-configuration-parser")
+    ;; XXXX: Incompatible with repository error 2011-05-31.
     (trivial-features darcs "http://common-lisp.net/~loliveira/darcs/trivial-features"
      :asd ("trivial-features.asd"
            "trivial-features-tests.asd"))
+    ;; XXXX: Incompatible with repository error 2011-05-31.
     (trivial-garbage darcs "http://common-lisp.net/~loliveira/darcs/trivial-garbage")
     (trivial-gray-streams cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (trivial-http darcs "http://common-lisp.net/project/trivial-http"
@@ -2187,9 +2194,11 @@
     ;; Also available at "http://common-lisp.net/project/xcvb/git/xcvb.git"
     ;; Which is best?
     (xcvb (github "fare")
-     :asd ("xcvb.asd"
+     :asd ("examples/a2x/a2x-test.asd"
+           "t/xcvb-unit-tests.asd"
+           "xcvb.asd"
            "xcvb-driver.asd"
-           "xcvb-master.asd"))
+           "xcvb-bridge.asd"))
     (xe2 (github "dto"))
     (xhtmlgen (github "hanshuebner"))
     (xlunit (b9))
