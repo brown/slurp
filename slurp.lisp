@@ -433,6 +433,7 @@
     (cl-2d (github "tpapp"))
     (cl-azure (github "blackwre"))
     (cl-base64 (b9))
+    (cl-bayesian (github "tpapp"))
     (cl-beanstalk (github "antifuchs"))
     (cl-bench (clnet svn)
      :asd none)
@@ -572,6 +573,9 @@
     (cl-irregsexp (clnet git)
      :asd ("cl-irregsexp-test.asd"
            "cl-irregsexp.asd"))
+    (cl-jags (github "tpapp")
+     :asd ("cl-jags.asd"
+           "cl-jags-tests.asd"))
     (cl-jpeg (clnet cvs "cljl"))
     (cl-js (github "akapav" "js"))
     (cl-json (clnet darcs))
@@ -740,6 +744,9 @@
     (cl-telnetd (clnet cvs)
      :asd none)
     (cl-tetris3d (github "grouzen"))
+    (cl-text-tables (github "tpapp")
+     :asd ("cl-text-tables.asd"
+           "cl-text-tables-tests.asd"))
     (cl-tidy (github "gonzojive"))
     (cl-tk (github "marijnh"))
     (cl-tokyo-cabinet (github "keithj")
@@ -1469,6 +1476,7 @@
     (lassie (melis))
     (latex-table (github "tpapp"))
     (lens (github "willijar" "LENS"))
+    (let-plus (github "tpapp"))
     ;; XXXX: This user has disappeared on github.
     ;; (lexer (github "turbo24prg"))
     (liards (clnet darcs))
@@ -2042,6 +2050,7 @@
      :asd ("tinaa.asd"
            "tinaa-test.asd"))
     (towers (github "death"))
+    (tpapp-utils (github "tpapp"))
     (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
