@@ -357,7 +357,10 @@
     (caleb svn "svn://common-lisp.net/project/caleb/svn")
     ;; XXXX: Should work soon.
     ;; (categories git "git://codebasehq.com/bywicket/xg/categories.git"
-
+    (caveman (github "fukamachi")
+     :asd ("caveman.asd"
+           "caveman-test.asd"
+           "skeleton/skeleton.asd"))
     ;; XXXX: switch to checking out the Linux sources ... or maybe everything
     (ccl svn "http://svn.clozure.com/publicsvn/openmcl/trunk/darwinx86/ccl"
      :asd none)
@@ -431,6 +434,13 @@
      :asd none)
     (cl+ssl cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
     (cl-2d (github "tpapp"))
+    (cl-amazonproduct (github "arielnetworks")
+     :asd ("cl-amazonproduct.asd"
+           "cl-amazonproduct-test.asd"))
+    (cl-annot (github "arielnetworks")
+     :asd ("cl-annot.asd"
+           "cl-annot-test.asd"))
+    (cl-anonfun (github "arielnetworks"))
     (cl-azure (github "blackwre"))
     (cl-base64 (b9))
     (cl-bayesian (github "tpapp"))
@@ -596,15 +606,23 @@
            "cl-libxml2.asd"
            "xoverlay.asd"))
     (cl-llvm (repo-or-cz))
+    (cl-locale (github "arielnetworks")
+     :asd ("cl-locale.asd"
+           "cl-locale-test.asd"))
+    (cl-loop-plus (github "arielnetworks"))
     (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
      :asd ("cl-markdown-comparisons.asd"
            "cl-markdown-test.asd"
            "cl-markdown.asd"))
+    (cl-markup (github "arielnetworks")
+     :asd ("cl-markup.asd"
+           "cl-markup-test.asd"))
     (cl-mathstats darcs "http://common-lisp.net/project/cl-mathstats"
      :asd ("cl-mathstats.asd"
            "cl-mathstats-test.asd"))
     (cl-mediawiki (github "bobbysmith007"))
+    (cl-memcached (github "arielnetworks"))
     (cl-menusystem (clnet cvs))
     (cl-migrations (clnet darcs))
     (cl-mill (google-code svn)
@@ -675,6 +693,10 @@
     (cl-parser-combinators (github "Ramarren")
      :asd ("parser-combinators.asd"
            "parser-combinators-tests.asd"))
+    (cl-pattern (github "arielnetworks")
+     :asd ("cl-pattern.asd"
+           "cl-pattern-test.asd"
+           "cl-pattern-benchmark.asd"))
     (cl-pdf svn "http://www.fractalconcept.com:8000/public/open-source/cl-pdf"
      :asd ("cl-pdf.asd"
            "cl-pdf-parser.asd"
@@ -743,6 +765,7 @@
            "tokyotyrant.asd"))
     (cl-telnetd (clnet cvs)
      :asd none)
+    (cl-test-more (github "fukamachi"))
     (cl-tetris3d (github "grouzen"))
     (cl-text-tables (github "tpapp")
      :asd ("cl-text-tables.asd"
@@ -800,6 +823,10 @@
     ;; XXXX: rename to zeromq
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
+    (clack (github "fukamachi")
+     :asd ("clack.asd"
+           "clack-test.asd"))
+    (clack-doc (github "fukamachi"))
     (claw (clnet svn)
      :asd ("main/claw-as/claw-as.asd"
            "main/claw-demo/claw-demo.asd"
@@ -814,6 +841,7 @@
      :asd none)
     (clbuild2 (gitorious)
      :asd none)
+    (clee (github "fukamachi"))
     (clem (github "slyrus")
      :asd ("clem.asd"
            "clem-benchmark.asd"
@@ -1141,6 +1169,7 @@
     (fsbv (repo-or-cz))
     (fsvd (melis))
     (ftd (clnet darcs))
+    (fukacl (github "fukamachi"))
     (garbage-pools (google-code svn)
      :asd ("garbage-pools.asd"
            "garbage-pools-test.asd"))
@@ -1152,6 +1181,7 @@
      :asd ("gcc-xml-ffi.asd"
            "gcc-xml-ffi-test.asd"))
     (geometry (github "xach"))
+    (getopt (b9))
     (gigamonkey-distcompiler (github "gigamonkey" "quicklisp-distcompiler"))
     (glaw (github "patzy")
      :asd ("glaw-sdl.asd"
@@ -1162,7 +1192,9 @@
     (glop (github "patzy")
      :asd ("glop.asd"
            "glop-test.asd"))
-    (getopt (b9))
+    (gotanda (github "fukamachi")
+     :asd ("gotanda.asd"
+           "gotanda-server.asd"))
     (gridlock (github "xach"))
     (group-by (github "bobbysmith007"))
     (grout (github "xach"))
@@ -1809,6 +1841,9 @@
      :asd ("src/plop.asd"))
     (png-read (github "Ramarren"))
     (poiu (clnet git "qitab"))
+    (ponzu.db (github "fukamachi")
+     :asd ("ponzu.db.asd"
+           "ponzu.db-test.asd"))
     (portableaserve (sourceforge cvs)
      :asd ("acl-compat/acl-compat.asd"
            "aserve/aserve.asd"
@@ -2092,6 +2127,7 @@
     (umlisp-orf (b9)
      :asd ("umlisp-orf.asd"
            "umlisp-orf-tests.asd"))
+    (uncl (github "fukamachi"))
     (unet (github "nklein"))
     (until-it-dies (github "sykopomp")
      :asd ("until-it-dies.base.asd"
