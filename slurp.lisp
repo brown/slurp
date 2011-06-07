@@ -25,6 +25,8 @@
            "avm2-lib.asd"
            "swf-writer-hack.asd"))
     (3bmd (github "3b"))
+    ;; The following URL was recently announced.  Is fetching ABCL via http
+    ;; better?  svn co http://svn.common-lisp.net/armedbear/trunk abcl
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
     (abcl-web (sourceforge svn)
      :asd none)
@@ -1019,6 +1021,7 @@
     (decimal-floats (github "gugamilare")
      :asd ("decimal-floats.asd"
            "decimal-floats-tests.asd"))
+    (decimals (github "tlikonen" "cl-decimals"))
     (deflate (github "pmai" "Deflate"))
     (defservice (github "marijnh")
      :asd ("defservice.asd"
@@ -1955,10 +1958,10 @@
     ;; (sb-mailbox (github "nikodemus")
     ;;  :asd none)
     (sb-vector-io (github "nikodemus"))
-    (sbcl (sourceforge cvs)
+    (sbcl (sourceforge git)
      :asd none)
-    (sbcl-git git "git://git.boinkor.net/sbcl"
-     :asd none)
+    ;;(sbcl-git git "git://git.boinkor.net/sbcl"
+    ;; :asd none)
     (score (github "emoon" "Score")
      :asd ("src/Score.asd"))
     ;; XXXX:  Is this one better?  stored in screamer-or-cz
@@ -2084,6 +2087,7 @@
     (tinaa darcs "http://common-lisp.net/project/tinaa"
      :asd ("tinaa.asd"
            "tinaa-test.asd"))
+    (titler (github "ryepup"))
     (towers (github "death"))
     (tpapp-utils (github "tpapp"))
     (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
@@ -2381,7 +2385,8 @@ sourceforge.net."
              ,(intern (string-upcase (concat repository ".cvs.sourceforge.net")))
              ,(concat "/cvsroot/" repository)
              :module ,repository))
-    ((git) `(git ,(concat "http://" repository ".sourceforge.net/git/" repository "/.git")))
+    ((git) `(git ,(concat "git://" repository ".git.sourceforge.net/gitroot/" repository
+                          "/" repository ".git")))
     ((svn) `(svn ,(concat "https://" repository ".svn.sourceforge.net/svnroot/" repository)))))
 
 (defun xach (project)
