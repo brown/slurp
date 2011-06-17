@@ -611,6 +611,7 @@
     (cl-locale (github "arielnetworks")
      :asd ("cl-locale.asd"
            "cl-locale-test.asd"))
+    (cl-loom (github "billstclair"))
     (cl-loop-plus (github "arielnetworks"))
     (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
@@ -683,13 +684,17 @@
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
     (cl-opencalais (github "blackwre"))
-    ;; XXXXXXXXXX: There is a cl-opengl project on github.  Is it a better version?
-    ;;(cl-opengl (github "3b") :asd none)
-    (cl-opengl (clnet darcs)
+    ;; XXXXXXXXXX: Compare this to the cl-opengl below and delete one.
+    (cl-opengl (github "3b")
      :asd ("cl-glu.asd"
            "cl-glut-examples.asd"
            "cl-glut.asd"
            "cl-opengl.asd"))
+    ;; (cl-opengl (clnet darcs)
+    ;;  :asd ("cl-glu.asd"
+    ;;        "cl-glut-examples.asd"
+    ;;        "cl-glut.asd"
+    ;;        "cl-opengl.asd"))
     (cl-openid (clnet darcs))
     (cl-parsec (github "vseloved"))
     (cl-parser-combinators (github "Ramarren")
@@ -1590,6 +1595,10 @@
            "lispbuilder-yacc/lispbuilder-yacc.asd"))
     (lispdev (bitbucket "skolos")
      :asd none)
+    (lisplog (github "billstclair" "Lisplog")
+     :asd ("lisplog.asd"
+           "fsdb/fsdb.asd"
+           "cl-crypto/cl-crypto.asd"))
     (lispmud (github "Valera" "LispMud")
      :asd ("lispmud.asd"
            "mudsketcher.asd"))
@@ -1755,6 +1764,7 @@
      :asd ("osicat.asd"
            "osicat-tests.asd"))
     (outbreak (github "patzy"))
+    (package-local-nicknames (github "3b"))
     (page-ranges (github "xach"))
     (paktahn (github "skypher")
      :asd none)
@@ -2018,6 +2028,30 @@
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (spectacle (github "slyrus"))
     (squirl (github "sykopomp"))
+    (srfi-0 (github "g000001"))
+    (srfi-1 (github "g000001"))
+    (srfi-2 (github "g000001"))
+    (srfi-3 (github "g000001"))
+    (srfi-4 (github "g000001"))
+    (srfi-5 (github "g000001"))
+    (srfi-6 (github "g000001"))
+    (srfi-7 (github "g000001"))
+    (srfi-8 (github "g000001"))
+    (srfi-10 (github "g000001"))
+    (srfi-11 (github "g000001"))
+    (srfi-16 (github "g000001"))
+    (srfi-23 (github "g000001"))
+    (srfi-26 (github "g000001"))
+    (srfi-28 (github "g000001"))
+    (srfi-42 (github "g000001"))
+    (srfi-48 (github "g000001"))
+    (srfi-61 (github "g000001"))
+    (srfi-62 (github "g000001"))
+    (srfi-78 (github "g000001"))
+    (srfi-86 (github "g000001"))
+    (srfi-87 (github "g000001"))
+    (srfi-98 (github "g000001"))
+    (srfi-compat (github "g000001"))
     (sse-expr (github "deplinenoise")
      :asd none)
     (sst (github "vy"))
@@ -2117,6 +2151,87 @@
      :asd ("trivial-timeout.asd"
            "trivial-timeout-test.asd"))
     (trivial-utf-8 (clnet darcs))
+    (trubanc-lisp (github "billstclair")
+     :asd ("trubanc.asd"
+           "trubanc-loader.asd"
+           ;; "systems/puri-1.5.1/puri.asd"
+           ;; "systems/cl-fad-0.6.2/cl-fad.asd"
+           ;; "systems/cl-base64-3.3.2/cl-base64.asd"
+           ;; "systems/cl-who-0.11.1/cl-who.asd"
+           ;; "systems/bordeaux-threads/bordeaux-threads.asd"
+           ;; "systems/chunga-1.0.0/chunga.asd"
+           ;; "systems/ironclad_0.26/ironclad.asd"
+           ;; "systems/babel_0.3.1/babel-streams.asd"
+           ;; "systems/babel_0.3.1/babel-tests.asd"
+           ;; "systems/babel_0.3.1/babel.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre-unicode.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre.asd"
+           ;; "systems/cl+ssl-2008-11-04/cl+ssl.asd"
+           ;; "systems/flexi-streams-1.0.7/flexi-streams.asd"
+           ;; "systems/md5-1.8.5/md5.asd"
+           ;; "systems/slime/swank.asd"
+           ;; "systems/alexandria/alexandria.asd"
+           ;; "systems/alexandria/alexandria-tests.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot-test.asd"
+           ;; "systems/usocket-0.4.1/usocket.asd"
+           ;; "systems/usocket-0.4.1/test/usocket-test.asd"
+           ;; "systems/trivial-features/trivial-features-tests.asd"
+           ;; "systems/trivial-features/trivial-features.asd"
+           ;; "systems/rfc2388/rfc2388.asd"
+           ;; "systems/cffi_0.10.4/cffi-tests.asd"
+           ;; "systems/cffi_0.10.4/cffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-grovel.asd"
+           ;; "systems/cffi_0.10.4/uffi-compat/uffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-uffi-compat.asd"
+           ;; "systems/cffi_0.10.4/cffi-examples.asd"
+           ;; "systems/cl-smtp/cl-smtp.asd"
+           ;; "systems/split-sequence/split-sequence.asd"
+           ;; "systems/trivial-gray-streams-2008-11-02/trivial-gray-streams.asd"
+           ;; "systems/cybertiggyr-time/cybertiggyr-time.asd"
+           ;; "systems/drakma-1.0.0/drakma.asd"
+           ))
+    (truledger (github "billstclair")
+     :asd ("truledger.asd"
+           "truledger-loader.asd"
+           ;; "systems/puri-1.5.1/puri.asd"
+           ;; "systems/cl-fad-0.6.2/cl-fad.asd"
+           ;; "systems/cl-base64-3.3.2/cl-base64.asd"
+           ;; "systems/cl-who-0.11.1/cl-who.asd"
+           ;; "systems/bordeaux-threads/bordeaux-threads.asd"
+           ;; "systems/chunga-1.0.0/chunga.asd"
+           ;; "systems/ironclad_0.26/ironclad.asd"
+           ;; "systems/babel_0.3.1/babel-streams.asd"
+           ;; "systems/babel_0.3.1/babel-tests.asd"
+           ;; "systems/babel_0.3.1/babel.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre-unicode.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre.asd"
+           ;; "systems/cl+ssl-2008-11-04/cl+ssl.asd"
+           ;; "systems/flexi-streams-1.0.7/flexi-streams.asd"
+           ;; "systems/md5-1.8.5/md5.asd"
+           ;; "systems/slime/swank.asd"
+           ;; "systems/alexandria/alexandria.asd"
+           ;; "systems/alexandria/alexandria-tests.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot-test.asd"
+           ;; "systems/usocket-0.4.1/usocket.asd"
+           ;; "systems/usocket-0.4.1/test/usocket-test.asd"
+           ;; "systems/cl-crypto/cl-crypto.asd"
+           ;; "systems/trivial-features/trivial-features-tests.asd"
+           ;; "systems/trivial-features/trivial-features.asd"
+           ;; "systems/rfc2388/rfc2388.asd"
+           ;; "systems/cffi_0.10.4/cffi-tests.asd"
+           ;; "systems/cffi_0.10.4/cffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-grovel.asd"
+           ;; "systems/cffi_0.10.4/uffi-compat/uffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-uffi-compat.asd"
+           ;; "systems/cffi_0.10.4/cffi-examples.asd"
+           ;; "systems/cl-smtp/cl-smtp.asd"
+           ;; "systems/split-sequence/split-sequence.asd"
+           ;; "systems/trivial-gray-streams-2008-11-02/trivial-gray-streams.asd"
+           ;; "systems/cybertiggyr-time/cybertiggyr-time.asd"
+           ;; "systems/drakma-1.0.0/drakma.asd"
+           ))
     (ucw-presentations darcs "http://common-lisp.net/project/ucw/repos/ucw-presentations")
     (ucw_ajax darcs "http://common-lisp.net/project/ucw/repos/ucw_ajax"
      :asd none)
