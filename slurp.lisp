@@ -67,6 +67,7 @@
      :asd none)
     (araneida-testing darcs "http://common-lisp.net/project/araneida/araneida-testing"
      :asd ("araneida.asd"))
+    (arc-compat (github "g000001"))
     ;; hanshueber has a fork of archive on github.
     (archive (github "froydnj"))
     (armish (clnet darcs))
@@ -74,6 +75,7 @@
      :asd ("arnesi.asd"))
     (aromyxo (github "lnostdal" "Aromyxo"))
     (array-operations (github "tpapp"))
+    (artificial-flavors (github "g000001"))
     (asdf (clnet git)
      :asd none)
     (asdf-binary-locations darcs "http://common-lisp.net/project/asdf-binary-locations/darcs"
@@ -970,6 +972,7 @@
     (clysma (github "aerique")
      :asd ("clysma.asd"
            "clysma-gtk.asd"))
+    (cmlisp1 (github "g000001"))
     (cmucl (clnet cvs "cmucl" "src")
      :asd none)
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
@@ -999,6 +1002,8 @@
      :submodules t
      :asd none)
     (common-worm (github "sykopomp"))
+    (commonorbit (github "g000001" "CommonORBIT")
+     :asd ("CommonORBIT.asd"))
     ;; commonqt-OLD comes from repo.or.cz
     ;; (commonqt git "git://repo.or.cz/commonqt.git" ...)
     ;; Checkout of that repository fails, so I switched to lichteblau's
@@ -1178,6 +1183,7 @@
     (fsvd (melis))
     (ftd (clnet darcs))
     (fukacl (github "fukamachi"))
+    (g000001 (github "g000001"))
     (garbage-pools (google-code svn)
      :asd ("garbage-pools.asd"
            "garbage-pools-test.asd"))
@@ -1517,6 +1523,9 @@
     (latex-table (github "tpapp"))
     (lens (github "willijar" "LENS"))
     (let-plus (github "tpapp"))
+    (lets (github "g000001" "LetS")
+     :asd ("lets.asd"
+           "lets-tests.asd"))
     ;; XXXX: This user has disappeared on github.
     ;; (lexer (github "turbo24prg"))
     (liards (clnet darcs))
@@ -1532,7 +1541,9 @@
            "terminfo.asd"))
     (linebreaker (github "xach"))
     (linj (github "xach"))
+    (lint (github "g000001"))
     (lisa (sourceforge cvs))
+    (lisp-critic (github "g000001"))
     (lisp-matrix (github "blindglobe"))
     (lisp-on-lines (github "drewc")
      :asd ("lisp-on-lines.asd"
@@ -1631,6 +1642,9 @@
     (lsw2 (google-code svn)
      :asd none)
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
+    (maclisp-compat (github "g000001" "MacLISP-compat")
+     :asd ("maclisp-compat.asd"
+           "misc/maclisp.asd"))
     (macrophp (github "valeryz" "MacroPHP"))
     (maild (github "franzinc")
      :asd none)
@@ -1645,6 +1659,7 @@
      :asd none)
     (maxima (sourceforge cvs)
      :asd ("src/maxima.asd"))
+    (mbe (github "g000001"))
     (mc git "git://git.informatimago.com/public/mc"
      :asd none)
     (mcclim (clnet cvs)
@@ -1729,6 +1744,7 @@
     (nfs (github "franzinc")
      :asd none)
     (nibbles (github "froydnj"))
+    (nil-compat (github "g000001"))
     (nio (clnet cvs)
      :asd ("nio.asd"
            "event-notification.asd"))
@@ -1888,6 +1904,7 @@
     (pvs svn "https://spartan.csl.sri.com/svn/public/pvs/trunk"
      :asd none)
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
+    (qpj1 (github "g000001"))
     (quicklisp-bootstrap (github "quicklisp")
      :asd none)
     (quicklisp-client (github "quicklisp")
@@ -1979,8 +1996,10 @@
     ;;:asd none)
     (screamer (github "nikodemus"))
     (series (sourceforge cvs))
+    (series-ext (github "g000001"))
     (sheeple (github "sykopomp"))
     (sheldonbot (github "vsedach" "SheldonBot"))
+    (shibuya.lisp (github "g000001"))
     (shuffletron (github "ahefner"))
     ;; XXXX: This repository appears to be the canonical one, but is
     ;; sicl-OLD from "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
@@ -2022,6 +2041,7 @@
     (sorting (github "gugamilare")
      :asd ("sorting.asd"
            "sorting-benchmark.asd"))
+    (source-compare (github "g000001"))
     ;; XXXX: 2011-02-03 error: not a repository
     ;; XXXX: 2011-03-24 same thing
     ;; XXXX: 2011-05-31 cannot connect to server
@@ -2051,11 +2071,13 @@
     (srfi-86 (github "g000001"))
     (srfi-87 (github "g000001"))
     (srfi-98 (github "g000001"))
+    ;; XXXX: May be obsolete.
     (srfi-compat (github "g000001"))
     (sse-expr (github "deplinenoise")
      :asd none)
     (sst (github "vy"))
     (st-json (github "marijnh" "ST-JSON"))
+    (starlisp (github "g000001" "Starlisp-simulator"))
     (static-vectors (gitorious "iolib")
      :asd ("src/static-vectors.asd"))
     (storable-functions (github "gugamilare")
@@ -2064,6 +2086,7 @@
            "cl-store+functions-tests.asd"
            "storable-functions-tests.asd"))
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
+    (style-checker-1 (github "g000001"))
     (submarine (clnet darcs)
      :asd ("submarine.asd"
            "submarine-tests.asd"))
@@ -2091,6 +2114,7 @@
     (t-system (gitorious)
      :asd none)
     (talcl (github "bobbysmith007"))
+    (tao-compat (github "g000001"))
     (tapulli (google-code svn)
      :asd ("tag-pool/tag-pool.asd"))
     (teepeedee2 (github "vii")
@@ -2256,6 +2280,7 @@
            "until-it-dies.graphics.asd"))
     (upstream (github "nikodemus")
      :asd none)
+    (uranus (github "g000001" "Uranus"))
     (uri (github "franzinc")
      :asd none)
     (uri-template (github "vsedach")
@@ -2387,6 +2412,8 @@
     (zen (github "pyb")
      :asd none)
     (zip (clnet cvs))
+    (zipper-1 (github "g000001"))
+    (zl-compat (github "g000001"))
     (zlib (github "franzinc")
      :asd none)
     (zpb-aws (github "xach"))
