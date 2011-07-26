@@ -25,6 +25,8 @@
            "avm2-lib.asd"
            "swf-writer-hack.asd"))
     (3bmd (github "3b"))
+    ;; The following URL was recently announced.  Is fetching ABCL via http
+    ;; better?  svn co http://svn.common-lisp.net/armedbear/trunk abcl
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
     (abcl-web (sourceforge svn)
      :asd none)
@@ -65,6 +67,7 @@
      :asd none)
     (araneida-testing darcs "http://common-lisp.net/project/araneida/araneida-testing"
      :asd ("araneida.asd"))
+    (arc-compat (github "g000001"))
     ;; hanshueber has a fork of archive on github.
     (archive (github "froydnj"))
     (armish (clnet darcs))
@@ -72,6 +75,7 @@
      :asd ("arnesi.asd"))
     (aromyxo (github "lnostdal" "Aromyxo"))
     (array-operations (github "tpapp"))
+    (artificial-flavors (github "g000001"))
     (asdf (clnet git)
      :asd none)
     (asdf-binary-locations darcs "http://common-lisp.net/project/asdf-binary-locations/darcs"
@@ -357,7 +361,10 @@
     (caleb svn "svn://common-lisp.net/project/caleb/svn")
     ;; XXXX: Should work soon.
     ;; (categories git "git://codebasehq.com/bywicket/xg/categories.git"
-
+    (caveman (github "fukamachi")
+     :asd ("caveman.asd"
+           "caveman-test.asd"
+           "skeleton/skeleton.asd"))
     ;; XXXX: switch to checking out the Linux sources ... or maybe everything
     (ccl svn "http://svn.clozure.com/publicsvn/openmcl/trunk/darwinx86/ccl"
      :asd none)
@@ -431,8 +438,16 @@
      :asd none)
     (cl+ssl (gitorious "cl-plus-ssl" "cl-plus-ssl"))
     (cl-2d (github "tpapp"))
+    (cl-amazonproduct (github "arielnetworks")
+     :asd ("cl-amazonproduct.asd"
+           "cl-amazonproduct-test.asd"))
+    (cl-annot (github "arielnetworks")
+     :asd ("cl-annot.asd"
+           "cl-annot-test.asd"))
+    (cl-anonfun (github "arielnetworks"))
     (cl-azure (github "blackwre"))
     (cl-base64 (b9))
+    (cl-bayesian (github "tpapp"))
     (cl-beanstalk (github "antifuchs"))
     (cl-bench (clnet svn)
      :asd none)
@@ -572,6 +587,9 @@
     (cl-irregsexp (clnet git)
      :asd ("cl-irregsexp-test.asd"
            "cl-irregsexp.asd"))
+    (cl-jags (github "tpapp")
+     :asd ("cl-jags.asd"
+           "cl-jags-tests.asd"))
     (cl-jpeg (clnet cvs "cljl"))
     (cl-js (github "akapav" "js"))
     (cl-json (clnet darcs))
@@ -592,15 +610,24 @@
            "cl-libxml2.asd"
            "xoverlay.asd"))
     (cl-llvm (repo-or-cz))
+    (cl-locale (github "arielnetworks")
+     :asd ("cl-locale.asd"
+           "cl-locale-test.asd"))
+    (cl-loom (github "billstclair"))
+    (cl-loop-plus (github "arielnetworks"))
     (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
      :asd ("cl-markdown-comparisons.asd"
            "cl-markdown-test.asd"
            "cl-markdown.asd"))
+    (cl-markup (github "arielnetworks")
+     :asd ("cl-markup.asd"
+           "cl-markup-test.asd"))
     (cl-mathstats darcs "http://common-lisp.net/project/cl-mathstats"
      :asd ("cl-mathstats.asd"
            "cl-mathstats-test.asd"))
     (cl-mediawiki (github "bobbysmith007"))
+    (cl-memcached (github "arielnetworks"))
     (cl-menusystem (clnet cvs))
     (cl-migrations (clnet darcs))
     (cl-mill (google-code svn)
@@ -659,18 +686,26 @@
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
     (cl-opencalais (github "blackwre"))
-    ;; XXXXXXXXXX: There is a cl-opengl project on github.  Is it a better version?
-    ;;(cl-opengl (github "3b") :asd none)
-    (cl-opengl (clnet darcs)
+    ;; XXXXXXXXXX: Compare this to the cl-opengl below and delete one.
+    (cl-opengl (github "3b")
      :asd ("cl-glu.asd"
            "cl-glut-examples.asd"
            "cl-glut.asd"
            "cl-opengl.asd"))
+    ;; (cl-opengl (clnet darcs)
+    ;;  :asd ("cl-glu.asd"
+    ;;        "cl-glut-examples.asd"
+    ;;        "cl-glut.asd"
+    ;;        "cl-opengl.asd"))
     (cl-openid (clnet darcs))
     (cl-parsec (github "vseloved"))
     (cl-parser-combinators (github "Ramarren")
      :asd ("parser-combinators.asd"
            "parser-combinators-tests.asd"))
+    (cl-pattern (github "arielnetworks")
+     :asd ("cl-pattern.asd"
+           "cl-pattern-test.asd"
+           "cl-pattern-benchmark.asd"))
     (cl-pdf svn "http://www.fractalconcept.com:8000/public/open-source/cl-pdf"
      :asd ("cl-pdf.asd"
            "cl-pdf-parser.asd"
@@ -739,7 +774,11 @@
            "tokyotyrant.asd"))
     (cl-telnetd (clnet cvs)
      :asd none)
+    (cl-test-more (github "fukamachi"))
     (cl-tetris3d (github "grouzen"))
+    (cl-text-tables (github "tpapp")
+     :asd ("cl-text-tables.asd"
+           "cl-text-tables-tests.asd"))
     (cl-tidy (github "gonzojive"))
     (cl-tk (github "marijnh"))
     (cl-tokyo-cabinet (github "keithj")
@@ -793,6 +832,10 @@
     ;; XXXX: rename to zeromq
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
+    (clack (github "fukamachi")
+     :asd ("clack.asd"
+           "clack-test.asd"))
+    (clack-doc (github "fukamachi"))
     (claw (clnet svn)
      :asd ("main/claw-as/claw-as.asd"
            "main/claw-demo/claw-demo.asd"
@@ -807,6 +850,7 @@
      :asd none)
     (clbuild2 (gitorious)
      :asd none)
+    (clee (github "fukamachi"))
     (clem (github "slyrus")
      :asd ("clem.asd"
            "clem-benchmark.asd"
@@ -928,6 +972,7 @@
     (clysma (github "aerique")
      :asd ("clysma.asd"
            "clysma-gtk.asd"))
+    (cmlisp1 (github "g000001"))
     (cmucl (clnet cvs "cmucl" "src")
      :asd none)
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
@@ -957,6 +1002,8 @@
      :submodules t
      :asd none)
     (common-worm (github "sykopomp"))
+    (commonorbit (github "g000001" "CommonORBIT")
+     :asd ("CommonORBIT.asd"))
     ;; commonqt-OLD comes from repo.or.cz
     ;; (commonqt git "git://repo.or.cz/commonqt.git" ...)
     ;; Checkout of that repository fails, so I switched to lichteblau's
@@ -984,6 +1031,7 @@
     (decimal-floats (github "gugamilare")
      :asd ("decimal-floats.asd"
            "decimal-floats-tests.asd"))
+    (decimals (github "tlikonen" "cl-decimals"))
     (deflate (github "pmai" "Deflate"))
     (defservice (github "marijnh")
      :asd ("defservice.asd"
@@ -1134,6 +1182,8 @@
     (fsbv (repo-or-cz))
     (fsvd (melis))
     (ftd (clnet darcs))
+    (fukacl (github "fukamachi"))
+    (g000001 (github "g000001"))
     (garbage-pools (google-code svn)
      :asd ("garbage-pools.asd"
            "garbage-pools-test.asd"))
@@ -1145,6 +1195,7 @@
      :asd ("gcc-xml-ffi.asd"
            "gcc-xml-ffi-test.asd"))
     (geometry (github "xach"))
+    (getopt (b9))
     (gigamonkey-distcompiler (github "gigamonkey" "quicklisp-distcompiler"))
     (glaw (github "patzy")
      :asd ("glaw-sdl.asd"
@@ -1155,7 +1206,9 @@
     (glop (github "patzy")
      :asd ("glop.asd"
            "glop-test.asd"))
-    (getopt (b9))
+    (gotanda (github "fukamachi")
+     :asd ("gotanda.asd"
+           "gotanda-server.asd"))
     (gridlock (github "xach"))
     (group-by (github "bobbysmith007"))
     (grout (github "xach"))
@@ -1469,6 +1522,10 @@
     (lassie (melis))
     (latex-table (github "tpapp"))
     (lens (github "willijar" "LENS"))
+    (let-plus (github "tpapp"))
+    (lets (github "g000001" "LetS")
+     :asd ("lets.asd"
+           "lets-tests.asd"))
     ;; XXXX: This user has disappeared on github.
     ;; (lexer (github "turbo24prg"))
     (liards (clnet darcs))
@@ -1484,7 +1541,9 @@
            "terminfo.asd"))
     (linebreaker (github "xach"))
     (linj (github "xach"))
+    (lint (github "g000001"))
     (lisa (sourceforge cvs))
+    (lisp-critic (github "g000001"))
     (lisp-matrix (github "blindglobe"))
     (lisp-on-lines (github "drewc")
      :asd ("lisp-on-lines.asd"
@@ -1547,6 +1606,10 @@
            "lispbuilder-yacc/lispbuilder-yacc.asd"))
     (lispdev (bitbucket "skolos")
      :asd none)
+    (lisplog (github "billstclair" "Lisplog")
+     :asd ("lisplog.asd"
+           "fsdb/fsdb.asd"
+           "cl-crypto/cl-crypto.asd"))
     (lispmud (github "Valera" "LispMud")
      :asd ("lispmud.asd"
            "mudsketcher.asd"))
@@ -1579,6 +1642,9 @@
     (lsw2 (google-code svn)
      :asd none)
     (lw-compat darcs "http://common-lisp.net/project/closer/repos/lw-compat")
+    (maclisp-compat (github "g000001" "MacLISP-compat")
+     :asd ("maclisp-compat.asd"
+           "misc/maclisp.asd"))
     (macrophp (github "valeryz" "MacroPHP"))
     (maild (github "franzinc")
      :asd none)
@@ -1593,6 +1659,7 @@
      :asd none)
     (maxima (sourceforge cvs)
      :asd ("src/maxima.asd"))
+    (mbe (github "g000001"))
     (mc git "git://git.informatimago.com/public/mc"
      :asd none)
     (mcclim (clnet cvs)
@@ -1677,6 +1744,7 @@
     (nfs (github "franzinc")
      :asd none)
     (nibbles (github "froydnj"))
+    (nil-compat (github "g000001"))
     (nio (clnet cvs)
      :asd ("nio.asd"
            "event-notification.asd"))
@@ -1712,6 +1780,7 @@
      :asd ("osicat.asd"
            "osicat-tests.asd"))
     (outbreak (github "patzy"))
+    (package-local-nicknames (github "3b"))
     (page-ranges (github "xach"))
     (paktahn (github "skypher")
      :asd none)
@@ -1801,6 +1870,9 @@
      :asd ("src/plop.asd"))
     (png-read (github "Ramarren"))
     (poiu (clnet git "qitab"))
+    (ponzu.db (github "fukamachi")
+     :asd ("ponzu.db.asd"
+           "ponzu.db-test.asd"))
     (portableaserve (sourceforge cvs)
      :asd ("acl-compat/acl-compat.asd"
            "aserve/aserve.asd"
@@ -1832,6 +1904,7 @@
     (pvs svn "https://spartan.csl.sri.com/svn/public/pvs/trunk"
      :asd none)
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
+    (qpj1 (github "g000001"))
     (quicklisp-bootstrap (github "quicklisp")
      :asd none)
     (quicklisp-client (github "quicklisp")
@@ -1912,10 +1985,10 @@
     ;; (sb-mailbox (github "nikodemus")
     ;;  :asd none)
     (sb-vector-io (github "nikodemus"))
-    (sbcl (sourceforge cvs)
+    (sbcl (sourceforge git)
      :asd none)
-    (sbcl-git git "git://git.boinkor.net/sbcl"
-     :asd none)
+    ;;(sbcl-git git "git://git.boinkor.net/sbcl"
+    ;; :asd none)
     (score (github "emoon" "Score")
      :asd ("src/Score.asd"))
     ;; XXXX:  Is this one better?  stored in screamer-or-cz
@@ -1923,8 +1996,10 @@
     ;;:asd none)
     (screamer (github "nikodemus"))
     (series (sourceforge cvs))
+    (series-ext (github "g000001"))
     (sheeple (github "sykopomp"))
     (sheldonbot (github "vsedach" "SheldonBot"))
+    (shibuya.lisp (github "g000001"))
     (shuffletron (github "ahefner"))
     ;; XXXX: This repository appears to be the canonical one, but is
     ;; sicl-OLD from "http://dept-info.labri.fr/~strandh/SICL/SICL.git"
@@ -1966,16 +2041,43 @@
     (sorting (github "gugamilare")
      :asd ("sorting.asd"
            "sorting-benchmark.asd"))
+    (source-compare (github "g000001"))
     ;; XXXX: 2011-02-03 error: not a repository
     ;; XXXX: 2011-03-24 same thing
     ;; XXXX: 2011-05-31 cannot connect to server
     (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (spectacle (github "slyrus"))
     (squirl (github "sykopomp"))
+    (srfi-0 (github "g000001"))
+    (srfi-1 (github "g000001"))
+    (srfi-2 (github "g000001"))
+    (srfi-3 (github "g000001"))
+    (srfi-4 (github "g000001"))
+    (srfi-5 (github "g000001"))
+    (srfi-6 (github "g000001"))
+    (srfi-7 (github "g000001"))
+    (srfi-8 (github "g000001"))
+    (srfi-10 (github "g000001"))
+    (srfi-11 (github "g000001"))
+    (srfi-16 (github "g000001"))
+    (srfi-23 (github "g000001"))
+    (srfi-26 (github "g000001"))
+    (srfi-28 (github "g000001"))
+    (srfi-42 (github "g000001"))
+    (srfi-48 (github "g000001"))
+    (srfi-61 (github "g000001"))
+    (srfi-62 (github "g000001"))
+    (srfi-78 (github "g000001"))
+    (srfi-86 (github "g000001"))
+    (srfi-87 (github "g000001"))
+    (srfi-98 (github "g000001"))
+    ;; XXXX: May be obsolete.
+    (srfi-compat (github "g000001"))
     (sse-expr (github "deplinenoise")
      :asd none)
     (sst (github "vy"))
     (st-json (github "marijnh" "ST-JSON"))
+    (starlisp (github "g000001" "Starlisp-simulator"))
     (static-vectors (gitorious "iolib")
      :asd ("src/static-vectors.asd"))
     (storable-functions (github "gugamilare")
@@ -1984,6 +2086,7 @@
            "cl-store+functions-tests.asd"
            "storable-functions-tests.asd"))
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
+    (style-checker-1 (github "g000001"))
     (submarine (clnet darcs)
      :asd ("submarine.asd"
            "submarine-tests.asd"))
@@ -2011,6 +2114,7 @@
     (t-system (gitorious)
      :asd none)
     (talcl (github "bobbysmith007"))
+    (tao-compat (github "g000001"))
     (tapulli (google-code svn)
      :asd ("tag-pool/tag-pool.asd"))
     (teepeedee2 (github "vii")
@@ -2041,7 +2145,9 @@
     (tinaa darcs "http://common-lisp.net/project/tinaa"
      :asd ("tinaa.asd"
            "tinaa-test.asd"))
+    (titler (github "ryepup"))
     (towers (github "death"))
+    (tpapp-utils (github "tpapp"))
     (trivial-backtrace git "http://common-lisp.net/project/trivial-backtrace/trivial-backtrace.git"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
@@ -2069,6 +2175,87 @@
      :asd ("trivial-timeout.asd"
            "trivial-timeout-test.asd"))
     (trivial-utf-8 (clnet darcs))
+    (trubanc-lisp (github "billstclair")
+     :asd ("trubanc.asd"
+           "trubanc-loader.asd"
+           ;; "systems/puri-1.5.1/puri.asd"
+           ;; "systems/cl-fad-0.6.2/cl-fad.asd"
+           ;; "systems/cl-base64-3.3.2/cl-base64.asd"
+           ;; "systems/cl-who-0.11.1/cl-who.asd"
+           ;; "systems/bordeaux-threads/bordeaux-threads.asd"
+           ;; "systems/chunga-1.0.0/chunga.asd"
+           ;; "systems/ironclad_0.26/ironclad.asd"
+           ;; "systems/babel_0.3.1/babel-streams.asd"
+           ;; "systems/babel_0.3.1/babel-tests.asd"
+           ;; "systems/babel_0.3.1/babel.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre-unicode.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre.asd"
+           ;; "systems/cl+ssl-2008-11-04/cl+ssl.asd"
+           ;; "systems/flexi-streams-1.0.7/flexi-streams.asd"
+           ;; "systems/md5-1.8.5/md5.asd"
+           ;; "systems/slime/swank.asd"
+           ;; "systems/alexandria/alexandria.asd"
+           ;; "systems/alexandria/alexandria-tests.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot-test.asd"
+           ;; "systems/usocket-0.4.1/usocket.asd"
+           ;; "systems/usocket-0.4.1/test/usocket-test.asd"
+           ;; "systems/trivial-features/trivial-features-tests.asd"
+           ;; "systems/trivial-features/trivial-features.asd"
+           ;; "systems/rfc2388/rfc2388.asd"
+           ;; "systems/cffi_0.10.4/cffi-tests.asd"
+           ;; "systems/cffi_0.10.4/cffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-grovel.asd"
+           ;; "systems/cffi_0.10.4/uffi-compat/uffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-uffi-compat.asd"
+           ;; "systems/cffi_0.10.4/cffi-examples.asd"
+           ;; "systems/cl-smtp/cl-smtp.asd"
+           ;; "systems/split-sequence/split-sequence.asd"
+           ;; "systems/trivial-gray-streams-2008-11-02/trivial-gray-streams.asd"
+           ;; "systems/cybertiggyr-time/cybertiggyr-time.asd"
+           ;; "systems/drakma-1.0.0/drakma.asd"
+           ))
+    (truledger (github "billstclair")
+     :asd ("truledger.asd"
+           "truledger-loader.asd"
+           ;; "systems/puri-1.5.1/puri.asd"
+           ;; "systems/cl-fad-0.6.2/cl-fad.asd"
+           ;; "systems/cl-base64-3.3.2/cl-base64.asd"
+           ;; "systems/cl-who-0.11.1/cl-who.asd"
+           ;; "systems/bordeaux-threads/bordeaux-threads.asd"
+           ;; "systems/chunga-1.0.0/chunga.asd"
+           ;; "systems/ironclad_0.26/ironclad.asd"
+           ;; "systems/babel_0.3.1/babel-streams.asd"
+           ;; "systems/babel_0.3.1/babel-tests.asd"
+           ;; "systems/babel_0.3.1/babel.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre-unicode.asd"
+           ;; "systems/cl-ppcre-2.0.1/cl-ppcre.asd"
+           ;; "systems/cl+ssl-2008-11-04/cl+ssl.asd"
+           ;; "systems/flexi-streams-1.0.7/flexi-streams.asd"
+           ;; "systems/md5-1.8.5/md5.asd"
+           ;; "systems/slime/swank.asd"
+           ;; "systems/alexandria/alexandria.asd"
+           ;; "systems/alexandria/alexandria-tests.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot.asd"
+           ;; "systems/hunchentoot-1.0.0/hunchentoot-test.asd"
+           ;; "systems/usocket-0.4.1/usocket.asd"
+           ;; "systems/usocket-0.4.1/test/usocket-test.asd"
+           ;; "systems/cl-crypto/cl-crypto.asd"
+           ;; "systems/trivial-features/trivial-features-tests.asd"
+           ;; "systems/trivial-features/trivial-features.asd"
+           ;; "systems/rfc2388/rfc2388.asd"
+           ;; "systems/cffi_0.10.4/cffi-tests.asd"
+           ;; "systems/cffi_0.10.4/cffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-grovel.asd"
+           ;; "systems/cffi_0.10.4/uffi-compat/uffi.asd"
+           ;; "systems/cffi_0.10.4/cffi-uffi-compat.asd"
+           ;; "systems/cffi_0.10.4/cffi-examples.asd"
+           ;; "systems/cl-smtp/cl-smtp.asd"
+           ;; "systems/split-sequence/split-sequence.asd"
+           ;; "systems/trivial-gray-streams-2008-11-02/trivial-gray-streams.asd"
+           ;; "systems/cybertiggyr-time/cybertiggyr-time.asd"
+           ;; "systems/drakma-1.0.0/drakma.asd"
+           ))
     (ucw-presentations darcs "http://common-lisp.net/project/ucw/repos/ucw-presentations")
     (ucw_ajax darcs "http://common-lisp.net/project/ucw/repos/ucw_ajax"
      :asd none)
@@ -2083,6 +2270,7 @@
     (umlisp-orf (b9)
      :asd ("umlisp-orf.asd"
            "umlisp-orf-tests.asd"))
+    (uncl (github "fukamachi"))
     (unet (github "nklein"))
     (until-it-dies (github "sykopomp")
      :asd ("until-it-dies.base.asd"
@@ -2092,6 +2280,7 @@
            "until-it-dies.graphics.asd"))
     (upstream (github "nikodemus")
      :asd none)
+    (uranus (github "g000001" "Uranus"))
     (uri (github "franzinc")
      :asd none)
     (uri-template (github "vsedach")
@@ -2223,6 +2412,8 @@
     (zen (github "pyb")
      :asd none)
     (zip (clnet cvs))
+    (zipper-1 (github "g000001"))
+    (zl-compat (github "g000001"))
     (zlib (github "franzinc")
      :asd none)
     (zpb-aws (github "xach"))
@@ -2336,7 +2527,8 @@ sourceforge.net."
              ,(intern (string-upcase (concat repository ".cvs.sourceforge.net")))
              ,(concat "/cvsroot/" repository)
              :module ,repository))
-    ((git) `(git ,(concat "http://" repository ".sourceforge.net/git/" repository "/.git")))
+    ((git) `(git ,(concat "git://" repository ".git.sourceforge.net/gitroot/" repository
+                          "/" repository ".git")))
     ((svn) `(svn ,(concat "https://" repository ".svn.sourceforge.net/svnroot/" repository)))))
 
 (defun xach (project)
