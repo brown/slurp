@@ -429,7 +429,7 @@
     ;; Unofficial darcs mirrir.
     (chunga darcs "http://common-lisp.net/~loliveira/ediware/chunga"
      :asd none)
-    (cl+ssl cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
+    (cl+ssl (gitorious "cl-plus-ssl" "cl-plus-ssl"))
     (cl-2d (github "tpapp"))
     (cl-azure (github "blackwre"))
     (cl-base64 (b9))
@@ -2042,7 +2042,7 @@
      :asd ("tinaa.asd"
            "tinaa-test.asd"))
     (towers (github "death"))
-    (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
+    (trivial-backtrace git "http://common-lisp.net/project/trivial-backtrace/trivial-backtrace.git"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
     (trivial-bit-streams (github "Lovesan"))
@@ -2053,7 +2053,7 @@
            "trivial-features-tests.asd"))
     ;; XXXX: Incompatible with repository error 2011-05-31.
     (trivial-garbage darcs "http://common-lisp.net/~loliveira/darcs/trivial-garbage")
-    (trivial-gray-streams cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
+    (trivial-gray-streams (gitorious))
     (trivial-http darcs "http://common-lisp.net/project/trivial-http"
      :asd ("trivial-http.asd"
            "trivial-http-test.asd"))
