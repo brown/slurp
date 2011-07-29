@@ -1,6 +1,7 @@
 
 ;;;;    slurp.lisp
 
+; check out     (blackthorn-engine-3d (google-code hg))
 
 (in-package #:slurp)
 
@@ -577,6 +578,7 @@
     (cl-i18n (bitbucket "skypher"))
     (cl-imagemagick (github "franzinc")
      :asd none)
+    (cl-inflector (github "bobbysmith007"))
     ;; Unofficial darcs mirrir.
     (cl-interpol darcs "http://common-lisp.net/~loliveira/ediware/cl-interpol"
      :asd none)
@@ -698,6 +700,9 @@
     ;;        "cl-glut.asd"
     ;;        "cl-opengl.asd"))
     (cl-openid (clnet darcs))
+    (cl-pack (github "dballard")
+     :asd ("cl-pack.asd"
+           "ieee-floats/ieee-floats.asd"))
     (cl-parsec (github "vseloved"))
     (cl-parser-combinators (github "Ramarren")
      :asd ("parser-combinators.asd"
@@ -975,6 +980,8 @@
     (cmlisp1 (github "g000001"))
     (cmucl (clnet cvs "cmucl" "src")
      :asd none)
+    (collectors (github "bobbysmith007"))
+    (com.dvlsoft.declt git "http://www.lrde.epita.fr/~didier/software/lisp/declt/declt.git")
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
     (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
     (com.gigamonkeys.id3v2 (github "slyrus" "monkeylib-id3")
@@ -1093,6 +1100,8 @@
      :asd none)
     (ecl-test git "http://ecls.sourceforge.net/git/ecl-test/.git"
      :asd none)
+    (eclipse (clnet cvs)
+     :asd none)
     (elephant (clnet darcs "elephant" "elephant-1.0")
      :asd ("ele-bdb.asd"
            "ele-clp.asd"
@@ -1106,8 +1115,7 @@
            "src/contrib/rread/db-clsql/ele-postgresql.asd"
            "src/contrib/rread/db-clsql/ele-sqlite3.asd"
            "src/contrib/rread/dcm/dcm.asd"))
-    (eclipse (clnet cvs)
-     :asd none)
+    (elf git "git://adaptive.cs.unm.edu/elf.git")
     (enumerations cvs pserver anonymous t common-lisp.net "/project/cl-enumeration/cvsroot")
     (eos (github "adlai" "Eos"))
     (epigraph (github "slyrus")
@@ -1153,6 +1161,8 @@
            "pfft.asd"))
     (filtered-functions darcs "http://common-lisp.net/project/closer/repos/filtered-functions")
     (finebrush (github "Valera"))
+    (fink (github "dballard")
+     :asd none)
     (firehose (github "xach"))
     (fiveam darcs "http://common-lisp.net/project/bese/repos/fiveam")
     ;; Unofficial darcs mirrir.
@@ -2133,6 +2143,7 @@
     (tester (github "franzinc"))
     (texinfo-docstrings (gitorious "iolib"))
     (the (google-code svn "cl-the"))
+    (thread-pool (github "kiuma"))
     (tibly (google-code svn)
      :asd none)
     (thinlisp (github "vsedach" "Thinlisp-1.1")
