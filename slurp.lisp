@@ -437,7 +437,7 @@
     ;; Unofficial darcs mirrir.
     (chunga darcs "http://common-lisp.net/~loliveira/ediware/chunga"
      :asd none)
-    (cl+ssl cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
+    (cl+ssl (gitorious "cl-plus-ssl" "cl-plus-ssl"))
     (cl-2d (github "tpapp"))
     (cl-amazonproduct (github "arielnetworks")
      :asd ("cl-amazonproduct.asd"
@@ -642,8 +642,8 @@
     (cl-mongo (github "fons"))
     (cl-mongrel2 (github "vseloved"))
 
-; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-;    (mpeg (clnet cvs "cl-mp3-parse" "cl-mp3-parse") :asd none)
+    ;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    ;;    (mpeg (clnet cvs "cl-mp3-parse" "cl-mp3-parse") :asd none)
 
     (cl-mpi (google-code svn)
      :asd ("cl-mpi.asd"
@@ -1139,8 +1139,8 @@
            "expresso/trunk/shell/terminfo/terminfo.asd"
            "expresso/trunk/shell/linedit/linedit.asd"
            "expresso/trunk/shell/expresso-shell.asd"
-           ;"expresso/trunk/shell/uffi/uffi.asd"
-           ;"expresso/trunk/shell/uffi/uffi-tests.asd"
+           ;; "expresso/trunk/shell/uffi/uffi.asd"
+           ;; "expresso/trunk/shell/uffi/uffi-tests.asd"
            "expresso/trunk/p11/p11.asd"
            "expresso/trunk/compiler/expresso-compiler.asd"
            "expresso/trunk/expcore/expresso-core.asd"
@@ -2159,7 +2159,7 @@
     (titler (github "ryepup"))
     (towers (github "death"))
     (tpapp-utils (github "tpapp"))
-    (trivial-backtrace darcs "http://common-lisp.net/project/trivial-backtrace"
+    (trivial-backtrace git "http://common-lisp.net/project/trivial-backtrace/trivial-backtrace.git"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
     (trivial-bit-streams (github "Lovesan"))
@@ -2170,7 +2170,7 @@
            "trivial-features-tests.asd"))
     ;; XXXX: Incompatible with repository error 2011-05-31.
     (trivial-garbage darcs "http://common-lisp.net/~loliveira/darcs/trivial-garbage")
-    (trivial-gray-streams cvs pserver anonymous t common-lisp.net "/project/cl-plus-ssl/cvsroot")
+    (trivial-gray-streams (gitorious))
     (trivial-http darcs "http://common-lisp.net/project/trivial-http"
      :asd ("trivial-http.asd"
            "trivial-http-test.asd"))
