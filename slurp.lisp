@@ -159,20 +159,8 @@
            "projects/unmaintained/gpn/gpn.asd"
            "projects/unmaintained/raw-data/mcp/mcp.asd"
            "projects/unmaintained/saugnapf/src/saugnapf.asd"
-           "thirdparty/chunga/chunga.asd"
-           "thirdparty/cl-fad/cl-fad.asd"
-           "thirdparty/cl-gd/cl-gd-test.asd"
-           "thirdparty/cl-gd/cl-gd.asd"
-           "thirdparty/cl-interpol/cl-interpol.asd"
-           "thirdparty/cl-ppcre/cl-ppcre-unicode.asd"
-           "thirdparty/cl-ppcre/cl-ppcre.asd"
-           "thirdparty/cl-unicode/cl-unicode.asd"
-           "thirdparty/cl-webdav/cl-webdav.asd"
-           "thirdparty/cl-who/cl-who.asd"
            "thirdparty/documentation-template/documentation-template.asd"
-           "thirdparty/drakma/drakma.asd"
            "thirdparty/flexi-streams/flexi-streams.asd"
-           "thirdparty/hunchentoot/hunchentoot.asd"
            ;; "thirdparty/alexandria/alexandria-tests.asd"
            ;; "thirdparty/alexandria/alexandria.asd"
            ;; "thirdparty/anaphora-0.9.3/anaphora.asd"
@@ -222,24 +210,34 @@
            ;; "thirdparty/cffi/cffi.asd"
            ;; "thirdparty/cffi/uffi-compat/uffi.asd"
            ;; "thirdparty/chtml/closure-html.asd"
+           ;; "thirdparty/chunga/chunga.asd"
            ;; "thirdparty/cl+ssl/cl+ssl.asd"
            ;; "thirdparty/cl-base64/cl-base64.asd"
+           ;; "thirdparty/cl-fad/cl-fad.asd"
            ;; "thirdparty/cl-ftp/ftp.asd"
+           ;; "thirdparty/cl-gd/cl-gd-test.asd"
+           ;; "thirdparty/cl-gd/cl-gd.asd"
+           ;; "thirdparty/cl-interpol/cl-interpol.asd"
            ;; "thirdparty/cl-mime/cl-mime.asd"
            ;; "thirdparty/cl-paypal/cl-paypal.asd"
            ;; "thirdparty/cl-pdf/cl-pdf-parser.asd"
            ;; "thirdparty/cl-pdf/cl-pdf.asd"
+           ;; "thirdparty/cl-ppcre/cl-ppcre-unicode.asd"
+           ;; "thirdparty/cl-ppcre/cl-ppcre.asd"
            ;; "thirdparty/cl-qprint/cl-qprint.asd"
            ;; "thirdparty/cl-smtp/cl-smtp.asd"
            ;; "thirdparty/cl-ssl/cl-ssl/cl-ssl.asd"
            ;; "thirdparty/cl-stm/_darcs/pristine/cl-stm.asd"
            ;; "thirdparty/cl-stm/cl-stm.asd"
            ;; "thirdparty/cl-store_0.8.4/cl-store.asd"
+           ;; "thirdparty/cl-unicode/cl-unicode.asd"
            ;; "thirdparty/cl-vectors-0.1.3/cl-aa-misc.asd"
            ;; "thirdparty/cl-vectors-0.1.3/cl-aa.asd"
            ;; "thirdparty/cl-vectors-0.1.3/cl-paths-ttf.asd"
            ;; "thirdparty/cl-vectors-0.1.3/cl-paths.asd"
            ;; "thirdparty/cl-vectors-0.1.3/cl-vectors.asd"
+           ;; "thirdparty/cl-webdav/cl-webdav.asd"
+           ;; "thirdparty/cl-who/cl-who.asd"
            ;; "thirdparty/cl-xmlspam/cl-xmlspam.asd"
            ;; "thirdparty/cl-yacc/_darcs/pristine/yacc.asd"
            ;; "thirdparty/cl-yacc/yacc.asd"
@@ -252,8 +250,10 @@
            ;; "thirdparty/cybertiggyr-time/cybertiggyr-time.asd"
            ;; "thirdparty/defclass-star/_darcs/pristine/defclass-star.asd"
            ;; "thirdparty/defclass-star/defclass-star.asd"
+           ;; "thirdparty/drakma/drakma.asd"
            ;; "thirdparty/fiveam/_darcs/pristine/fiveam.asd"
            ;; "thirdparty/fiveam/fiveam.asd"
+           ;; "thirdparty/hunchentoot/hunchentoot.asd"
            ;; "thirdparty/iolib/examples/iolib.examples.asd"
            ;; "thirdparty/iolib/src/iolib.asd"
            ;; "thirdparty/iolib/src/iolib.base.asd"
@@ -434,9 +434,7 @@
     (chronicity (github "chaitanyagupta")
      :asd ("chronicity.asd"
            "chronicity-test.asd"))
-    ;; Unofficial darcs mirrir.
-    (chunga darcs "http://common-lisp.net/~loliveira/ediware/chunga"
-     :asd none)
+    (chunga (github "edicl"))
     (cl+ssl (gitorious "cl-plus-ssl" "cl-plus-ssl"))
     (cl-2d (github "tpapp"))
     (cl-amazonproduct (github "arielnetworks")
@@ -525,9 +523,7 @@
     (cl-env (github "franzinc"))
     (cl-eshop (github "rigidus")
      :asd none)
-    ;; Unofficial darcs mirrir.
-    (cl-fad darcs "http://common-lisp.net/~loliveira/ediware/cl-fad"
-     :asd none)
+    (cl-fad (github "edicl"))
     (cl-fluiddb (github "hdurer")
      :asd ("cl-fluiddb.asd"
            "cl-fluiddb-test.asd"))
@@ -537,9 +533,9 @@
     (cl-gambol (google-code svn)
      :asd ("gambol.asd"))
     (cl-gcalc (google-code svn))
-    ;; Unofficial darcs mirrir, slightly different from bknr version.
-    (cl-gd darcs "http://common-lisp.net/~loliveira/ediware/cl-gd"
-     :asd none)
+    (cl-gd (github "edicl")
+     :asd ("cl-gd-test.asd"
+           "cl-gd.asd"))
     (cl-genomic (github "keithj")
      :asd ("cl-genomic.asd"
            "cl-genomic-test.asd"))
@@ -579,9 +575,7 @@
     (cl-imagemagick (github "franzinc")
      :asd none)
     (cl-inflector (github "bobbysmith007"))
-    ;; Unofficial darcs mirrir.
-    (cl-interpol darcs "http://common-lisp.net/~loliveira/ediware/cl-interpol"
-     :asd none)
+    (cl-interpol (github "edicl"))
     (cl-irc (clnet svn)
      :asd ("cl-irc.asd"
            "example/cliki-bot.asd"
@@ -720,9 +714,9 @@
     (cl-photo (b9)
      :asd ("cl-photo.asd"
            "cl-photo-tests.asd"))
-    ;; Unofficial darcs mirrir.
-    (cl-ppcre darcs "http://common-lisp.net/~loliveira/ediware/cl-ppcre"
-     :asd none)
+    (cl-ppcre (github "edicl")
+     :asd ("cl-ppcre-unicode.asd"
+           "cl-ppcre.asd"))
     ;; The web page says the repository on bitbucket is the most recent.
     ;; My old version is from:  (cl-prevalence (clnet cvs))
     (cl-prevalence (bitbucket "skypher")
@@ -805,6 +799,7 @@
            "cl-typesetting-test.asd"
            "contrib/xhtml-renderer/xml-render.asd"
            "documentation/lisp-source/cl-pdf-doc.asd"))
+    (cl-unicode (github "edicl"))
     (cl-unification (clnet cvs)
      :asd ("cl-unification.asd"
            "cl-unification-lib.asd"))
@@ -823,9 +818,8 @@
            "cl-variates-test.asd"))
     (cl-wal-trunk (sourceforge svn "cl-wal"))
     (cl-web-crawler (google-code svn))
-    ;; Unofficial darcs mirrir.
-    (cl-who darcs "http://common-lisp.net/~loliveira/ediware/cl-who"
-     :asd none)
+    (cl-webdav (github "edicl"))
+    (cl-who (github "edicl"))
     (cl-whois (github "billitch"))
     (cl-x86-asm (repo-or-cz))
     (cl-xspf (google-code svn))
@@ -1081,9 +1075,7 @@
     (doors (github "Lovesan")
      :asd ("doors.asd"
            "doors.examples.asd"))
-    ;; Unofficial darcs mirrir.
-    (drakma darcs "http://common-lisp.net/~loliveira/ediware/drakma"
-     :asd none)
+    (drakma (github "edicl"))
     (dynamic-classes darcs "http://common-lisp.net/project/dynamic-classes"
      :asd ("dynamic-classes.asd"
            "dynamic-classes-test.asd"))
@@ -1430,9 +1422,7 @@
      :asd ("hu.dwim.walker.documentation.asd"
            "hu.dwim.walker.test.asd"
            "hu.dwim.walker.asd"))
-    ;; Unofficial darcs mirrir.
-    (hunchentoot darcs "http://common-lisp.net/~loliveira/ediware/hunchentoot"
-     :asd none)
+    (hunchentoot (github "edicl"))
     (hunchentoot-auth (harmon)
      :asd ("hunchentoot-auth.asd"
            "hunchentoot-auth-test.asd"))
