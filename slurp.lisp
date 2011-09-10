@@ -15,7 +15,7 @@
   (defun concat (&rest args)
     (apply #'concatenate (cons 'string args))))
 
-(defparameter +repositiory-specs+
+(defparameter +repository-specs+
   '((3b-swf (github "3b")
      :asd ("3b-swf-swc.asd"
            "3b-swf.asd"))
@@ -408,6 +408,7 @@
     (cffi-stfl (github "Ramarren"))
     (cffi-udp git "http://cl-www.msi.co.jp/projects/cffi-udp/cffi-udp.git")
     (cffi-util darcs "http://common-lisp.net/project/bdb/darcs/cffi-util")
+    (cffi-wordnet (github "kraison"))
     (ch-asdf (github "slyrus"))
     ;; ch-image is also available on github, but this version seems newer.
     ;; XXXX: Look at the two again.
@@ -469,6 +470,7 @@
     (cl-bliky (github "fons"))
     (cl-blockfort (github "gonzojive"))
     (cl-blog svn "svn://unmutual.info/cl-blog/trunk/cl-blog")
+    (cl-bmp (github "mon-key"))
     (cl-btree (github "gonzojive")
      :asd ("btree/btree.asd"))
     (cl-btree-trunk (sourceforge svn "cl-btree"))
@@ -529,6 +531,7 @@
            "cl-fluiddb-test.asd"))
     (cl-frame (github "dto")
      :asd none)
+    (cl-freeswitch (github "kraison"))
     (cl-future (github "jpalmucci"))
     (cl-gambol (google-code svn)
      :asd ("gambol.asd"))
@@ -654,6 +657,7 @@
      :asd ("cl-mysql-test.asd"
            "cl-mysql.asd"))
     (cl-ncurses (clnet svn))
+    (cl-neo4j (github "kraison"))
     (cl-net-snmp (sourceforge svn)
      :asd ("asn.1/trunk/asn.1-dev.asd"
            "asn.1/trunk/asn.1.asd"
@@ -884,6 +888,7 @@
            "clim-desktop-minimal.asd"))
     (climacs (clnet cvs))
     (climc (google-code svn))
+    (clime (github "mon-key"))
     (climon (github "nlamirault"))
     (clisp (sourceforge cvs)
      :asd none)
@@ -1021,6 +1026,7 @@
     (contextl darcs "http://common-lisp.net/project/closer/repos/contextl")
     (css-lite (github "paddymul"))
     (css-selectors (github "bobbysmith007"))
+    (csv-parser (github "nikodemus"))
     (cusp svn "http://cusp.googlecode.com/svn" ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
@@ -1084,6 +1090,7 @@
     (eager-future2 (github "vsedach" "Eager-Future2")
      :asd ("eager-future2.asd"
            "test.eager-future2.asd"))
+    (ec2 (github "nikodemus"))
     ;; XXXX: The git repositories don't seem to have the latest code.  Try:
     ;; git clone git://ecls.git.sourceforge.net/gitroot/ecls/ecls
     (ecl git "http://ecls.sourceforge.net/git/ecl/.git"
@@ -1182,6 +1189,7 @@
      :asd none)
     (fset (clnet svn))
     (fsbv (repo-or-cz))
+    (fsdb (github "nikodemus"))
     (fsvd (melis))
     (ftd (clnet darcs))
     (fukacl (github "fukamachi"))
@@ -1211,6 +1219,7 @@
     (gotanda (github "fukamachi")
      :asd ("gotanda.asd"
            "gotanda-server.asd"))
+    (graph-utils (github "kraison"))
     (gridlock (github "xach"))
     (group-by (github "bobbysmith007"))
     (grout (github "xach"))
@@ -1435,6 +1444,7 @@
     (ia-x86 cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
     (idna (github "antifuchs"))
     (ieee-floats (clnet darcs))
+    (image-ops (github "mon-key"))
     (imago (clnet cvs)
      :asd ("src/imago.asd"))
     (imap (github "franzinc")
@@ -1519,6 +1529,12 @@
            "kpax-paserve.asd"
            "kpax-s-http-server.asd"
            "kpax.asd"))
+    (kyoto-persistence (github "kraison"))
+    (langutils (github "kraison")
+     :asd ("langutils/langutils.asd"
+           "meta/meta.asd"
+           "stdutils/stdutils.asd"
+           "stdutils/utils.asd"))
     (lassie (melis))
     (latex-table (github "tpapp"))
     (lens (github "willijar" "LENS"))
@@ -1608,7 +1624,7 @@
      :asd none)
     (lisplog (github "billstclair" "Lisplog")
      :asd ("lisplog.asd"
-           "fsdb/fsdb.asd"
+           ;; "fsdb/fsdb.asd"
            "cl-crypto/cl-crypto.asd"))
     (lispmud (github "Valera" "LispMud")
      :asd ("lispmud.asd"
@@ -1715,6 +1731,7 @@
     (mod_lisp svn "http://www.fractalconcept.com:8000/public/open-source/mod_lisp"
      :asd none)
     (modlisp (b9 "cl-modlisp"))
+    (mon (github "mon-key" "mon-systems-cl"))
     (monkeylib-markup-html (github "gigamonkey"))
     (monkeylib-markup-xml (github "gigamonkey"))
     (montezuma (google-code svn)
@@ -1977,8 +1994,10 @@
     (s-xml-rpc (clnet cvs))
     (salza2 (xach))
     (sapaclisp (clnet cvs))
+    (sb-bench (github "nikodemus"))
     (sb-cga (github "nikodemus"))
     (sb-cpu-affinity (github "nikodemus"))
+    (sb-daemon (github "nikodemus"))
     (sb-lset (github "nikodemus")
      :asd none)
     ;; XXXX: this repository is missing now
@@ -1987,6 +2006,7 @@
     (sb-vector-io (github "nikodemus"))
     (sbcl (sourceforge git)
      :asd none)
+    (4store (github "mon-key" "sbcl-4store"))
     ;;(sbcl-git git "git://git.boinkor.net/sbcl"
     ;; :asd none)
     (score (github "emoon" "Score")
@@ -2141,6 +2161,7 @@
     (tiff-ffi (harmon)
      :asd ("tiff-ffi.asd"
            "tiff-ffi-gen.asd"))
+    (tiff4cl (github "mon-key" "tiff4cl-fork"))
     (tilde (github "xach"))
     (time-interval (harmon))
     (tinaa darcs "http://common-lisp.net/project/tinaa"
@@ -2273,6 +2294,7 @@
            "umlisp-orf-tests.asd"))
     (uncl (github "fukamachi"))
     (unet (github "nklein"))
+    (unicly (github "mon-key"))
     (until-it-dies (github "sykopomp")
      :asd ("until-it-dies.base.asd"
            "until-it-dies.examples.asd"
@@ -2318,6 +2340,9 @@
      :asd ("verrazano.asd"
            "verrazano-runtime.asd"))
     (vivace-graph (github "kraison"))
+    (vivace-graph-v2 (github "kraison")
+     :asd ("vivace-graph-v2.asd"
+           "vivace-graph-v2-test.asd"))
     (virgil (github "Lovesan")
      :asd ("virgil.asd"
            "virgil-test.asd"))
@@ -2553,11 +2578,11 @@ ABBREV-ARGS) to create SCMS and SCMS-ARGS."
                 spec
               `(,project ,@(apply scms (cons project arguments)) ,@rest)))))
 
-(defun make-database (repositiory-specs)
+(defun make-database (repository-specs)
   "Create the repository database from a list of repository specifications."
-  (mapcar #'parse-repository-spec repositiory-specs))
+  (mapcar #'parse-repository-spec repository-specs))
 
-(defparameter *database* (make-database +repositiory-specs+)  "Repository database")
+(defparameter *database* (make-database +repository-specs+)  "Repository database")
 
 
 ;;;     Operations on the parsed repository database
