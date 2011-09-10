@@ -112,13 +112,13 @@
            "autoproject.pkg.asd"
            "autoproject.util.asd"))
     (avl-tree (github "vy"))
-    ;; XXXX Axiom has transitioned to git for version control, but which
-    ;; repository is canonical?  The web site lists at least:
+    ;; XXXX Axiom has transitioned to git for version control, but which repository is canonical?
+    ;; The web site lists at least:
     ;;   git clone git://axiom.git.sourceforge.net/gitroot/axiom/axiom
     ;;   git clone git://git.savannah.nongnu.org/axiom.git
     ;;   git clone axiom@git.sv.nongnu.org:/srv/git/axiom.git
-    ;; Figure out which is best.  Bill Daly's git repository on github and
-    ;; the one on sourceforge are getting updates.
+    ;; Figure out which is best.  Bill Daly's git repository on github and the one on sourceforge
+    ;; are getting updates.
     (axiom (github "daly" "axiom")
      :asd none)
     (babel (clnet darcs)
@@ -137,9 +137,9 @@
      :asd none)
     (binomial-heap (github "vy"))
     (bk-tree (github "vy"))
-    ;; The bknr reporsitory holds the canonical version of many ediware
-    ;; libraries.  I have also retained mirrors of the ediware libraries
-    ;; elsewhere, since they occasionally are slightly different.
+    ;; The bknr reporsitory holds the canonical version of many ediware libraries.  I have also
+    ;; retained mirrors of the ediware libraries elsewhere, since they occasionally are slightly
+    ;; different.
     (bknr svn "svn://svn.bknr.net/svn/trunk"
      :asd ("libraries/clixdoc/clixdoc.asd"
            "libraries/xhtmlgen/xhtmlgen.asd"
@@ -2470,21 +2470,18 @@
 
 
 (defun b9 (project &optional (repository (string-downcase project)))
-  "Repository specification abbreviation function for a git project hosted
-on b9.com."
+  "Repository specification abbreviation function for a git project hosted on b9.com."
   ;; XXXX: git:// used to work.  Try it again soon.
   `(git ,(concat "http://git.b9.com/" repository ".git")))
 
 (defun bitbucket (project user)
-  "Repository specification abbreviation function for a Mercurial project
-hosted on bitbucket.org."
+  "Repository specification abbreviation function for a Mercurial project hosted on bitbucket.org."
   (let ((repository (string-downcase project)))
     `(hg ,(concat "https://bitbucket.org/" user "/" repository))))
 
 (defun clnet (project scms
               &optional (name (string-downcase project)) (repository (string-downcase project)))
-  "Repository specification abbreviation function for a project hosted on
-common-lisp.net."
+  "Repository specification abbreviation function for a project hosted on common-lisp.net."
   (ecase scms
     ((cvs) `(cvs pserver anonymous t common-lisp.net ,(concat "/project/" name "/cvsroot")
                  :module ,repository))
@@ -2493,51 +2490,46 @@ common-lisp.net."
     ((svn) `(svn ,(concat "svn://common-lisp.net/project/" name "/svn/trunk")))))
 
 (defun melis (project &optional (repository (string-downcase project)))
-  "Repository specification abbreviation function for a git project hosted by
-Gabor Melis on quotenil.com."
+  "Repository specification abbreviation function for a git project hosted by Gabor Melis on
+quotenil.com."
   `(git ,(concat "http://quotenil.com/git/" repository ".git")))
 
 (defun github (project user &optional (repository (string-downcase project)))
-  "Repository specification abbreviation function for a git project hosted on
-github.com."
+  "Repository specification abbreviation function for a git project hosted on github.com."
   `(git ,(concat "git://github.com/" user "/" repository ".git")))
 
 (defun gitorious (project
                   &optional
                     (name (string-downcase project))
                     (repository (string-downcase project)))
-  "Repository specification abbreviation function for a git project hosted on
-gitorious.org."
+  "Repository specification abbreviation function for a git project hosted on gitorious.org."
   `(git ,(concat "git://gitorious.org/" name "/" repository ".git")))
 
 (defun google-code (project scms &optional (repository (string-downcase project)))
-  "Repository specification abbreviation function for a Subversion or
-Mercurial repository hosted on code.google.com."
+  "Repository specification abbreviation function for a Subversion or Mercurial repository hosted
+on code.google.com."
   (ecase scms
     ((hg) `(hg ,(concat "http://" repository ".googlecode.com/hg")))
     ((svn) `(svn ,(concat "http://" repository ".googlecode.com/svn/trunk")))))
 
 (defun harmon (project)
-  "Repository specification abbreviation function for Cyrus Harmon's git
-projects hosted on http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
+  "Repository specification abbreviation function for Cyrus Harmon's git projects hosted on
+http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
   (let ((name (string-downcase project)))
     `(git ,(concat "git://cyrusharmon.org/pub/git/" name ".git"))))
 
 (defun dwim-hu (project)
-  "Repository specification abbreviation function for darcs projects hosted
-on dwim.hu."
+  "Repository specification abbreviation function for darcs projects hosted on dwim.hu."
   (let ((name (string-downcase project)))
     `(darcs ,(concat "http://dwim.hu/darcs/" name))))
 
 (defun repo-or-cz (project)
-  "Repository specification abbreviation function for git projects hosted on
-repo.or.cz."
+  "Repository specification abbreviation function for git projects hosted on repo.or.cz."
   (let ((name (string-downcase project)))
     `(git ,(concat "git://repo.or.cz/" name ".git"))))
 
 (defun savannah (project scms)
-  "Repository specification abbreviation function for a project hosted on
-savannah.gnu.org."
+  "Repository specification abbreviation function for a project hosted on savannah.gnu.org."
   (let ((name (string-downcase project)))
     (ecase scms
       ((bzr) `(bzr ,(concat "http://bzr.savannah.gnu.org/r/" name "/trunk")))
@@ -2546,8 +2538,7 @@ savannah.gnu.org."
       ((git) `(git ,(concat "git://git.savannah.gnu.org/" name ".git"))))))
 
 (defun sourceforge (project scms &optional (repository (string-downcase project)))
-  "Repository specification abbreviation function for a project hosted on
-sourceforge.net."
+  "Repository specification abbreviation function for a project hosted on sourceforge.net."
   (ecase scms
     ((cvs) `(cvs pserver anonymous nil
              ,(intern (string-upcase (concat repository ".cvs.sourceforge.net")))
@@ -2558,8 +2549,8 @@ sourceforge.net."
     ((svn) `(svn ,(concat "https://" repository ".svn.sourceforge.net/svnroot/" repository)))))
 
 (defun xach (project)
-  "Repository specification abbreviation function for Zach Beane's git
-projects hosted on http://git.xach.com"
+  "Repository specification abbreviation function for Zach Beane's git projects hosted on
+http://git.xach.com"
   (let ((name (string-downcase project)))
     `(git ,(concat "http://git.xach.com/" name ".git"))))
 
@@ -2568,10 +2559,9 @@ projects hosted on http://git.xach.com"
 
 
 (defun parse-repository-spec (spec)
-  "Parse a repository specification.  The form of the repository entry is
-either (NAME SCMS SCMS-ARGS MORE-ARGS) or (NAME (ABBREV-FUNC ABBREV-ARGS)
-MORE-ARGS).  In the latter case, ABBREV-FUNC is invoked on (cons NAME
-ABBREV-ARGS) to create SCMS and SCMS-ARGS."
+  "Parse a repository specification.  The form of the repository entry is either (NAME SCMS
+SCMS-ARGS MORE-ARGS) or (NAME (ABBREV-FUNC ABBREV-ARGS) MORE-ARGS).  In the latter case,
+ABBREV-FUNC is invoked on (cons NAME ABBREV-ARGS) to create SCMS and SCMS-ARGS."
   (ecase (type-of (second spec))
     ((symbol) spec)
     ((cons) (destructuring-bind (project (scms . arguments) &rest rest)
@@ -2589,9 +2579,8 @@ ABBREV-ARGS) to create SCMS and SCMS-ARGS."
 
 
 (defun find-project (name)
-  "Find the repository specification of the project.  Return two values, the
-source code management system (SCMS) used by the project and the project
-specification with the SCMS removed."
+  "Find the repository specification of the project.  Return two values, the source code management
+system (SCMS) used by the project and the project specification with the SCMS removed."
   (let ((project-spec (assoc name *database*)))
     (when project-spec
       (destructuring-bind (project scms &rest rest)
@@ -2604,8 +2593,7 @@ specification with the SCMS removed."
       (find-project project)
     (unless scms
       (error "unknown project"))
-    ;; Lack of an asd specification means there's one asd file named after
-    ;; the project.
+    ;; Lack of an asd specification means there's one asd file named after the project.
     (unless (member :asd arguments)
       (setf arguments (append arguments '(:asd project))))
     (apply scms (cons operation arguments))
@@ -2635,8 +2623,7 @@ specification with the SCMS removed."
   (update-repositories *database*))
 
 (defun update-all-starting-with (name)
-  "Update all the project repositories in the database with names greater
-than or equal to NAME."
+  "Update all the project repositories in the database with names greater than or equal to NAME."
   (update-repositories
    (loop for repository-spec in *database*
          when (string>= (first repository-spec) name)
@@ -2736,15 +2723,14 @@ than or equal to NAME."
          (run "darcs" `("get" ,url ,name) *terminal-io*)))
       ((update)
        (with-cwd project-directory
-         ;; Sometimes a darcs pull fails because there's a leftover lock
-         ;; file from a previous interrupted pull.  Should we try to remove
-         ;; the lock file, repository/_darcs/lock?
+         ;; Sometimes a darcs pull fails because there's a leftover lock file from a previous
+         ;; interrupted pull.  Should we try to remove the lock file, repository/_darcs/lock?
          (run "darcs" '("pull" "--all" "--verbose") *terminal-io*))))
     (create-asd-links project-directory name asd)))
 
 (defun git (op name url &key asd submodules)
-  "Check out or update a Git repository.  When SUBMODULES is non-nil, check
-out or update all submodules."
+  "Check out or update a Git repository.  When SUBMODULES is non-nil, check out or update all
+submodules."
   (let* ((name (string-downcase name))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
