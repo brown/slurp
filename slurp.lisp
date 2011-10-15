@@ -1,7 +1,13 @@
+; check out     (blackthorn-engine-3d (google-code hg))
+
+    ;; (blocky (github "dto"))
+    ;; (xong (github "dto"))
+    ;; (pastel.blocky (github "dto"))
+;; https://github.com/gihnius/cl-common-blog
+;; <https://github.com/billstclair/cl-autorepo>
+
 
 ;;;;    slurp.lisp
-
-; check out     (blackthorn-engine-3d (google-code hg))
 
 (in-package #:slurp)
 
@@ -60,9 +66,6 @@
     (ansi-tests svn "svn://common-lisp.net/project/ansi-test/svn/trunk/ansi-tests"
      :asd none)
     (antiweb (github "hoytech")
-     :asd none)
-    ;; XXXX: Remove? It's not a Lisp library.
-    (aquamacs cvs pserver anonymous nil cvs.aquamacs.org "/cvsroot/aquamacs"
      :asd none)
     (araneida-release darcs "http://common-lisp.net/project/araneida/araneida-release"
      :asd none)
@@ -436,6 +439,9 @@
      :asd ("chronicity.asd"
            "chronicity-test.asd"))
     (chunga (github "edicl"))
+    (city-hash (github "brown")
+     :asd ("city-hash.asd"
+           "city-hash-test.asd"))
     (cl+ssl (gitorious "cl-plus-ssl" "cl-plus-ssl"))
     (cl-2d (github "tpapp"))
     (cl-amazonproduct (github "arielnetworks")
@@ -445,7 +451,7 @@
      :asd ("cl-annot.asd"
            "cl-annot-test.asd"))
     (cl-anonfun (github "arielnetworks"))
-    (cl-azure (github "blackwre"))
+    (cl-azure (github "RobBlackwell"))
     (cl-base64 (b9))
     (cl-bayesian (github "tpapp"))
     (cl-beanstalk (github "antifuchs"))
@@ -499,7 +505,7 @@
            "cl-couchdb-object-layer.asd"
            "cl-couchdb-view-server.asd"
            "logv.asd"))
-    (cl-crc64 (github "blackwre"))
+    (cl-crc64 (github "RobBlackwell"))
     (cl-creditcard (github "bobbysmith007")
      :asd ("cl-creditcard.asd"
            "cl-authorize-net.asd"))
@@ -529,8 +535,9 @@
     (cl-fluiddb (github "hdurer")
      :asd ("cl-fluiddb.asd"
            "cl-fluiddb-test.asd"))
-    (cl-frame (github "dto")
-     :asd none)
+    ;; Repository has disappeared.  User still there.
+    ;; (cl-frame (github "dto")
+    ;;  :asd none)
     (cl-freeswitch (github "kraison"))
     (cl-future (github "jpalmucci"))
     (cl-gambol (google-code svn)
@@ -589,6 +596,7 @@
     (cl-jags (github "tpapp")
      :asd ("cl-jags.asd"
            "cl-jags-tests.asd"))
+    ;; Trouble updating from repository on 2011-09-17.
     (cl-jpeg (clnet cvs "cljl"))
     (cl-js (github "akapav" "js"))
     (cl-json (clnet darcs))
@@ -613,6 +621,7 @@
      :asd ("cl-locale.asd"
            "cl-locale-test.asd"))
     (cl-loom (github "billstclair"))
+    ;; Repository missing on 2011-09-17.
     (cl-loop-plus (github "arielnetworks"))
     (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
@@ -667,7 +676,7 @@
            "ldap/trunk/ldap.asd"
            "ldap/trunk/trivial-ldap-0.71/trivial-ldap.asd"
            "lispworks-udp/trunk/lispworks-udp.asd"
-           "snmp/trunk/snmp-mib.asd"
+           ;; "snmp/trunk/snmp-mib.asd"
            "snmp/trunk/snmp-server.asd"
            "snmp/trunk/snmp-test.asd"
            "snmp/trunk/snmp-ui.asd"
@@ -675,17 +684,15 @@
            ;; This is the canonical version of usocket-udp.
            "usocket-udp/trunk/usocket-udp.asd"))
     (cl-notify (repo-or-cz))
+    (cl-num-utils (github "tpapp"))
     (cl-numlib (github "tpapp"))
-    (cl-num-utils (github "tpapp")
-     :asd ("cl-num-utils.asd"
-           "cl-num-utils-tests.asd"))
     (cl-oauth (github "skypher"))
     (cl-objc (clnet darcs))
     (cl-observer (google-code svn))
     (cl-openal (github "sykopomp")
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
-    (cl-opencalais (github "blackwre"))
+    (cl-opencalais (github "RobBlackwell"))
     ;; XXXXXXXXXX: Compare this to the cl-opengl below and delete one.
     (cl-opengl (github "3b")
      :asd ("cl-glu.asd"
@@ -849,8 +856,8 @@
            "site/claw-site.asd"))
     (clazy (clnet cvs))
     ;; May no longer be maintained ... appears to be gone on gitorious.
-    (clbuild (gitorious)
-     :asd none)
+    ;; (clbuild (gitorious)
+    ;;  :asd none)
     (clbuild2 (gitorious)
      :asd none)
     (clee (github "fukamachi"))
@@ -937,8 +944,6 @@
            "src/clouchdb-tests.asd"))
     (cloze-call (google-code svn)
      :asd none)
-    ;; (clpython cvs pserver cvspublic t cvspublic.franz.com "/cvs-public"
-    ;;  :asd ("clpython-test.asd"))
     (clpython (github "franzinc" "cl-python"))
     (clqr (repo-or-cz)
      :asd none)
@@ -995,6 +1000,10 @@
     (com.gigamonkeys.statistics (github "gigamonkey" "monkeylib-statistics"))
     (com.gigamonkeys.test-framework (github "gigamonkey" "monkeylib-test-framework"))
     (com.gigamonkeys.utilities (github "gigamonkey" "monkeylib-utilities"))
+    (com.google.base (github "brown" "base"))
+    (com.google.flag (github "brown" "lisp-gflags")
+     :asd ("com.google.flag.asd"
+           "com.google.flag-test.asd"))
     (com.nklein.gl-springs (github "nklein" "com-nklein-gl-springs"))
     (com.nklein.misc (github "nklein" "com-nklein-misc") :asd none)
     (com.nklein.parser-generator (github "nklein")
@@ -1167,8 +1176,6 @@
     ;; Unofficial darcs mirrir.
     (flexi-streams darcs "http://common-lisp.net/~loliveira/ediware/flexi-streams"
      :asd none)
-
-    ;; Repository read problem 2010-12-28
     (flexichain (clnet cvs)
      :asd ("flexichain-doc.asd"
            "flexichain-test.asd"
@@ -1233,9 +1240,7 @@
            "foreign-array.asd"
            "grid.asd"
            "foreign-array-tests.asd"))
-    (gsll (repo-or-cz)
-     :asd ("gsll.asd"
-           "gsll-tests.asd"))
+    (gsll (repo-or-cz))
     (gtk (github "franzinc")
      :asd none)
     (hemlock (gitorious)
@@ -1410,9 +1415,10 @@
     ;; git://dwim.hu/git/xcvb
     ;; use BRANCH "hu.dwim"
     ;; I use swank.asd from the slime project.
-    (hu.dwim.slime (dwim-hu)
-     :asd none)
 
+    ;; Moved to slime darcs or slime git repoository on dwim.hu ??
+    ;; (hu.dwim.slime (dwim-hu)
+    ;;  :asd none)
 
     (hu.dwim.stefil (dwim-hu)
      :asd ("hu.dwim.stefil.test.asd"
@@ -1558,6 +1564,8 @@
     (linebreaker (github "xach"))
     (linj (github "xach"))
     (lint (github "g000001"))
+    ;; Update failed 2011-10-12
+    ;; failed to create lock directory for `/cvsroot/lisa/lisa'
     (lisa (sourceforge cvs))
     (lisp-critic (github "g000001"))
     (lisp-matrix (github "blindglobe"))
@@ -1622,10 +1630,7 @@
            "lispbuilder-yacc/lispbuilder-yacc.asd"))
     (lispdev (bitbucket "skolos")
      :asd none)
-    (lisplog (github "billstclair" "Lisplog")
-     :asd ("lisplog.asd"
-           ;; "fsdb/fsdb.asd"
-           "cl-crypto/cl-crypto.asd"))
+    (lisplog (github "billstclair" "Lisplog"))
     (lispmud (github "Valera" "LispMud")
      :asd ("lispmud.asd"
            "mudsketcher.asd"))
@@ -1756,6 +1761,7 @@
     (named-readtables darcs "http://common-lisp.net/project/editor-hints/darcs/named-readtables")
     (net-xml-generator (github "franzinc")
      :asd none)
+    ;; Update failed on 2011-10-12
     (netkit darcs "http://fresh.homeunix.net/~luke/misc/repo/netkit"
      :asd none)
     (nfs (github "franzinc")
@@ -1906,8 +1912,7 @@
     (prepl (gitorious))
     (pretty-function (clnet darcs))
     (protobuf (github "brown")
-     :asd ("base/base.asd"
-           "example/protobuf-example.asd"
+     :asd ("example/protobuf-example.asd"
            "protobuf-test.asd"
            "protobuf.asd"
            "varint/varint-test.asd"
@@ -1992,6 +1997,7 @@
     (s-utils darcs "http://www.beta9.be/darcs/s-utils")
     (s-xml (clnet cvs))
     (s-xml-rpc (clnet cvs))
+    ;; Update failed 2011-10-12
     (salza2 (xach))
     (sapaclisp (clnet cvs))
     (sb-bench (github "nikodemus"))
@@ -2037,12 +2043,14 @@
     (simple-rgb (google-code svn))
     (single-threaded-ccl (clnet git "qitab")
      :asd none)
+    ;; Update failed 2011-10-12
     (skippy (xach))
     (slime (clnet cvs)
      :asd ("swank.asd"))
     (slime-proxy (github "3b")
      :asd ("slime-proxy.asd"
            "contrib/slime-parenscript/swank-parenscript.asd"))
+    ;; Update failed 2011-10-12
     (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
      :asd ("src/netlib.asd"))
     (slurp (github "brown"))
@@ -2065,7 +2073,8 @@
     ;; XXXX: 2011-02-03 error: not a repository
     ;; XXXX: 2011-03-24 same thing
     ;; XXXX: 2011-05-31 cannot connect to server
-    (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
+    ;; Update failed 2011-10-12
+    ;; (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (spectacle (github "slyrus"))
     (squirl (github "sykopomp"))
     (srfi-0 (github "g000001"))
@@ -2114,6 +2123,9 @@
     (sw-http (github "lnostdal" "SW-HTTP"))
     (sw-mvc (github "lnostdal" "SW-MVC"))
     (sw-stm (github "lnostdal" "SW-STM"))
+    (swank-client (github "brown")
+     :asd ("swank-client.asd"
+           "swank-client-test.asd"))
     (swank-client-usocket (github "pf")
      :asd none)
     (sykobot (github "sykopomp"))
@@ -2127,7 +2139,8 @@
     ;;        "sykosomatic.parser.asd"
     ;;        "sykosomatic.test.asd"))
     (symbol-munger (github "bobbysmith007"))
-    (symbolicweb (github "lnostdal" "SymbolicWeb")
+    ;; Repository was renamed at some point.  SymbolicWeb is now a Clojure project.
+    (symbolicweb (github "lnostdal" "old-SymbolicWeb")
      :asd ("symbolicweb.asd"
            "symbolicweb-examples.asd"
            "symbolicweb-jquery.asd"))
@@ -2175,11 +2188,9 @@
            "trivial-backtrace-test.asd"))
     (trivial-bit-streams (github "Lovesan"))
     (trivial-configuration-parser svn "svn://unmutual.info/trivial-configuration-parser")
-    ;; XXXX: Incompatible with repository error 2011-05-31.
     (trivial-features darcs "http://common-lisp.net/~loliveira/darcs/trivial-features"
      :asd ("trivial-features.asd"
            "trivial-features-tests.asd"))
-    ;; XXXX: Incompatible with repository error 2011-05-31.
     (trivial-garbage darcs "http://common-lisp.net/~loliveira/darcs/trivial-garbage")
     (trivial-gray-streams (gitorious))
     (trivial-http darcs "http://common-lisp.net/project/trivial-http"
@@ -2239,45 +2250,7 @@
            ))
     (truledger (github "billstclair")
      :asd ("truledger.asd"
-           "truledger-loader.asd"
-           ;; "systems/puri-1.5.1/puri.asd"
-           ;; "systems/cl-fad-0.6.2/cl-fad.asd"
-           ;; "systems/cl-base64-3.3.2/cl-base64.asd"
-           ;; "systems/cl-who-0.11.1/cl-who.asd"
-           ;; "systems/bordeaux-threads/bordeaux-threads.asd"
-           ;; "systems/chunga-1.0.0/chunga.asd"
-           ;; "systems/ironclad_0.26/ironclad.asd"
-           ;; "systems/babel_0.3.1/babel-streams.asd"
-           ;; "systems/babel_0.3.1/babel-tests.asd"
-           ;; "systems/babel_0.3.1/babel.asd"
-           ;; "systems/cl-ppcre-2.0.1/cl-ppcre-unicode.asd"
-           ;; "systems/cl-ppcre-2.0.1/cl-ppcre.asd"
-           ;; "systems/cl+ssl-2008-11-04/cl+ssl.asd"
-           ;; "systems/flexi-streams-1.0.7/flexi-streams.asd"
-           ;; "systems/md5-1.8.5/md5.asd"
-           ;; "systems/slime/swank.asd"
-           ;; "systems/alexandria/alexandria.asd"
-           ;; "systems/alexandria/alexandria-tests.asd"
-           ;; "systems/hunchentoot-1.0.0/hunchentoot.asd"
-           ;; "systems/hunchentoot-1.0.0/hunchentoot-test.asd"
-           ;; "systems/usocket-0.4.1/usocket.asd"
-           ;; "systems/usocket-0.4.1/test/usocket-test.asd"
-           ;; "systems/cl-crypto/cl-crypto.asd"
-           ;; "systems/trivial-features/trivial-features-tests.asd"
-           ;; "systems/trivial-features/trivial-features.asd"
-           ;; "systems/rfc2388/rfc2388.asd"
-           ;; "systems/cffi_0.10.4/cffi-tests.asd"
-           ;; "systems/cffi_0.10.4/cffi.asd"
-           ;; "systems/cffi_0.10.4/cffi-grovel.asd"
-           ;; "systems/cffi_0.10.4/uffi-compat/uffi.asd"
-           ;; "systems/cffi_0.10.4/cffi-uffi-compat.asd"
-           ;; "systems/cffi_0.10.4/cffi-examples.asd"
-           ;; "systems/cl-smtp/cl-smtp.asd"
-           ;; "systems/split-sequence/split-sequence.asd"
-           ;; "systems/trivial-gray-streams-2008-11-02/trivial-gray-streams.asd"
-           ;; "systems/cybertiggyr-time/cybertiggyr-time.asd"
-           ;; "systems/drakma-1.0.0/drakma.asd"
-           ))
+           "systems/cybertiggyr-time/cybertiggyr-time.asd"))
     (ucw-presentations darcs "http://common-lisp.net/project/ucw/repos/ucw-presentations")
     (ucw_ajax darcs "http://common-lisp.net/project/ucw/repos/ucw_ajax"
      :asd none)
@@ -2335,6 +2308,7 @@
     (vclos darcs "http://common-lisp.net/~crhodes/vclos")
     (vcs-tree (b9))
     (vectometry (github "xach"))
+    ;; Update failed 2011-10-12
     (vecto (xach))
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
      :asd ("verrazano.asd"
@@ -2410,20 +2384,22 @@
     ;; Which is best?
     (xcvb (github "fare")
      :asd ("examples/a2x/a2x-test.asd"
-           "t/xcvb-unit-tests.asd"
+           "examples/example-2/xcvb-example-2.asd"
            "xcvb.asd"
            "xcvb-driver.asd"
+           "t/xcvb-driver-test.asd"
+           "t/xcvb-test.asd"
            "xcvb-bridge.asd"))
     (xe2 (github "dto"))
     (xhtmlgen (github "hanshuebner"))
     (xlunit (b9))
     (xml-mop (github "gonzojive"))
+    ;; XXXX: Why do I check this out?  Delete??
     (xmlisp (google-code svn)
      :asd none)
     (xmlutils (b9))
     (xptest (b9))
     (xuriella (repo-or-cz))
-    ;; XXXX: Timed out on 2010-12-28.
     (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
     (yacc-ebnf (gitorious "cl-yacc-ebnf" "cl-yacc-ebnf")
      :asd ("src/yacc-ebnf.asd"))
@@ -2443,8 +2419,11 @@
     (zlib (github "franzinc")
      :asd none)
     (zpb-aws (github "xach"))
+    ;; Update failed 2011-10-12
     (zpb-exif (xach))
+    ;; Update failed 2011-10-12
     (zpb-ttf (xach))
+    ;; Update failed 2011-10-12
     (zpng (xach))
     (zs3 (github "xach"))
 
@@ -2622,12 +2601,10 @@ system (SCMS) used by the project and the project specification with the SCMS re
   "Update all the project repositories in the database."
   (update-repositories *database*))
 
-(defun update-all-starting-with (name)
-  "Update all the project repositories in the database with names greater than or equal to NAME."
-  (update-repositories
-   (loop for repository-spec in *database*
-         when (string>= (first repository-spec) name)
-           collect repository-spec)))
+(defun update-all-starting-with (repository-name)
+  "Update all the project repositories in the database starting with the entry for REPOSITORY-NAME."
+  (let ((start (position repository-name *database* :key #'first)))
+    (update-repositories (subseq *database* start))))
 
 #+sbcl
 (defmacro with-cwd (directory &body body)
