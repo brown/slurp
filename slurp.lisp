@@ -1,6 +1,3 @@
-; check out     (blackthorn-engine-3d (google-code hg))
-
-
 
 ;;;;    slurp.lisp
 
@@ -330,14 +327,18 @@
            "modules/spider/leech.asd"
            "modules/bknr.modules.asd"))
     (black-tie (github "aerique"))
-    ;; XXXX: rename to blackthorn
-    (blackthorn-engine (google-code hg)
+    (blackthorn (google-code hg "blackthorn-engine")
      :asd ("blackthorn.asd"
            "thopter.asd"
            "blackthorn-collision-test.asd"
            "blackthorn-test.asd"
            "bunnyslayer.asd"
            "blackthorn-stress-test.asd"))
+    (blackthorn3d (google-code hg "blackthorn-engine-3d")
+     :asd ("blank.asd"
+           "lkcas.asd"
+           "blackthorn3d.asd"
+           "blackthorn3d-test.asd"))
     (blocky (github "dto"))
     (blogger (google-code svn "cl-blogger"))
     (blogworks (github "madnificent"))
@@ -2512,7 +2513,7 @@ quotenil.com."
   "Repository specification abbreviation function for a Subversion or Mercurial repository hosted
 on code.google.com."
   (ecase scms
-    ((hg) `(hg ,(concat "http://" repository ".googlecode.com/hg")))
+    ((hg) `(hg ,(concat "http://code.google.com/p/" repository)))
     ((svn) `(svn ,(concat "http://" repository ".googlecode.com/svn/trunk")))))
 
 (defun harmon (project)
