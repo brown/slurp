@@ -27,6 +27,7 @@
     ;; The following URL was recently announced.  Is fetching ABCL via http
     ;; better?  svn co http://svn.common-lisp.net/armedbear/trunk abcl
     (abcl svn "svn://common-lisp.net/project/armedbear/svn/trunk/abcl")
+    (abcl-helper (github "quek"))
     (abcl-web (sourceforge svn)
      :asd none)
     (acl-zmq (github "marijnh"))
@@ -723,6 +724,7 @@
      :asd ("cl-pdf.asd"
            "cl-pdf-parser.asd"
            "salza/salza.asd"))
+    (cl-pdf-jp (github "quek"))
     (cl-peg darcs "http://subvert-the-dominant-paradigm.net/repos/cl-peg")
     (cl-period (google-code svn))
     (cl-photo (b9)
@@ -832,11 +834,15 @@
     (cl-variates (clnet darcs)
      :asd ("cl-variates.asd"
            "cl-variates-test.asd"))
+    (cl-vh (github "quek"))
     (cl-wal-trunk (sourceforge svn "cl-wal"))
     (cl-web-crawler (google-code svn))
     (cl-webdav (github "edicl"))
     (cl-who (github "edicl"))
     (cl-whois (github "billitch"))
+    (cl-win32ole (github "quek")
+     :asd ("cl-win32ole.asd"
+           "cl-win32ole-sys.asd"))
     (cl-x86-asm (repo-or-cz))
     (cl-xspf (google-code svn))
     (cl-xmpp (clnet cvs)
@@ -844,6 +850,7 @@
            "cl-xmpp-tls.asd"
            "cl-xmpp.asd"
            "test/cl-xmpp-test.asd"))
+    (cl-xsands (github "quek"))
     (cl-zipper (github "danielfm"))
     ;; XXXX: rename to zeromq
     (cl-zmq (repo-or-cz)
@@ -1457,6 +1464,7 @@
     (hunchentoot-auth (harmon)
      :asd ("hunchentoot-auth.asd"
            "hunchentoot-auth-test.asd"))
+    (hunchentoot-blank (github "quek"))
     (hunchentoot-cgi (harmon))
     (hunchentoot-vhost (harmon))
     (hyperdoc darcs "http://common-lisp.net/project/editor-hints/darcs/hyperdoc")
@@ -1464,6 +1472,7 @@
      :asd ("hyperobject.asd"
            "hyperobject-tests.asd"))
     (ia-x86 cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    (iconv (github "quek" "cl-iconv"))
     (idna (github "antifuchs"))
     (ieee-floats (clnet darcs))
     (image-ops (github "mon-key"))
@@ -1476,6 +1485,15 @@
      :asd ("http/inet.http.asd"
            "inet-tests.asd"
            "inet.asd"))
+    (info.read-eval-print.cl-mayu (github "quek"))
+    (info.read-eval-print.climacs.dired (github "quek"))
+    (info.read-eval-print.climacs.ext (github "quek"))
+    (info.read-eval-print.editor (github "quek"))
+    (info.read-eval-print.mecab (github "quek"))
+    (info.read-eval-print.nando (github "quek"))
+    (info.read-eval-print.reader (github "quek"))
+    (info.read-eval-print.repl-tw (github "quek" "twitter-client"))
+    (info.read-eval-print.web (github "quek"))
     ;; iolib used to be pulled as follows: (iolib (repo-or-cz) ...)
     ;; Switched to gitorious because static-vectors is there too.
     (iolib (gitorious)
@@ -1593,6 +1611,14 @@
     (lisp-on-lines (github "drewc")
      :asd ("lisp-on-lines.asd"
            "lisp-on-lines-ucw.asd"))
+    (lisp-on-rails (github "quek")
+     :asd ("lack-hunchentoot.asd"
+           "example/blog/config/blog.asd"
+           "railties.asd"
+           "action-pack.asd"
+           "active-record.asd"
+           "lack.asd"
+           "active-support.asd"))
     (lisp-unit (github "OdonataResearchLLC"))
     ;; XXXX: we need an asd rule that says "link every asd file in tree"
     (lispbuilder (google-code svn)
@@ -1720,6 +1746,7 @@
            "mcclim-jpeg-bitmaps.asd"
            "mcclim-tiff-bitmaps.asd"
            "mcclim.asd"))
+    (mcclim-uim (github "quek"))
     (mcpixel (github "ahefner" "McPixel"))
     (md5 (b9))
     (media git "http://www.jarw.org.uk/lisp/media.git")
@@ -1771,6 +1798,7 @@
     (moptilities darcs "http://common-lisp.net/project/moptilities"
      :asd ("moptilities.asd"
            "moptilities-test.asd"))
+    (mounit (github "quek"))
     (movitz cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
     (mtlisp (github "mtravers"))
     (mutest (github "vseloved"))
@@ -1950,6 +1978,7 @@
      :asd none)
     (qbook darcs "http://common-lisp.net/project/bese/repos/qbook")
     (qpj1 (github "g000001"))
+    (quek (github "quek"))
     (quicklisp-bootstrap (github "quicklisp")
      :asd none)
     (quicklisp-client (github "quicklisp")
@@ -2061,6 +2090,7 @@
            "Code/sicl.asd"
            "Code/Format/format.asd"
            "Code/Sequences/sequences.asd"))
+    (simple-date-time (github "quek"))
     ;; Another sicl project -- a SPARQL implementation.
     ;; (sicl (github "turbo24prg") :asd none)
     (simple-rgb (google-code svn))
@@ -2204,6 +2234,7 @@
      :asd ("tinaa.asd"
            "tinaa-test.asd"))
     (titler (github "ryepup"))
+    (tottori-nando (github "quek"))
     (towers (github "death"))
     (tpapp-utils (github "tpapp"))
     (trivial-backtrace git "http://common-lisp.net/project/trivial-backtrace/trivial-backtrace.git"
@@ -2435,6 +2466,13 @@
            "util/sprite-checker/sprite-checker.asd"))
     (yason (github "hanshuebner"))
     (yotta-zoomer (repo-or-cz))
+    (you (github "quek")
+     :asd ("you.asd"
+           "example/tt/you.example.tt.asd"
+           "example/chat/you.example.chat.asd"
+           "example/watch/you.example.watch.asd"
+           "example/todo/you.example.todo.asd"
+           "example/blog/you.example.blog.asd"))
     (zcdb (github "xach"))
     (zen (github "pyb")
      :asd none)
@@ -2608,9 +2646,20 @@ system (SCMS) used by the project and the project specification with the SCMS re
   (format t "~%checkout ~a~%" project)
   (operate project 'checkout))
 
+(defun checkout-repositories (repository-specs)
+  "Check cout all the projects listed in REPOSITORY-SPECS."
+  (loop for (name . rest) in repository-specs do (checkout name))
+  (values))
+
 (defun checkout-all ()
   "Check out all the project repositories in the database."
-  (loop for (name . rest) in *database* do (checkout name)))
+  (checkout-repositories *database*))
+
+(defun checkout-all-starting-with (repository-name)
+  "Check out all the project repositories in the database starting with the entry for
+REPOSITORY-NAME."
+  (let ((start (position repository-name *database* :key #'first)))
+    (checkout-repositories (subseq *database* start))))
 
 (defun update (project)
   "Update a project."
@@ -2627,7 +2676,8 @@ system (SCMS) used by the project and the project specification with the SCMS re
   (update-repositories *database*))
 
 (defun update-all-starting-with (repository-name)
-  "Update all the project repositories in the database starting with the entry for REPOSITORY-NAME."
+  "Update all the project repositories in the database starting with the entry for
+REPOSITORY-NAME."
   (let ((start (position repository-name *database* :key #'first)))
     (update-repositories (subseq *database* start))))
 
