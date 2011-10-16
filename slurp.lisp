@@ -1,8 +1,5 @@
 ; check out     (blackthorn-engine-3d (google-code hg))
 
-    ;; (blocky (github "dto"))
-    ;; (xong (github "dto"))
-    ;; (pastel.blocky (github "dto"))
 ;; https://github.com/gihnius/cl-common-blog
 ;; <https://github.com/billstclair/cl-autorepo>
 
@@ -343,6 +340,7 @@
            "blackthorn-test.asd"
            "bunnyslayer.asd"
            "blackthorn-stress-test.asd"))
+    (blocky (github "dto"))
     (blogger (google-code svn "cl-blogger"))
     (blogworks (github "madnificent"))
     (bordeaux-fft (github "ahefner"))
@@ -1845,6 +1843,7 @@
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
     (parse-js (github "marijnh"))
     (pastebin.com-api (github "Lovesan"))
+    (pastel.blocky (github "dto"))
     ;; (patg (clnet ))  XXXXXXXXXXX Subversion ???
     (patron (github "vy"))
     ;; XXXX: blog entry says persistent-sheeple is being renamed.  code has
@@ -2420,6 +2419,7 @@
     (xmlisp (google-code svn)
      :asd none)
     (xmlutils (b9))
+    (xong.blocky (github "dto"))
     (xptest (b9))
     (xuriella (repo-or-cz))
     (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
