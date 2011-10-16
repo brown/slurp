@@ -963,7 +963,7 @@
     (cloze-call (google-code svn)
      :asd none)
     (clpython (github "franzinc" "cl-python"))
-    (clqr (repo-or-cz)
+    (clqr (github "trebb")
      :asd none)
     (clrs (github "willijar"))
     (clsem (github "antifuchs"))
@@ -1885,6 +1885,10 @@
            "pcall-queue.asd"))
     (pcl-practicals (github "gigamonkey"))
     (pg (clnet cvs))
+    (phoros (github "trebb")
+     :asd ("phoros.asd"
+           "phoros-test.asd"))
+    (phoml (github "trebb"))
     (pileup (github "nikodemus"))
     (pipes (b9))
     (pipes-edsl (github "pkhuong" "Pipes")
@@ -2687,18 +2691,16 @@ REPOSITORY-NAME."
         (chdir-worked (gensym "chdir-worked")))
     `(let ((,chdir-worked nil))
        (unwind-protect
-            (prog ()
-               (sb-posix:chdir ,directory)
-               (setf ,chdir-worked t)
-               ,@body)
-         (when ,chdir-worked
-           (sb-posix:chdir ,original-directory))))))
+            (progn (sb-posix:chdir ,directory)
+                   (setf ,chdir-worked t)
+                   ,@body)
+         (when ,chdir-worked (sb-posix:chdir ,original-directory))))))
 
 #+sbcl
-(defun run (program args output)
+(defun run (program args)
   (let ((result
          (sb-ext:process-exit-code
-          (sb-ext:run-program program args :output output :search t :wait t))))
+          (sb-ext:run-program program args :output *terminal-io* :search t :wait t))))
     (assert (zerop result))))
 
 (defun link (project-directory asd-file-path)
@@ -2710,8 +2712,8 @@ REPOSITORY-NAME."
          (link (concat *systems-root* "/" asd-file)))
     (assert (probe-file link-target))
     (format t "Create link to ~a~%" link-target)
-    (run "rm" `("-f" ,link) *terminal-io*)
-    (run "ln" `("-s" ,link-target ,link) *terminal-io*)))
+    (run "rm" `("-f" ,link))
+    (run "ln" `("-s" ,link-target ,link))))
 
 (defun create-asd-links (project-directory project asd-files)
   (cond ((eq asd-files 'none))
@@ -2743,12 +2745,11 @@ REPOSITORY-NAME."
     (ecase op
       ((checkout)
        (with-cwd *source-root*
-         (run "cvs" `("-z3" ,cvs-root "co" ,module) *terminal-io*)
-         (when (not (string= name module))
-           (run "mv" `(,module ,name) *terminal-io*))))
+         (run "cvs" `("-z3" ,cvs-root "co" ,module))
+         (when (not (string= name module)) (run "mv" `(,module ,name)))))
       ((update)
        (with-cwd project-directory
-         (run "cvs" `("-z3" ,cvs-root "up" "-A" "-P" "-d") *terminal-io*))))
+         (run "cvs" `("-z3" ,cvs-root "up" "-A" "-P" "-d")))))
     (create-asd-links project-directory name asd)))
 
 (defun bzr (op name url &key asd lightweight)
@@ -2758,11 +2759,10 @@ REPOSITORY-NAME."
     (ecase op
       ((checkout)
        (with-cwd *source-root*
-         (run "bzr" `("checkout" "--verbose" ,@(when lightweight '("--lightweight")) ,url ,name)
-              *terminal-io*)))
+         (run "bzr" `("checkout" "--verbose" ,@(when lightweight '("--lightweight")) ,url ,name))))
       ((update)
        (with-cwd project-directory
-         (run "bzr" '("update" "--verbose") *terminal-io*))))
+         (run "bzr" '("update" "--verbose")))))
     (create-asd-links project-directory name asd)))
 
 (defun darcs (op name url &key asd)
@@ -2772,12 +2772,12 @@ REPOSITORY-NAME."
     (ecase op
       ((checkout)
        (with-cwd *source-root*
-         (run "darcs" `("get" ,url ,name) *terminal-io*)))
+         (run "darcs" `("get" ,url ,name))))
       ((update)
        (with-cwd project-directory
          ;; Sometimes a darcs pull fails because there's a leftover lock file from a previous
          ;; interrupted pull.  Should we try to remove the lock file, repository/_darcs/lock?
-         (run "darcs" '("pull" "--all" "--verbose") *terminal-io*))))
+         (run "darcs" '("pull" "--all" "--verbose")))))
     (create-asd-links project-directory name asd)))
 
 (defun git (op name url &key asd submodules)
@@ -2788,14 +2788,14 @@ submodules."
     (ecase op
       ((checkout)
        (with-cwd *source-root*
-         (run "git" `("clone" ,url ,name) *terminal-io*)))
+         (run "git" `("clone" ,url ,name))))
       ((update)
        (with-cwd project-directory
-         (run "git" '("pull") *terminal-io*))))
+         (run "git" '("pull")))))
     (when submodules
       (with-cwd project-directory
-        (run "git" '("submodule" "init") *terminal-io*)
-        (run "git" '("submodule" "update") *terminal-io*)))
+        (run "git" '("submodule" "init"))
+        (run "git" '("submodule" "update"))))
     (create-asd-links project-directory name asd)))
 
 (defun hg (op name url &key asd)
@@ -2805,10 +2805,10 @@ submodules."
     (ecase op
       ((checkout)
        (with-cwd *source-root*
-         (run "hg" `("clone" ,url ,name) *terminal-io*)))
+         (run "hg" `("clone" ,url ,name))))
       ((update)
        (with-cwd project-directory
-         (run "hg" '("pull" "--update") *terminal-io*))))
+         (run "hg" '("pull" "--update")))))
     (create-asd-links project-directory name asd)))
 
 (defun svn (op name url &key asd)
@@ -2818,8 +2818,8 @@ submodules."
     (ecase op
       ((checkout)
        (with-cwd *source-root*
-         (run "svn" `("checkout" ,url ,name) *terminal-io*)))
+         (run "svn" `("checkout" ,url ,name))))
       ((update)
        (with-cwd project-directory
-         (run "svn" '("update") *terminal-io*))))
+         (run "svn" '("update")))))
     (create-asd-links project-directory name asd)))
