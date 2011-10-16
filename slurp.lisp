@@ -1,7 +1,5 @@
 ; check out     (blackthorn-engine-3d (google-code hg))
 
-;; https://github.com/gihnius/cl-common-blog
-;; <https://github.com/billstclair/cl-autorepo>
 
 
 ;;;;    slurp.lisp
@@ -450,6 +448,7 @@
      :asd ("cl-annot.asd"
            "cl-annot-test.asd"))
     (cl-anonfun (github "arielnetworks"))
+    (cl-autorepo (github "billstclair"))
     (cl-azure (github "RobBlackwell"))
     (cl-base64 (b9))
     (cl-bayesian (github "tpapp"))
@@ -509,6 +508,7 @@
     (cl-creditcard (github "bobbysmith007")
      :asd ("cl-creditcard.asd"
            "cl-authorize-net.asd"))
+    (cl-crypto (github "billstclair"))
     (cl-css (github "madnificent"))
     (cl-curl svn "svn://common-lisp.net/project/cl-curl/subversion/trunk"
      :asd ("curl.asd"))
@@ -533,6 +533,7 @@
     (cl-eshop (github "rigidus")
      :asd none)
     (cl-fad (github "edicl"))
+    (cl-fidelia (github "billstclair"))
     (cl-fluiddb (github "hdurer")
      :asd ("cl-fluiddb.asd"
            "cl-fluiddb-test.asd"))
@@ -1575,6 +1576,7 @@
      :asd ("lift.asd"
            "lift-test.asd"
            "lift-documentation.asd"))
+    (limited-thread-taskmaster (github "billstclair"))
     ;; http://common-lisp.net/project/linedit
     (linedit (clnet git)
      :asd ("linedit.asd"
