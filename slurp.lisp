@@ -344,6 +344,7 @@
            "bunnyslayer.asd"
            "blackthorn-stress-test.asd"))
     (blogger (google-code svn "cl-blogger"))
+    (blogworks (github "madnificent"))
     (bordeaux-fft (github "ahefner"))
     ;; http://common-lisp.net/project/bordeaux-threads
     (bordeaux-threads (clnet git)
@@ -492,6 +493,7 @@
     (cl-closure-template (github "archimag")
      :asd ("closure-template.asd"))
     (cl-colors (github "tpapp"))
+    (cl-common-blog (github "gihnius"))
     (cl-cont (clnet darcs)
      :asd ("cl-cont.asd"
            "cl-cont-test.asd"))
@@ -509,6 +511,7 @@
     (cl-creditcard (github "bobbysmith007")
      :asd ("cl-creditcard.asd"
            "cl-authorize-net.asd"))
+    (cl-css (github "madnificent"))
     (cl-curl svn "svn://common-lisp.net/project/cl-curl/subversion/trunk"
      :asd ("curl.asd"))
     (cl-darcs svn "svn://common-lisp.net/project/cl-darcs/svn/cl-darcs/trunk")
@@ -741,6 +744,7 @@
     (cl-randist (github "lvaruzza"))
     (cl-random (github "tpapp"))
     (cl-rdfxml svn "http://svn.cs.rpi.edu/svn/tayloj/cl-rdfxml")
+    (cl-recaptcha (github "madnificent"))
     ;; XXXX: This version of cl-rdfxml may be better.  Active development?
     ;; (cl-rdfxml (github "turbo24prg") :asd none)
     (cl-redis (github "vseloved"))
@@ -771,6 +775,7 @@
     (cl-strings (google-code svn)
      :asd ("cl-strings.asd"
            "cl-strings-tests.asd"))
+    (cl-stripe (github "antifuchs"))
     (cl-svg (google-code svn))
     ;; http://common-lisp.net/projects/cl-machine-learning/git/cl-svm/.git
     ;; Look for a newer cl-swm repository at github.com/gonzojive.
@@ -839,6 +844,7 @@
            "cl-xmpp-tls.asd"
            "cl-xmpp.asd"
            "test/cl-xmpp-test.asd"))
+    (cl-zipper (github "danielfm"))
     ;; XXXX: rename to zeromq
     (cl-zmq (repo-or-cz)
      :asd ("zeromq.asd"))
@@ -846,6 +852,10 @@
      :asd ("clack.asd"
            "clack-test.asd"))
     (clack-doc (github "fukamachi"))
+    (clans (github "patzy"))
+    (claymore (github "madnificent" "cl-aymore")
+     :asd ("claymore.asd"
+           "tests/claymore.tests.asd"))
     (claw (clnet svn)
      :asd ("main/claw-as/claw-as.asd"
            "main/claw-demo/claw-demo.asd"
@@ -854,6 +864,7 @@
            "main/claw.i18n/claw.i18n.asd"
            "main/connectors/claw-hunchentoot-connector/claw-hunchentoot-connector.asd"
            "site/claw-site.asd"))
+    (clayworks (github "madnificent"))
     (clazy (clnet cvs))
     ;; May no longer be maintained ... appears to be gone on gitorious.
     ;; (clbuild (gitorious)
@@ -981,6 +992,7 @@
     (clysma (github "aerique")
      :asd ("clysma.asd"
            "clysma-gtk.asd"))
+    (cm-openid (github "madnificent"))
     (cmlisp1 (github "g000001"))
     (cmucl (clnet cvs "cmucl" "src")
      :asd none)
@@ -1041,6 +1053,7 @@
     (cxml (repo-or-cz))
     (cxml-rpc (github "antifuchs"))
     (data-format-validation (github "willijar" "cl-data-format-validation"))
+    (database-migrations (github "madnificent"))
     (date-utils (github "vseloved")
      :asd none)
     (dbus (github "death"))
@@ -1180,6 +1193,7 @@
      :asd ("flexichain-doc.asd"
            "flexichain-test.asd"
            "flexichain.asd"))
+    (flow (github "madnificent"))
 
     ;; Repository missing on 2010-11-09.
     ;; (folio git "git://codebasehq.com/bywicket/xg/folio.git"
@@ -1194,12 +1208,14 @@
     (freeimage (github "BradWBeer" "CL-FreeImage"))
     (fricas (sourceforge svn)
      :asd none)
+    (fridge (github "madnificent"))
     (fset (clnet svn))
     (fsbv (repo-or-cz))
     (fsdb (github "nikodemus"))
     (fsvd (melis))
     (ftd (clnet darcs))
     (fukacl (github "fukamachi"))
+    (function-namespace (github "madnificent"))
     (g000001 (github "g000001"))
     (garbage-pools (google-code svn)
      :asd ("garbage-pools.asd"
@@ -1521,9 +1537,13 @@
      :asd ("js-parser-tests.asd"
            "js-parser.asd"))
     (js-toolkit (github "vsedach"))
+    (jsown (github "madnificent")
+     :asd ("jsown.asd"
+           "tests/jsown-tests.asd"))
     (jwacs darcs "http://chumsley.org/jwacs/unstable"
      :asd ("jwacs.asd"
            "jwacs-tests.asd"))
+    (kayou (github "patzy"))
     (kilns  (github "sellout" "Kilns"))
     (kmrcl (b9)
      :asd ("kmrcl.asd"
@@ -1922,6 +1942,7 @@
     (ptester (b9))
     (pubmed (b9))
     (puri (b9))
+    (push (github "patzy"))
     ;; XXXX: I had to permanently accepted a bogus expired certificate.
     (pvs svn "https://spartan.csl.sri.com/svn/public/pvs/trunk"
      :asd none)
@@ -2313,6 +2334,7 @@
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
      :asd ("verrazano.asd"
            "verrazano-runtime.asd"))
+    (versioned-objects (github "madnificent"))
     (vivace-graph (github "kraison"))
     (vivace-graph-v2 (github "kraison")
      :asd ("vivace-graph-v2.asd"
