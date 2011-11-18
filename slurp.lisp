@@ -601,6 +601,7 @@
      :asd ("cl-jags.asd"
            "cl-jags-tests.asd"))
     ;; Trouble updating from repository on 2011-09-17.
+    ;; Trouble updating from repository on 2011-10-26.
     (cl-jpeg (clnet cvs "cljl"))
     (cl-js (github "akapav" "js"))
     (cl-json (clnet darcs))
@@ -626,6 +627,7 @@
            "cl-locale-test.asd"))
     (cl-loom (github "billstclair"))
     ;; Repository missing on 2011-09-17.
+    ;; Repository missing on 2011-10-26.
     (cl-loop-plus (github "arielnetworks"))
     (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
@@ -860,6 +862,7 @@
            "clack-test.asd"))
     (clack-doc (github "fukamachi"))
     (clans (github "patzy"))
+    (clawk (github "sharplispers"))
     (claymore (github "madnificent" "cl-aymore")
      :asd ("claymore.asd"
            "tests/claymore.tests.asd"))
@@ -1605,6 +1608,7 @@
     (lint (github "g000001"))
     ;; Update failed 2011-10-12
     ;; failed to create lock directory for `/cvsroot/lisa/lisa'
+    ;; Update failed 2011-10-26 for same reason.
     (lisa (sourceforge cvs))
     (lisp-critic (github "g000001"))
     (lisp-matrix (github "blindglobe"))
@@ -1714,6 +1718,9 @@
      :asd ("maclisp-compat.asd"
            "misc/maclisp.asd"))
     (macrophp (github "valeryz" "MacroPHP"))
+    (mailbox-plus (github "austinhaas")
+     :asd ("mailbox-plus.asd"
+           "mailbox-plus-tests.asd"))
     (maild (github "franzinc")
      :asd none)
     ;; Also available from git://github.com/ilitirit/manardb.git
@@ -1755,6 +1762,9 @@
     ;; old ... jan to nov of 2009
     (mel-base-old darcs "http://common-lisp.net/project/mel-base/darcs/mel-base"
      :asd none)
+    (message-stream (github "austinhaas")
+     :asd ("message-stream.asd"
+           "message-stream-tests.asd"))
     (meta-sexp (github "vy"))
     (metabang-bind (github "gwkkwg")
      :asd ("metabang-bind.asd"
@@ -1811,6 +1821,7 @@
     (net-xml-generator (github "franzinc")
      :asd none)
     ;; Update failed on 2011-10-12
+    ;; Update failed on 2011-10-26
     (netkit darcs "http://fresh.homeunix.net/~luke/misc/repo/netkit"
      :asd none)
     (nfs (github "franzinc")
@@ -1873,8 +1884,10 @@
      :asd ("parse-declarations-1.0.asd"))
     (parse-html darcs "http://common-lisp.net/project/bese/repos/parse-html")
     (parse-js (github "marijnh"))
+    (parse-number (github "sharplispers"))
     (pastebin.com-api (github "Lovesan"))
-    (pastel.blocky (github "dto"))
+    (pastel.blocky (github "dto")
+     :asd none)
     ;; (patg (clnet ))  XXXXXXXXXXX Subversion ???
     (patron (github "vy"))
     ;; XXXX: blog entry says persistent-sheeple is being renamed.  code has
@@ -1884,6 +1897,7 @@
      :asd ("pcall.asd"
            "pcall-queue.asd"))
     (pcl-practicals (github "gigamonkey"))
+    (perfpiece (github "luismbo"))
     (pg (clnet cvs))
     (phoros (github "trebb")
      :asd ("phoros.asd"
@@ -2133,6 +2147,7 @@
     ;; Update failed 2011-10-12
     ;; (spatial-trees darcs "http://rvw.doc.gold.ac.uk/sullivan/darcs/spatial-trees")
     (spectacle (github "slyrus"))
+    (split-sequence (github "sharplispers"))
     (squirl (github "sykopomp"))
     (srfi-0 (github "g000001"))
     (srfi-1 (github "g000001"))
