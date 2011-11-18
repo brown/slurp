@@ -1,7 +1,6 @@
 
 ;;;;    slurp.asd
 
-
 (cl:in-package #:common-lisp-user)
 
 (defpackage #:slurp-system
@@ -9,7 +8,6 @@
   (:use #:common-lisp #:asdf))
 
 (in-package #:slurp-system)
-
 
 (defsystem slurp
   :name "Slurp"
@@ -20,7 +18,7 @@ repositories change."
   :version "0.3"
   :author "Robert Brown"
   :license "See file COPYING and the copyright messages in individual files."
-  #+sbcl :depends-on #+sbcl (:sb-posix)
+  #+sbcl :depends-on #+sbcl (sb-posix)
   :components
   ((:cl-source-file "package")
    (:cl-source-file "slurp" :depends-on ("package"))))
