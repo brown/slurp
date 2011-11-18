@@ -1468,6 +1468,8 @@
      :asd ("hunchentoot-auth.asd"
            "hunchentoot-auth-test.asd"))
     (hunchentoot-blank (github "quek"))
+    ;; Now also available as: https://github.com/slyrus/hunchentoot-cgi
+    ;; perhaps with patches for the latest hunchentoot.
     (hunchentoot-cgi (harmon))
     (hunchentoot-vhost (harmon))
     (hyperdoc darcs "http://common-lisp.net/project/editor-hints/darcs/hyperdoc")
@@ -2838,3 +2840,19 @@ submodules."
        (with-cwd project-directory
          (run "svn" '("update")))))
     (create-asd-links project-directory name asd)))
+
+;; github.com/Hexstream
+;; github.com/luisbmo
+;; http://jp-larocque.livejournal.com/66618.html
+;; https://github.com/nikodemus/sb-texinfo
+;; http://github.com/galdor/m2cl
+;; https://github.com/gigamonkey/toot/
+;; https://github.com/stassats/lisp-config/blob/master/bin/data
+;; https://github.com/quicklisp/quicklisp-projects
+
+;; http://code.google.com/p/cl-gdata/source/browse/src/contacts.lisp
+;; git://matlisp.git.sourceforge.net/gitroot/matlisp/matlisp
+;; https://github.com/galdor/cl-zmq
+;; http://codemore.org/cl-zmq.html
+;; https://github.com/mmontone
+
