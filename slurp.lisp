@@ -380,12 +380,13 @@
     (bratwurst (github "sabetts"))
     (buclet (github "aerique"))
     (buildapp (github "xach"))
-    (buildnode (github "bobbysmith007")
-     :asd ("buildnode-excel.asd"
-           "buildnode-xul.asd"
-           "buildnode-kml.asd"
-           "buildnode.asd"
-           "buildnode-xhtml.asd"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (buildnode (github "bobbysmith007")
+    ;;  :asd ("buildnode-excel.asd"
+    ;;        "buildnode-xul.asd"
+    ;;        "buildnode-kml.asd"
+    ;;        "buildnode.asd"
+    ;;        "buildnode-xhtml.asd"))
     (bytemap git "http://common-lisp.net/projects/bytemap/bytemap.git"
      :asd ("bytemap-test.asd"
            "bytemap.asd"))
@@ -536,9 +537,10 @@
            "cl-couchdb-view-server.asd"
            "logv.asd"))
     (cl-crc64 (github "RobBlackwell"))
-    (cl-creditcard (github "bobbysmith007")
-     :asd ("cl-creditcard.asd"
-           "cl-authorize-net.asd"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (cl-creditcard (github "bobbysmith007")
+    ;;  :asd ("cl-creditcard.asd"
+    ;;        "cl-authorize-net.asd"))
     (cl-crypto (github "billstclair"))
     (cl-css (github "madnificent"))
     (cl-curl svn "svn://common-lisp.net/project/cl-curl/subversion/trunk"
@@ -617,7 +619,8 @@
     (cl-i18n (bitbucket "skypher"))
     (cl-imagemagick (github "franzinc")
      :asd none)
-    (cl-inflector (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (cl-inflector (github "bobbysmith007"))
     (cl-interpol (github "edicl"))
     (cl-irc (clnet svn)
      :asd ("cl-irc.asd"
@@ -631,6 +634,7 @@
            "cl-jags-tests.asd"))
     ;; Trouble updating from repository on 2011-09-17.
     ;; Trouble updating from repository on 2011-10-26.
+    ;; Trouble updating from repository on 2011-11-30.
     (cl-jpeg (clnet cvs "cljl"))
     (cl-js (github "akapav" "js"))
     (cl-json (clnet darcs))
@@ -657,6 +661,7 @@
     (cl-loom (github "billstclair"))
     ;; Repository missing on 2011-09-17.
     ;; Repository missing on 2011-10-26.
+    ;; Repository missing on 2011-11-30.
     (cl-loop-plus (github "arielnetworks"))
     (cl-magick (clnet cvs))
     (cl-markdown darcs "http://common-lisp.net/project/cl-markdown"
@@ -669,7 +674,8 @@
     (cl-mathstats darcs "http://common-lisp.net/project/cl-mathstats"
      :asd ("cl-mathstats.asd"
            "cl-mathstats-test.asd"))
-    (cl-mediawiki (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (cl-mediawiki (github "bobbysmith007"))
     (cl-memcached (github "arielnetworks"))
     (cl-menusystem (clnet cvs))
     (cl-migrations (clnet darcs))
@@ -719,6 +725,7 @@
            "snmp/trunk/snmp.asd"
            ;; This is the canonical version of usocket-udp.
            "usocket-udp/trunk/usocket-udp.asd"))
+    ;; Repository problem on 2011-11-30.
     (cl-notify (repo-or-cz))
     (cl-num-utils (github "tpapp"))
     (cl-numlib (github "tpapp"))
@@ -991,6 +998,7 @@
     (clonsigna (clnet git))
     (closer-mop darcs "http://common-lisp.net/project/closer/repos/closer-mop")
     (closure (clnet cvs))
+    ;; Repository problem on 2011-11-30.
     (closure-common (repo-or-cz))
     (closure-html (repo-or-cz))
     (clouchdb (clnet cvs)
@@ -1017,7 +1025,8 @@
            "clsql-sqlite3.asd"
            "clsql-tests.asd"
            "clsql-uffi.asd"))
-    (clsql-orm (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (clsql-orm (github "bobbysmith007"))
     (clsr (harmon)
      :asd ("clsr.asd"
            "clsr-doc.asd"
@@ -1040,7 +1049,8 @@
     (cmlisp1 (github "g000001"))
     (cmucl (clnet cvs "cmucl" "src")
      :asd none)
-    (collectors (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (collectors (github "bobbysmith007"))
     (com.dvlsoft.declt git "http://www.lrde.epita.fr/~didier/software/lisp/declt/declt.git")
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
     (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
@@ -1090,8 +1100,10 @@
     (constantia (github "death"))
     (contextl darcs "http://common-lisp.net/project/closer/repos/contextl")
     (css-lite (github "paddymul"))
-    (css-selectors (github "bobbysmith007"))
-    (csv-parser (github "nikodemus"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (css-selectors (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (csv-parser (github "nikodemus"))
     (cusp svn "http://cusp.googlecode.com/svn" ; missing /trunk on URI
      :asd none)
     (cxml (repo-or-cz))
@@ -1289,7 +1301,8 @@
            "gotanda-server.asd"))
     (graph-utils (github "kraison"))
     (gridlock (github "xach"))
-    (group-by (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (group-by (github "bobbysmith007"))
     (grout (github "xach"))
     (gsharp git "git://common-lisp.net/projects/gsharp/gsharp.git")
     (gsd (repo-or-cz)
@@ -1652,6 +1665,7 @@
     ;; Update failed 2011-10-12
     ;; failed to create lock directory for `/cvsroot/lisa/lisa'
     ;; Update failed 2011-10-26 for same reason.
+    ;; Update failed 2011-11-30 for same reason.
     (lisa (sourceforge cvs))
     (lisp-critic (github "g000001"))
     (lisp-matrix (github "blindglobe"))
@@ -1889,6 +1903,7 @@
      :asd ("nuts.asd"
            "nuts-clsql.asd"
            "nuts-core.asd"))
+    ;; Repository problem on 2011-11-30.
     (objcffi (repo-or-cz))
     (ocml (github "kmi"))
     (ogg (github "stassats"))
@@ -2118,6 +2133,9 @@
     (s-xml (clnet cvs))
     (s-xml-rpc (clnet cvs))
     ;; Update failed 2011-10-12
+    ;; Repository problem on 2011-11-30.
+    ;; Your configuration specifies to merge with the ref 'master' from the remote, but no
+    ;; such ref was fetched.
     (salza2 (xach))
     (sapaclisp (clnet cvs))
     (sb-bench (github "nikodemus"))
@@ -2165,6 +2183,9 @@
     (single-threaded-ccl (clnet git "qitab")
      :asd none)
     ;; Update failed 2011-10-12
+    ;; Repository problem on 2011-11-30.
+    ;; Your configuration specifies to merge with the ref 'master' from the remote, but no
+    ;; such ref was fetched.
     (skippy (xach))
     (slime (clnet cvs)
      :asd ("swank.asd"))
@@ -2266,7 +2287,8 @@
     ;;        "sykosomatic.object.asd"
     ;;        "sykosomatic.parser.asd"
     ;;        "sykosomatic.test.asd"))
-    (symbol-munger (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (symbol-munger (github "bobbysmith007"))
     ;; Repository was renamed at some point.  SymbolicWeb is now a Clojure project.
     (symbolicweb (github "lnostdal" "old-SymbolicWeb")
      :asd ("symbolicweb.asd"
@@ -2274,7 +2296,8 @@
            "symbolicweb-jquery.asd"))
     (t-system (gitorious)
      :asd none)
-    (talcl (github "bobbysmith007"))
+    ;; Not present on 2011-11-30 ... move code someplace.
+    ;; (talcl (github "bobbysmith007"))
     (tao-compat (github "g000001"))
     (tapulli (google-code svn)
      :asd ("tag-pool/tag-pool.asd"))
@@ -2439,6 +2462,9 @@
     (vcs-tree (b9))
     (vectometry (github "xach"))
     ;; Update failed 2011-10-12
+    ;; Repository problem on 2011-11-30.
+    ;; Your configuration specifies to merge with the ref 'master' from the remote, but no
+    ;; such ref was fetched.
     (vecto (xach))
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
      :asd ("verrazano.asd"
@@ -2525,15 +2551,17 @@
            "t/xcvb-driver-test.asd"
            "t/xcvb-test.asd"
            "xcvb-bridge.asd"))
+    ;; Repository problem on 2011-11-30.
     (xe2 (github "dto"))
     (xhtmlgen (github "hanshuebner"))
     (xlunit (b9))
     (xml-mop (github "gonzojive"))
-    ;; XXXX: Why do I check this out?  Delete??
+    ;; XXXXXXXXXXXXXXXXXXXX: Why do I check this out?  Delete??
     (xmlisp (google-code svn)
      :asd none)
     (xmlutils (b9))
-    (xong.blocky (github "dto"))
+    (xong.blocky (github "dto")
+     :asd none)
     (xptest (b9))
     (xuriella (repo-or-cz))
     (yacc darcs "http://www.pps.jussieu.fr/~jch/software/repos/cl-yacc")
@@ -2563,10 +2591,19 @@
      :asd none)
     (zpb-aws (github "xach"))
     ;; Update failed 2011-10-12
+    ;; Repository problem on 2011-11-30.
+    ;; Your configuration specifies to merge with the ref 'master' from the remote, but no
+    ;; such ref was fetched.
     (zpb-exif (xach))
     ;; Update failed 2011-10-12
+    ;; Repository problem on 2011-11-30.
+    ;; Your configuration specifies to merge with the ref 'master' from the remote, but no
+    ;; such ref was fetched.
     (zpb-ttf (xach))
     ;; Update failed 2011-10-12
+    ;; Repository problem on 2011-11-30.
+    ;; Your configuration specifies to merge with the ref 'master' from the remote, but no
+    ;; such ref was fetched.
     (zpng (xach))
     (zs3 (github "xach"))
 
@@ -2576,13 +2613,13 @@
     (emacs (savannah git) :asd none)
     (emacs-jabber (sourceforge cvs) :asd none)
     (git git "git://git.kernel.org/pub/scm/git/git.git" :asd none)
-    (go (google-code hg) :asd none)
     (libsigsegv (savannah cvs) :asd none)
     (magit git "git://gitorious.org/magit/mainline.git" :asd none)
     (gnome-common git "git://git.gnome.org/gnome-common" :asd none)
     (gnome-terminal git "git://git.gnome.org/gnome-terminal" :asd none)
     (vte git "git://git.gnome.org/vte" :asd none)
     (wave-client-for-emacs (google-code hg) :asd none)
+    ;; Repository problem on 2011-11-30.
     (wave-protocol (google-code hg) :asd none)
     )
   "Database of projects we are interested in cloning locally.")
