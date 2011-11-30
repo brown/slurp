@@ -2656,16 +2656,16 @@ http://git.cyrusharmon.org/cgi-bin/gitweb.cgi"
     (ecase scms
       ((bzr) `(bzr ,(concat "http://bzr.savannah.gnu.org/r/" name "/trunk")))
       ((cvs) `(cvs pserver anonymous nil cvs.savannah.gnu.org ,(concat "/sources/" name)
-               :module ,name))
+                   :module ,name))
       ((git) `(git ,(concat "git://git.savannah.gnu.org/" name ".git"))))))
 
 (defun sourceforge (project scms &optional (repository (string-downcase project)))
   "Repository specification abbreviation function for a project hosted on sourceforge.net."
   (ecase scms
     ((cvs) `(cvs pserver anonymous nil
-             ,(intern (string-upcase (concat repository ".cvs.sourceforge.net")))
-             ,(concat "/cvsroot/" repository)
-             :module ,repository))
+                 ,(intern (string-upcase (concat repository ".cvs.sourceforge.net")))
+                 ,(concat "/cvsroot/" repository)
+                 :module ,repository))
     ((git) `(git ,(concat "git://" repository ".git.sourceforge.net/gitroot/" repository
                           "/" repository ".git")))
     ((svn) `(svn ,(concat "https://" repository ".svn.sourceforge.net/svnroot/" repository)))))
@@ -2775,8 +2775,8 @@ REPOSITORY-NAME."
 #+sbcl
 (defun run (program args)
   (let ((result
-         (sb-ext:process-exit-code
-          (sb-ext:run-program program args :output *terminal-io* :search t :wait t))))
+          (sb-ext:process-exit-code
+           (sb-ext:run-program program args :output *terminal-io* :search t :wait t))))
     (assert (zerop result))))
 
 (defun link (project-directory asd-file-path)
@@ -2810,13 +2810,13 @@ REPOSITORY-NAME."
   (let* ((name (string-downcase name))
          (user (string-downcase user))
          (cvs-root
-          (concat "-d" ":" (string-downcase method)
-                  (case password
-                    ((t) (concat ":" user))
-                    ((nil) "")
-                    (otherwise (concat ":" password)))
-                  ":" user "@" (string-downcase host)
-                  ":" root))
+           (concat "-d" ":" (string-downcase method)
+                   (case password
+                     ((t) (concat ":" user))
+                     ((nil) "")
+                     (otherwise (concat ":" password)))
+                   ":" user "@" (string-downcase host)
+                   ":" root))
          (project-directory (concat *source-root* "/" name)))
     (ecase op
       ((checkout)
