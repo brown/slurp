@@ -3,6 +3,23 @@
 
 (in-package #:slurp)
 
+
+;; github.com/Hexstream
+;; github.com/luisbmo
+;; http://jp-larocque.livejournal.com/66618.html
+;; https://github.com/nikodemus/sb-texinfo
+;; http://github.com/galdor/m2cl
+;; https://github.com/gigamonkey/toot/
+;; https://github.com/stassats/lisp-config/blob/master/bin/data
+;; https://github.com/quicklisp/quicklisp-projects
+
+;; http://code.google.com/p/cl-gdata/source/browse/src/contacts.lisp
+;; git://matlisp.git.sourceforge.net/gitroot/matlisp/matlisp
+;; https://github.com/galdor/cl-zmq
+;; http://codemore.org/cl-zmq.html
+;; https://github.com/mmontone
+
+
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
 
@@ -17,6 +34,18 @@
   '((3b-swf (github "3b")
      :asd ("3b-swf-swc.asd"
            "3b-swf.asd"))
+
+    ;; All these are duplicates ... sort out !!!
+    ;; (bordeaux-threads (github "sionescu"))
+    ;; (commonqt (github "stassats"))
+    ;; (iolib (github "sionescu"))
+    ;; (static-vectors (github "sionescu"))
+    ;; (split-sequence (github "sionescu"))
+    ;; (versioned-objects (github "smithzvk" "Versoned-Objects")
+    ;;  :asd ("versioned-objects.asd"
+    ;;        "versioned-objects-test.asd"))
+
+
     (3bil (github "3b")
      :asd ("3b-swf-writer.asd"
            "avm2-asm.asd"
@@ -671,6 +700,7 @@
     (cl-mysql (github "hackinghat")
      :asd ("cl-mysql-test.asd"
            "cl-mysql.asd"))
+    (cl-n-back (github "smithzvk"))
     (cl-ncurses (clnet svn))
     (cl-neo4j (github "kraison"))
     (cl-net-snmp (sourceforge svn)
@@ -698,6 +728,7 @@
     (cl-openal (github "sykopomp")
      :asd ("cl-openal.asd"
            "cl-openal-examples.asd"))
+    (cl-openbox (github "stassats"))
     (cl-opencalais (github "RobBlackwell"))
     ;; XXXXXXXXXX: Compare this to the cl-opengl below and delete one.
     (cl-opengl (github "3b")
@@ -745,6 +776,7 @@
            "cl-prolog-test.asd"
            "cl-swi.asd"
            "cl-swi-client.asd"))
+    (cl-qt-web-browser (github "stassats"))
     (cl-randist (github "lvaruzza"))
     (cl-random (github "tpapp"))
     (cl-rdfxml svn "http://svn.cs.rpi.edu/svn/tayloj/cl-rdfxml")
@@ -911,6 +943,7 @@
            "pango/pango.asd"
            "rsvg/rsvg.asd"
            "tools/clg-tools.asd"))
+    (clim-chess (github "stassats"))
     (clim-desktop (clnet cvs)
      :asd ("clim-desktop.asd"
            "clim-desktop-minimal.asd"))
@@ -945,6 +978,7 @@
     (clois-lane (github "aerique")
      :asd ("clois-lane.asd"
            "clois-lane-cegui.asd"))
+    (clommand (github "smithzvk"))
     ;; Gabor Melis' task scheduler.
     (clon-task-scheduler (melis "clon")
      :asd none)
@@ -1190,6 +1224,7 @@
     (fft (github "nklein" "FFT")
      :asd ("fft.asd"
            "pfft.asd"))
+    (fftw-bindings (github "smithzvk"))
     (filtered-functions darcs "http://common-lisp.net/project/closer/repos/filtered-functions")
     (finebrush (github "Valera"))
     (fink (github "dballard")
@@ -1279,6 +1314,7 @@
     (html-entities (google-code svn))
     ;; Not present in bknr/third_party.
     (html-template darcs "http://common-lisp.net/~loliveira/ediware/html-template")
+    (http (github "stassats"))
     (http-dohc (github "vsedach" "HTTP-DOHC"))
     ;; XXXXXXXXXXXXXXXXXXXX look for other dwim.hu repositories
     ;; XXXX: finish conversion to dwim-hu
@@ -1486,6 +1522,9 @@
     (imap (github "franzinc")
      :asd none)
     (incf-cl (github "jmbr"))
+    (index-mapped-arrays (github "smithzvk")
+     :asd ("index-mapped-arrays.asd"
+           "index-mapped-arrays-test.asd"))
     (inet git "http://www.jarw.org.uk/lisp/cl-inet.git"
      :asd ("http/inet.http.asd"
            "inet-tests.asd"
@@ -1499,6 +1538,7 @@
     (info.read-eval-print.reader (github "quek"))
     (info.read-eval-print.repl-tw (github "quek" "twitter-client"))
     (info.read-eval-print.web (github "quek"))
+    (inotify (github "stassats"))
     ;; iolib used to be pulled as follows: (iolib (repo-or-cz) ...)
     ;; Switched to gitorious because static-vectors is there too.
     (iolib (gitorious)
@@ -1541,6 +1581,7 @@
            "tests/irs-tests.asd"
            "tests/irs-tests-core.asd"))
     (iso-media (github "slyrus"))
+    (iso-3166-1 (github "stassats"))
     (iterate (clnet darcs))
     (j cvs pserver anonymous nil armedbear-j.cvs.sourceforge.net "/cvsroot/armedbear-j"
      :asd none)
@@ -1690,6 +1731,7 @@
     ;; XXXX: maybe change project name to lisppaste
     (lisppaste2 cvs pserver anonymous t common-lisp.net "/project/lisppaste/cvsroot"
      :asd ("lisppaste.asd"))
+    (literate-lisp (github "smithzvk"))
     (lla (github "tpapp"))
     (llvm  (github "sellout" "CL-LLVM"))
     (lml (b9)
@@ -1795,6 +1837,9 @@
            "micmac-test.asd"))
     (mod_lisp svn "http://www.fractalconcept.com:8000/public/open-source/mod_lisp"
      :asd none)
+    (modf (github "smithzvk"))
+    (modf-fset (github "smithzvk"))
+    (modf-funds (github "smithzvk"))
     (modlisp (b9 "cl-modlisp"))
     (mon (github "mon-key" "mon-systems-cl"))
     (monkeylib-markup-html (github "gigamonkey"))
@@ -1812,6 +1857,7 @@
            "moptilities-test.asd"))
     (mounit (github "quek"))
     (movitz cvs pserver anonymous t common-lisp.net "/project/movitz/cvsroot")
+    (mpd (github "stassats"))
     (mtlisp (github "mtravers"))
     (mutest (github "vseloved"))
     (mw-equiv svn "http://svn.foldr.org/~michaelw/mw-equiv/trunk")
@@ -1845,6 +1891,7 @@
            "nuts-core.asd"))
     (objcffi (repo-or-cz))
     (ocml (github "kmi"))
+    (ogg (github "stassats"))
     (okra (github "aerique")
      :asd ("okra-bindings.asd"
            "okra-bindings-generator.asd"
@@ -2057,6 +2104,7 @@
     (rss (b9 "cl-rss"))
     (rt (b9))
     (rtf darcs "http://common-lisp.net/project/bese/repos/rtf")
+    (rtorrent-controller (github "stassats"))
     (rucksack (clnet cvs)
      :asd ("rucksack.asd"
            "tests/rucksack-test.asd"))
@@ -2120,6 +2168,8 @@
     (skippy (xach))
     (slime (clnet cvs)
      :asd ("swank.asd"))
+    (slime-cover (github "stassats")
+     :asd none)
     (slime-proxy (github "3b")
      :asd ("slime-proxy.asd"
            "contrib/slime-parenscript/swank-parenscript.asd"))
@@ -2188,11 +2238,13 @@
            "storable-functions.asd"
            "cl-store+functions-tests.asd"
            "storable-functions-tests.asd"))
+    (storage (github "stassats"))
     (stumpwm git "git://git.savannah.nongnu.org/stumpwm.git")
     (style-checker-1 (github "g000001"))
     (submarine (clnet darcs)
      :asd ("submarine.asd"
            "submarine-tests.asd"))
+    (subtitles (github "stassats"))
     (sw-db (github "lnostdal" "SW-DB"))
     (sw-http (github "lnostdal" "SW-HTTP"))
     (sw-mvc (github "lnostdal" "SW-MVC"))
@@ -2202,6 +2254,8 @@
            "swank-client-test.asd"))
     (swank-client-usocket (github "pf")
      :asd none)
+    ;; Efficient byte swapping for SBCL.
+    (swap-bytes (github "stassats"))
     (sykobot (github "sykopomp"))
     ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
     ;;XXXXXXXXXXXXXXXXXXXX investigate
@@ -2258,6 +2312,7 @@
     (tottori-nando (github "quek"))
     (towers (github "death"))
     (tpapp-utils (github "tpapp"))
+    (tracking (github "stassats"))
     (trivial-backtrace git "http://common-lisp.net/project/trivial-backtrace/trivial-backtrace.git"
      :asd ("trivial-backtrace.asd"
            "trivial-backtrace-test.asd"))
@@ -2388,6 +2443,9 @@
     (verrazano darcs "http://common-lisp.net/project/fetter/darcs/verrazano"
      :asd ("verrazano.asd"
            "verrazano-runtime.asd"))
+    (versioned-arrays (github "smithzvk")
+     :asd ("versioned-arrays.asd"
+           "versioned-arrays-test.asd"))
     (versioned-objects (github "madnificent"))
     (vivace-graph (github "kraison"))
     (vivace-graph-v2 (github "kraison")
@@ -2450,6 +2508,7 @@
      :asd ("woolly.asd"
            "woolly-gl.asd"))
     (wormtrails (github "xach"))
+    (wunderground (github "stassats"))
     (wuwei (github "mtravers"))
     (wxcl (sourceforge svn))
     (x.let-star (github "ks" "X.LET-STAR"))
@@ -2840,19 +2899,3 @@ submodules."
        (with-cwd project-directory
          (run "svn" '("update")))))
     (create-asd-links project-directory name asd)))
-
-;; github.com/Hexstream
-;; github.com/luisbmo
-;; http://jp-larocque.livejournal.com/66618.html
-;; https://github.com/nikodemus/sb-texinfo
-;; http://github.com/galdor/m2cl
-;; https://github.com/gigamonkey/toot/
-;; https://github.com/stassats/lisp-config/blob/master/bin/data
-;; https://github.com/quicklisp/quicklisp-projects
-
-;; http://code.google.com/p/cl-gdata/source/browse/src/contacts.lisp
-;; git://matlisp.git.sourceforge.net/gitroot/matlisp/matlisp
-;; https://github.com/galdor/cl-zmq
-;; http://codemore.org/cl-zmq.html
-;; https://github.com/mmontone
-
