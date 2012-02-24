@@ -19,6 +19,9 @@
 ;; http://codemore.org/cl-zmq.html
 ;; https://github.com/mmontone
 
+;; https://github.com/drewc/smug
+;; https://github.com/rpav/cl-xcb-xlib
+;; https://github.com/sharplispers
 
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
