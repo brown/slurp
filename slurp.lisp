@@ -22,6 +22,8 @@
 ;; https://github.com/drewc/smug
 ;; https://github.com/rpav/cl-xcb-xlib
 ;; https://github.com/sharplispers
+;; https://github.com/mtravers/waybacker/blob/master/src/oauth2-google.lisp
+;; cvs -z3 -d:pserver:anonymous@clorb.cvs.sourceforge.net:/cvsroot/clorb co clorb
 
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
@@ -1761,6 +1763,7 @@
      :asd ("cl-postgres+local-time.asd"
            "local-time.asd"
            "local-time.test.asd"))
+    (log4cl (github "7max"))
     (log5 (github "gwkkwg")
      :asd ("log5.asd"
            "log5-test.asd"))
@@ -2768,7 +2771,7 @@ system (SCMS) used by the project and the project specification with the SCMS re
 
 (defun checkout-repositories (repository-specs)
   "Check cout all the projects listed in REPOSITORY-SPECS."
-  (loop for (name . rest) in repository-specs do (checkout name))
+  (loop for (name . nil) in repository-specs do (checkout name))
   (values))
 
 (defun checkout-all ()
@@ -2788,7 +2791,7 @@ REPOSITORY-NAME."
 
 (defun update-repositories (repository-specs)
   "Update all the projects listed in REPOSITORY-SPECS."
-  (loop for (name . rest) in repository-specs do (update name))
+  (loop for (name . nil) in repository-specs do (update name))
   (values))
 
 (defun update-all ()
@@ -2801,23 +2804,34 @@ REPOSITORY-NAME."
   (let ((start (position repository-name *database* :key #'first)))
     (update-repositories (subseq *database* start))))
 
-#+sbcl
+(defun change-directory (directory)
+  #+ccl (setf (ccl:current-directory) directory)
+  #+sbcl (sb-posix:chdir directory))
+
+(defun current-directory ()
+  #+ccl (ccl:current-directory)
+  #+sbcl (sb-posix:getcwd))
+
 (defmacro with-cwd (directory &body body)
-  (let ((original-directory (sb-posix:getcwd))
+  (let ((original-directory (gensym "original-directory"))
         (chdir-worked (gensym "chdir-worked")))
-    `(let ((,chdir-worked nil))
+    `(let ((,original-directory (current-directory))
+           (,chdir-worked nil))
        (unwind-protect
-            (progn (sb-posix:chdir ,directory)
+            (progn (change-directory ,directory)
                    (setf ,chdir-worked t)
                    ,@body)
-         (when ,chdir-worked (sb-posix:chdir ,original-directory))))))
+         (when ,chdir-worked (change-directory ,original-directory))))))
 
-#+sbcl
 (defun run (program args)
-  (let ((result
-          (sb-ext:process-exit-code
-           (sb-ext:run-program program args :output *terminal-io* :search t :wait t))))
-    (assert (zerop result))))
+  #+ccl
+  (let ((process (ccl:run-program program args :output *terminal-io* :wait t)))
+    (multiple-value-bind (status exit-code)
+        (ccl:external-process-status process)
+      (assert (and (eq status :exited) (zerop exit-code)))))
+  #+sbcl
+  (let ((process (sb-ext:run-program program args :output *terminal-io* :search t :wait t)))
+    (assert (zerop (sb-ext:process-exit-code process)))))
 
 (defun link (project-directory asd-file-path)
   (let* ((link-target (concat project-directory "/" asd-file-path))
