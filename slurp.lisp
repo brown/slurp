@@ -24,6 +24,9 @@
 ;; https://github.com/sharplispers
 ;; https://github.com/mtravers/waybacker/blob/master/src/oauth2-google.lisp
 ;; cvs -z3 -d:pserver:anonymous@clorb.cvs.sourceforge.net:/cvsroot/clorb co clorb
+;; https://github.com/mathematical-systems/
+;; all pjb stuff may be here:
+;;  https://gitorious.org/com-informatimago/com-informatimago/trees/master/common-lisp/lisp-reader
 
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
