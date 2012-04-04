@@ -3,7 +3,20 @@
 
 (in-package #:slurp)
 
-
+;; http://github.com/7max/log4cl
+;;web: http://git.androdna.com/?p=lisp/package-aliases.git
+;;git: http://git.androdna.com/git/lisp/package-aliases.git
+;; > http://sf.net/projects/tmasterkey2/
+;; github.com/Neronus/clesh
+;; https://github.com/kruhft/cl-active-variables
+;; http://www.kylheku.com/cgit/lisp-snippets/tree/refs.lisp
+;; http://mustache.github.com/    https://github.com/osa1/cl-mustache
+;; https://github.com/vsedach/cliki2
+;; https://github.com/archimag/cliki2/issues
+;; https://github.com/AccelerationNet/static-analysis/blob/master/static-analysis.lisp
+;; https://github.com/pkhuong/Napa-FFT
+;; https://github.com/filonenko-mikhail/maxima/tree/quicklisp
+;;   http://code.google.com/p/cl-op/
 ;; github.com/Hexstream
 ;; github.com/luisbmo
 ;; http://jp-larocque.livejournal.com/66618.html
@@ -961,7 +974,7 @@
     (climc (google-code svn))
     (clime (github "mon-key"))
     (climon (github "nlamirault"))
-    (clisp (sourceforge cvs)
+    (clisp hg "http://clisp.hg.sourceforge.net:8000/hgroot/clisp/clisp"
      :asd none)
 
     ;; XXXX: figure out where this is
@@ -2198,8 +2211,11 @@
      :asd ("slime-proxy.asd"
            "contrib/slime-parenscript/swank-parenscript.asd"))
     ;; Update failed 2011-10-12
-    (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
+    (slitch (github "sharplispers")
      :asd ("src/netlib.asd"))
+
+    ;; (slitch darcs "http://fresh.homeunix.net/~luke/misc/repo/slitch"
+    ;;  :asd ("src/netlib.asd"))
     (slurp (github "brown"))
     (smarkup (github "slyrus")
      :asd ("smarkup.asd"
@@ -2613,7 +2629,7 @@
     ;;; Repositories not related to Common Lisp.
 
     (dwarf git "http://git.androdna.com/lisp/dwarf" :asd none)
-    (emacs (savannah git) :asd none)
+    ;; (emacs (savannah git) :asd none)
     (emacs-jabber (sourceforge cvs) :asd none)
     (git git "git://git.kernel.org/pub/scm/git/git.git" :asd none)
     (libsigsegv (savannah cvs) :asd none)
