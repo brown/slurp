@@ -3,6 +3,35 @@
 
 (in-package #:slurp)
 
+;; https://github.com/tlikonen/cl-eval-bot/
+;; https://github.com/slyrus/xml-class/
+;; https://github.com/davazp/jscl
+;; http://discontinuity.info/~pkhuong/mcas/
+;; http://orthecreedence.github.io/cl-async/
+;; https://github.com/redline6561/cl-6502
+;; http://github.com/redline6561/famiclom
+;; https://github.com/jasom/plush
+;; https://github.com/fare/fare-memoization
+;; https://github.com/erikg/ucw-core
+;; https://github.com/peterhil/common-lisp-friday
+;; https://github.com/3b/3b-cl-libgit2
+;; https://github.com/lokedhs/cl-gss/
+;; https://github.com/paultag/hy
+;; http://github.com/lmj/lfarm
+;; http://lparallel.org
+;; https://github.com/mathematical-systems/clml
+;; http://common-lisp.net/project/py-configparser/
+;; https://github.com/atomontage/plokami
+;; https://github.com/jasom/kiss-rng/blob/master/kiss-rng.lisp
+;; https://github.com/wlbr/cl-marshal
+;; https://github.com/vsedach/Vacietis/blob/master/libc/stdio.lisp
+;; https://github.com/dlowe-net/printf
+;; git://common-lisp.net/users/frideau/slave-repl.git
+;; https://github.com/dbmcclain/LispPlotter.git
+;; https://github.com/rpav/fast-io/
+;; https://github.com/dimitri/sudoku
+;; https://bitbucket.org/easye/jeannie
+;; https://github.com/m2ym/optima
 ;; https://github.com/sionescu/fiveam
 ;; http://github.com/7max/log4cl
 ;;web: http://git.androdna.com/?p=lisp/package-aliases.git
