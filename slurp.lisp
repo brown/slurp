@@ -3,6 +3,11 @@
 
 (in-package #:slurp)
 
+;; https://github.com/sionescu/static-vectors may be the most up to date repo
+;; https://github.com/sile/h264
+;; https://code.google.com/p/jrm-code-project/source/browse/#svn%2Ftrunk%2FChangeSafe
+;; https://github.com/stassats/lisp-bots/
+;; http://mr.gy/software/soundlab/
 ;; https://github.com/tlikonen/cl-eval-bot/
 ;; https://github.com/slyrus/xml-class/
 ;; https://github.com/davazp/jscl
