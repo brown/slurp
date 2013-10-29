@@ -3,6 +3,12 @@
 
 (in-package #:slurp)
 
+;; https://github.com/carlini/rhoscript
+;; https://github.com/mtravers/heroku-buildpack-cl
+;; https://github.com/hydandata?tab=repositories
+;; https://github.com/dardoria/uuid
+;; https://github.com/cosmos72/stmx/
+;; monotone repository   http://mtn-host.prjek.net/projects/cl-fuse/
 ;; https://github.com/sionescu/static-vectors may be the most up to date repo
 ;; https://github.com/sile/h264
 ;; https://code.google.com/p/jrm-code-project/source/browse/#svn%2Ftrunk%2FChangeSafe
@@ -3003,6 +3009,20 @@ or update all submodules."
        (with-cwd project-directory
          (run "hg" '("pull" "--update")))))
     (create-asd-links project-directory name asd)))
+
+;; (defun monotone (op name url &key asd)
+;;   "Check out or update a Monotone repository."
+;;   (let* ((name (string-downcase name))
+;;          (project-directory (concat *source-root* "/" name)))
+;;     (ecase op
+;;       ((checkout)
+;;        (with-cwd *source-root*
+;;          (run "mtn" `("clone" ,url ,name))))
+;;       ((update)
+;;        (with-cwd project-directory
+;;          (run "mtn" '("pull"))
+;;          (run "mtn" '("update")))))
+;;     (create-asd-links project-directory name asd)))
 
 (defun svn (op name url &key asd)
   "Check out or update a Subversion repository."

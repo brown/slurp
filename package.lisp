@@ -1,7 +1,4 @@
 
-;;;;    package.lisp
-
-
 (in-package #:common-lisp-user)
 
 (defpackage #:slurp
