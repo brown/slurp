@@ -3,7 +3,57 @@
 
 (in-package #:slurp)
 
+;; Quicklisp removed the following.  Track them down.
+;;   asdf-install, cgn, cl-cron (website gone),
+;;   cl-prolog, cl-tokyo-cabinet,
+;;   fare-matcher (everyone should use optima),
+;;   hunchentoot-vhost (obsolete), montezuma
+
 ;; github.com/lmj
+;; slime moves from CVS to https://github.com/slime/slime.git
+;; https://github.com/carlini/rhoscript
+;; https://github.com/mtravers/heroku-buildpack-cl
+;; https://github.com/hydandata?tab=repositories
+;; https://github.com/dardoria/uuid
+;; https://github.com/cosmos72/stmx/
+;; monotone repository   http://mtn-host.prjek.net/projects/cl-fuse/
+;; https://github.com/sionescu/static-vectors may be the most up to date repo
+;; https://github.com/sile/h264
+;; https://code.google.com/p/jrm-code-project/source/browse/#svn%2Ftrunk%2FChangeSafe
+;; https://github.com/stassats/lisp-bots/
+;; http://mr.gy/software/soundlab/
+;; https://github.com/tlikonen/cl-eval-bot/
+;; https://github.com/slyrus/xml-class/
+;; https://github.com/davazp/jscl
+;; http://discontinuity.info/~pkhuong/mcas/
+;; http://orthecreedence.github.io/cl-async/
+;; https://github.com/redline6561/cl-6502
+;; http://github.com/redline6561/famiclom
+;; https://github.com/jasom/plush
+;; https://github.com/fare/fare-memoization
+;; https://github.com/erikg/ucw-core
+;; https://github.com/peterhil/common-lisp-friday
+;; https://github.com/3b/3b-cl-libgit2
+;; https://github.com/lokedhs/cl-gss/
+;; https://github.com/paultag/hy
+;; http://github.com/lmj/lfarm
+;; http://lparallel.org
+;; https://github.com/mathematical-systems/clml
+;; http://common-lisp.net/project/py-configparser/
+;; https://github.com/atomontage/plokami
+;; https://github.com/jasom/kiss-rng/blob/master/kiss-rng.lisp
+;; https://github.com/wlbr/cl-marshal
+;; https://github.com/vsedach/Vacietis/blob/master/libc/stdio.lisp
+;; https://github.com/dlowe-net/printf
+;; git://common-lisp.net/users/frideau/slave-repl.git
+;; https://github.com/dbmcclain/LispPlotter.git
+;; https://github.com/rpav/fast-io/
+;; https://github.com/dimitri/sudoku
+;; https://bitbucket.org/easye/jeannie
+;; https://github.com/m2ym/optima
+;; https://github.com/sionescu/fiveam
+;; http://github.com/7max/log4cl
+
 ;;web: http://git.androdna.com/?p=lisp/package-aliases.git
 ;;git: http://git.androdna.com/git/lisp/package-aliases.git
 ;; > http://sf.net/projects/tmasterkey2/
@@ -2329,6 +2379,7 @@
     (swank-client-usocket (github "pf")
      :asd none)
     ;; Efficient byte swapping for SBCL.
+    ;; Canonical repository may now be https://github.com/sionescu/swap-bytes
     (swap-bytes (github "stassats"))
     (sykobot (github "sykopomp"))
     ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
@@ -2996,6 +3047,20 @@ or update all submodules."
        (with-cwd project-directory
          (run "hg" '("pull" "--update")))))
     (create-asd-links project-directory name asd)))
+
+;; (defun monotone (op name url &key asd)
+;;   "Check out or update a Monotone repository."
+;;   (let* ((name (string-downcase name))
+;;          (project-directory (concat *source-root* "/" name)))
+;;     (ecase op
+;;       ((checkout)
+;;        (with-cwd *source-root*
+;;          (run "mtn" `("clone" ,url ,name))))
+;;       ((update)
+;;        (with-cwd project-directory
+;;          (run "mtn" '("pull"))
+;;          (run "mtn" '("update")))))
+;;     (create-asd-links project-directory name asd)))
 
 (defun svn (op name url &key asd)
   "Check out or update a Subversion repository."
