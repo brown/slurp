@@ -3,7 +3,7 @@
 
 (in-package #:slurp)
 
-;; http://github.com/7max/log4cl
+;; github.com/lmj
 ;;web: http://git.androdna.com/?p=lisp/package-aliases.git
 ;;git: http://git.androdna.com/git/lisp/package-aliases.git
 ;; > http://sf.net/projects/tmasterkey2/
@@ -38,8 +38,7 @@
 ;; https://github.com/mtravers/waybacker/blob/master/src/oauth2-google.lisp
 ;; cvs -z3 -d:pserver:anonymous@clorb.cvs.sourceforge.net:/cvsroot/clorb co clorb
 ;; https://github.com/mathematical-systems/
-;; all pjb stuff may be here:
-;;  https://gitorious.org/com-informatimago/com-informatimago/trees/master/common-lisp/lisp-reader
+
 
 (defparameter *source-root* "/local/software/source-trees"
   "Directory into which source code repositories are checked out.")
@@ -390,6 +389,11 @@
            "lkcas.asd"
            "blackthorn3d.asd"
            "blackthorn3d-test.asd"))
+    (blas-lapack-ffi (github "mathematical-systems")
+     :asd ("lapack-test.asd"
+           "blas-test.asd"
+           "lapack.asd"
+           "blas.asd"))
     (blocky (github "dto"))
     (blogger (google-code svn "cl-blogger"))
     (blogworks (github "madnificent"))
@@ -454,6 +458,8 @@
            "cffi-tests.asd"
            "cffi-uffi-compat.asd"
            "uffi-compat/uffi.asd"))
+    (cffi-fortran (github "mathematical-systems")
+     :asd none)
     (cffi-j (github "Ramarren"))
     (cffi-redland (github "Ramarren")
      :asd ("redland.asd"
@@ -489,6 +495,7 @@
      :asd ("chronicity.asd"
            "chronicity-test.asd"))
     (chunga (github "edicl"))
+    (cilk (github "7max" "cl-cilk"))
     (city-hash (github "brown")
      :asd ("city-hash.asd"
            "city-hash-test.asd"))
@@ -583,6 +590,7 @@
     ;;  :asd ("dwim.asd" "dwim-meta-model-test.asd"))
 
     (cl-elf (repo-or-cz))
+    (cl-emacs-if (github "7max"))
     (cl-env (github "franzinc"))
     (cl-eshop (github "rigidus")
      :asd none)
@@ -635,6 +643,7 @@
            "gtk-glext/cl-gtk2-gtkglext.asd"
            "gtk/cl-gtk2-gtk.asd"
            "pango/cl-gtk2-pango.asd"))
+    (cl-gui (github "mathematical-systems"))
     (cl-hmm (google-code svn))
     ;; XXXX: Not sure if this one is the best.
     (cl-i18n (bitbucket "skypher"))
@@ -695,6 +704,7 @@
     (cl-mathstats darcs "http://common-lisp.net/project/cl-mathstats"
      :asd ("cl-mathstats.asd"
            "cl-mathstats-test.asd"))
+    (cl-maxlib (github "7max"))
     ;; Not present on 2011-11-30 ... move code someplace.
     ;; (cl-mediawiki (github "bobbysmith007"))
     (cl-memcached (github "arielnetworks"))
@@ -831,6 +841,7 @@
      :asd ("sqlite-tests.asd"
            "sqlite.asd"))
     (cl-starcraft-proxybot (github "aerique"))
+    (cl-static-array (github "mathematical-systems"))
     (cl-stm darcs "http://common-lisp.net/project/cl-stm")
     (cl-stomp (clnet git)
      :asd ("cl-stomp.asd"
@@ -863,6 +874,8 @@
     (cl-tokyo-cabinet (github "keithj")
      :asd ("cl-tokyo-cabinet.asd"
            "cl-tokyo-cabinet-test.asd"))
+    (cl-tokyo-tyrant (github "mathematical-systems")
+     :asd none)
     (cl-transactional (github "Ramarren")
      :asd ("cl-transactional-tests.asd"
            "cl-transactional.asd"))
@@ -986,6 +999,8 @@
     ;;    (clnuplot darcs "http://common-lisp.net/project/clnuplot")
 
     (clixdoc (github "hanshuebner"))
+    (clml (github "mathematical-systems")
+     :asd none)
     (cloak git "http://www.lichteblau.com/git/cloakbuild.git"
      :asd ("cloak/cloak.asd"
            "java-cloak-compat/java-cloak-compat.asd"
@@ -1072,6 +1087,46 @@
      :asd none)
     ;; Not present on 2011-11-30 ... move code someplace.
     ;; (collectors (github "bobbysmith007"))
+    (com-informatimago (gitorious)
+     :asd ("clisp/com.informatimago.clisp.asd"
+           "susv3/com.informatimago.susv3.asd"
+           "tools/com.informatimago.common-lisp.tools.make-depends.asd"
+           "clext/com.informatimago.clext.asd"
+           "cl-posix/cliki/cliki.asd"
+           "cl-posix/cliki/clposixcliki.asd"
+           "clmisc/com.informatimago.clmisc.asd"
+           "common-lisp/diagram/com.informatimago.common-lisp.diagram.asd"
+           "common-lisp/html-parser/com.informatimago.common-lisp.html-parser.asd"
+           "common-lisp/csv/com.informatimago.common-lisp.csv.asd"
+           "common-lisp/http/com.informatimago.common-lisp.http.asd"
+           "common-lisp/cesarum/com.informatimago.common-lisp.cesarum.asd"
+           "common-lisp/regexp/com.informatimago.common-lisp.regexp.asd"
+           "common-lisp/rfc2822/com.informatimago.common-lisp.rfc2822.asd"
+           "common-lisp/cxx/com.informatimago.common-lisp.cxx.asd"
+           "common-lisp/rfc3548/com.informatimago.common-lisp.rfc3548.asd"
+           "common-lisp/invoice/com.informatimago.common-lisp.invoice.asd"
+           "common-lisp/picture/com.informatimago.common-lisp.picture.asd"
+           "common-lisp/graphviz/com.informatimago.common-lisp.graphviz.asd"
+           "common-lisp/lisp-reader/com.informatimago.common-lisp.lisp-reader.asd"
+           "common-lisp/bank/com.informatimago.common-lisp.bank.asd"
+           "common-lisp/lisp-text/com.informatimago.common-lisp.lisp-text.asd"
+           "common-lisp/lisp/com.informatimago.common-lisp.lisp.asd"
+           "common-lisp/interactive/com.informatimago.common-lisp.interactive.asd"
+           "common-lisp/html-generator/com.informatimago.common-lisp.html-generator.asd"
+           "common-lisp/lisp-sexp/com.informatimago.common-lisp.lisp-sexp.asd"
+           "common-lisp/heap/com.informatimago.common-lisp.heap.asd"
+           "common-lisp/arithmetic/com.informatimago.common-lisp.arithmetic.asd"
+           "common-lisp/com.informatimago.common-lisp.asd"
+           "common-lisp/unix/com.informatimago.common-lisp.unix.asd"
+           "common-lisp/parser/com.informatimago.common-lisp.parser.asd"
+           "common-lisp/ed/com.informatimago.common-lisp.ed.asd"
+           "common-lisp/data-encoding/com.informatimago.common-lisp.data-encoding.asd"
+           "common-lisp/html-base/com.informatimago.common-lisp.html-base.asd"))
+    (com-informatimago-rdp (gitorious "com-informatimago")
+     :asd ("com.informatimago.rdp.example.asd"
+           "com.informatimago.rdp.asd"
+           "com.informatimago.rdp.basic.asd"
+           "com.informatimago.rdp.basic.example.asd"))
     (com.dvlsoft.declt git "http://www.lrde.epita.fr/~didier/software/lisp/declt/declt.git")
     (com.gigamonkeys.binary-data (github "gigamonkey" "monkeylib-binary-data"))
     (com.gigamonkeys.foo (github "gigamonkey" "monkeylib-foo"))
@@ -1282,6 +1337,9 @@
     ;;        ;; "lib/fset_1.2.2/fset.asd"
     ;;        "folio.asd"))
 
+    (fork-future (github "mathematical-systems")
+     :asd ("fork-future.asd"
+           "fork-future-test.asd"))
     (format-time (github "xach"))
     (freeimage (github "BradWBeer" "CL-FreeImage"))
     (fricas (sourceforge svn)
@@ -1294,6 +1352,9 @@
     (ftd (clnet darcs))
     (fukacl (github "fukamachi"))
     (function-namespace (github "madnificent"))
+    (future (github "mathematical-systems")
+     :asd ("future.asd"
+           "future-test.asd"))
     (g000001 (github "g000001"))
     (garbage-pools (google-code svn)
      :asd ("garbage-pools.asd"
@@ -1573,6 +1634,7 @@
     (info.read-eval-print.repl-tw (github "quek" "twitter-client"))
     (info.read-eval-print.web (github "quek"))
     (inotify (github "stassats"))
+    (intel-mkl-bindings (github "mathematical-systems"))
     ;; iolib used to be pulled as follows: (iolib (repo-or-cz) ...)
     ;; Switched to gitorious because static-vectors is there too.
     (iolib (gitorious)
@@ -1803,9 +1865,11 @@
            "mailbox-plus-tests.asd"))
     (maild (github "franzinc")
      :asd none)
-    ;; Also available from git://github.com/ilitirit/manardb.git
-    ;; Maybe that's the real master?  double check other msi projects
-    (manardb git "http://cl-www.msi.co.jp/projects/manardb/manardb.git"
+    ;; This is a clone of git://github.com/ilitirit/manardb.git
+    ;; Use that one instead?  Double check other msi projects.
+    ;; This one has moved to github from
+    ;; http://cl-www.msi.co.jp/projects/manardb/manardb.git
+    (manardb (github "mathematical-systems")
      :asd ("manardb.asd"
            "manardb-test.asd"))
     (markup git "http://www.jarw.org.uk/lisp/cl-markup.git")
@@ -1994,43 +2058,7 @@
     (pipes-edsl (github "pkhuong" "Pipes")
      :asd none)
     (pithy-xml (github "frodef"))
-    ;; http://informatimago.com/develop/lisp/
-    (pjb-lisp git "git://git.informatimago.com/public/lisp"
-     :asd ("clisp/com.informatimago.clisp.asd"
-           "susv3/com.informatimago.susv3.asd"
-           "tools/com.informatimago.common-lisp.tools.make-depends.asd"
-           "clext/com.informatimago.clext.asd"
-           "cl-posix/cliki/cliki.asd"
-           "cl-posix/cliki/clposixcliki.asd"
-           "clmisc/com.informatimago.clmisc.asd"
-           "common-lisp/diagram/com.informatimago.common-lisp.diagram.asd"
-           "common-lisp/html-parser/com.informatimago.common-lisp.html-parser.asd"
-           "common-lisp/csv/com.informatimago.common-lisp.csv.asd"
-           "common-lisp/http/com.informatimago.common-lisp.http.asd"
-           "common-lisp/cesarum/com.informatimago.common-lisp.cesarum.asd"
-           "common-lisp/regexp/com.informatimago.common-lisp.regexp.asd"
-           "common-lisp/rfc2822/com.informatimago.common-lisp.rfc2822.asd"
-           "common-lisp/cxx/com.informatimago.common-lisp.cxx.asd"
-           "common-lisp/rfc3548/com.informatimago.common-lisp.rfc3548.asd"
-           "common-lisp/invoice/com.informatimago.common-lisp.invoice.asd"
-           "common-lisp/picture/com.informatimago.common-lisp.picture.asd"
-           "common-lisp/graphviz/com.informatimago.common-lisp.graphviz.asd"
-           "common-lisp/lisp-reader/com.informatimago.common-lisp.lisp-reader.asd"
-           "common-lisp/bank/com.informatimago.common-lisp.bank.asd"
-           "common-lisp/lisp-text/com.informatimago.common-lisp.lisp-text.asd"
-           "common-lisp/lisp/com.informatimago.common-lisp.lisp.asd"
-           "common-lisp/interactive/com.informatimago.common-lisp.interactive.asd"
-           "common-lisp/html-generator/com.informatimago.common-lisp.html-generator.asd"
-           "common-lisp/lisp-sexp/com.informatimago.common-lisp.lisp-sexp.asd"
-           "common-lisp/heap/com.informatimago.common-lisp.heap.asd"
-           "common-lisp/arithmetic/com.informatimago.common-lisp.arithmetic.asd"
-           "common-lisp/com.informatimago.common-lisp.asd"
-           "common-lisp/unix/com.informatimago.common-lisp.unix.asd"
-           "common-lisp/parser/com.informatimago.common-lisp.parser.asd"
-           "common-lisp/ed/com.informatimago.common-lisp.ed.asd"
-           "common-lisp/data-encoding/com.informatimago.common-lisp.data-encoding.asd"
-           "common-lisp/html-base/com.informatimago.common-lisp.html-base.asd"
-           "sbcl/com.informatimago.sbcl.asd"))
+    ;; probably doesn't work anymore
     (pjb-small-cl-pgms git "git://git.informatimago.com/public/small-cl-pgms"
      :asd none)
     (planet-wars (melis)
