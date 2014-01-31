@@ -3,6 +3,13 @@
 
 (in-package #:slurp)
 
+;; Quicklisp removed the following.  Track them down.
+;;   asdf-install, cgn, cl-cron (website gone),
+;;   cl-prolog, cl-tokyo-cabinet,
+;;   fare-matcher (everyone should use optima),
+;;   hunchentoot-vhost (obsolete), montezuma
+
+;; slime moves from CVS to https://github.com/slime/slime.git
 ;; https://github.com/carlini/rhoscript
 ;; https://github.com/mtravers/heroku-buildpack-cl
 ;; https://github.com/hydandata?tab=repositories
@@ -2342,6 +2349,7 @@
     (swank-client-usocket (github "pf")
      :asd none)
     ;; Efficient byte swapping for SBCL.
+    ;; Canonical repository may now be https://github.com/sionescu/swap-bytes
     (swap-bytes (github "stassats"))
     (sykobot (github "sykopomp"))
     ;;XXXXXXXXXXXXXXXXXXXX  all files were deleted
