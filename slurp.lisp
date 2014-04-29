@@ -3,6 +3,12 @@
 
 (in-package #:slurp)
 
+;; https://github.com/bhyde/cl-one-time-passwords
+;; https://github.com/jasom/foil
+;; https://github.com/AccelerationNet/access
+;; https://github.com/dimitri/pginstall, plus daemon code that's in quicklisp
+;; https://github.com/lokedhs/lofn
+
 ;; Quicklisp removed the following.  Track them down.
 ;;   asdf-install, cgn, cl-cron (website gone),
 ;;   cl-prolog, cl-tokyo-cabinet,
@@ -1042,6 +1048,8 @@
     (climc (google-code svn))
     (clime (github "mon-key"))
     (climon (github "nlamirault"))
+    ;; XXXX: This URL may be better.
+    ;; http://hg.code.sf.net/p/clisp/clisp
     (clisp hg "http://clisp.hg.sourceforge.net:8000/hgroot/clisp/clisp"
      :asd none)
 
